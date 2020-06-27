@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.input__control--file{position:fixed;top:-1000px}.input__control--file:focus+.btn{outline:1px solid #ffb612}[class*=background--] .input__control--file:focus+.btn{outline-color:inherit}.file{-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding-bottom:10px;padding-bottom:1rem}.file:only-child{padding-bottom:0}.file .meta{display:block;padding:0}.list--files .file{margin-bottom:0}.file__icon{-ms-flex-item-align:stretch;align-self:stretch;display:block;-ms-flex-negative:0;flex-shrink:0;position:relative;width:32px;width:3.2rem}@media (min-width:768px){.file__icon{width:4.4rem}}.file__icon:before{font-size:32px;font-size:3.2rem;left:-6px;left:-.6rem;position:absolute;top:0}@media (min-width:768px){.file__icon:before{font-size:4.4rem}}.file__title{display:block;padding-right:10px;padding-right:1rem}.file__data{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}@media (min-width:768px){.file__data{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}.file__button{-ms-flex-negative:0;flex-shrink:0}
+/*# sourceMappingURL=file.css.map */

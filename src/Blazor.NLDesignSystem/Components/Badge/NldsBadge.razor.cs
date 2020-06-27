@@ -1,0 +1,16 @@
+﻿using Blazor.NLDesignSystem.Extensions;
+using Microsoft.AspNetCore.Components;
+
+namespace Blazor.NLDesignSystem.Components.Badge
+{
+    public partial class NldsBadge
+    {
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
+        [Parameter]
+        public BadgeColor Color { get;set; }
+
+        private string color => Color.GetDescription<StyleAttribute>();
+
+    }
+}

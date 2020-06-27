@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.list--notification{list-style:none;margin-left:0}.list--notification .list__item{display:block;font-size:18px;font-size:1.8rem;line-height:26px;line-height:2.6rem;margin-bottom:4px;margin-bottom:.4rem;background:#fff;font-weight:400;margin:0;padding:15px;padding:1.5rem}.list--notification .list__item a:focus{outline:2px solid #ffb612}.list--notification .list__item--new a{font-weight:700}.list--notification .list__meta{color:dimgray;display:block;font-size:14px;font-size:1.4rem;font-weight:400;margin-bottom:10px;margin-bottom:1rem;text-transform:uppercase}@media (min-width:768px){.list--notification .list__meta{font-size:1.6rem}}.list--notification .list__meta:last-child{margin-bottom:0}
+/*# sourceMappingURL=list-notification.css.map */

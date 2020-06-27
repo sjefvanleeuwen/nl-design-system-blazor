@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.sidenav ul{margin-bottom:0;margin-left:0}.sidenav__item{list-style-type:none;margin-bottom:1px;margin-bottom:.1rem}.sidenav__item a{background:#fff;color:#2b2b2b;display:block;padding:12px 10px 11px;padding:1.2rem 1rem 1.1rem;text-decoration:none}.sidenav__item a:focus,.sidenav__item a:hover{text-decoration:underline}.sidenav__item:last-child{border-bottom:2px solid #ccc;border-bottom:.2rem solid #ccc}.sidenav__item .sidenav__item{border-bottom:0;margin-bottom:0}.sidenav__item .sidenav__item a{padding:8px 10px 8px 20px;padding:.8rem 1rem .8rem 2rem}.sidenav__item .sidenav__item--active{border:0;padding:0}.sidenav__item--active{border-bottom:2px solid #ccc;border-bottom:.2rem solid #ccc;border-top:2px solid #ccc;border-top:.2rem solid #ccc;margin-bottom:9px;margin-bottom:.9rem;padding-top:9px;padding-top:.9rem}.sidenav__item--active:first-child{border-top:0;padding-top:0}.sidenav__item--active>a{font-weight:700}.sidenav__item--active .sidenav__item:last-child a{padding-bottom:10px;padding-bottom:1rem}
+/*# sourceMappingURL=sidenav.css.map */

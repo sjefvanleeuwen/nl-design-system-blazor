@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.quote{margin:20px 0;margin:2rem 0;width:100%}.quote:after{content:"";display:table;clear:both}.content-background .quote{border-left:5px solid #ffb612;border-left:.5rem solid #ffb612;padding:0 0 0 20px;padding:0 0 0 2rem}.quote:not(.quote--with-image){font-family:RijksoverheidSans,Helvetica,Arial,sans-serif;font-size:20px;font-size:2rem;font-style:italic;line-height:27px;line-height:2.7rem}@media (min-width:768px){.quote:not(.quote--with-image){font-size:2.3rem;line-height:3rem}}@media (min-width:768px){.quote{padding-right:5rem}}.quote__body{font-family:RijksoverheidSans,Helvetica,Arial,sans-serif;font-size:20px;font-size:2rem;font-style:italic;line-height:27px;line-height:2.7rem;margin-bottom:10px;margin-bottom:1rem}@media (min-width:768px){.quote__body{font-size:2.3rem;line-height:3rem}}.quote__image{float:left;height:60px;height:6rem;overflow:hidden;width:60px;width:6rem}.quote__image>img{height:auto;-o-object-fit:cover;object-fit:cover;width:100%}.quote__meta{float:right;width:calc(100% - 7.5rem)}@media (min-width:544px){.quote__body{float:right;margin-bottom:0}.quote__body,.quote__meta{width:calc(100% - 8rem)}}
+/*# sourceMappingURL=quote.css.map */

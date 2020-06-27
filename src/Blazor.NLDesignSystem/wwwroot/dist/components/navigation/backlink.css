@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.backlink{display:inline-block;margin:0 0 10px;margin:0 0 1rem;padding:8px 10px 8px 34px;padding:.8rem 1rem .8rem 3.4rem;position:relative}@media (min-width:768px){.backlink{margin:1rem 0;padding:1rem 1rem 1rem 3.4rem}}.backlink:active,.backlink:hover,.backlink:link,.backlink:visited{color:#2b2b2b;text-decoration:none}.backlink:before,.backlink:focus{text-decoration:underline}.backlink:before{font-family:duo-basic!important;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-style:normal;font-variant:normal;font-weight:400;line-height:1;speak:none;text-transform:none;content:"";font-size:24px;font-size:2.4rem;left:2px;left:.2rem;line-height:inherit;position:absolute;text-decoration:none;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-transition:-webkit-transform .1s ease;transition:-webkit-transform .1s ease;transition:transform .1s ease;transition:transform .1s ease,-webkit-transform .1s ease;width:24px;width:2.4rem}.backlink:hover:before{-webkit-transform:translateX(-.2rem);transform:translateX(-.2rem)}.main{padding-top:20px;padding-top:2rem}
+/*# sourceMappingURL=backlink.css.map */

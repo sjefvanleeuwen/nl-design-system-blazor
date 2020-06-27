@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+ul.list--grid{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;margin-bottom:10px;margin-bottom:1rem;margin-left:0}@media (min-width:544px){ul.list--grid:not(.list--card-small){display:-webkit-box;display:-ms-flexbox;display:flex}}@media (min-width:992px){ul.list--grid:not(.list--card-small){width:calc(99.9% + 2rem)}}ul.list--grid>li .card__content,ul.list--grid li.card .card__content{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){ul.list--grid>li .card__content,ul.list--grid li.card .card__content{display:block}}@media (min-width:544px){ul.list--grid>li,ul.list--grid li.card{-ms-flex-preferred-size:calc(99.9% / 2 - 1rem);flex-basis:calc(99.9% / 2 - 1rem);margin-bottom:2rem;max-width:calc(99.9% / 2 - 1rem);position:relative;width:auto}ul.list--grid>li:nth-child(odd),ul.list--grid li.card:nth-child(odd){margin-left:0}}@media (min-width:992px){ul.list--grid>li,ul.list--grid li.card{-ms-flex-preferred-size:calc(99.9% / 3 - 2rem);flex-basis:calc(99.9% / 3 - 2rem);max-width:calc(99.9% / 3 - 2rem);position:relative}ul.list--grid>li:nth-child(odd),ul.list--grid li.card:nth-child(odd){margin-left:2rem}ul.list--grid>li:nth-child(3n+1),ul.list--grid li.card:nth-child(3n+1){margin-left:0}}
+/*# sourceMappingURL=list-grid.css.map */

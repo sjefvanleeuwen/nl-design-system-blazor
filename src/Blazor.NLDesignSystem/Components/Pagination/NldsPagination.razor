@@ -1,0 +1,20 @@
+﻿<nav aria-label="pagination">
+    <ul class="pagination pagination--dots">
+        <li class="pagination__item pagination__item--previous">
+            @if (!@PreviousDisabled)
+            {
+                <a href="javascipt: void(0)" @onclick="InvokePrevious" class="pagination__link"><span class="pagination__link--previous">@PreviousText</span><span class="screenreader-only">@ScreenreaderDescription</span></a>
+            }
+        </li>
+        <li class="pagination__item pagination__item--next">
+            @*@if (!@NextDisabled)*@
+            {
+            <a href="" @onclick="@InvokeNextt" @onclick:preventDefault class="pagination__link"><span class="pagination__link--previous">@NextText</span><span class="screenreader-only">@ScreenreaderDescription</span></a>
+            }
+        </li>
+    </ul>
+    <button @onclick="@InvokeNextt">baaa1</button>
+    <button @onclick="InvokeNextt">baaa2</button>
+    <button @onclick=@InvokeNextt>baaa3</button>
+    <button @onclick=InvokeNextt>baaa4</button>
+</nav>

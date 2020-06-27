@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.content--inpage h1{font-weight:400}.content.content--inpage-nav-footer{padding-bottom:0;padding-top:0}.prev-next{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;min-height:60px}.prev-next__next--hidden,.prev-next__prev--hidden{display:none}.prev-next__next,.prev-next__prev{display:block;-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;line-height:18px;line-height:1.8rem;padding:10px;padding:1rem;position:relative;text-decoration:none}.prev-next__next:hover,.prev-next__prev:hover{background:#f3f3f3}.prev-next__next:before,.prev-next__prev:before{color:#005ea5;font-size:28px;font-size:2.8rem;height:30px;height:3rem;position:absolute;top:14px;top:1.4rem;-webkit-transform:translateZ(0);transform:translateZ(0)}.prev-next__next .prev-next__meta,.prev-next__prev .prev-next__meta{color:dimgray}.prev-next__next{padding-right:40px;padding-right:4rem;text-align:right}.prev-next__next:before{font-family:duo-basic!important;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-style:normal;font-variant:normal;font-weight:400;line-height:1;speak:none;text-transform:none;content:"";right:0}.prev-next__next:hover:before{-webkit-transform:translateX(-.6rem);transform:translateX(-.6rem)}.prev-next__prev{padding-left:40px;padding-left:4rem}.prev-next__prev:before{font-family:duo-basic!important;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-style:normal;font-variant:normal;font-weight:400;line-height:1;speak:none;text-transform:none;content:"";left:0}.prev-next__prev:hover:before{-webkit-transform:translateX(.6rem);transform:translateX(.6rem)}.prev-next__meta{display:block;font-size:14px;font-size:1.4rem;padding:0}.prev-next__text{display:block;text-decoration:underline}@media (min-width:768px){.prev-next{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}
+/*# sourceMappingURL=inpage.css.map */

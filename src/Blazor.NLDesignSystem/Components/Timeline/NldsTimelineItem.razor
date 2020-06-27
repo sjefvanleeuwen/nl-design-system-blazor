@@ -1,0 +1,18 @@
+﻿<li class="list__item">
+    @if (!string.IsNullOrWhiteSpace(Title) || Number != null)
+    {
+        <h2 class="list__item-heading">
+            @if (Number != null)
+            {
+                <Badge Number="@Number.GetValueOrDefault()" />
+            }
+            <strong>@Title</strong>
+        </h2>
+    }
+    @if (!string.IsNullOrWhiteSpace(Content))
+    {
+        <p>
+            @Content
+        </p>
+    }
+</li>
