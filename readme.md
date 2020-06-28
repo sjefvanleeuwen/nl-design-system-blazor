@@ -11,6 +11,8 @@ The project is in early stage currently, but expanded almost daily. Feel free to
 * Badges
 * Buttons
 * Collapsible
+* Radio Buttons
+* Form Input
 
 # Installation
 
