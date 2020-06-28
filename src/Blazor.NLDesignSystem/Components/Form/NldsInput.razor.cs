@@ -23,7 +23,9 @@ namespace Blazor.NLDesignSystem.Components.Form
         public string AriaDescribedBy { get; set; }
         [Parameter]
         public bool IsRequired { get; set; }
+        public InputType Type { get; set; }
         private string labelAlignment => LabelAlignment.GetDescription<StyleAttribute>();
         private string size => Size.GetDescription<StyleAttribute>();
+        private string type =>Type.GetDescription<StyleAttribute>();
     }
 }
