@@ -1,0 +1,6 @@
+﻿<div class="input @labelAlignment @(IsInvalid ? "input--invalid" : "")">
+    <label class="input__label" for="@Id">@ChildContent</label>
+    @Hint
+    @Error
+    <input id="@Id" type="text" class="input__control input__control@(size) input__control--search">
+</div>
