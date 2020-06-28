@@ -5,9 +5,9 @@ namespace Blazor.NLDesignSystem.Components.Header
     public partial class NldsHeader
     {
         [Parameter]
-        public string Text { get; set; }
+        public RenderFragment Content { get; set; }
         [Parameter]
-        public string Title { get; set; }
+        public string LinkTitle { get; set; }
         [Parameter]
         public string Link { get; set; } = "/";
         [Parameter]
