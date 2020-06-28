@@ -51,3 +51,28 @@
 <NldsForm>
     <NldsInput Id="a" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium">Horizontal Label</NldsInput>
 </NldsForm>
+<h2>Radios</h2>
+@code {
+    List<RadioItem> Items = new List<RadioItem>() {
+        new RadioItem() { Description = "Alleenstaande", Name = "alleenstaande" },
+        new RadioItem() { Description = "Aanvrager met toeslagparter", Name = "aanvrager_met_toeslagpartner" }
+    };
+}
+<NldsInputHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsInputHint>
+<NldsRadio Items="@Items" CurrentItem="@Items[1]" OnChange="ChangeRadio" Legend="" Group="groupName" />
+
+@if (Radio != null)
+{
+    @Radio.CurrentItem.Name;
+}
+
+
+@code {
+
+    NldsRadio Radio;
+
+    void ChangeRadio(NldsRadio radio)
+    {
+        Radio = radio;
+    }
+}

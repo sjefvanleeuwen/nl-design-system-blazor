@@ -1,0 +1,10 @@
+﻿<fieldset class="input">
+    <legend class="input__legend">@Legend</legend>
+    @foreach (var item in Items)
+    {
+        <div class="input__group input__group--radio">
+            <input type="radio" name="@Group" id="@item.Name" class="input__control input__control--radio" checked="@(CurrentItem == item)" @onchange="@(() => { onChange(item); })">
+            <label class="input__label input__label--radio" for="@item.Name">@item.Description</label>
+        </div>
+    }
+</fieldset>
