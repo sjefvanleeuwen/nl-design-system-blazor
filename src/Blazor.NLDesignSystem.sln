@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem", "Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem.Wasm", "Blazor.NLDesignSystem.Wasm\Blazor.NLDesignSystem.Wasm.csproj", "{FB82BF8D-83C2-4803-B83C-B9FC1FE7C413}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem.Tests", "Blazor.NLDesignSystem.Tests\Blazor.NLDesignSystem.Tests.csproj", "{D065EB0E-2522-4524-9A94-F08F02A3ED8D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{FB82BF8D-83C2-4803-B83C-B9FC1FE7C413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB82BF8D-83C2-4803-B83C-B9FC1FE7C413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB82BF8D-83C2-4803-B83C-B9FC1FE7C413}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D065EB0E-2522-4524-9A94-F08F02A3ED8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D065EB0E-2522-4524-9A94-F08F02A3ED8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D065EB0E-2522-4524-9A94-F08F02A3ED8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D065EB0E-2522-4524-9A94-F08F02A3ED8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
