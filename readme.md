@@ -13,6 +13,8 @@ The project is in early stage currently, but expanded almost daily. Feel free to
 * Collapsible
 * Radio Buttons
 * Form Input
+* TopNav (flat, no hierarchy yet)
+* Header
 
 # Installation
 
@@ -71,3 +73,15 @@ Depending on running WASM or Server, change your index.html or _Host.cshtml. As 
 ```
 
 Contents from the Blazor Component Library are served from : _content/Blazor.NLDesignSystem/
+
+# Serve the WASM sample.
+
+Clone the repo and open it up in VS CODE. CWD to ./src/Blazor.NLDesignSystem.Wasm/
+
+Execute the following command:
+
+```
+dotnet run
+```
+
+Point your favourite browser to https://localhost:5001/
