@@ -8,7 +8,7 @@ namespace Blazor.NLDesignSystem.Components.Badge
         [Parameter]
         public RenderFragment ChildContent { get; set; }
         [Parameter]
-        public BadgeColor Color { get;set; }
+        public Color Color { get;set; }
 
         private string color => Color.GetDescription<StyleAttribute>();
 
