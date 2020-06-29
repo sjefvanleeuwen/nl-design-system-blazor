@@ -1,5 +1,6 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
+using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components.Form
 {
@@ -12,7 +13,11 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public LabelAlignment LabelAlignment { get; set; }
         [Parameter]
+        public RenderFragment Label { get; set; }
+
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
+
         [Parameter]
         public RenderFragment Hint { get; set; }
         [Parameter]
@@ -27,5 +32,14 @@ namespace Blazor.NLDesignSystem.Components.Form
         private string labelAlignment => LabelAlignment.GetDescription<StyleAttribute>();
         private string size => Size.GetDescription<StyleAttribute>();
         private string type =>Type.GetDescription<StyleAttribute>();
+
+        protected override Task OnInitializedAsync()
+        {
+            if (ChildContent != null)
+            {
+                Label = ChildContent;
+            }
+            return base.OnInitializedAsync();
+        }
     }
 }
