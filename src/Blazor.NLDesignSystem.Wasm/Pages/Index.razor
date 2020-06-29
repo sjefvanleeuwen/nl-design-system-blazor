@@ -1,24 +1,45 @@
 ﻿@page "/"
+
 <h2>Badges</h2>
-<NldsBadge Color="BadgeColor.Wit">WIT</NldsBadge>
-<NldsBadge Color="BadgeColor.Zwart">ZWART</NldsBadge>
-<NldsBadge Color="BadgeColor.Violet">VIOLET</NldsBadge>
-<NldsBadge Color="BadgeColor.Roze">ROZE</NldsBadge>
-<NldsBadge Color="BadgeColor.Rood">ROOD</NldsBadge>
-<NldsBadge Color="BadgeColor.RobijnRood">ROBIJNROOD</NldsBadge>
-<NldsBadge Color="BadgeColor.Paars">PAARS</NldsBadge>
-<NldsBadge Color="BadgeColor.Oranje">ORANJE</NldsBadge>
-<NldsBadge Color="BadgeColor.Mosgroen">MOSGROEN</NldsBadge>
-<NldsBadge Color="BadgeColor.Mintgroen">MINTGROEN</NldsBadge>
-<NldsBadge Color="BadgeColor.Lichtblauw">LICHTBLAUW</NldsBadge>
-<NldsBadge Color="BadgeColor.HemelBlauw">HEMELBLAUW</NldsBadge>
-<NldsBadge Color="BadgeColor.DonkerBlauw">DONKERBLAUW</NldsBadge>
-<NldsBadge Color="BadgeColor.Groen">GROEN</NldsBadge>
-<NldsBadge Color="BadgeColor.Geel">GEEL</NldsBadge>
-<NldsBadge Color="BadgeColor.Donkergroen">DONKERGROEN</NldsBadge>
-<NldsBadge Color="BadgeColor.Donkergeel">DONKERGEEL</NldsBadge>
-<NldsBadge Color="BadgeColor.Bruin">BRUIN</NldsBadge>
-<NldsBadge Color="BadgeColor.Optioneel">OPTIONEEL</NldsBadge>
+<NldsBadge Color="Color.Wit">WIT</NldsBadge>
+<NldsBadge Color="Color.Zwart">ZWART</NldsBadge>
+<NldsBadge Color="Color.Violet">VIOLET</NldsBadge>
+<NldsBadge Color="Color.Roze">ROZE</NldsBadge>
+<NldsBadge Color="Color.Rood">ROOD</NldsBadge>
+<NldsBadge Color="Color.RobijnRood">ROBIJNROOD</NldsBadge>
+<NldsBadge Color="Color.Paars">PAARS</NldsBadge>
+<NldsBadge Color="Color.Oranje">ORANJE</NldsBadge>
+<NldsBadge Color="Color.Mosgroen">MOSGROEN</NldsBadge>
+<NldsBadge Color="Color.Mintgroen">MINTGROEN</NldsBadge>
+<NldsBadge Color="Color.Lichtblauw">LICHTBLAUW</NldsBadge>
+<NldsBadge Color="Color.HemelBlauw">HEMELBLAUW</NldsBadge>
+<NldsBadge Color="Color.DonkerBlauw">DONKERBLAUW</NldsBadge>
+<NldsBadge Color="Color.Groen">GROEN</NldsBadge>
+<NldsBadge Color="Color.Geel">GEEL</NldsBadge>
+<NldsBadge Color="Color.Donkergroen">DONKERGROEN</NldsBadge>
+<NldsBadge Color="Color.Donkergeel">DONKERGEEL</NldsBadge>
+<NldsBadge Color="Color.Bruin">BRUIN</NldsBadge>
+<NldsBadge Color="Color.Optioneel">OPTIONEEL</NldsBadge>
+
+<NldsBadge Color="Color.Wit">1</NldsBadge>
+<NldsBadge Color="Color.Zwart">2</NldsBadge>
+<NldsBadge Color="Color.Violet">3</NldsBadge>
+<NldsBadge Color="Color.Roze">4</NldsBadge>
+<NldsBadge Color="Color.Rood">5</NldsBadge>
+<NldsBadge Color="Color.RobijnRood">6</NldsBadge>
+<NldsBadge Color="Color.Paars">7</NldsBadge>
+<NldsBadge Color="Color.Oranje">8</NldsBadge>
+<NldsBadge Color="Color.Mosgroen">9</NldsBadge>
+<NldsBadge Color="Color.Mintgroen">10</NldsBadge>
+<NldsBadge Color="Color.Lichtblauw">11</NldsBadge>
+<NldsBadge Color="Color.HemelBlauw">12</NldsBadge>
+<NldsBadge Color="Color.DonkerBlauw">13</NldsBadge>
+<NldsBadge Color="Color.Groen">14</NldsBadge>
+<NldsBadge Color="Color.Geel">15</NldsBadge>
+<NldsBadge Color="Color.Donkergroen">16</NldsBadge>
+<NldsBadge Color="Color.Donkergeel">17</NldsBadge>
+<NldsBadge Color="Color.Bruin">18</NldsBadge>
+<NldsBadge Color="Color.Optioneel">19</NldsBadge>
 <h2>Buttons</h2>
 <NldsButton Type="ButtonType.Primary">Hello World!</NldsButton>
 <NldsButton Type="ButtonType.Disabled">Hello World!</NldsButton>
@@ -34,7 +55,7 @@
 <h3>5 Input Types</h3>
 <NldsForm>
     <NldsInput IsInvalid="true" Id="a" Size="InputSize.Medium" AriaDescribedBy="fullname">
-        <ChildContent>Naam Beheerder</ChildContent>
+        <Label>Naam Beheerder</Label>
         <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
         <Error><NldsInputError>U heeft het veld Naam beheerder nog niet ingevuld</NldsInputError></Error>
     </NldsInput>
@@ -42,14 +63,14 @@
 <h3>Sizes</h3>
 <NldsForm>
     <NldsInput Id="a" Size="InputSize.ExtraSmall">Extra Small</NldsInput>
-    <NldsInput Id="a" Size="InputSize.Small">Small</NldsInput>
-    <NldsInput Id="a" Size="InputSize.Medium">Medium</NldsInput>
-    <NldsInput Id="a" Size="InputSize.Large">Large</NldsInput>
-    <NldsInput Id="a" Size="InputSize.ExtraLarge">Extra Large</NldsInput>
+    <NldsInput Id="a" Size="InputSize.Small"><Label>Small</Label></NldsInput>
+    <NldsInput Id="a" Size="InputSize.Medium"><Label>Medium</Label></NldsInput>
+    <NldsInput Id="a" Size="InputSize.Large"><Label>Large</Label></NldsInput>
+    <NldsInput Id="a" Size="InputSize.ExtraLarge"><Label>Extra Large</Label></NldsInput>
 </NldsForm>
 <h3>Horizontal</h3>
 <NldsForm>
-    <NldsInput Id="a" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium">Horizontal Label</NldsInput>
+    <NldsInput Id="a" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label>Horizontal Label</Label></NldsInput>
 </NldsForm>
 <h2>Radios</h2>
 @code {
@@ -63,7 +84,7 @@
 
 @if (Radio != null)
 {
-    @Radio.CurrentItem.Name;
+@Radio.CurrentItem.Name;
 }
 
 
