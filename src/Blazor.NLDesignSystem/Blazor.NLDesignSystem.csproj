@@ -22,4 +22,10 @@
     <Folder Include="wwwroot\dist\tools\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\interop\collapse.js" />
+    <None Include="wwwroot\interop\navigation.js" />
+  </ItemGroup>
+
 </Project>
