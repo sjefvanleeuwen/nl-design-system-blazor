@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Blazor.NLDesignSystem.Wasm</title>
+    <title>NL Design System for Blazor</title>
     <base href="/" />
     <link href="_content/Blazor.NLDesignSystem/dist/core/uno.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="1024x1024" href="nlds-1024.png" />
     <script src="_content/Blazor.NLDesignSystem/interop/Promise.min.js"></script>
     <script src="_content/Blazor.NLDesignSystem/interop/system.js"></script>
     <script>
@@ -22,7 +22,75 @@
     </script>
 </head>
 <body class="theme--large-padding">
-    <app>Loading...</app>
+    <app>
+        <div class="app-load">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </app>
+    <style>
+        .app-load {
+            margin: 100px auto;
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+            .app-load > div {
+                background-color: #333;
+                height: 100%;
+                width: 6px;
+                display: inline-block;
+                -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+                animation: sk-stretchdelay 1.2s infinite ease-in-out;
+            }
+
+            .app-load .rect2 {
+                -webkit-animation-delay: -1.1s;
+                animation-delay: -1.1s;
+            }
+
+            .app-load .rect3 {
+                -webkit-animation-delay: -1.0s;
+                animation-delay: -1.0s;
+            }
+
+            .app-load .rect4 {
+                -webkit-animation-delay: -0.9s;
+                animation-delay: -0.9s;
+            }
+
+            .app-load .rect5 {
+                -webkit-animation-delay: -0.8s;
+                animation-delay: -0.8s;
+            }
+
+        @-webkit-keyframes sk-stretchdelay {
+            0%, 40%, 100% {
+                -webkit-transform: scaleY(0.4);
+            }
+
+            20% {
+                -webkit-transform: scaleY(1.0);
+            }
+        }
+
+        @keyframes sk-stretchdelay {
+            0%, 40%, 100% {
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+            }
+
+            20% {
+                transform: scaleY(1.0);
+                -webkit-transform: scaleY(1.0);
+            }
+        }
+    </style>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
