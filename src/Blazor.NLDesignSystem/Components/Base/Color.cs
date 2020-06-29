@@ -2,7 +2,7 @@
 
 namespace Blazor.NLDesignSystem
 {
-    public enum BadgeColor
+    public enum Color
     {
         [Style("wit")]
         Wit,
