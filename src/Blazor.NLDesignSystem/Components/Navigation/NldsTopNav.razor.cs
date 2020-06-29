@@ -1,5 +1,6 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
+using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components.Navigation
 {
@@ -11,5 +12,17 @@ namespace Blazor.NLDesignSystem.Components.Navigation
         public Color Color { get; set; }
 
         private string color => Color.GetDescription<StyleAttribute>();
+
+        protected override Task OnInitializedAsync()
+        {
+            StateHasChanged();
+            return base.OnInitializedAsync();
+        }
+
+        protected override Task OnAfterRenderAsync(bool firstRender)
+        {
+
+            return base.OnAfterRenderAsync(firstRender);
+        }
     }
 }
