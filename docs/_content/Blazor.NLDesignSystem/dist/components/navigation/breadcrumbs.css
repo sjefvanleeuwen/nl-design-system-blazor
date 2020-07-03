@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.breadcrumbs{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:40px;padding-right:4rem}.breadcrumbs .breadcrumbs__list{list-style:none;margin:0}.breadcrumbs .breadcrumbs__list li{display:inline;font-weight:700;line-height:27px;line-height:2.7rem;padding:23px 10px 22px 0;padding:2.3rem 1rem 2.2rem 0;position:relative}.breadcrumbs .breadcrumbs__list li:before{content:"›";display:inline-block;font-weight:700;margin:0 11px 0 0;margin:0 1.1rem 0 0}.breadcrumbs .breadcrumbs__list li:first-child{padding:23px 10px 22px;padding:2.3rem 1rem 2.2rem}.breadcrumbs .breadcrumbs__list li:first-child:before{display:none}.breadcrumbs .breadcrumbs__list li a{color:inherit;display:inline-block;text-decoration:none}.breadcrumbs .breadcrumbs__list li a:focus span,.breadcrumbs .breadcrumbs__list li a:hover span{text-decoration:underline}.breadcrumbs .breadcrumbs__list li a:focus{background:none;color:#000;outline:3px solid #ffb612;text-decoration:none}.breadcrumbs .breadcrumbs__list li .icon{margin-right:3px;vertical-align:-1px}
+/*# sourceMappingURL=breadcrumbs.css.map */

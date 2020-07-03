@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.donut-chart{-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#007bc7;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-align:center}.donut-chart__chart{min-width:200px;position:relative;width:170px}.donut-chart__title{color:#2b2b2b}.donut-chart__subtitle{display:block;font-weight:700}.donut-chart__canvas{display:block;width:100%}.donut-chart__inner{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:transparent;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;font-size:22px;font-size:2.2rem;font-weight:700;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;left:50%;position:absolute;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.donut-chart__inner--small{font-size:16px;font-size:1.6rem;font-weight:400}.donut-chart--violet{color:#a90061}.donut-chart--roze{color:#f092cd}.donut-chart--rood{color:#d52b1e}.donut-chart--robijnrood{color:#ca005d}.donut-chart--paars{color:#42145f}.donut-chart--oranje{color:#e17000}.donut-chart--mosgroen{color:#767b00}.donut-chart--mintgroen{color:#76d2b6}.donut-chart--lichtblauw{color:#8fcae7}.donut-chart--hemelblauw{color:#007bc7}.donut-chart--groen{color:#39870c}.donut-chart--geel{color:#f9e11e}.donut-chart--donkergroen{color:#275937}.donut-chart--donkergeel{color:#ffb612}.donut-chart--donkerbruin{color:#673327}.donut-chart--donkerblauw{color:#01689b}.donut-chart--bruin{color:#94710a}
+/*# sourceMappingURL=donut-chart.css.map */

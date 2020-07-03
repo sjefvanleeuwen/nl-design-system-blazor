@@ -1,0 +1,15 @@
+{
+  "name": "NL Design System for Blazor",
+  "short_name": "NLDS Blazor ",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#03173d",
+  "icons": [
+    {
+      "src": "nlds-1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ]
+}

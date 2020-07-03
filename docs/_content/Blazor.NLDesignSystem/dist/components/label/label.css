@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.label{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid;display:inline-block;font-size:12px;font-size:1.2rem;font-weight:700;line-height:18px;line-height:1.8rem;margin:0 2.5px;margin:0 .25rem;padding:0 4px;padding:0 .4rem;text-decoration:none;text-transform:uppercase;white-space:nowrap}.label--wit{background-color:#fff;color:#2b2b2b}.label--zwart{background-color:#2b2b2b;color:#fff}.label--optional{color:dimgray;letter-spacing:.5px;letter-spacing:.05rem;text-transform:uppercase}.label--violet{background-color:#a90061;color:#fff}.label--roze{background-color:#f092cd;color:#000}.label--rood{background-color:#d52b1e;color:#fff}.label--robijnrood{background-color:#ca005d;color:#fff}.label--paars{background-color:#42145f;color:#fff}.label--oranje{background-color:#e17000;color:#000}.label--mosgroen{background-color:#767b00;color:#fff}.label--mintgroen{background-color:#76d2b6;color:#000}.label--lichtblauw{background-color:#8fcae7;color:#000}.label--hemelblauw{background-color:#007bc7;color:#fff}.label--groen{background-color:#39870c;color:#fff}.label--geel{background-color:#f9e11e;color:#000}.label--donkergroen{background-color:#275937;color:#fff}.label--donkergeel{background-color:#ffb612;color:#000}.label--donkerbruin{background-color:#673327;color:#fff}.label--donkerblauw{background-color:#01689b;color:#fff}.label--bruin{background-color:#94710a;color:#fff}
+/*# sourceMappingURL=label.css.map */

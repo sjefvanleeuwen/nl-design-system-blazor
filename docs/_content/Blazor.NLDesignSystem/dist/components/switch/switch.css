@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.switch{display:block;height:20px;height:2rem;margin-bottom:10px;margin-bottom:1rem;position:relative;width:36px;width:3.6rem}.table .switch{margin-bottom:0}.switch__input{display:block;margin-left:2px;margin-top:2px}.switch__slider{background-color:#e6e6e6;bottom:0;-webkit-box-shadow:inset .1rem .1rem .1rem .1rem rgba(0,0,0,.05);box-shadow:inset .1rem .1rem .1rem .1rem rgba(0,0,0,.05);cursor:pointer;left:0;position:absolute;right:0;text-transform:uppercase;top:0;-webkit-transition:.3s;transition:.3s}.switch__slider:before{background-color:#fff;content:"";height:16px;height:1.6rem;left:2px;left:.2rem;position:absolute;top:2px;top:.2rem;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-transition:.2s;transition:.2s;width:16px;width:1.6rem}.switch__input:checked+.switch__slider{background-color:#39870c}.switch__state{font-size:12px;font-size:1.2rem;font-weight:700;left:40px;left:4rem;line-height:20px;line-height:2rem;position:absolute;top:0}.switch__state--on{display:none}.switch__state--off{display:inline-block}.switch__input:checked+.switch__slider .switch__state--off{display:none}.switch__input:checked+.switch__slider .switch__state--on{display:inline-block}.switch__input:focus+.switch__slider{-webkit-box-shadow:0 0 .1rem #007bc7;box-shadow:0 0 .1rem #007bc7;outline:2px solid #ffb612}.switch__input:checked+.switch__slider:before{-webkit-transform:translate3d(1.6rem,0,0);transform:translate3d(1.6rem,0,0)}
+/*# sourceMappingURL=switch.css.map */

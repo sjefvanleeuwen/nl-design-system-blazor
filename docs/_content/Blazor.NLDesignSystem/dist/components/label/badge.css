@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.badge{display:inline-block;font-size:12px;font-size:1.2rem;font-weight:700;height:18px;height:1.8rem;line-height:14px;line-height:1.4rem;margin:0 5px;margin:0 .5rem;min-width:18px;min-width:1.8rem;padding:2px 4px;padding:.2rem .4rem;text-align:center;text-transform:uppercase}.badge--wit{background-color:#fff;color:#2b2b2b}.badge--zwart{background-color:#2b2b2b;color:#fff}.badge--icon{margin-left:-9px;margin-left:-.9rem;-webkit-transform:translateY(-1.4rem);transform:translateY(-1.4rem)}.badge--violet{background-color:#a90061;color:#fff}.badge--roze{background-color:#f092cd;color:#000}.badge--rood{background-color:#d52b1e;color:#fff}.badge--robijnrood{background-color:#ca005d;color:#fff}.badge--paars{background-color:#42145f;color:#fff}.badge--oranje{background-color:#e17000;color:#000}.badge--mosgroen{background-color:#767b00;color:#fff}.badge--mintgroen{background-color:#76d2b6;color:#000}.badge--lichtblauw{background-color:#8fcae7;color:#000}.badge--hemelblauw{background-color:#007bc7;color:#fff}.badge--groen{background-color:#39870c;color:#fff}.badge--geel{background-color:#f9e11e;color:#000}.badge--donkergroen{background-color:#275937;color:#fff}.badge--donkergeel{background-color:#ffb612;color:#000}.badge--donkerbruin{background-color:#673327;color:#fff}.badge--donkerblauw{background-color:#01689b;color:#fff}.badge--bruin{background-color:#94710a;color:#fff}
+/*# sourceMappingURL=badge.css.map */

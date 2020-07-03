@@ -1,4 +1,4 @@
-![nl design system for blazor](doc/img/nl-design-system-blazor.svg)
+![nl design system for blazor](docs/img/nl-design-system-blazor.svg)
 
 # What is it?
 

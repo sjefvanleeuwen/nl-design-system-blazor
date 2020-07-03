@@ -1,0 +1,12 @@
+/*!
+NL Design System Componenten library 0.1.1, build date 27-06-2020
+Copyright 2011-2020 The NL Design System Authors
+Copyright 2011-2020 Duo
+Author: DUO & The NL Design System Authors
+Author URI: https://nl-design-system.gitlab.io/nl-design-system/
+License: EUPL v1.2
+License URL: https://joinup.ec.europa.eu/software/page/eupl5
+Version: 0.1.1
+*/
+.list--filter{font-size:14px;font-size:1.4rem;margin-left:0}.combobox .list--filter{margin-bottom:0}@media (min-width:768px){.list--filter{font-size:1.6rem}}.list--filter li:focus,.list--filter li:hover{background-color:#7b96a7}.list--filter li{background-color:#d9ebf7;cursor:pointer;display:block;height:36px;height:3.6rem;margin-bottom:10px;margin-bottom:1rem;padding:6px 10px 0 8px;padding:.6rem 1rem 0 .8rem;position:relative}.list--filter-inline li{display:inline-block;margin-right:6px;margin-right:.6rem;width:auto}.list--filter-button{background:transparent;border:0;font-size:13px;font-size:1.3rem;line-height:1;padding:0 0 0 6px;padding:0 0 0 .6rem;text-align:center;text-decoration:none;text-transform:uppercase}.list--filter-closable li{padding-right:34px;padding-right:3.4rem}.list--filter-closable li:before{font-family:duo-basic!important;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-style:normal;font-variant:normal;font-weight:400;line-height:1;speak:none;text-transform:none;content:"";font-size:13px;font-size:1.3rem;line-height:inherit;position:absolute;right:-16px;right:-1.6rem;text-align:center;top:6px;top:.6rem;width:36px;width:3.6rem}
+/*# sourceMappingURL=list-filter.css.map */
