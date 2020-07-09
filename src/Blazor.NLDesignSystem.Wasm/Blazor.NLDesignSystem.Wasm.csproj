@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor.NLDesignSystem\Blazor.NLDesignSystem.csproj" />
+    <ProjectReference Include="..\Blazor.NLDesignSystem.Site.Components\Blazor.NLDesignSystem.Site.Components.csproj" />
   </ItemGroup>
 
   <ItemGroup>
