@@ -118,26 +118,13 @@
 </NldsForm>
 <h2>Radios</h2>
 @code {
-    List<RadioItem> Items = new List<RadioItem>() {
-        new RadioItem() { Description = "Alleenstaande", Name = "alleenstaande" },
-        new RadioItem() { Description = "Aanvrager met toeslagparter", Name = "aanvrager_met_toeslagpartner" }
+    string radioValue = "aanvrager_met_toeslagpartner";
+    List<RadioItem> items = new List<RadioItem>() {
+        new RadioItem() { Description = new MarkupString("<i>Alleenstaande<i>"), Value = "alleenstaande" },
+        new RadioItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter"), Value = "aanvrager_met_toeslagpartner" }
     };
 }
 <NldsInputHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsInputHint>
-<NldsRadio Items="@Items" CurrentItem="@Items[1]" OnChange="ChangeRadio" Legend="" Group="groupName" />
+<NldsRadio Items="@items" @bind-Value="radioValue" Legend="" Group="groupName" />
+<h4>Geselecteerde waarde: @items.FirstOrDefault(i => i.Value == radioValue)?.Value</h4>
 
-@if (Radio != null)
-{
-    @Radio.CurrentItem.Name;
-}
-
-
-@code {
-
-    NldsRadio Radio;
-
-    void ChangeRadio(NldsRadio radio)
-    {
-        Radio = radio;
-    }
-}

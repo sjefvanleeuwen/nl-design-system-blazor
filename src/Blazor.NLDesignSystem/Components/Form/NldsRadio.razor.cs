@@ -12,26 +12,28 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public List<RadioItem> Items { get; set; }
 
-        [Parameter]
-        public RadioItem CurrentItem { get; set; }
+        //2-way binding
+        private string _value;
 
         [Parameter]
-        public EventCallback<NldsRadio> OnChange { get; set; }
-
-        private async void onChange(RadioItem item)
+        public string Value
         {
-            CurrentItem = item;
-            if (OnChange.HasDelegate)
+            get => _value;
+            set
             {
-                await OnChange.InvokeAsync(this);
+                if (_value == value) return;
+                _value = value;
+                ValueChanged.InvokeAsync(value);
             }
-
         }
+
+        [Parameter]
+        public EventCallback<string> ValueChanged { get; set; }
     }
 
     public class RadioItem
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Value { get; set; }
+        public MarkupString Description { get; set; }
     }
 }

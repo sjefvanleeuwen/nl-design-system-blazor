@@ -3,8 +3,10 @@
     @foreach (var item in Items)
     {
         <div class="input__group input__group--radio">
-            <input type="radio" name="@Group" id="@item.Name" class="input__control input__control--radio" checked="@(CurrentItem == item)" @onchange="@(() => { onChange(item); })" @onchange:preventDefault>
-            <label class="input__label input__label--radio" for="@item.Name">@item.Description</label>
+            <input type="radio" name="@Group" id="@item.Value" class="input__control input__control--radio" checked="@(Value == item.Value)" 
+                   @onchange="@(() => Value = item.Value)"
+                   @onchange:preventDefault>
+            <label class="input__label input__label--radio" for="@item.Value">@item.Description</label>
         </div>
     }
 </fieldset>
