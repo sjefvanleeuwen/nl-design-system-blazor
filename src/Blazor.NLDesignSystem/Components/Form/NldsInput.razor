@@ -1,10 +1,10 @@
 ﻿<div class="input @LabelAlignmentStyle @(IsInvalid ? "input--invalid" : "")">
-    <CascadingValue Name="InputName" Value="@Id">
+    <CascadingValue Name="InputIdentifier" Value="@Identifier">
         @Label
         @Hint
         @Error
     </CascadingValue>
-    <input id="@Id" 
+    <input id="@Identifier" 
            type="@DisplayType" 
            class="input__control input__control@(SizeAppendix) input__control--search" 
            @bind="Value" 

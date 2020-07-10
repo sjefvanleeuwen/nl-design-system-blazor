@@ -12,7 +12,7 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public string AriaDescribedBy { get; set; }
         [Parameter]
-        public string Id { get; set; }
+        public string Identifier { get; set; }
         [Parameter]
         public bool IsDisabled { get; set; }
         [Parameter]
@@ -59,7 +59,7 @@ namespace Blazor.NLDesignSystem.Components.Form
         {
             var attributes = new Dictionary<string, object>();
 
-            var tagAriaDescribedby = AriaDescribedBy ?? (Hint != null && !string.IsNullOrWhiteSpace(Id) ? $"hint_{Id}" : null) ?? string.Empty;
+            var tagAriaDescribedby = AriaDescribedBy ?? (Hint != null && !string.IsNullOrWhiteSpace(Identifier) ? $"hint_{Identifier}" : null) ?? string.Empty;
             if (tagAriaDescribedby != string.Empty)
             {
                 attributes["aria-describedby"] = tagAriaDescribedby;
