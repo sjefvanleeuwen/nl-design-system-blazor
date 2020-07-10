@@ -5,7 +5,7 @@ namespace Blazor.NLDesignSystem.Components.Form
 {
     public partial class NldsInputLabel
     {
-        [CascadingParameter]
+        [CascadingParameter(Name = "InputName")]
         public string InputName { get; set; }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Blazor.NLDesignSystem.Components.Form
         {
             var attributes = new Dictionary<string, object>();
 
-            var tagFor = (!string.IsNullOrWhiteSpace(InputName) ? $"hint_{InputName}" : null) ?? For ?? string.Empty;
+            var tagFor = (!string.IsNullOrWhiteSpace(InputName) ? $"{InputName}" : null) ?? For ?? string.Empty;
             if (tagFor != string.Empty)
             {
                 attributes["for"] = tagFor;

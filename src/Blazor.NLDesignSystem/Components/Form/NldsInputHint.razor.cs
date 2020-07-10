@@ -5,7 +5,7 @@ namespace Blazor.NLDesignSystem.Components.Form
 {
     public partial class NldsInputHint
     {
-        [CascadingParameter]
+        [CascadingParameter(Name = "InputName")]
         public string InputName { get; set; }
 
         /// <summary>
