@@ -4,5 +4,13 @@
         @Hint
         @Error
     </CascadingValue>
-    <input id="@Id" type="@DisplayType" class="input__control input__control@(SizeAppendix) input__control--search" >
+    <input id="@Id" 
+           type="@DisplayType" 
+           class="input__control input__control@(SizeAppendix) input__control--search" 
+           @bind="Value" 
+           @bind:event="oninput"
+           @oninput:preventDefault
+           @attributes="GetAttributes()"
+           disabled="@IsDisabled"
+           required="@IsRequired" />
 </div>

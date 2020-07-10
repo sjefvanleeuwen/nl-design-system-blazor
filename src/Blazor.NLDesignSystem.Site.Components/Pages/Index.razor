@@ -54,10 +54,54 @@
 <h2>Input</h2>
 <h3>5 Input Types</h3>
 <NldsForm>
-    <NldsInput Id="a" Size="InputSize.Medium" AriaDescribedBy="fullname">
-        <Label>Naam Beheerder</Label>
+    <NldsInput Id="z1" Size="InputSize.Medium" Type="InputType.Email">
+        <Label><NldsInputLabel>Email</NldsInputLabel></Label>
+    </NldsInput>
+    <NldsInput Id="z2" Size="InputSize.Medium" Type="InputType.Number">
+        <Label><NldsInputLabel>Number</NldsInputLabel></Label>
+    </NldsInput>
+    <NldsInput Id="z3" Size="InputSize.Medium" Type="InputType.Password">
+        <Label><NldsInputLabel>Password</NldsInputLabel></Label>
+    </NldsInput>
+    <NldsInput Id="z4" Size="InputSize.Medium" Type="InputType.Text">
+        <Label><NldsInputLabel>Text</NldsInputLabel></Label>
+    </NldsInput>
+    <NldsInput Id="z5" Size="InputSize.Medium" Type="InputType.Url">
+        <Label><NldsInputLabel>Url</NldsInputLabel></Label>
+    </NldsInput>
+</NldsForm>
+<h3>Values</h3>
+@code {
+    private string inputValue = "This is content of the input";
+}
+<NldsForm>
+    <NldsInput Id="a1" Size="InputSize.Large" @bind-Value="@inputValue">
+        <Label><NldsInputLabel>Two-way binding</NldsInputLabel></Label>
+    </NldsInput>
+</NldsForm>
+<h4>@inputValue</h4>
+<h3>Errors</h3>
+<NldsForm>
+    <NldsInput Id="a1" Size="InputSize.Medium">
+        <Label><NldsInputLabel>Naam Beheerder</NldsInputLabel></Label>
         <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
         <Error><NldsInputError>U heeft het veld Naam beheerder nog niet ingevuld</NldsInputError></Error>
+    </NldsInput>
+</NldsForm>
+<h3>Area describedby</h3>
+<NldsForm>
+    <NldsInput Id="a2" Size="InputSize.Medium" AriaDescribedBy="fullname">
+        <Label><NldsInputLabel>Area descirbed by manually set</NldsInputLabel></Label>
+        <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
+    </NldsInput>
+</NldsForm>
+<h3>Restrictiong</h3>
+<NldsForm>
+    <NldsInput Id="a2" Size="InputSize.Medium" IsDisabled="true">
+        <Label><NldsInputLabel>Disabled</NldsInputLabel></Label>
+    </NldsInput>
+    <NldsInput Id="a2" Size="InputSize.Medium" IsRequired="true">
+        <Label><NldsInputLabel>Required</NldsInputLabel></Label>
     </NldsInput>
 </NldsForm>
 <h3>Sizes</h3>
@@ -70,7 +114,7 @@
 </NldsForm>
 <h3>Horizontal</h3>
 <NldsForm>
-    <NldsInput Id="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label>Horizontal Label</Label></NldsInput>
+    <NldsInput Id="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsInputLabel>Horizontal Label</NldsInputLabel></Label></NldsInput>
 </NldsForm>
 <h2>Radios</h2>
 @code {
@@ -84,7 +128,7 @@
 
 @if (Radio != null)
 {
-@Radio.CurrentItem.Name;
+    @Radio.CurrentItem.Name;
 }
 
 

@@ -6,6 +6,11 @@ namespace Blazor.NLDesignSystem.Components.Form
 {
     public partial class NldsInput
     {
+        /// <summary>
+        /// Optional; overrides the default value; if the input contains a hint the value "hint_" + Id will be used by default
+        /// </summary>
+        [Parameter]
+        public string AriaDescribedBy { get; set; }
         [Parameter]
         public string Id { get; set; }
         [Parameter]
@@ -18,11 +23,6 @@ namespace Blazor.NLDesignSystem.Components.Form
         public InputSize Size { get; set; }
         [Parameter]
         public InputType Type { get; set; }
-        /// <summary>
-        /// Optional; overrides the default value; if the input containts a hint the value "hint_" + Id will be used by default
-        /// </summary>
-        [Parameter]
-        public string AriaDescribedBy { get; set; }
 
         [Parameter]
         public RenderFragment Label { get; set; }
@@ -30,6 +30,24 @@ namespace Blazor.NLDesignSystem.Components.Form
         public RenderFragment Hint { get; set; }
         [Parameter]
         public RenderFragment Error { get; set; }
+
+        //2-way binding
+        private string _value;
+
+        [Parameter]
+        public string Value
+        {
+            get => _value;
+            set
+            {
+                if (_value == value) return;
+                _value = value;
+                ValueChanged.InvokeAsync(value);
+            }
+        }
+
+        [Parameter]
+        public EventCallback<string> ValueChanged { get; set; }
 
         private bool IsInvalid => Error != null;
 
