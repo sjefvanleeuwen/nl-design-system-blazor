@@ -27,7 +27,7 @@ namespace Blazor.NLDesignSystem.Components.Navigation
         protected override Task OnInitializedAsync()
         {
             NavigationManager.LocationChanged += LocationChanged;
-            LocationChanged(this, new LocationChangedEventArgs(NavigationManager.Uri,false));
+            LocationChanged(this, new LocationChangedEventArgs(NavigationManager.Uri, false));
             return base.OnInitializedAsync();
         }
 

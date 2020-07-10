@@ -25,7 +25,7 @@ namespace Blazor.NLDesignSystem.Components.Form
             {
                 attributes["id"] = tagId;
             }
-        
+
             return attributes;
         }
     }

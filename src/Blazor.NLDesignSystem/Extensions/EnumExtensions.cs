@@ -6,7 +6,7 @@ namespace Blazor.NLDesignSystem.Extensions
 {
     public static class EnumExtensions
     {
-        public static string GetDescription<U>(this IConvertible e) 
+        public static string GetDescription<U>(this IConvertible e)
             where U : class, IDescription
         {
             if (e is Enum)

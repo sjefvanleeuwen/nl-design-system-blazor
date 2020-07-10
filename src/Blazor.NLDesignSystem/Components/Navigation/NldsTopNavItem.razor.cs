@@ -7,7 +7,7 @@ namespace Blazor.NLDesignSystem.Components.Navigation
 {
     public partial class NldsTopNavItem
     {
-        [Inject] 
+        [Inject]
         NavigationManager NavigationManager { get; set; }
         [Parameter]
         public string HRef { get; set; } = "#";
