@@ -7,7 +7,7 @@
   "theme_color": "#03173d",
   "icons": [
     {
-      "src": "nlds-1024.png",
+      "src": "_content/Blazor.NLDesignSystem/nlds-1024.png",
       "type": "image/png",
       "sizes": "1024x1024"
     }
