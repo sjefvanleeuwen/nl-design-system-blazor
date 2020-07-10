@@ -1,6 +1,8 @@
-﻿<div class="input @labelAlignment @(IsInvalid ? "input--invalid" : "")">
-    <label class="input__label" for="@Id">@Label</label>
-    @Hint
-    @Error
-    <input id="@Id" type="@type" class="input__control input__control@(size) input__control--search">
+﻿<div class="input @LabelAlignmentStyle @(IsInvalid ? "input--invalid" : "")">
+    <CascadingValue Name="InputName" Value="@Id">
+        @Label
+        @Hint
+        @Error
+    </CascadingValue>
+    <input id="@Id" type="@DisplayType" class="input__control input__control@(SizeAppendix) input__control--search" >
 </div>

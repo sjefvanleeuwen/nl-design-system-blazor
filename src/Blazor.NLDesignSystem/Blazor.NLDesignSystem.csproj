@@ -5,6 +5,17 @@
     <RazorLangVersion>3.0</RazorLangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="wwwroot\dist\settings\**" />
+    <Compile Remove="wwwroot\dist\tools\**" />
+    <Content Remove="wwwroot\dist\settings\**" />
+    <Content Remove="wwwroot\dist\tools\**" />
+    <EmbeddedResource Remove="wwwroot\dist\settings\**" />
+    <EmbeddedResource Remove="wwwroot\dist\tools\**" />
+    <None Remove="wwwroot\dist\settings\**" />
+    <None Remove="wwwroot\dist\tools\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.4" />
@@ -18,8 +29,6 @@
     <Folder Include="wwwroot\dist\core\elements\" />
     <Folder Include="wwwroot\dist\core\generic\" />
     <Folder Include="wwwroot\dist\core\objects\" />
-    <Folder Include="wwwroot\dist\settings\" />
-    <Folder Include="wwwroot\dist\tools\" />
   </ItemGroup>
 
 

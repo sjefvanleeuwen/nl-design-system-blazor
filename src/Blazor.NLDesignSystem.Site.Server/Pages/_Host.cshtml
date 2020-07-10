@@ -1,13 +1,17 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@page "/"
+@namespace Blazor.NLDesignSystem.Site.Server
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>NL Design System for Blazor - WASM</title>
-    <base href="/" />
-    <link href="css/site.css" rel="stylesheet" />
-    <link href="manifest.json" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="1024x1024" href="nlds-1024.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NL Design System for Blazor - Server</title>
+    <base href="~/" />
     <!-- Blazor.NLDesignSystem -->
     <link href="_content/Blazor.NLDesignSystem/dist/core/uno.css" rel="stylesheet" />
     <script src="_content/Blazor.NLDesignSystem/interop/Promise.min.js"></script>
@@ -15,6 +19,7 @@
     <!-- Blazor.NLDesignSystem.Site.Components -->
     <link href="_content/Blazor.NLDesignSystem.Site.Components/appLoad.css" rel="stylesheet" />
     <link href="_content/Blazor.NLDesignSystem.Site.Components/forkOnGithub.css" rel="stylesheet" />
+    <!-- Set the default extension -->
     <script>
         System.config({
             packages: {
@@ -25,24 +30,25 @@
         });
     </script>
 </head>
-<body class="theme--large-padding">
+<body>
     <app>
-        <div class="app-load">
-            <div class="rect1"></div>
-            <div class="rect2"></div>
-            <div class="rect3"></div>
-            <div class="rect4"></div>
-            <div class="rect5"></div>
-        </div>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+        <span id="forkongithub"><a href="https://github.com/sjefvanleeuwen/nl-design-system-blazor">Fork me on GitHub</a></span>
     </app>
+
     <div id="blazor-error-ui">
-        An unhandled error has occurred.
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+
+    <script src="_framework/blazor.server.js"></script>
+    <!-- Blazor.NLDesignSystem -->
     <script src="_content/Blazor.NLDesignSystem/interop/collapse.js"></script>
-    <span id="forkongithub"><a href="https://github.com/sjefvanleeuwen/nl-design-system-blazor">Fork me on GitHub</a></span>
 </body>
 </html>

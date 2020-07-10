@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components.Form
 {
-    public partial class NldsInputHint
+    public partial class NldsInputLabel
     {
         [CascadingParameter]
         public string InputName { get; set; }
@@ -12,7 +12,8 @@ namespace Blazor.NLDesignSystem.Components.Form
         /// Optional; if it is encapsulated in an input the cascading value (InputName) is taken over this value
         /// </summary>
         [Parameter]
-        public string HintName { get; set; }
+        public string For { get; set; }
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
@@ -20,12 +21,12 @@ namespace Blazor.NLDesignSystem.Components.Form
         {
             var attributes = new Dictionary<string, object>();
 
-            var tagId = (!string.IsNullOrWhiteSpace(InputName) ? $"hint_{InputName}" : null) ?? HintName ?? string.Empty;
-            if (tagId != string.Empty)
+            var tagFor = (!string.IsNullOrWhiteSpace(InputName) ? $"hint_{InputName}" : null) ?? For ?? string.Empty;
+            if (tagFor != string.Empty)
             {
-                attributes["id"] = tagId;
+                attributes["for"] = tagFor;
             }
-        
+
             return attributes;
         }
     }
