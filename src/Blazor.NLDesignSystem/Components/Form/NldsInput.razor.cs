@@ -50,7 +50,6 @@ namespace Blazor.NLDesignSystem.Components.Form
         public EventCallback<string> ValueChanged { get; set; }
 
         private bool IsInvalid => Error != null;
-
         private string LabelAlignmentStyle => LabelAlignment.GetDescription<StyleAttribute>();
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
         private string DisplayType => Type.GetDescription<StyleAttribute>();

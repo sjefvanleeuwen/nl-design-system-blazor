@@ -1,12 +1,33 @@
-﻿<fieldset class="input">
-    <legend class="input__legend">@Legend</legend>
-    @foreach (var item in Items)
-    {
-        <div class="input__group input__group--radio">
-            <input type="radio" name="@Group" id="@item.Value" class="input__control input__control--radio" checked="@(Value == item.Value)" 
-                   @onchange="@(() => Value = item.Value)"
-                   @onchange:preventDefault>
-            <label class="input__label input__label--radio" for="@item.Value">@item.Description</label>
-        </div>
-    }
+﻿@{ 
+    var counter = 0;
+}
+
+<fieldset class="input @(IsInvalid ? "input--invalid" : "")">
+    <CascadingValue Name="InputIdentifier" Value="@Identifier">
+        @Legend
+        @Hint
+        @Error
+    </CascadingValue>
+    <div class="@ItemAlignmentStyle">
+        @*When empty the wrapping div is not there in the example. But it makes no difference for the element*@
+        @foreach (var item in Items)
+        {
+            counter++;
+            @*The id is a combination between the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
+            <div class="input__group input__group--radio">
+                <input type="radio"
+                       name="@Identifier"
+                       id="@(Identifier)_@counter"
+                       class="input__control input__control--radio"
+                       checked="@(Value == item.Value)"
+                       @onchange="@(() => Value = item.Value)"
+                       @onchange:preventDefault
+                       @attributes="GetAttributes()"
+                       disabled="@item.IsDisabled">
+                <label class="input__label input__label--radio" for="@(Identifier)_@counter">@item.Description</label>
+            </div>
+        }
+    </div>@*
+        id="@($"{Identifier}-{item.Value}")"
+    *@
 </fieldset>

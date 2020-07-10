@@ -101,7 +101,7 @@
         <Label><NldsInputLabel>Disabled</NldsInputLabel></Label>
     </NldsInput>
     <NldsInput Identifier="a2" Size="InputSize.Medium" IsRequired="true">
-        <Label><NldsInputLabel>Required</NldsInputLabel></Label>
+        <Label><NldsInputLabel><strong>Required</strong></NldsInputLabel></Label>
     </NldsInput>
 </NldsForm>
 <h3>Sizes</h3>
@@ -118,17 +118,29 @@
 </NldsForm>
 <h2>Radios</h2>
 @code {
-    string radioValue = "aanvrager_met_toeslagpartner";
-    List<RadioItem> items = new List<RadioItem>() {
+    string radio1Value = "aanvrager_met_toeslagpartner";
+    List<RadioItem> items1 = new List<RadioItem>() {
         new RadioItem() { Description = new MarkupString("<i>Alleenstaande<i>"), Value = "alleenstaande" },
-        new RadioItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter"), Value = "aanvrager_met_toeslagpartner" }
+        new RadioItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter"), Value = "aanvrager_met_toeslagpartner" },
+        new RadioItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
+    };
+
+    string radio2Value = "bestaat niet";
+    List<RadioItem> items2 = new List<RadioItem>() {
+        new RadioItem() { Description = new MarkupString("Ja"), Value = "Ja" },
+        new RadioItem() { Description = new MarkupString("Nee"), Value = "Nee" },
+        new RadioItem() { Description = new MarkupString("Misschien"), Value = "Misschien", IsDisabled = true }
     };
 }
 
-<NldsRadio Items="@items" @bind-Value="radioValue" Id="groupName">
-    <Legend><NldsInputLegend>Legend</NldsInputLegend></Legend>
+<NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName">
+    <Legend><NldsInputLegend>Multiple functionalities shown</NldsInputLegend></Legend>
     <Hint><NldsInputHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsInputHint></Hint>
     <Error><NldsInputError>Er is een error ofzo...</NldsInputError></Error>
 </NldsRadio>
-<h4>Geselecteerde waarde: @items.FirstOrDefault(i => i.Value == radioValue)?.Value</h4>
+<h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
+
+<NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
+    <Legend><NldsInputLegend>Item Alignment Horizontal</NldsInputLegend></Legend>
+</NldsRadio>
 
