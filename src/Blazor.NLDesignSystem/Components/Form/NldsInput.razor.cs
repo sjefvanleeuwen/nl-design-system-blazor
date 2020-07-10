@@ -9,8 +9,6 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public string Id { get; set; }
         [Parameter]
-        public bool IsInvalid { get; set; }
-        [Parameter]
         public bool IsDisabled { get; set; }
         [Parameter]
         public bool IsRequired { get; set; }
@@ -32,6 +30,8 @@ namespace Blazor.NLDesignSystem.Components.Form
         public RenderFragment Hint { get; set; }
         [Parameter]
         public RenderFragment Error { get; set; }
+
+        private bool IsInvalid => Error != null;
 
         private string LabelAlignmentStyle => LabelAlignment.GetDescription<StyleAttribute>();
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
