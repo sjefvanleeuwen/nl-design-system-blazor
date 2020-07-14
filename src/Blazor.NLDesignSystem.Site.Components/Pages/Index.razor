@@ -125,16 +125,16 @@
 @code {
     string radio1Value = "aanvrager_met_toeslagpartner";
     List<RadioItem> items1 = new List<RadioItem>() {
-        new RadioItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
-        new RadioItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
-        new RadioItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
+        new RadioItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+        new RadioItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+        new RadioItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
 
     string radio2Value = "bestaat niet";
     List<RadioItem> items2 = new List<RadioItem>() {
-        new RadioItem() { Description = new MarkupString("Ja"), Value = "Ja" },
-        new RadioItem() { Description = new MarkupString("Nee"), Value = "Nee" },
-        new RadioItem() { Description = new MarkupString("Misschien"), Value = "Misschien", IsDisabled = true }
+        new RadioItem() { Description = "Ja", Value = "Ja" },
+        new RadioItem() { Description = "Nee", Value = "Nee" },
+        new RadioItem() { Description = "Misschien", Value = "Misschien", IsDisabled = true }
     };
 }
 <NldsForm>
@@ -150,25 +150,27 @@
 @code {
     string selectValue1 = "aanvrager_met_toeslagpartner";
     List<SelectItem> select1 = new List<SelectItem>() {
-        new SelectItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
-        new SelectItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
-        new SelectItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
+        new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+        new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+        new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
 
     string selectValue2;
     List<SelectItem> select2 = new List<SelectItem>() {
-        new SelectItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
-        new SelectItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
-        new SelectItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
+        new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+        new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+        new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
 }
 <h3>Select - 2-way binding</h3>
+<p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
 <NldsForm>
     <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select1" @bind-Value="@selectValue1" ShowEmptyValue="false">
         <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
     </NldsSelect>
-    @selectValue1
+    <p>Selected value: @selectValue1</p>
+    <p>Selected displayvalue: @((MarkupString)select1.FirstOrDefault(s => s.Value == selectValue1).Description)</p>
 </NldsForm>
 <h3>Select with error</h3>
 <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>

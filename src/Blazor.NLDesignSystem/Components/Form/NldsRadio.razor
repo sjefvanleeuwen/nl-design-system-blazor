@@ -27,7 +27,7 @@
                        @onchange:preventDefault
                        @attributes="GetAttributes()"
                        disabled="@item.IsDisabled">
-                <label class="input__label input__label--radio" for="@(Identifier)_@counter">@item.Description</label>
+                <label class="input__label input__label--radio" for="@(Identifier)_@counter">@((MarkupString)item.Description)</label>
             </div>
         }
     </div>

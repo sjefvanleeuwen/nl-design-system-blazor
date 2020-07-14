@@ -31,7 +31,7 @@
         }
         @foreach(var item in Items)
         {
-            <option value="@item.Value" disabled="@item.IsDisabled" selected="@(item.Value == Value)">@item.Description</option>
+            <option value="@item.Value" disabled="@item.IsDisabled" selected="@(item.Value == Value)">@((MarkupString)item.Description)</option>
         }
     </select>
 </div>

@@ -63,7 +63,7 @@ namespace Blazor.NLDesignSystem.Components.Form
     public class RadioItem
     {
         public string Value { get; set; }
-        public MarkupString Description { get; set; }
+        public string Description { get; set; }
         public bool IsDisabled { get; set; }
     }
 }
