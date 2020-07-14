@@ -5,8 +5,8 @@ namespace Blazor.NLDesignSystem.Components.Form
 {
     public partial class NldsFormHint
     {
-        [CascadingParameter(Name = "InputIdentifier")]
-        public string InputIdentifier { get; set; }
+        [CascadingParameter(Name = "ElementIdentifier")]
+        public string ElementIdentifier { get; set; }
 
         /// <summary>
         /// Optional; if it is encapsulated in an input the cascading value (InputName) is taken over this value
@@ -20,7 +20,7 @@ namespace Blazor.NLDesignSystem.Components.Form
         {
             var attributes = new Dictionary<string, object>();
 
-            var tagId = (!string.IsNullOrWhiteSpace(InputIdentifier) ? $"hint_{InputIdentifier}" : null) ?? HintName ?? string.Empty;
+            var tagId = (!string.IsNullOrWhiteSpace(ElementIdentifier) ? $"hint_{ElementIdentifier}" : null) ?? HintName ?? string.Empty;
             if (tagId != string.Empty)
             {
                 attributes["id"] = tagId;

@@ -60,7 +60,7 @@ namespace Blazor.NLDesignSystem.Components.Form
         }
     }
 
-    public class SelectItem
+    public class RadioItem
     {
         public string Value { get; set; }
         public MarkupString Description { get; set; }

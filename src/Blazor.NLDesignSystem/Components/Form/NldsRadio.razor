@@ -3,7 +3,7 @@
 }
 
 <fieldset class="input @(!IsValid ? "input--invalid" : "")">
-    <CascadingValue Name="InputIdentifier" Value="@Identifier">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
         @Legend
         @Hint
         @if (!IsValid)
