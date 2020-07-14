@@ -111,6 +111,7 @@
     <NldsInput Identifier="f" Size="InputSize.ExtraLarge"><Label><NldsLabel>Extra Large</NldsLabel></Label></NldsInput>
 </NldsForm>
 <h3>Horizontal</h3>
+<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
 <NldsForm>
     <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsLabel>Horizontal Label</NldsLabel></Label></NldsInput>
 </NldsForm>
@@ -142,7 +143,6 @@
         <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
     </NldsRadio>
     <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
-    <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
     <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
         <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
     </NldsRadio>
