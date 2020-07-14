@@ -17,10 +17,13 @@
     <link href="_content/Blazor.NLDesignSystem/dist/core/uno.css" rel="stylesheet" />
     <script src="_content/Blazor.NLDesignSystem/interop/Promise.min.js"></script>
     <script src="_content/Blazor.NLDesignSystem/interop/system.js"></script>
+    <!-- Blazor.NLDesignSystem corrections-->
+    <link href="_content/Blazor.NLDesignSystem/nl-design-system-overrides.css" rel="stylesheet" />
     <!-- Blazor.NLDesignSystem.Site.Components -->
     <link rel="apple-touch-icon" sizes="1024x1024" href="_content/Blazor.NLDesignSystem/nlds-1024.png" />
     <link href="_content/Blazor.NLDesignSystem.Site.Components/appLoad.css" rel="stylesheet" />
     <link href="_content/Blazor.NLDesignSystem.Site.Components/forkOnGithub.css" rel="stylesheet" />
+
     <!-- Set the default extension -->
     <script>
         System.config({
@@ -32,7 +35,7 @@
         });
     </script>
 </head>
-<body>
+<body class="theme--large-padding theme--xxl-breakpoint">
     <app>
         <component type="typeof(App)" render-mode="ServerPrerendered" />
         <span id="forkongithub"><a href="https://github.com/sjefvanleeuwen/nl-design-system-blazor">Fork me on GitHub</a></span>

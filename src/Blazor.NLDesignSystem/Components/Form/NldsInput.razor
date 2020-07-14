@@ -1,10 +1,20 @@
 ﻿<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
     <CascadingValue Name="ElementIdentifier" Value="@Identifier">
-        @Label
-        @Hint
+        @if (LabelAlignment == LabelAlignment.Horizontal)
+        {
+            <div>
+                @Label
+                @Hint
+            </div>
+        }
+        else
+        {
+            @Label
+            @Hint
+        }
         @if (!IsValid)
         {
-            <NldsError>@((MarkupString)ErrorText)</NldsError> 
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
         }
     </CascadingValue>
     <input id="@Identifier"
