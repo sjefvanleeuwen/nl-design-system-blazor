@@ -2,7 +2,7 @@
 
 namespace Blazor.NLDesignSystem.Components.Form
 {
-    public partial class NldsInputLegend
+    public partial class NldsLegend
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }

@@ -55,19 +55,19 @@
 <h3>5 Input Types</h3>
 <NldsForm>
     <NldsInput Identifier="z1" Size="InputSize.Medium" Type="InputType.Email">
-        <Label><NldsInputLabel>Email</NldsInputLabel></Label>
+        <Label><NldsLabel>Email</NldsLabel></Label>
     </NldsInput>
     <NldsInput Identifier="z2" Size="InputSize.Medium" Type="InputType.Number">
-        <Label><NldsInputLabel>Number</NldsInputLabel></Label>
+        <Label><NldsLabel>Number</NldsLabel></Label>
     </NldsInput>
     <NldsInput Identifier="z3" Size="InputSize.Medium" Type="InputType.Password">
-        <Label><NldsInputLabel>Password</NldsInputLabel></Label>
+        <Label><NldsLabel>Password</NldsLabel></Label>
     </NldsInput>
     <NldsInput Identifier="z4" Size="InputSize.Medium" Type="InputType.Text">
-        <Label><NldsInputLabel>Text</NldsInputLabel></Label>
+        <Label><NldsLabel>Text</NldsLabel></Label>
     </NldsInput>
     <NldsInput Identifier="z5" Size="InputSize.Medium" Type="InputType.Url">
-        <Label><NldsInputLabel>Url</NldsInputLabel></Label>
+        <Label><NldsLabel>Url</NldsLabel></Label>
     </NldsInput>
 </NldsForm>
 <h3>Values</h3>
@@ -76,44 +76,44 @@
 }
 <NldsForm>
     <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">
-        <Label><NldsInputLabel>Two-way binding</NldsInputLabel></Label>
+        <Label><NldsLabel>Two-way binding</NldsLabel></Label>
     </NldsInput>
 </NldsForm>
 <h4>@inputValue</h4>
 <h3>Errors</h3>
 <NldsForm>
     <NldsInput Identifier="a1" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
-        <Label><NldsInputLabel>Naam Beheerder</NldsInputLabel></Label>
-        <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
+        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsFormHint></Hint>
     </NldsInput>
 </NldsForm>
 <h3>Area describedby</h3>
 <NldsForm>
     <NldsInput Identifier="a2" Size="InputSize.Medium" AriaDescribedBy="fullname">
-        <Label><NldsInputLabel>Area descirbed by manually set</NldsInputLabel></Label>
-        <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
+        <Label><NldsLabel>Area descirbed by manually set</NldsLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsFormHint></Hint>
     </NldsInput>
 </NldsForm>
 <h3>Restriction</h3>
 <NldsForm>
     <NldsInput Identifier="a2" Size="InputSize.Medium" IsDisabled="true">
-        <Label><NldsInputLabel>Disabled</NldsInputLabel></Label>
+        <Label><NldsLabel>Disabled</NldsLabel></Label>
     </NldsInput>
     <NldsInput Identifier="a2" Size="InputSize.Medium" IsRequired="true">
-        <Label><NldsInputLabel><strong>Required</strong></NldsInputLabel></Label>
+        <Label><NldsLabel><strong>Required</strong></NldsLabel></Label>
     </NldsInput>
 </NldsForm>
 <h3>Sizes</h3>
 <NldsForm>
-    <NldsInput Identifier="b" Size="InputSize.ExtraSmall"><Label><NldsInputLabel>Extra Small</NldsInputLabel></Label></NldsInput>
-    <NldsInput Identifier="c" Size="InputSize.Small"><Label><NldsInputLabel>Small</NldsInputLabel></Label></NldsInput>
-    <NldsInput Identifier="d" Size="InputSize.Medium"><Label><NldsInputLabel>Medium</NldsInputLabel></Label></NldsInput>
-    <NldsInput Identifier="e" Size="InputSize.Large"><Label><NldsInputLabel>Large</NldsInputLabel></Label></NldsInput>
-    <NldsInput Identifier="f" Size="InputSize.ExtraLarge"><Label><NldsInputLabel>Extra Large</NldsInputLabel></Label></NldsInput>
+    <NldsInput Identifier="b" Size="InputSize.ExtraSmall"><Label><NldsLabel>Extra Small</NldsLabel></Label></NldsInput>
+    <NldsInput Identifier="c" Size="InputSize.Small"><Label><NldsLabel>Small</NldsLabel></Label></NldsInput>
+    <NldsInput Identifier="d" Size="InputSize.Medium"><Label><NldsLabel>Medium</NldsLabel></Label></NldsInput>
+    <NldsInput Identifier="e" Size="InputSize.Large"><Label><NldsLabel>Large</NldsLabel></Label></NldsInput>
+    <NldsInput Identifier="f" Size="InputSize.ExtraLarge"><Label><NldsLabel>Extra Large</NldsLabel></Label></NldsInput>
 </NldsForm>
 <h3>Horizontal</h3>
 <NldsForm>
-    <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsInputLabel>Horizontal Label</NldsInputLabel></Label></NldsInput>
+    <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsLabel>Horizontal Label</NldsLabel></Label></NldsInput>
 </NldsForm>
 <h2>Radios</h2>
 @code {
@@ -133,12 +133,12 @@
 }
 
 <NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
-    <Legend><NldsInputLegend>Multiple functionalities shown</NldsInputLegend></Legend>
-    <Hint><NldsInputHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsInputHint></Hint>
+    <Legend><NldsLegend>Multiple functionalities shown</NldsLegend></Legend>
+    <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
 </NldsRadio>
 <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
 
 <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
-    <Legend><NldsInputLegend>Item Alignment Horizontal</NldsInputLegend></Legend>
+    <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
 </NldsRadio>
 

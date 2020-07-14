@@ -2,7 +2,7 @@
 
 namespace Blazor.NLDesignSystem.Components.Form
 {
-    public partial class NldsInputError
+    public partial class NldsError
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
