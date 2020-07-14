@@ -1,0 +1,11 @@
+﻿<span class="btn__content">
+    @if (Position == RelativePosition.Before)
+    {
+        <i class="btn__icon icon @Icon" title="" role=""></i>
+    }
+    @ChildContent
+    @if (Position == RelativePosition.After)
+    {
+        <i class="btn__icon icon @Icon" title="" role=""></i>
+    }
+</span>
