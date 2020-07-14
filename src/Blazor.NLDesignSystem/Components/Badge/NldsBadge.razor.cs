@@ -10,7 +10,7 @@ namespace Blazor.NLDesignSystem.Components.Badge
         [Parameter]
         public Color Color { get; set; }
 
-        private string color => Color.GetDescription<StyleAttribute>();
+        private string DisplayColor => Color.GetDescription<StyleAttribute>();
 
     }
 }
