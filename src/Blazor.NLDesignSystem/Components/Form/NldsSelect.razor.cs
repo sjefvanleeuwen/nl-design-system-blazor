@@ -12,6 +12,8 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public string AriaDescribedBy { get; set; }
         [Parameter]
+        public string EmptyValueDescription { get; set; }
+        [Parameter]
         public string ErrorText { get; set; }
         [Parameter]
         public string Identifier { get; set; }
@@ -25,6 +27,8 @@ namespace Blazor.NLDesignSystem.Components.Form
         public LabelAlignment LabelAlignment { get; set; }
         [Parameter]
         public InputSize Size { get; set; }
+        [Parameter]
+        public bool ShowEmptyValue { get; set; } = true;
 
         [Parameter]
         public RenderFragment Label { get; set; }

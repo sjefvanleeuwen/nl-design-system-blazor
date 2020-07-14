@@ -15,6 +15,10 @@
             @attributes="GetAttributes()"
             disabled="@IsDisabled"
             required="@IsRequired">
+        @if (ShowEmptyValue)
+        {
+        <option value="">@EmptyValueDescription</option>
+        }
         @foreach(var item in Items)
         {
             <option value="@item.Value" disabled="@item.IsDisabled" selected="@(item.Value == Value)">@item.Description</option>

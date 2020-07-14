@@ -143,23 +143,31 @@
     </NldsRadio>
 </NldsForm>
 @code {
-    string selectValue = "aanvrager_met_toeslagpartner";
-    List<SelectItem> select = new List<SelectItem>() {
+    string selectValue1 = "aanvrager_met_toeslagpartner";
+    List<SelectItem> select1 = new List<SelectItem>() {
+        new SelectItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
+        new SelectItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
+        new SelectItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
+    };
+
+    string selectValue2;
+    List<SelectItem> select2 = new List<SelectItem>() {
         new SelectItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
         new SelectItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
         new SelectItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
     };
 }
-<h3>Select</h3>
+<h3>Select &Aacute; 2-way binding</h3>
 <NldsForm>
-    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select" @bind-Value="@selectValue">
+    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select1" @bind-Value="@selectValue1" ShowEmptyValue="false">
         <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
     </NldsSelect>
+    @selectValue1
 </NldsForm>
 <h3>Select with error</h3>
 <NldsForm>
-    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select" @bind-Value="@selectValue" ErrorText="Oops something went wrong.">
+    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select2" @bind-Value="@selectValue2" EmptyValueDescription="--Selecteer iets--" ErrorText="Oops something went wrong.">
         <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsSelect>
