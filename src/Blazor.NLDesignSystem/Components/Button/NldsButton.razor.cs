@@ -10,6 +10,6 @@ namespace Blazor.NLDesignSystem.Components.Button
         [Parameter]
         public ButtonType Type { get; set; }
 
-        private string classType => Type.GetDescription<StyleAttribute>();
+        private string DisplayType => Type.GetDescription<StyleAttribute>();
     }
 }
