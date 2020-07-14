@@ -1,182 +1,184 @@
 ﻿@page "/"
-<h2>Badges</h2>
-<NldsBadge Color="Color.Wit">WIT</NldsBadge>
-<NldsBadge Color="Color.Zwart">ZWART</NldsBadge>
-<NldsBadge Color="Color.Violet">VIOLET</NldsBadge>
-<NldsBadge Color="Color.Roze">ROZE</NldsBadge>
-<NldsBadge Color="Color.Rood">ROOD</NldsBadge>
-<NldsBadge Color="Color.RobijnRood">ROBIJNROOD</NldsBadge>
-<NldsBadge Color="Color.Paars">PAARS</NldsBadge>
-<NldsBadge Color="Color.Oranje">ORANJE</NldsBadge>
-<NldsBadge Color="Color.Mosgroen">MOSGROEN</NldsBadge>
-<NldsBadge Color="Color.Mintgroen">MINTGROEN</NldsBadge>
-<NldsBadge Color="Color.Lichtblauw">LICHTBLAUW</NldsBadge>
-<NldsBadge Color="Color.HemelBlauw">HEMELBLAUW</NldsBadge>
-<NldsBadge Color="Color.DonkerBlauw">DONKERBLAUW</NldsBadge>
-<NldsBadge Color="Color.Groen">GROEN</NldsBadge>
-<NldsBadge Color="Color.Geel">GEEL</NldsBadge>
-<NldsBadge Color="Color.Donkergroen">DONKERGROEN</NldsBadge>
-<NldsBadge Color="Color.Donkergeel">DONKERGEEL</NldsBadge>
-<NldsBadge Color="Color.Bruin">BRUIN</NldsBadge>
-<NldsBadge Color="Color.Optioneel">OPTIONEEL</NldsBadge>
+    <h2>Header example</h2>
+    <NldsHeader Link="#" LinkTitle="A road to nowhere" LogoClass="header-logo--ocw" LinkScreenReaderDescription="This is a test header to nowhere" IsTransparent="true">Header info</NldsHeader>
+    <h2>Badges</h2>
+    <NldsBadge Color="Color.Wit">WIT</NldsBadge>
+    <NldsBadge Color="Color.Zwart">ZWART</NldsBadge>
+    <NldsBadge Color="Color.Violet">VIOLET</NldsBadge>
+    <NldsBadge Color="Color.Roze">ROZE</NldsBadge>
+    <NldsBadge Color="Color.Rood">ROOD</NldsBadge>
+    <NldsBadge Color="Color.RobijnRood">ROBIJNROOD</NldsBadge>
+    <NldsBadge Color="Color.Paars">PAARS</NldsBadge>
+    <NldsBadge Color="Color.Oranje">ORANJE</NldsBadge>
+    <NldsBadge Color="Color.Mosgroen">MOSGROEN</NldsBadge>
+    <NldsBadge Color="Color.Mintgroen">MINTGROEN</NldsBadge>
+    <NldsBadge Color="Color.Lichtblauw">LICHTBLAUW</NldsBadge>
+    <NldsBadge Color="Color.HemelBlauw">HEMELBLAUW</NldsBadge>
+    <NldsBadge Color="Color.DonkerBlauw">DONKERBLAUW</NldsBadge>
+    <NldsBadge Color="Color.Groen">GROEN</NldsBadge>
+    <NldsBadge Color="Color.Geel">GEEL</NldsBadge>
+    <NldsBadge Color="Color.Donkergroen">DONKERGROEN</NldsBadge>
+    <NldsBadge Color="Color.Donkergeel">DONKERGEEL</NldsBadge>
+    <NldsBadge Color="Color.Bruin">BRUIN</NldsBadge>
+    <NldsBadge Color="Color.Optioneel">OPTIONEEL</NldsBadge>
 
-<NldsBadge Color="Color.Wit">1</NldsBadge>
-<NldsBadge Color="Color.Zwart">2</NldsBadge>
-<NldsBadge Color="Color.Violet">3</NldsBadge>
-<NldsBadge Color="Color.Roze">4</NldsBadge>
-<NldsBadge Color="Color.Rood">5</NldsBadge>
-<NldsBadge Color="Color.RobijnRood">6</NldsBadge>
-<NldsBadge Color="Color.Paars">7</NldsBadge>
-<NldsBadge Color="Color.Oranje">8</NldsBadge>
-<NldsBadge Color="Color.Mosgroen">9</NldsBadge>
-<NldsBadge Color="Color.Mintgroen">10</NldsBadge>
-<NldsBadge Color="Color.Lichtblauw">11</NldsBadge>
-<NldsBadge Color="Color.HemelBlauw">12</NldsBadge>
-<NldsBadge Color="Color.DonkerBlauw">13</NldsBadge>
-<NldsBadge Color="Color.Groen">14</NldsBadge>
-<NldsBadge Color="Color.Geel">15</NldsBadge>
-<NldsBadge Color="Color.Donkergroen">16</NldsBadge>
-<NldsBadge Color="Color.Donkergeel">17</NldsBadge>
-<NldsBadge Color="Color.Bruin">18</NldsBadge>
-<NldsBadge Color="Color.Optioneel">19</NldsBadge>
-<h2>Buttons</h2>
-<NldsButton Type="ButtonType.Primary">Hello World!</NldsButton>
-<NldsButton Type="ButtonType.Disabled">Hello World!</NldsButton>
-<NldsButton Type="ButtonType.Icon"><NldsIcon Icon="icon-arr-forward"></NldsIcon></NldsButton>
-<NldsButton Type="ButtonType.Primary"><NldsIcon Icon="icon-arr-forward">Verder</NldsIcon></NldsButton>
-<NldsButton Type="ButtonType.DigiD">Hello World!</NldsButton>
-<h2>Collapse</h2>
-<NldsCollapse>
-    <Title>Titel van collapse</Title>
-    <Content>Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.</Content>
-</NldsCollapse>
-<h2>Input</h2>
-<h3>5 Input Types</h3>
-<NldsForm>
-    <NldsInput Identifier="z1" Size="InputSize.Medium" Type="InputType.Email">
-        <Label><NldsLabel>Email</NldsLabel></Label>
-    </NldsInput>
-    <NldsInput Identifier="z2" Size="InputSize.Medium" Type="InputType.Number">
-        <Label><NldsLabel>Number</NldsLabel></Label>
-    </NldsInput>
-    <NldsInput Identifier="z3" Size="InputSize.Medium" Type="InputType.Password">
-        <Label><NldsLabel>Password</NldsLabel></Label>
-    </NldsInput>
-    <NldsInput Identifier="z4" Size="InputSize.Medium" Type="InputType.Text">
-        <Label><NldsLabel>Text</NldsLabel></Label>
-    </NldsInput>
-    <NldsInput Identifier="z5" Size="InputSize.Medium" Type="InputType.Url">
-        <Label><NldsLabel>Url</NldsLabel></Label>
-    </NldsInput>
-</NldsForm>
-<h3>Values</h3>
-@code {
-    private string inputValue = "This is content of the input";
-}
-<NldsForm>
-    <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">
-        <Label><NldsLabel>Two-way binding</NldsLabel></Label>
-    </NldsInput>
-</NldsForm>
-<h4>@inputValue</h4>
-<h3>Errors</h3>
-<NldsForm>
-    <NldsInput Identifier="a1" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
-        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
-        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsFormHint></Hint>
-    </NldsInput>
-</NldsForm>
-<h3>Area describedby</h3>
-<NldsForm>
-    <NldsInput Identifier="a2" Size="InputSize.Medium" AriaDescribedBy="fullname">
-        <Label><NldsLabel>Area descirbed by manually set</NldsLabel></Label>
-        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Govers</NldsFormHint></Hint>
-    </NldsInput>
-</NldsForm>
-<h3>Restriction</h3>
-<NldsForm>
-    <NldsInput Identifier="a2" Size="InputSize.Medium" IsDisabled="true">
-        <Label><NldsLabel>Disabled</NldsLabel></Label>
-    </NldsInput>
-    <NldsInput Identifier="a2" Size="InputSize.Medium" IsRequired="true">
-        <Label><NldsLabel><strong>Required</strong></NldsLabel></Label>
-    </NldsInput>
-</NldsForm>
-<h3>Sizes</h3>
-<NldsForm>
-    <NldsInput Identifier="b" Size="InputSize.ExtraSmall"><Label><NldsLabel>Extra Small</NldsLabel></Label></NldsInput>
-    <NldsInput Identifier="c" Size="InputSize.Small"><Label><NldsLabel>Small</NldsLabel></Label></NldsInput>
-    <NldsInput Identifier="d" Size="InputSize.Medium"><Label><NldsLabel>Medium</NldsLabel></Label></NldsInput>
-    <NldsInput Identifier="e" Size="InputSize.Large"><Label><NldsLabel>Large</NldsLabel></Label></NldsInput>
-    <NldsInput Identifier="f" Size="InputSize.ExtraLarge"><Label><NldsLabel>Extra Large</NldsLabel></Label></NldsInput>
-</NldsForm>
-<h3>Horizontal</h3>
-<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
-<NldsForm>
-    <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsLabel>Horizontal Label</NldsLabel></Label></NldsInput>
-</NldsForm>
-<NldsForm>
-    <NldsInput Identifier="a1" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
-        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
-        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Zappa</NldsFormHint></Hint>
-    </NldsInput>
-</NldsForm>
-<h2>Radios</h2>
-@code {
-    string radio1Value = "aanvrager_met_toeslagpartner";
-    List<RadioItem> items1 = new List<RadioItem>() {
+    <NldsBadge Color="Color.Wit">1</NldsBadge>
+    <NldsBadge Color="Color.Zwart">2</NldsBadge>
+    <NldsBadge Color="Color.Violet">3</NldsBadge>
+    <NldsBadge Color="Color.Roze">4</NldsBadge>
+    <NldsBadge Color="Color.Rood">5</NldsBadge>
+    <NldsBadge Color="Color.RobijnRood">6</NldsBadge>
+    <NldsBadge Color="Color.Paars">7</NldsBadge>
+    <NldsBadge Color="Color.Oranje">8</NldsBadge>
+    <NldsBadge Color="Color.Mosgroen">9</NldsBadge>
+    <NldsBadge Color="Color.Mintgroen">10</NldsBadge>
+    <NldsBadge Color="Color.Lichtblauw">11</NldsBadge>
+    <NldsBadge Color="Color.HemelBlauw">12</NldsBadge>
+    <NldsBadge Color="Color.DonkerBlauw">13</NldsBadge>
+    <NldsBadge Color="Color.Groen">14</NldsBadge>
+    <NldsBadge Color="Color.Geel">15</NldsBadge>
+    <NldsBadge Color="Color.Donkergroen">16</NldsBadge>
+    <NldsBadge Color="Color.Donkergeel">17</NldsBadge>
+    <NldsBadge Color="Color.Bruin">18</NldsBadge>
+    <NldsBadge Color="Color.Optioneel">19</NldsBadge>
+    <h2>Buttons</h2>
+    <NldsButton Type="ButtonType.Primary">Hello World!</NldsButton>
+    <NldsButton Type="ButtonType.Disabled">Hello World!</NldsButton>
+    <NldsButton Type="ButtonType.Icon"><NldsIcon Icon="icon-arr-forward"></NldsIcon></NldsButton>
+    <NldsButton Type="ButtonType.Primary"><NldsIcon Icon="icon-arr-forward">Verder</NldsIcon></NldsButton>
+    <NldsButton Type="ButtonType.DigiD">Hello World!</NldsButton>
+    <h2>Collapse</h2>
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.</Content>
+    </NldsCollapse>
+    <h2>Input</h2>
+    <h3>5 Input Types</h3>
+    <NldsForm>
+        <NldsInput Identifier="z1" Size="InputSize.Medium" Type="InputType.Email">
+            <Label><NldsLabel>Email</NldsLabel></Label>
+        </NldsInput>
+        <NldsInput Identifier="z2" Size="InputSize.Medium" Type="InputType.Number">
+            <Label><NldsLabel>Number</NldsLabel></Label>
+        </NldsInput>
+        <NldsInput Identifier="z3" Size="InputSize.Medium" Type="InputType.Password">
+            <Label><NldsLabel>Password</NldsLabel></Label>
+        </NldsInput>
+        <NldsInput Identifier="z4" Size="InputSize.Medium" Type="InputType.Text">
+            <Label><NldsLabel>Text</NldsLabel></Label>
+        </NldsInput>
+        <NldsInput Identifier="z5" Size="InputSize.Medium" Type="InputType.Url">
+            <Label><NldsLabel>Url</NldsLabel></Label>
+        </NldsInput>
+    </NldsForm>
+    <h3>Values</h3>
+    @code {
+        private string inputValue = "This is content of the input";
+    }
+    <NldsForm>
+        <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">
+            <Label><NldsLabel>Two-way binding</NldsLabel></Label>
+        </NldsInput>
+    </NldsForm>
+    <h4>@inputValue</h4>
+    <h3>Errors</h3>
+    <NldsForm>
+        <NldsInput Identifier="a1" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
+            <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+            <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsFormHint></Hint>
+        </NldsInput>
+    </NldsForm>
+    <h3>Area describedby</h3>
+    <NldsForm>
+        <NldsInput Identifier="a2" Size="InputSize.Medium" AriaDescribedBy="fullname">
+            <Label><NldsLabel>Area descirbed by manually set</NldsLabel></Label>
+            <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Govers</NldsFormHint></Hint>
+        </NldsInput>
+    </NldsForm>
+    <h3>Restriction</h3>
+    <NldsForm>
+        <NldsInput Identifier="a2" Size="InputSize.Medium" IsDisabled="true">
+            <Label><NldsLabel>Disabled</NldsLabel></Label>
+        </NldsInput>
+        <NldsInput Identifier="a2" Size="InputSize.Medium" IsRequired="true">
+            <Label><NldsLabel><strong>Required</strong></NldsLabel></Label>
+        </NldsInput>
+    </NldsForm>
+    <h3>Sizes</h3>
+    <NldsForm>
+        <NldsInput Identifier="b" Size="InputSize.ExtraSmall"><Label><NldsLabel>Extra Small</NldsLabel></Label></NldsInput>
+        <NldsInput Identifier="c" Size="InputSize.Small"><Label><NldsLabel>Small</NldsLabel></Label></NldsInput>
+        <NldsInput Identifier="d" Size="InputSize.Medium"><Label><NldsLabel>Medium</NldsLabel></Label></NldsInput>
+        <NldsInput Identifier="e" Size="InputSize.Large"><Label><NldsLabel>Large</NldsLabel></Label></NldsInput>
+        <NldsInput Identifier="f" Size="InputSize.ExtraLarge"><Label><NldsLabel>Extra Large</NldsLabel></Label></NldsInput>
+    </NldsForm>
+    <h3>Horizontal</h3>
+    <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
+    <NldsForm>
+        <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsLabel>Horizontal Label</NldsLabel></Label></NldsInput>
+    </NldsForm>
+    <NldsForm>
+        <NldsInput Identifier="a1" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
+            <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+            <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Zappa</NldsFormHint></Hint>
+        </NldsInput>
+    </NldsForm>
+    <h2>Radios</h2>
+    @code {
+        string radio1Value = "aanvrager_met_toeslagpartner";
+        List<RadioItem> items1 = new List<RadioItem>() {
         new RadioItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
         new RadioItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
         new RadioItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
 
-    string radio2Value = "bestaat niet";
-    List<RadioItem> items2 = new List<RadioItem>() {
+        string radio2Value = "bestaat niet";
+        List<RadioItem> items2 = new List<RadioItem>() {
         new RadioItem() { Description = "Ja", Value = "Ja" },
         new RadioItem() { Description = "Nee", Value = "Nee" },
         new RadioItem() { Description = "Misschien", Value = "Misschien", IsDisabled = true }
     };
-}
-<NldsForm>
-    <NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
-        <Legend><NldsLegend>Multiple functionalities shown</NldsLegend></Legend>
-        <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
-    </NldsRadio>
-    <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
-    <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
-        <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
-    </NldsRadio>
-</NldsForm>
-@code {
-    string selectValue1 = "aanvrager_met_toeslagpartner";
-    List<SelectItem> select1 = new List<SelectItem>() {
+    }
+    <NldsForm>
+        <NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
+            <Legend><NldsLegend>Multiple functionalities shown</NldsLegend></Legend>
+            <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
+        </NldsRadio>
+        <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
+        <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
+            <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
+        </NldsRadio>
+    </NldsForm>
+    @code {
+        string selectValue1 = "aanvrager_met_toeslagpartner";
+        List<SelectItem> select1 = new List<SelectItem>() {
         new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
         new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
         new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
 
-    string selectValue2;
-    List<SelectItem> select2 = new List<SelectItem>() {
+        string selectValue2;
+        List<SelectItem> select2 = new List<SelectItem>() {
         new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
         new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
         new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
-}
-<h3>Select - 2-way binding</h3>
-<p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
-<NldsForm>
-    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select1" @bind-Value="@selectValue1" ShowEmptyValue="false">
-        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
-        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
-    </NldsSelect>
-    <p>Selected value: @selectValue1</p>
-    <p>Selected displayvalue: @((MarkupString)select1.FirstOrDefault(s => s.Value == selectValue1).Description)</p>
-</NldsForm>
-<h3>Select with error</h3>
-<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
-<NldsForm>
-    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select2" @bind-Value="@selectValue2" LabelAlignment="LabelAlignment.Horizontal" EmptyValueDescription="--Selecteer iets--" ErrorText="Oops something went wrong.">
-        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
-        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
-    </NldsSelect>
-</NldsForm>
+    }
+    <h3>Select - 2-way binding</h3>
+    <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
+    <NldsForm>
+        <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select1" @bind-Value="@selectValue1" ShowEmptyValue="false">
+            <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+            <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
+        </NldsSelect>
+        <p>Selected value: @selectValue1</p>
+        <p>Selected displayvalue: @((MarkupString)select1.FirstOrDefault(s => s.Value == selectValue1).Description)</p>
+    </NldsForm>
+    <h3>Select with error</h3>
+    <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
+    <NldsForm>
+        <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select2" @bind-Value="@selectValue2" LabelAlignment="LabelAlignment.Horizontal" EmptyValueDescription="--Selecteer iets--" ErrorText="Oops something went wrong.">
+            <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+            <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+        </NldsSelect>
+    </NldsForm>
