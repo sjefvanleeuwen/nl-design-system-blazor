@@ -1,12 +1,15 @@
-﻿@{ 
+﻿@{
     var counter = 0;
 }
 
-<fieldset class="input @(IsInvalid ? "input--invalid" : "")">
+<fieldset class="input @(!IsValid ? "input--invalid" : "")">
     <CascadingValue Name="InputIdentifier" Value="@Identifier">
         @Legend
         @Hint
-        @Error
+        @if (!IsValid)
+        {
+            <NldsInputError>@((MarkupString)ErrorText)</NldsInputError>
+        }
     </CascadingValue>
     <div class="@ItemAlignmentStyle">
         @*When empty the wrapping div is not there in the example. But it makes no difference for the element*@
@@ -27,7 +30,5 @@
                 <label class="input__label input__label--radio" for="@(Identifier)_@counter">@item.Description</label>
             </div>
         }
-    </div>@*
-        id="@($"{Identifier}-{item.Value}")"
-    *@
+    </div>
 </fieldset>

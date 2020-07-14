@@ -75,17 +75,16 @@
     private string inputValue = "This is content of the input";
 }
 <NldsForm>
-    <NldsInput Identifier="a1" Size="InputSize.Large" @bind-Value="@inputValue">
+    <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">
         <Label><NldsInputLabel>Two-way binding</NldsInputLabel></Label>
     </NldsInput>
 </NldsForm>
 <h4>@inputValue</h4>
 <h3>Errors</h3>
 <NldsForm>
-    <NldsInput Identifier="a1" Size="InputSize.Medium">
+    <NldsInput Identifier="a1" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
         <Label><NldsInputLabel>Naam Beheerder</NldsInputLabel></Label>
         <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
-        <Error><NldsInputError>U heeft het veld Naam beheerder nog niet ingevuld</NldsInputError></Error>
     </NldsInput>
 </NldsForm>
 <h3>Area describedby</h3>
@@ -95,7 +94,7 @@
         <Hint><NldsInputHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsInputHint></Hint>
     </NldsInput>
 </NldsForm>
-<h3>Restrictiong</h3>
+<h3>Restriction</h3>
 <NldsForm>
     <NldsInput Identifier="a2" Size="InputSize.Medium" IsDisabled="true">
         <Label><NldsInputLabel>Disabled</NldsInputLabel></Label>
@@ -133,10 +132,9 @@
     };
 }
 
-<NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName">
+<NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
     <Legend><NldsInputLegend>Multiple functionalities shown</NldsInputLegend></Legend>
     <Hint><NldsInputHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsInputHint></Hint>
-    <Error><NldsInputError>Er is een error ofzo...</NldsInputError></Error>
 </NldsRadio>
 <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
 

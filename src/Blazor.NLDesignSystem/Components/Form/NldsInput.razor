@@ -1,13 +1,16 @@
-﻿<div class="input @LabelAlignmentStyle @(IsInvalid ? "input--invalid" : "")">
+﻿<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
     <CascadingValue Name="InputIdentifier" Value="@Identifier">
         @Label
         @Hint
-        @Error
+        @if (!IsValid)
+        {
+            <NldsInputError>@((MarkupString)ErrorText)</NldsInputError> 
+        }
     </CascadingValue>
-    <input id="@Identifier" 
-           type="@DisplayType" 
-           class="input__control input__control@(SizeAppendix) input__control--search" 
-           @bind="Value" 
+    <input id="@Identifier"
+           type="@DisplayType"
+           class="input__control input__control@(SizeAppendix) input__control--search"
+           @bind="Value"
            @bind:event="oninput"
            @oninput:preventDefault
            @attributes="GetAttributes()"

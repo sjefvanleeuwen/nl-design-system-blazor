@@ -12,6 +12,8 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public string AriaDescribedBy { get; set; }
         [Parameter]
+        public string ErrorText { get; set; }
+        [Parameter]
         public string Identifier { get; set; }
         [Parameter]
         public ItemAlignment ItemAlignment { get; set; }
@@ -22,8 +24,6 @@ namespace Blazor.NLDesignSystem.Components.Form
         public RenderFragment Legend { get; set; }
         [Parameter]
         public RenderFragment Hint { get; set; }
-        [Parameter]
-        public RenderFragment Error { get; set; }
 
         //2-way binding
         private string _value;
@@ -43,7 +43,7 @@ namespace Blazor.NLDesignSystem.Components.Form
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
-        private bool IsInvalid => Error != null;
+        private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string ItemAlignmentStyle => ItemAlignment.GetDescription<StyleAttribute>();
 
         private IDictionary<string, object> GetAttributes()
