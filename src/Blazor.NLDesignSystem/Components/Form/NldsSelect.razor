@@ -1,0 +1,23 @@
+﻿<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+        @Label
+        @Hint
+        @if (!IsValid)
+        {
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
+        }
+    </CascadingValue>
+    <select id="@Identifier"
+            class="input__control input__control@(SizeAppendix) input__control--search"
+            @bind="Value"
+            @bind:event="onchange"
+            @onchange:preventDefault
+            @attributes="GetAttributes()"
+            disabled="@IsDisabled"
+            required="@IsRequired">
+        @foreach(var item in Items)
+        {
+            <option value="@item.Value" disabled="@item.IsDisabled" selected="@(item.Value == Value)">@item.Description</option>
+        }
+    </select>
+</div>

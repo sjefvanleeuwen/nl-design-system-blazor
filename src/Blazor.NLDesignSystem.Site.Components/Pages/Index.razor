@@ -91,7 +91,7 @@
 <NldsForm>
     <NldsInput Identifier="a2" Size="InputSize.Medium" AriaDescribedBy="fullname">
         <Label><NldsLabel>Area descirbed by manually set</NldsLabel></Label>
-        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Masmeijer</NldsFormHint></Hint>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Govers</NldsFormHint></Hint>
     </NldsInput>
 </NldsForm>
 <h3>Restriction</h3>
@@ -119,8 +119,8 @@
 @code {
     string radio1Value = "aanvrager_met_toeslagpartner";
     List<RadioItem> items1 = new List<RadioItem>() {
-        new RadioItem() { Description = new MarkupString("<i>Alleenstaande<i>"), Value = "alleenstaande" },
-        new RadioItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter"), Value = "aanvrager_met_toeslagpartner" },
+        new RadioItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
+        new RadioItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
         new RadioItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
     };
 
@@ -131,14 +131,36 @@
         new RadioItem() { Description = new MarkupString("Misschien"), Value = "Misschien", IsDisabled = true }
     };
 }
+<NldsForm>
+    <NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
+        <Legend><NldsLegend>Multiple functionalities shown</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
+    </NldsRadio>
+    <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
 
-<NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
-    <Legend><NldsLegend>Multiple functionalities shown</NldsLegend></Legend>
-    <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
-</NldsRadio>
-<h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
-
-<NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
-    <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
-</NldsRadio>
-
+    <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
+        <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
+    </NldsRadio>
+</NldsForm>
+@code {
+    string selectValue = "aanvrager_met_toeslagpartner";
+    List<SelectItem> select = new List<SelectItem>() {
+        new SelectItem() { Description = new MarkupString("<i>Alleenstaande</i>"), Value = "alleenstaande" },
+        new SelectItem() { Description = new MarkupString("<i>Aanvrager <strong>met</strong> toeslagparter</i>"), Value = "aanvrager_met_toeslagpartner" },
+        new SelectItem() { Description = new MarkupString("<u>Disabled</u>"), Value = "disabled", IsDisabled = true }
+    };
+}
+<h3>Select</h3>
+<NldsForm>
+    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select" @bind-Value="@selectValue">
+        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
+    </NldsSelect>
+</NldsForm>
+<h3>Select with error</h3>
+<NldsForm>
+    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select" @bind-Value="@selectValue" ErrorText="Oops something went wrong.">
+        <Label><NldsLabel>Naam Beheerder</NldsLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsSelect>
+</NldsForm>
