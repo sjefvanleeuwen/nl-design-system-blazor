@@ -9,6 +9,8 @@ namespace Blazor.NLDesignSystem.Components.Badge
         public int Number { get; set; }
         [Parameter]
         public Color Color { get; set; }
+        [Parameter]
+        public bool UseOnIcon { get; set; }
 
         private string DisplayColor => Color.GetDescription<StyleAttribute>();
     }
