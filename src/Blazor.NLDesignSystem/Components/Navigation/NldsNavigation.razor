@@ -1,7 +1,18 @@
 ﻿<nav class="top-nav top-nav--@DisplayColor">
     <div class="container">
-        <ul class="nav">
-            @ChildContent
-        </ul>
+        @if (AutoResize)
+        {
+            <div class="top-nav-autoresize">
+                <ul class="nav">
+                    @ChildContent
+                </ul>
+            </div>
+        }
+        else
+        {
+            <ul class="nav">
+                @ChildContent
+            </ul>
+        }
     </div>
 </nav>

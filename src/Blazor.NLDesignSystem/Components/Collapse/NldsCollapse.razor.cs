@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components.Collapse
@@ -8,7 +9,7 @@ namespace Blazor.NLDesignSystem.Components.Collapse
     public partial class NldsCollapse
     {
         [Inject] 
-        private IJSRuntime JS { get; set; }
+        private IJSRuntime JSRuntime { get; set; }
 
         [CascadingParameter(Name = "GroupName")]
         protected string GroupName { get; set; }
@@ -25,7 +26,7 @@ namespace Blazor.NLDesignSystem.Components.Collapse
         [Parameter]
         public RenderFragment Title { get; set; }
 
-        private ElementReference HeaderRef { get; set; }
+        private ElementReference CollapsableReference { get; set; }
 
         private bool ShowContent => Content != null;
 
@@ -33,8 +34,9 @@ namespace Blazor.NLDesignSystem.Components.Collapse
         {
             if (firstRender)
             {
-                await JS.InvokeVoidAsync("collapse", HeaderRef);
+                await JSRuntime.InvokeVoidAsync("collapse", CollapsableReference);
             }
+            await base.OnAfterRenderAsync(firstRender);
         }
 
         private IDictionary<string, object> GetAttributes()
