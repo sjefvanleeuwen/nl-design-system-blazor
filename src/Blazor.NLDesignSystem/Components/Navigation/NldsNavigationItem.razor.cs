@@ -9,14 +9,14 @@ namespace Blazor.NLDesignSystem.Components.Navigation
     {
         [Inject]
         NavigationManager NavigationManager { get; set; }
-        
+
         [Parameter]
         public Icon Icon { get; set; }
         [Parameter]
         public string Title { get; set; }
         [Parameter]
         public string Uri { get; set; } = "#";
-        
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 

@@ -7,7 +7,7 @@ namespace Blazor.NLDesignSystem.Components.Skiplink
         [Parameter]
         public string ContentId { get; set; } = "content";
 
-        [Parameter] 
+        [Parameter]
         public RenderFragment ChildContent { get; set; }
     }
 }

@@ -113,8 +113,9 @@ namespace Blazor.NLDesignSystem.Components.Pagination
             var result = new List<Page>();
             foreach (var pageNumber in pageNumbers)
             {
-                var page = new Page { 
-                    Number = pageNumber, 
+                var page = new Page
+                {
+                    Number = pageNumber,
                     IsActive = pageNumber == ActivePage
                 };
                 if (pageNumber == 1 && pageNumbers.Count() > 1 && !pageNumbers.Contains(2))

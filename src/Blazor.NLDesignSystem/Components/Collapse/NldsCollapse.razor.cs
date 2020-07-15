@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components.Collapse
 {
     public partial class NldsCollapse
     {
-        [Inject] 
+        [Inject]
         private IJSRuntime JSRuntime { get; set; }
 
         [CascadingParameter(Name = "GroupName")]
