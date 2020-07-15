@@ -18,9 +18,6 @@ namespace Blazor.NLDesignSystem.Components.Header
         [Parameter]
         public string LogoClass { get; set; }
 
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
-
         private string TransparentClass => IsTransparent ? "header--transparent" : string.Empty;
     }
 }
