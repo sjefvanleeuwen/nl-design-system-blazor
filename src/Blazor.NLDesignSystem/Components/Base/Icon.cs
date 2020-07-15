@@ -4,6 +4,7 @@ namespace Blazor.NLDesignSystem
 {
     public enum Icon
     {
+        Undefined,
         [Style("icon-arr-backward")]
         ArrowBackward,
         [Style("icon-arr-forward")]

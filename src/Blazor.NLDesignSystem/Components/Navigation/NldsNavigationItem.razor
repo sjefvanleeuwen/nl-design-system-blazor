@@ -1,0 +1,9 @@
+﻿<li class="nav__item">
+    <a class="nav__link @(IsActiveLink ?  "nav__link--active" : string.Empty)" href="@Uri" @attributes="GetAttributes()">
+        @if (Icon != Icon.Undefined)
+        {
+            <i class="icon @DisplayIcon" role="presentation"></i>
+        }
+        @ChildContent
+    </a>
+</li>
