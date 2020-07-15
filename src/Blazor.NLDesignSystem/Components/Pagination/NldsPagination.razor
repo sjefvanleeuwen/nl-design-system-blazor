@@ -1,20 +1,43 @@
 ﻿<nav aria-label="pagination">
     <ul class="pagination pagination--dots">
         <li class="pagination__item pagination__item--previous">
-            @if (!@PreviousDisabled)
+            @if (PreviousEnabled)
             {
-                <a href="javascipt: void(0)" @onclick="InvokePrevious" class="pagination__link"><span class="pagination__link--previous">@PreviousText</span><span class="screenreader-only">@ScreenreaderDescription</span></a>
+                <a href="#" @onclick="InvokePrevious" @onclick:preventDefault class="pagination__link">
+                    <span class="pagination__link--previous">@PreviousText</span>
+                    <span class="screenreader-only">@ScreenreaderPageDescription </span>
+                </a>
             }
         </li>
+        @foreach (var page in Pages)
+        {
+            <li class="pagination__item
+                @(page.IsActive ? "pagination__item--active" : string.Empty)
+                @(page.IsFirst ? "pagination__item--first" : string.Empty)
+                @(page.IsLast ? "pagination__item--last" : string.Empty)
+                  ">
+                @if (page.IsActive)
+                {
+                    <span class="screenreader-only">@(page.IsActive ? ScreenreaderActivePageDescription : ScreenreaderPageDescription) </span>
+                    @(page.Number)
+                }
+                else
+                {
+                    <a href="#" class="pagination__link" @onclick="@(() => InvokePage(page.Number))" @onclick:preventDefault>
+                        <span class="screenreader-only">@(page.IsActive ? ScreenreaderActivePageDescription : ScreenreaderPageDescription) </span>
+                        @(page.Number)
+                    </a>
+                }
+            </li>
+        }
         <li class="pagination__item pagination__item--next">
-            @*@if (!@NextDisabled)*@
+            @if (NextEnabled)
             {
-            <a href="" @onclick="@InvokeNextt" @onclick:preventDefault class="pagination__link"><span class="pagination__link--previous">@NextText</span><span class="screenreader-only">@ScreenreaderDescription</span></a>
+                <a href="#" @onclick="@InvokeNext" @onclick:preventDefault class="pagination__link">
+                    <span class="pagination__link--previous">@NextText</span>
+                    <span class="screenreader-only">@ScreenreaderPageDescription </span>
+                </a>
             }
         </li>
     </ul>
-    <button @onclick="@InvokeNextt">baaa1</button>
-    <button @onclick="InvokeNextt">baaa2</button>
-    <button @onclick=@InvokeNextt>baaa3</button>
-    <button @onclick=InvokeNextt>baaa4</button>
 </nav>
