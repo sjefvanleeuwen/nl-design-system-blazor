@@ -34,4 +34,3 @@ namespace Blazor.NLDesignSystem.Components.Navigation
         }
     }
 }
-}

@@ -4,7 +4,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 [Navigation](https://nl-design-system.gitlab.io/nl-design-system/componenten/navigation/index.html)
 
 Status: Some features not implemented:
-- Navigatiebalk met breadcrumbs menu en knoppen
+- Navigatiebalk met breadcrumbs menu en knoppen (Blocks part is done)
 - Navigatiebalk met subnavigatie
 - Simpele navigatiebalk met submenu
 - Zijnavigatie

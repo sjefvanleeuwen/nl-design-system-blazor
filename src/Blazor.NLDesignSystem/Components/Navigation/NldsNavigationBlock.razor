@@ -1,0 +1,6 @@
+﻿<div class="@(AutoResize ? "top-nav-autoresize" : string.Empty) 
+            @(Position == Position.Right ? $"top-nav__block {DisplayPosition}" : string.Empty)">
+    <ul class="nav">
+        @ChildContent
+    </ul>
+</div>
