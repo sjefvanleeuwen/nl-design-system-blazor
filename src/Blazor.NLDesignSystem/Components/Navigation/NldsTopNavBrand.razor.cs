@@ -10,6 +10,7 @@ namespace Blazor.NLDesignSystem.Components.Navigation
     {
         [Inject]
         NavigationManager NavigationManager { get; set; }
+
         [Parameter]
         public string HRef { get; set; }
         [Parameter]
@@ -19,9 +20,9 @@ namespace Blazor.NLDesignSystem.Components.Navigation
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        private string icon => Icon.GetDescription<StyleAttribute>();
+        private string DisplayIcon => Icon.GetDescription<StyleAttribute>();
 
-        private string navLinkActive { get; set; }
+        private string NavLinkActive { get; set; }
         private string NavigationUri { get; set; }
 
         protected override Task OnInitializedAsync()
@@ -34,7 +35,7 @@ namespace Blazor.NLDesignSystem.Components.Navigation
         private void LocationChanged(object sender, LocationChangedEventArgs e)
         {
             NavigationUri = new Uri(NavigationManager.Uri).AbsolutePath.TrimStart('/');
-            navLinkActive = (NavigationUri == HRef || NavigationUri == "") ? "nav__link--active" : string.Empty;
+            NavLinkActive = (NavigationUri == HRef || NavigationUri == "") ? "nav__link--active" : string.Empty;
             StateHasChanged();
         }
     }
