@@ -227,20 +227,21 @@
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" PageAction="PageAction" />
     <h3>20 pages - last active</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="20" NumberOfPages="20" PageAction="PageAction" />
-    <h3>20 pages - 10th active and 7 middle numbers</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="7" PageAction="PageAction" />
+    <h3>20 pages - 10th active and an even (4) middle numbers</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="4" PageAction="PageAction" />
+    <h3>20 pages - 10th active and 3 middle numbers</h3>
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="3" PageAction="PageAction" />
     <h3>Andere screenreader informatie</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" PageAction="PageAction" ScreenreaderPageDescription="Page" ScreenreaderActivePageDescription="You are now on page" />
-@code {
-    int ActivePage = 1;
-    private void PageActionInteractive(int page)
-    {
-        ActivePage = page;
-        StateHasChanged();
+    @code {
+        int ActivePage = 1;
+        private void PageActionInteractive(int page)
+        {
+            ActivePage = page;
+            StateHasChanged();
+        }
     }
-}     
     <h3>20 pages - interactive</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="@ActivePage" NumberOfPages="20" PageAction="PageActionInteractive" />
 
 </NldsForm>
-
