@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem", "Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem.Wasm", "Blazor.NLDesignSystem.Wasm\Blazor.NLDesignSystem.Wasm.csproj", "{FB82BF8D-83C2-4803-B83C-B9FC1FE7C413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NLDesignSystem.Site.Components", "Blazor.NLDesignSystem.Site.Components\Blazor.NLDesignSystem.Site.Components.csproj", "{38EAB4E6-CE08-410A-8840-5F3F1695A9B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem.Site.Components", "Blazor.NLDesignSystem.Site.Components\Blazor.NLDesignSystem.Site.Components.csproj", "{38EAB4E6-CE08-410A-8840-5F3F1695A9B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NLDesignSystem.Site.Server", "Blazor.NLDesignSystem.Site.Server\Blazor.NLDesignSystem.Site.Server.csproj", "{A38D1908-4CC9-4203-AE7B-EE3EB6575586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.NLDesignSystem.Site.Server", "Blazor.NLDesignSystem.Site.Server\Blazor.NLDesignSystem.Site.Server.csproj", "{A38D1908-4CC9-4203-AE7B-EE3EB6575586}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
