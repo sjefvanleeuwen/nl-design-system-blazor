@@ -20,6 +20,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore ./src/Blazor.NLDesignSystem
     - name: Build
-      run: dotnet build ./src/Blazor.NLDesignSystemc --configuration Release --no-restore
-    - name: Test
-      run: dotnet test ./src/Blazor.NLDesignSystem --no-restore --verbosity normal
+      run: dotnet build ./src/Blazor.NLDesignSystem --configuration Release --no-restore
+#    - name: Test
+#      run: dotnet test ./src/Blazor.NLDesignSystem --no-restore --verbosity normal
