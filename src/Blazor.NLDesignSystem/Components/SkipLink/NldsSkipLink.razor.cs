@@ -4,6 +4,10 @@ namespace Blazor.NLDesignSystem.Components.SkipLink
 {
     public partial class NldsSkipLink
     {
-        [Parameter] public RenderFragment ChildContent { get; set; }
+        [Parameter]
+        public string ContentId { get; set; } = "content";
+
+        [Parameter] 
+        public RenderFragment ChildContent { get; set; }
     }
 }
