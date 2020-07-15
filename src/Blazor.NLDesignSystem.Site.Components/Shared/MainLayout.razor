@@ -1,10 +1,13 @@
 ﻿@inherits LayoutComponentBase
     <NldsSkiplink>Ga direct naar inhoud</NldsSkiplink>
     <NldsNavigation Color="Color.HemelBlauw">
-        <NldsNavigationBlock>
+        <NldsNavigationBlock HasSubmenu="true">
             <NldsNavigationItem Uri="" Icon="Icon.Home" Title="Home">NL Design System</NldsNavigationItem>
             <NldsNavigationItem Uri="aan-de-slag">Aan de slag</NldsNavigationItem>
-            <NldsNavigationItem Uri="core">Basis</NldsNavigationItem>
+            <NldsNavigationSubmenu Title="BasisMenu" Icon="Icon.Info" DisplayName="<u>BasisMenu</u>">
+                <NldsNavigationItem Uri="core">Basis</NldsNavigationItem>
+                <NldsNavigationItem Uri="#" Icon="Icon.Info">LinkToNowhere</NldsNavigationItem>
+            </NldsNavigationSubmenu>
             <NldsNavigationItem Uri="componenten">Componenten</NldsNavigationItem>
         </NldsNavigationBlock>
         <NldsNavigationBlock Position="Position.Right">

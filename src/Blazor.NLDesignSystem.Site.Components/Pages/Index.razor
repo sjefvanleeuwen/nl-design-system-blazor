@@ -183,10 +183,10 @@
 </NldsForm>
 <h3>Restriction</h3>
 <NldsForm>
-    <NldsInput Identifier="a2" Size="InputSize.Medium" IsDisabled="true">
+    <NldsInput Identifier="a3" Size="InputSize.Medium" IsDisabled="true">
         <Label><NldsFormLabel>Disabled</NldsFormLabel></Label>
     </NldsInput>
-    <NldsInput Identifier="a2" Size="InputSize.Medium" IsRequired="true">
+    <NldsInput Identifier="a4" Size="InputSize.Medium" IsRequired="true">
         <Label><NldsFormLabel><strong>Required</strong></NldsFormLabel></Label>
     </NldsInput>
 </NldsForm>
@@ -204,7 +204,7 @@
     <NldsInput Identifier="g" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium"><Label><NldsFormLabel>Horizontal Label</NldsFormLabel></Label></NldsInput>
 </NldsForm>
 <NldsForm>
-    <NldsInput Identifier="a1" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
+    <NldsInput Identifier="aa1" LabelAlignment="LabelAlignment.Horizontal" Size="InputSize.Medium" ErrorText="U heeft het veld <u>Naam beheerder</u> nog niet ingevuld">
         <Label><NldsFormLabel>Naam Beheerder</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Zappa</NldsFormHint></Hint>
     </NldsInput>
@@ -264,7 +264,7 @@
 <h3>Select with error</h3>
 <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
 <NldsForm>
-    <NldsSelect Identifier="b1" Size="InputSize.Medium" Items="@select2" @bind-Value="@selectValue2" LabelAlignment="LabelAlignment.Horizontal" EmptyValueDescription="--Selecteer iets--" ErrorText="Oops something went wrong.">
+    <NldsSelect Identifier="b2" Size="InputSize.Medium" Items="@select2" @bind-Value="@selectValue2" LabelAlignment="LabelAlignment.Horizontal" EmptyValueDescription="--Selecteer iets--" ErrorText="Oops something went wrong.">
         <Label><NldsFormLabel>Naam Beheerder</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsSelect>
