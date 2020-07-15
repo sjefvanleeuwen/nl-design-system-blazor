@@ -1,13 +1,12 @@
-﻿<div class="collapse">
-    <div @ref="@HeaderRef" class="collapse__header" x-uno-collapse="" x-uno-collapse-target="@Name">
-        <i class="collapse__indicator">
-            <span class="screenreader-only" data-contracted-i18n="@CollapsedText" data-expanded-i18n="@UnfoldedText"></span>
-        </i>
-        <span class="collapse__title">
-            @Title
-        </span>
-    </div>
-    <div class="collapse__details" id="@Name">
-        @Content
-    </div>
+﻿<div @ref="@HeaderRef" class="collapse__header" x-uno-collapse="" @attributes="GetAttributes()">
+    <i class="collapse__indicator">
+        <span class="screenreader-only" data-contracted-i18n="@CollapsedText" data-expanded-i18n="@UnfoldedText"></span>
+    </i>
+    <span class="collapse__title">
+        @Title
+    </span>
 </div>
+@if (ShowContent)
+{
+    @Content
+}

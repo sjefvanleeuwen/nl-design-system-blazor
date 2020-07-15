@@ -6,7 +6,7 @@ namespace Blazor.NLDesignSystem.Components.Form
     public partial class NldsFormHint
     {
         [CascadingParameter(Name = "ElementIdentifier")]
-        public string ElementIdentifier { get; set; }
+        protected string ElementIdentifier { get; set; }
 
         /// <summary>
         /// Optional; if it is encapsulated in an input the cascading value (InputName) is taken over this value

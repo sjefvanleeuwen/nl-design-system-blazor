@@ -53,10 +53,90 @@
 <NldsIcon Icon="icon-magnifier" />
 <NldsIcon Icon="icon-arr-forward" />
 <h2>Collapse</h2>
-<NldsCollapse>
-    <Title>Titel van collapse</Title>
-    <Content>Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.</Content>
-</NldsCollapse>
+<h3>Normal</h3>
+<NldsCollapseWrapper>
+    <NldsCollapse>
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Extra Indent</h3>
+<NldsCollapseWrapper>
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent IsIndented="true">
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>No Background</h3>
+<NldsCollapseWrapper HasBackground="false">
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Simple</h3>
+<NldsCollapseWrapper IsSimple="true">
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Icons</h3>
+<NldsCollapseWrapper UseIcons="true">
+    <NldsCollapse>
+        <Title>Titel van collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit is de inhoud van de collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Grouped</h3>
+<NldsCollapseWrapper GroupName="TestGroup">
+    <NldsCollapse>
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+    <NldsCollapse>
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Other Target</h3>
+<NldsCollapseWrapper>
+    <NldsCollapse Target="Collapse_target">
+        <Title>Titel <u>van</u> collapse</Title>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<h3>Collapse Target</h3>
+<NldsCollapseContent Id="Collapse_target">
+    Dolor set amit
+</NldsCollapseContent>
 <h2>Input</h2>
 <h3>5 Input Types</h3>
 <NldsForm>
