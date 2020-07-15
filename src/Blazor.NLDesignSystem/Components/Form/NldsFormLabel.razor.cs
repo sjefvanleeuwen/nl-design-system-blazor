@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components.Form
 {
-    public partial class NldsLabel
+    public partial class NldsFormLabel
     {
         [CascadingParameter(Name = "ElementIdentifier")]
         protected string ElementIdentifier { get; set; }

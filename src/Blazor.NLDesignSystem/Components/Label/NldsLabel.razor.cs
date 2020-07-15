@@ -1,12 +1,12 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.Badge
+namespace Blazor.NLDesignSystem.Components.Label
 {
-    public partial class NldsBadge
+    public partial class NldsLabel
     {
         [Parameter]
-        public int Number { get; set; }
+        public RenderFragment ChildContent { get; set; }
         [Parameter]
         public Color Color { get; set; }
 
