@@ -9,12 +9,11 @@ This holds the status of each component; if there is an implementation of this c
 - Collapse
 - Form
 - Header
-- Icon
 - Label
 - Navigation
 - Pagination
 - RadioButton (as part of Form)
-- SkipLink
+- Skiplink
 - Timeline
 
 ## Currently not implemented

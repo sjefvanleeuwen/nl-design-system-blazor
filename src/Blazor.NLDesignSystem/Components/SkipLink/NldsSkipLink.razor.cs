@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.SkipLink
+namespace Blazor.NLDesignSystem.Components.Skiplink
 {
-    public partial class NldsSkipLink
+    public partial class NldsSkiplink
     {
         [Parameter]
         public string ContentId { get; set; } = "content";
