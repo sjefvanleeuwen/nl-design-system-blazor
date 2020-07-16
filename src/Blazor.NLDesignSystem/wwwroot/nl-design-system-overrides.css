@@ -3,3 +3,7 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
     /* For an invalid form element diusplayed horizontally with the body set to show the horizontal labels */
     padding-left: 0px;
 }
+
+.definition-list__edit-button.pointer {
+    cursor: pointer;
+}

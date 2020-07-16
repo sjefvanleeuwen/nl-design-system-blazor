@@ -1,10 +1,18 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<li class="definition-list__item">
-    @if (ShowTitle)
-    {
-        <div class="definition-list__title">@((MarkupString)Title)</div>
-    }
-    <div class="definition-list__description">
-        @ChildContent
-    </div>
-</li>
+    <li class="definition-list__item @(ShowHorizontal ? "definition-list__item--horizontal" : string.Empty)">
+        @if (ShowTitle)
+        {
+            <div class="definition-list__title">@((MarkupString)Title)</div>
+        }
+        <div class="definition-list__description">
+            @if (ShowDescription)
+            {
+                @Description
+            }
+
+        </div>
+        @if (ShowAction)
+        {
+            @Action
+        }
+    </li>

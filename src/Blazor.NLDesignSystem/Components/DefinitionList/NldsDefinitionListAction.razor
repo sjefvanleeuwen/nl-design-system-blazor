@@ -1,0 +1,21 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (ShowAsLink)
+{
+    <a class="definition-list__edit-button" href="@Uri">
+        @ChildContent
+        @if (ShowLinkScreenReaderDescription)
+        {
+            <span class="screenreader-only">@LinkScreenReaderDescription</span>
+        }
+    </a>
+}
+else
+{
+<a class="definition-list__edit-button pointer">
+    @ChildContent
+    @if (ShowLinkScreenReaderDescription)
+    {
+        <span class="screenreader-only">@LinkScreenReaderDescription</span>
+    }
+</a>
+}
