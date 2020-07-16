@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -21,6 +21,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blazor.NLDesignSystem\Blazor.NLDesignSystem.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Pages\NewFolder\" />
   </ItemGroup>
 
 </Project>
