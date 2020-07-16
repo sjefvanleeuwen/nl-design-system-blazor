@@ -1,4 +1,5 @@
-﻿<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
     <CascadingValue Name="ElementIdentifier" Value="@Identifier">
         @if (LabelAlignment == LabelAlignment.Horizontal)
         {
@@ -27,9 +28,9 @@
             required="@IsRequired">
         @if (ShowEmptyValue)
         {
-        <option value="">@EmptyValueDescription</option>
+            <option value="">@EmptyValueDescription</option>
         }
-        @foreach(var item in Items)
+        @foreach (var item in Items)
         {
             <option value="@item.Value" disabled="@item.IsDisabled" selected="@(item.Value == Value)">@((MarkupString)item.Description)</option>
         }

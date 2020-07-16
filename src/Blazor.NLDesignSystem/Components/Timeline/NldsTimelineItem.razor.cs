@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.Timeline
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsTimelineItem
     {

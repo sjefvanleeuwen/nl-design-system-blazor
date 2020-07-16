@@ -1,6 +1,7 @@
-﻿<div class="collapse 
-     @(HasBackground ? string.Empty : "collapse--no-background") 
-     @(IsSimple ? "collapse--simple" : string.Empty) 
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="collapse
+     @(HasBackground ? string.Empty : "collapse--no-background")
+     @(IsSimple ? "collapse--simple" : string.Empty)
      @(UseIcons ? "collapse--icons" : string.Empty)">
     <CascadingValue IsFixed="true" Name="GroupName" Value="@GroupName">
         @ChildContent

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 
-namespace Blazor.NLDesignSystem.Components.Navigation
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsNavigationSubmenu
     {

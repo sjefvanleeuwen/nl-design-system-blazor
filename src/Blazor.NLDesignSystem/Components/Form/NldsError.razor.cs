@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.Form
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsError
     {

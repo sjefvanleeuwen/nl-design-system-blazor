@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.Skiplink
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsSkiplink
     {

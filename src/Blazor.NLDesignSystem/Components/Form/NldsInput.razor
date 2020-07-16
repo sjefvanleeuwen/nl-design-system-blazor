@@ -1,4 +1,5 @@
-﻿<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
     <CascadingValue Name="ElementIdentifier" Value="@Identifier">
         @if (LabelAlignment == LabelAlignment.Horizontal)
         {

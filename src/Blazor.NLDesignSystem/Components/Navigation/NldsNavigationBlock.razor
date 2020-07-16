@@ -1,4 +1,5 @@
-﻿<div class="@(AutoResize ? "top-nav-autoresize" : string.Empty) 
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="@(AutoResize ? "top-nav-autoresize" : string.Empty)
             @(Position == Position.Right ? $"top-nav__block {DisplayPosition}" : string.Empty)">
     <ul @ref="SubmenuReference" class="nav @(HasSubmenu ? "nav--submenu" : string.Empty)">
         @ChildContent

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace Blazor.NLDesignSystem.Components.Navigation
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsNavigation
     {

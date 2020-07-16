@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 
-namespace Blazor.NLDesignSystem.Components.Timeline
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsTimeline
     {

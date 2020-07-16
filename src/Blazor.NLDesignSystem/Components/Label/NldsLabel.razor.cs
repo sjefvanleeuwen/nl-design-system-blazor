@@ -1,7 +1,7 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.Label
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsLabel
     {

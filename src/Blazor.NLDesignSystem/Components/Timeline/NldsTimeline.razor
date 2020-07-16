@@ -1,4 +1,5 @@
-﻿<ul class="list list--timeline@(_indicateStart ? " list--timeline-no-start" : "") @(_indicateEnd ? " list--timeline-no-end" : "")">
+﻿@namespace Blazor.NLDesignSystem.Components
+<ul class="list list--timeline@(_indicateStart ? " list--timeline-no-start" : "") @(_indicateEnd ? " list--timeline-no-end" : "")">
     @foreach (var item in Items)
     {
         <TimelineItem Number="@item.Number" Title="@item.Title" Content="@item.Content" />

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor.NLDesignSystem.Components.Button
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsButtonIcon
     {

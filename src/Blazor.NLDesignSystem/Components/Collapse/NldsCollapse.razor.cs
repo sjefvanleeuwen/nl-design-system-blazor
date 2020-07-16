@@ -3,7 +3,7 @@ using Microsoft.JSInterop;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Blazor.NLDesignSystem.Components.Collapse
+namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsCollapse
     {
