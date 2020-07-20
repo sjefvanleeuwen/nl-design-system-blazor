@@ -4,8 +4,13 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 [Form](https://nl-design-system.gitlab.io/nl-design-system/componenten/form/index.html)
 
 Status: Some features not implemented:
+- HTML5 input types (mulitple field grouped values & label optional)
 - Bestanden upload
 
 [Radiobutton](https://nl-design-system.gitlab.io/nl-design-system/componenten/radio/index.html)
 
 Status: Fully implemented
+
+[Switch](https://nl-design-system.gitlab.io/nl-design-system/componenten/switch/index.html)
+
+Status Fully Implemented

@@ -60,6 +60,7 @@ namespace Blazor.NLDesignSystem
         /// A check box allowing single values to be selected/deselected. 	
         /// </summary>
         [InputControl("input__control--checkbox")]
+        [Style("checkbox")]
         Checkbox,
         /// <summary>
         /// A control for specifying a color; opening a color picker when active in supporting browsers.

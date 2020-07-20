@@ -1,0 +1,36 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+        @if (LabelAlignment == LabelAlignment.Horizontal)
+        {
+            <div>
+                @Label
+                @Hint
+            </div>
+        }
+        else
+        {
+            @Label
+            @Hint
+        }
+        @if (!IsValid)
+        {
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
+        }
+    </CascadingValue>
+    <label class="switch">
+        <input id="@Identifier"
+               type="@DisplayType"
+               class="switch__input"
+               checked="@Value"
+               @onchange="@(() => Value = !Value)"
+               @onchange:preventDefault
+               @attributes="GetAttributes()"
+               disabled="@IsDisabled"
+               required="@IsRequired" />
+        <span class="switch__slider">
+            <span class="switch__state switch__state--on">@OnText</span>
+            <span class="switch__state switch__state--off">@OffText</span>
+        </span>
+    </label>
+</div>

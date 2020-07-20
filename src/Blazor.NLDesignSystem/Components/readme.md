@@ -18,6 +18,7 @@ This holds the status of each component; if there is an implementation of this c
 - RadioButton (as part of Form)
 - Section
 - Skiplink
+- Switch (as part of Form)
 - Timeline
 
 ## Currently not implemented
@@ -38,7 +39,6 @@ This holds the status of each component; if there is an implementation of this c
 - Notification
 - Quote
 - Spinner
-- Switch
 - Table
 - Tabs
 - Tooltip

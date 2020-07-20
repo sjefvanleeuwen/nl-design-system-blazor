@@ -272,6 +272,18 @@
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsSelect>
 </NldsForm>
+<h2>Switch</h2>
+@code {
+    bool TheBoolean = true;
+}
+<NldsForm>
+    <NldsSwitch Identifier="a1.1" ErrorText="U dient akkoord te gaan" OnText="Akkoord" OffText="Niet Akkoord" @bind-Value="@TheBoolean">
+        <Label><NldsFormLabel>Switch Voorbeeld</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Lammers</NldsFormHint></Hint>
+    </NldsSwitch>
+</NldsForm>
+@TheBoolean.ToString()
+
 <h2>Pagination</h2>
 @code {
     string actionDone = string.Empty;

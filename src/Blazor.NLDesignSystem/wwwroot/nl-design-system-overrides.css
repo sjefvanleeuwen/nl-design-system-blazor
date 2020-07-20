@@ -7,3 +7,7 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
 .definition-list__edit-button.pointer {
     cursor: pointer;
 }
+
+.switch__state {
+    white-space: nowrap;
+}
