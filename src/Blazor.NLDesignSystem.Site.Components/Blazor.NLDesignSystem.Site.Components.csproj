@@ -23,9 +23,4 @@
     <ProjectReference Include="..\Blazor.NLDesignSystem\Blazor.NLDesignSystem.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Pages\NewFolder\" />
-  </ItemGroup>
-
 </Project>

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Primitives;
 
 namespace Blazor.NLDesignSystem.Components
 {
