@@ -10,6 +10,8 @@ This holds the status of each component; if there is an implementation of this c
 - DefinitionList
 - Form
 - Header
+- Hint
+- Icon (Usable component that is not a real Component)
 - Label
 - Navigation
 - Pagination
@@ -29,7 +31,6 @@ This holds the status of each component; if there is an implementation of this c
 - Footer
 - File (will be part of Form)
 - Filter
-- Hint
 - Image
 - List
 - Modal

@@ -15,8 +15,6 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Title { get; set; }
 
-        private string DisplayIcon => Icon.GetDescription<StyleAttribute>();
-
         private IDictionary<string, object> GetAttributes()
         {
             var attributes = new Dictionary<string, object>();
