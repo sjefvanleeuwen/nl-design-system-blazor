@@ -1,5 +1,6 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components
@@ -53,9 +54,11 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
+        private string InputControlType => InputType.Select.GetDescription<InputControlAttribute>();
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string LabelAlignmentStyle => LabelAlignment.GetDescription<StyleAttribute>();
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
+
 
         private IDictionary<string, object> GetAttributes()
         {

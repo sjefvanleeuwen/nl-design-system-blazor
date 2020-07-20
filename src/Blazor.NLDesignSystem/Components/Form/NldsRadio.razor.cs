@@ -43,6 +43,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
+        private string InputControlType => InputType.Radio.GetDescription<InputControlAttribute>();
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string ItemAlignmentStyle => ItemAlignment.GetDescription<StyleAttribute>();
 

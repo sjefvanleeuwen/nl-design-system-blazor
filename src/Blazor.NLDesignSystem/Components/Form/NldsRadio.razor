@@ -17,12 +17,12 @@
         @foreach (var item in Items)
         {
             counter++;
-            @*The id is a combination between the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
+            @*The id is a combination of the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
             <div class="input__group input__group--radio">
                 <input type="radio"
                        name="@Identifier"
                        id="@(Identifier)_@counter"
-                       class="input__control input__control--radio"
+                       class="input__control @InputControlType"
                        checked="@(Value == item.Value)"
                        @onchange="@(() => Value = item.Value)"
                        @onchange:preventDefault

@@ -49,10 +49,11 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
+        private string DisplayType => Type.GetDescription<StyleAttribute>();
+        private string InputControlType => Type.GetDescription<InputControlAttribute>();
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string LabelAlignmentStyle => LabelAlignment.GetDescription<StyleAttribute>();
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
-        private string DisplayType => Type.GetDescription<StyleAttribute>();
 
         private IDictionary<string, object> GetAttributes()
         {
