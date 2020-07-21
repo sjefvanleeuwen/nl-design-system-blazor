@@ -1,6 +1,5 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
-using System;
 using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components
