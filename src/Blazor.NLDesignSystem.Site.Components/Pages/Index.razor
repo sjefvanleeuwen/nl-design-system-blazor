@@ -238,6 +238,7 @@
         <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
     </NldsRadio>
 </NldsForm>
+<h2>Select</h2>
 @code {
     string selectValue1 = "aanvrager_met_toeslagpartner";
     List<SelectItem> select1 = new List<SelectItem>() {
@@ -253,7 +254,6 @@
         new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
     };
 }
-<h2>Select</h2>
 <h3>2-way binding</h3>
 <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
 <NldsForm>
@@ -272,6 +272,53 @@
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsSelect>
 </NldsForm>
+
+@code {
+    IEnumerable<string> CheckBoxValues1 = new List<string>() { "alleenstaande" };
+    List<CheckboxItem> CheckBox1 = new List<CheckboxItem>() {
+        new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+        new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+        new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+    };
+
+    IEnumerable<string> CheckBoxValues2 = new List<string>() { "alleenstaande" };
+    List<CheckboxItem> CheckBox2 = new List<CheckboxItem>() {
+        new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+        new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+        new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+    };
+}
+<h2>Checkbox</h2>
+<h3>2-way binding</h3>
+<p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
+<NldsForm>
+    <NldsCheckbox Identifier="ch1" Items="@CheckBox1" @bind-Values="@CheckBoxValues1">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var value in CheckBoxValues1 ?? new List<string>())
+    {
+        <text>@((MarkupString)CheckBox1.FirstOrDefault(s => s.Value == value).Description)</text>
+        <br />
+    }
+</NldsForm>
+
+<h3>Checkbox with error</h3>
+<p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
+<NldsForm>
+    <NldsCheckbox Identifier="ch2" Items="@CheckBox2" @bind-Values="@CheckBoxValues2" ItemAlignment="ItemAlignment.Horizontal" ErrorText="Oops something went wrong.">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var value in CheckBoxValues2 ?? new List<string>())
+    {
+        <text>@((MarkupString)CheckBox2.FirstOrDefault(s => s.Value == value).Description)</text>
+        <br />
+    }
+</NldsForm>
+
 <h2>Switch</h2>
 @code {
     bool TheBoolean = true;

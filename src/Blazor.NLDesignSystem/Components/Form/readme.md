@@ -14,3 +14,9 @@ Status: Fully implemented
 [Switch](https://nl-design-system.gitlab.io/nl-design-system/componenten/switch/index.html)
 
 Status Fully Implemented
+
+[Checkbox](https://nl-design-system.gitlab.io/nl-design-system/componenten/checkbox/index.html)
+
+Status: Some features not implemented:
+- Geneste checkboxen
+- Geneste checkboxen - tabel

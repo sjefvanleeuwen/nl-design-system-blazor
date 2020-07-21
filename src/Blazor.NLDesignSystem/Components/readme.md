@@ -6,12 +6,13 @@ This holds the status of each component; if there is an implementation of this c
 
 - Badge
 - Button
+- Checkbox (as part of Form)
 - Collapse
 - DefinitionList
 - Form
 - Header
 - Hint
-- Icon (Usable component that is not a real Component)
+- Icon (a usable component that is not a real Component in NL-Desing-System)
 - Label
 - Navigation
 - Pagination
@@ -27,7 +28,6 @@ This holds the status of each component; if there is an implementation of this c
 - BottomBar
 - Card
 - Chart
-- Checkbox (will be part of Form)
 - Combobox (will be part of Form)
 - Footer
 - File (will be part of Form)

@@ -1,0 +1,34 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@{
+    var counter = 0;
+}
+
+<fieldset class="input @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+        @Legend
+        @Hint
+        @if (!IsValid)
+        {
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
+        }
+    </CascadingValue>
+    <div class="@ItemAlignmentStyle">
+        @*When empty the wrapping div is not there in the example. But it makes no difference for the element*@
+        @foreach (var item in Items)
+        {
+            counter++;
+            @*The id is a combination of the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
+            <div class="input__group input__group--checkbox">
+                <input type="checkbox"
+                       name="@(Identifier)[]"
+                       id="@(Identifier)_@counter"
+                       class="input__control @InputControlType"
+                       checked="@(Values.Contains(item.Value))"
+                       @onchange="@(() => ToggleValue(item.Value))"
+                       @onchange:preventDefault
+                       disabled="@item.IsDisabled">
+                <label class="input__label input__label--checkbox" for="@(Identifier)_@counter">@((MarkupString)item.Description) @item.IsDisabled</label>
+            </div>
+        }
+    </div>
+</fieldset>
