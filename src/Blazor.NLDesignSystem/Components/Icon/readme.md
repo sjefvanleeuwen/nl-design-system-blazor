@@ -5,5 +5,6 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 Status: Fully implemented
 
-Additional Comment: Not really a component but still part of the design system with a list of icons.
-  Still it is easier to use than making (simple) html.
+Additional: 
+	Not really a component but still part of the design system with a list of icons.
+	Still it is easier to use than making (simple) html.

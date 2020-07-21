@@ -4,6 +4,7 @@ This holds the status of each component; if there is an implementation of this c
 
 ## Currently implemented
 
+- Backlink
 - Badge
 - Button
 - Card
@@ -26,7 +27,6 @@ This holds the status of each component; if there is an implementation of this c
 
 ## Currently not implemented
 
-- Backlink
 - BottomBar
 - Chart
 - Combobox (will be part of Form)
