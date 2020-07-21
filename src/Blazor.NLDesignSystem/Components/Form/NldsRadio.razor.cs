@@ -6,11 +6,6 @@ namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsRadio
     {
-        /// <summary>
-        /// Optional; overrides the default value; if the input contains a hint the value "hint_" + Id will be used by default
-        /// </summary>
-        [Parameter]
-        public string AriaDescribedBy { get; set; }
         [Parameter]
         public string ErrorText { get; set; }
         [Parameter]
@@ -46,19 +41,6 @@ namespace Blazor.NLDesignSystem.Components
         private string InputControlType => InputType.Radio.GetDescription<InputControlAttribute>();
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string ItemAlignmentStyle => ItemAlignment.GetDescription<StyleAttribute>();
-
-        private IDictionary<string, object> GetAttributes()
-        {
-            var attributes = new Dictionary<string, object>();
-
-            var tagAriaDescribedby = AriaDescribedBy ?? (Hint != null && !string.IsNullOrWhiteSpace(Identifier) ? $"hint_{Identifier}" : null) ?? string.Empty;
-            if (tagAriaDescribedby != string.Empty)
-            {
-                attributes["aria-describedby"] = tagAriaDescribedby;
-            }
-
-            return attributes;
-        }
     }
 
     public class RadioItem
