@@ -13,6 +13,7 @@ This holds the status of each component; if there is an implementation of this c
 - Header
 - Hint
 - Icon (a usable component that is not a real Component in NL-Desing-System)
+- Image
 - Label
 - Navigation
 - Pagination
@@ -32,7 +33,6 @@ This holds the status of each component; if there is an implementation of this c
 - Footer
 - File (will be part of Form)
 - Filter
-- Image
 - List
 - Modal
 - Meta
