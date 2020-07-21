@@ -1,0 +1,6 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<ul class="list list--card @(Small ? "list--card-small" : string.Empty)">
+    <CascadingValue Name="Small" Value="Small">
+        @ChildContent
+    </CascadingValue>
+</ul>

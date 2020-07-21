@@ -6,6 +6,7 @@ This holds the status of each component; if there is an implementation of this c
 
 - Badge
 - Button
+- Card
 - Checkbox (as part of Form)
 - Collapse
 - DefinitionList
@@ -27,7 +28,6 @@ This holds the status of each component; if there is an implementation of this c
 
 - Backlink
 - BottomBar
-- Card
 - Chart
 - Combobox (will be part of Form)
 - Footer

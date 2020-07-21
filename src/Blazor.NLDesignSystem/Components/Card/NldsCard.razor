@@ -1,0 +1,11 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<li class="card @(Small ? "card--small" : string.Empty)">
+    <a href="@Uri" class="card__content">
+        <div class="card__thumb @(Square ? "card__thumb--square" : string.Empty)" style="background-image: url('@ImageUri')"></div>
+        <div class="card__body">
+            <span class="card__title">
+                @ChildContent
+            </span>
+        </div>
+    </a>
+</li>
