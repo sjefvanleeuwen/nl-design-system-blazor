@@ -33,8 +33,7 @@
 
 
   <ItemGroup>
-    <None Include="wwwroot\interop\collapse.js" />
-    <None Include="wwwroot\interop\navigation.js" />
+    <None Include="wwwroot\interop\interop.js" />
   </ItemGroup>
 
 </Project>
