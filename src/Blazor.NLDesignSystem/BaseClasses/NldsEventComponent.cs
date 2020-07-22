@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
@@ -20,7 +19,8 @@ namespace Blazor.NLDesignSystem.Components
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
-            if (firstRender) {
+            if (firstRender)
+            {
                 await SetEventListeners();
             }
             await base.OnAfterRenderAsync(firstRender);

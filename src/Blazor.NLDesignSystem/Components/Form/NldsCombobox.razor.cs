@@ -1,7 +1,6 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -108,7 +107,7 @@ namespace Blazor.NLDesignSystem.Components
                     var comboboxSelectItem = JsonSerializer.Deserialize<ComboboxSelectItem>(eventJson, jsonOptions);
                     Value = comboboxSelectItem.Data;
                     if (OnComboboxSelect.HasDelegate)
-                        await OnComboboxSelect.InvokeAsync(comboboxSelectItem); 
+                        await OnComboboxSelect.InvokeAsync(comboboxSelectItem);
                     break;
             }
         }

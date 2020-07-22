@@ -34,8 +34,6 @@ namespace Blazor.NLDesignSystem.Components
         public RenderFragment Hint { get; set; }
 
         //2-way binding
-        private bool _value;
-
         [Parameter]
         public bool Value
         {
@@ -47,7 +45,7 @@ namespace Blazor.NLDesignSystem.Components
                 ValueChanged.InvokeAsync(value);
             }
         }
-
+        private bool _value;
         [Parameter]
         public EventCallback<bool> ValueChanged { get; set; }
 

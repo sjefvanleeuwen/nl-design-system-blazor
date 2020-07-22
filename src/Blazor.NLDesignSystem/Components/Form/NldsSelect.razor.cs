@@ -36,8 +36,6 @@ namespace Blazor.NLDesignSystem.Components
         public RenderFragment Hint { get; set; }
 
         //2-way binding
-        private string _value;
-
         [Parameter]
         public string Value
         {
@@ -49,7 +47,7 @@ namespace Blazor.NLDesignSystem.Components
                 ValueChanged.InvokeAsync(value);
             }
         }
-
+        private string _value;
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
