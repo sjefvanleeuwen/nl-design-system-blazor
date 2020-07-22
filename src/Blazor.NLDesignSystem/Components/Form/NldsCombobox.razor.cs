@@ -1,6 +1,7 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -11,7 +12,6 @@ namespace Blazor.NLDesignSystem.Components
     {
         [Inject]
         private IJSRuntime JSRuntime { get; set; }
-
         /// <summary>
         /// Optional; overrides the default value; if the input contains a hint the value "hint_" + Id will be used by default
         /// </summary>
@@ -29,13 +29,10 @@ namespace Blazor.NLDesignSystem.Components
         public bool IsRequired { get; set; }
         [Parameter]
         public LabelAlignment LabelAlignment { get; set; }
-
         //The Id used to register the elemtne in javascript. Will be the id of the element is not provided
         [Parameter]
         public string RegistrationId { get => _registrationId ?? Identifier; set => _registrationId = value; }
-
         private string _registrationId;
-
         [Parameter]
         public InputSize Size { get; set; }
 
@@ -43,8 +40,6 @@ namespace Blazor.NLDesignSystem.Components
         public RenderFragment Label { get; set; }
         [Parameter]
         public RenderFragment Hint { get; set; }
-
-        public ElementReference ComboboxReference { get; set; }
 
         //2-way binding
         [Parameter]
@@ -58,30 +53,20 @@ namespace Blazor.NLDesignSystem.Components
                 ValueChanged.InvokeAsync(value);
             }
         }
-
         private string _value;
-
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
+
         [Parameter]
         public EventCallback<ComboboxSelectItem> OnComboboxSelect { get; set; }
 
-        public InputType Type => InputType.Combobox;
-
-        public DotNetObjectReference<NldsCombobox> JSObjectRef { get; set; }
-
-        protected override void OnInitialized()
-        {
-            JSObjectRef = DotNetObjectReference.Create(this);
-            base.OnInitialized();
-        }
+        public ElementReference ComboboxReference { get; set; }
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
                 await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, RegistrationId, Items);
-                await SetEventListeners();
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -91,6 +76,7 @@ namespace Blazor.NLDesignSystem.Components
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string LabelAlignmentStyle => LabelAlignment.GetDescription<StyleAttribute>();
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
+        public InputType Type => InputType.Combobox;
 
         private IDictionary<string, object> GetAttributes()
         {
@@ -105,22 +91,14 @@ namespace Blazor.NLDesignSystem.Components
             return attributes;
         }
 
-        private async Task SetEventListeners()
+        protected override async Task SetEventListeners()
         {
-            //if (OnComboboxSelect.HasDelegate) 
             //always set the combobox-select callback. It sets the value after selecting.
-                await SetEventListener("combobox-select");
-        }
-
-        private async Task SetEventListener(string eventName)
-        {
-            if (JSRuntime == null)
-                return;
-            await JSRuntime.InvokeVoidAsync("setEventListener", "combobox", eventName, ComboboxReference, JSObjectRef);
+            await SetEventListener("combobox-select", ComboboxReference);
         }
 
         [JSInvokable]
-        public async Task EventCallback(string eventName, string eventJson)
+        public override async Task EventCallback(string eventName, string eventJson)
         {
             var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
@@ -133,7 +111,7 @@ namespace Blazor.NLDesignSystem.Components
                         await OnComboboxSelect.InvokeAsync(comboboxSelectItem); 
                     break;
             }
-        }  
+        }
     }
 
     public class ComboboxSelectItem

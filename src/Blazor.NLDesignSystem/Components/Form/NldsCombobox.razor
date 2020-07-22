@@ -1,4 +1,5 @@
-﻿@namespace Blazor.NLDesignSystem.Components
+﻿@inherits NldsEventComponent
+@namespace Blazor.NLDesignSystem.Components
 <div @ref="ComboboxReference" class="input combobox @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
     <CascadingValue Name="ElementIdentifier" Value="@Identifier">
         @if (LabelAlignment == LabelAlignment.Horizontal)

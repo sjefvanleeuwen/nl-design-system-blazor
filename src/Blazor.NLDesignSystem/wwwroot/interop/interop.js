@@ -3,17 +3,7 @@
 window.NlDesignSystemBlazor = window.NlDesignSystemBlazor || {};
 window.NlDesignSystemBlazor.elements = [];
 
-function setEventListener(type, eventName, handler, JSObjectRef) {
-  /*switch (type) {
-    case "combobox":
-      {
-        var element = this.getComboboxById(id);
-      }
-      break;
-    default:
-      break;
-  }*/
-
+function setEventListener(eventName, handler, JSObjectRef) {
   let listener = function (e) {
     JSObjectRef.invokeMethodAsync("EventCallback", eventName, JSON.stringify(e));
   };
