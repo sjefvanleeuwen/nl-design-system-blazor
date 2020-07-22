@@ -63,6 +63,12 @@ namespace Blazor.NLDesignSystem
         [Style("checkbox")]
         Checkbox,
         /// <summary>
+        /// A input field with a selection from a predefined list of values. 	
+        /// </summary>
+        [InputControl("input__control--text input__control--select")]
+        [Style("text")]
+        Combobox,
+        /// <summary>
         /// A control for specifying a color; opening a color picker when active in supporting browsers.
         /// </summary>
         [InputControl("input__control--text")]

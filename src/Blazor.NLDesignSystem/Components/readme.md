@@ -1,6 +1,6 @@
 # Implementation status
 Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/nl-design-system/index.html) version 0.1.1.
-This holds the status of each component; if there is an implementation of this component or not.
+This holds the status of the components; if there is an implementation of this component or not.
 
 ## Currently implemented
 
@@ -10,6 +10,7 @@ This holds the status of each component; if there is an implementation of this c
 - Card
 - Checkbox (as part of Form)
 - Collapse
+- Combobox (as part of Form)
 - DefinitionList
 - Form
 - Header
@@ -29,10 +30,9 @@ This holds the status of each component; if there is an implementation of this c
 
 - BottomBar
 - Chart
-- Combobox (will be part of Form)
 - Footer
-- File (will be part of Form)
 - Filter
+- File (will be part of Form)
 - List
 - Modal
 - Meta

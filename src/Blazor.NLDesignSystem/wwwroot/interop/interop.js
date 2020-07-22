@@ -1,22 +1,76 @@
-﻿//Combobox
+﻿//Event listeners
 
-<script>
-  System.import('/uno/components/form/combobox.js').then(function (module) {
-        var combobox = new module.Combobox(document.getElementById('example_combobox'));
-        combobox.allowUnknown = false;
-        combobox.data = data; // your data
-    });
+window.NlDesignSystemBlazor = window.NlDesignSystemBlazor || {};
+window.NlDesignSystemBlazor.elements = [];
 
-</script>
+function setEventListener(type, eventName, handler, JSObjectRef) {
+  /*switch (type) {
+    case "combobox":
+      {
+        var element = this.getComboboxById(id);
+      }
+      break;
+    default:
+      break;
+  }*/
 
+  let listener = function (e) {
+    JSObjectRef.invokeMethodAsync("EventCallback", eventName, JSON.stringify(e));
+  };
+  switch (eventName) {
+    case "combobox-select": handler.addEventListener(eventName, listener);
+    
+    break;
+  }
+}
 
+function getElementById (id, unobstrusive = false) {
+  let elementHolder = window.NlDesignSystemBlazor.elements.find(e => e.id === id);
+  if (!elementHolder) {
+    if (unobstrusive) return null;
+    throw "Couldn't find the element with id: " + id + " elements.length: " + window.NlDesignSystemBlazor.elements.length;
+  }
+  else if (!elementHolder.element) {
+    if (unobstrusive) return null;
+    throw "element is null for elementHolder: " + elementHolder.id;
+  }
+  return elementHolder.element;
+}
+
+function addElement(id, element, registrationId) {
+    var oldElement = getElementById(id, true);
+    if (oldElement != null) {
+       window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
+       oldElement.dispose();
+    }
+    window.NlDesignSystemBlazor.elements.push({ id: registrationId, element: element });
+}
 
 //Collapse
 
 function collapse(el) {
-    System.import('_content/Blazor.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
-        new module.Collapse(el);
-    });
+  System.import('_content/Blazor.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
+    new module.Collapse(el);
+  });
+}
+
+//Combobox
+
+var comboboxPrefix = "combobox_";
+
+function getComboboxById(id) {
+  var retrievalId = comboboxPrefix + id;
+  return getElementById(retrievalId);
+}
+
+async function combobox(el, id, dataArray) {
+  await System.import('_content/Blazor.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
+    var combobox = new module.Combobox(el);
+    combobox.allowUnknown = false;
+    combobox.data = dataArray;
+    var registrationId = comboboxPrefix + id;
+    addElement(id, combobox, registrationId);
+  });
 }
 
 //Navigation

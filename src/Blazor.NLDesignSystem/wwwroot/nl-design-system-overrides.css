@@ -11,3 +11,7 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
 .switch__state {
     white-space: nowrap;
 }
+
+.input--invalid .combobox__icon {
+    left: 3.4rem;
+}
