@@ -27,6 +27,7 @@ This holds the status of the components; if there is an implementation of this c
 - Spinner
 - Switch (as part of Form)
 - Timeline
+- Tooltip
 
 ## Currently not implemented
 
@@ -41,5 +42,4 @@ This holds the status of the components; if there is an implementation of this c
 - Quote
 - Table
 - Tabs
-- Tooltip
 - Video

@@ -1,4 +1,6 @@
-﻿//Event listeners
+﻿//////
+//Event listeners
+//////
 
 window.NlDesignSystemBlazor = window.NlDesignSystemBlazor || {};
 window.NlDesignSystemBlazor.elements = [];
@@ -35,7 +37,9 @@ function addElement(id, element, registrationId) {
     window.NlDesignSystemBlazor.elements.push({ id: registrationId, element: element });
 }
 
+//////
 //Collapse
+//////
 
 function collapse(el) {
   System.import('_content/Blazor.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
@@ -43,7 +47,9 @@ function collapse(el) {
   });
 }
 
+//////
 //Combobox
+//////
 
 var comboboxPrefix = "combobox_";
 
@@ -62,7 +68,9 @@ async function combobox(el, id, dataArray) {
   });
 }
 
+//////
 //Navigation
+//////
 
 function navigationSubmenu(el) {
   System.import('_content/Blazor.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
@@ -81,6 +89,18 @@ function navitationAutoResize() {
   });
 }
 
+//////
 //Notification
+//////
 
-//Done in Blazor, not javascript needed
+//Done in Blazor, no javascript needed
+
+//////
+//Tooltip
+//////
+
+function tooltip(el) {
+  System.import('_content/Blazor.NLDesignSystem/dist/components/tooltip/tooltip.js').then(function (module) {
+    new module.Tooltip(el);
+  });
+}

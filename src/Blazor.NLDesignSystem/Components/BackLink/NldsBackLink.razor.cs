@@ -24,6 +24,5 @@ namespace Blazor.NLDesignSystem.Components
 
             return attributes;
         }
-
     }
 }
