@@ -6,15 +6,10 @@ The NL Design System is a collection of reusable components, with which you can 
 
 # Status
 
-The project is in early stage currently, but expanded almost daily. Feel free to follow the project and receive updates as they arrive. The following components are available:
+This project componentized mostly all of the components available for NL-DESIGN-SYSTEM
+For a complete up to date status, please visit:
 
-* Badges
-* Buttons
-* Collapsible
-* Radio Buttons
-* Form Input
-* TopNav (flat, no hierarchy yet)
-* Header
+![Available Components](./src/Blazor.NLDesignSystem/Components/readme.md)
 
 # Installation
 
