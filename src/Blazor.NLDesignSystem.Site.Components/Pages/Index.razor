@@ -472,7 +472,7 @@
         "grijs-5, #999999",
         "grijs-6, #696969",
         "grijs-7, #535353"
-             };
+                 };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -488,3 +488,27 @@
     <DisplayText>Zoals bijvoorbeeld deze tekst die nog geladen moet worden. Het element waar de <span lang="en-US">spinner</span> op verschijnt krijgt ook een lichtere <span lang="en-US">opacity</span>.</DisplayText>
     <ScreenReaderText>Aan het laden</ScreenReaderText>
 </NldsSpinner>
+<h3>Notifications</h3>
+<NldsNotification Type="Notification.Info" TypeText="Ter <u>Info</u>rmatie" Title="Voor <u>de</u> veiligheid">
+    Vanwege de veiligheid sturen we u het <u>wachtwoord</u> en tokengenerator in 2 aparte enveloppen.
+</NldsNotification>
+<NldsNotification Type="Notification.Warning" TypeText="LET OP" Title="Bevoegd gezag moet dit document ondertekenen">
+    Zonder handtekening en kopie van het identiteitsbewijs van het bevoegd gezag nemen we de aanvraag niet in behandeling.
+</NldsNotification>
+<NldsNotification Type="Notification.Success" TypeText="GELUKT" Title="Aanvraag ontvangen">
+    Wij hebben uw aanvraag ontvangen en nemen deze zo snel mogelijk in behandeling.
+</NldsNotification>
+<NldsNotification Type="Notification.Error" TypeText="STORING" Title="Er gaat iets niet helemaal lekker">
+    De flux capacitor heeft de geest gegeven.
+</NldsNotification>
+<NldsNotification Type="Notification.Warning" TypeText="Bugs" Title="Eh, what's up doc?" @ref="@CloseDoc" />
+<h3>With Close button</h3>
+@code {
+    NldsNotification CloseDoc;
+    private void Close()
+    {
+        CloseDoc.Close();
+    }
+}
+<button @onclick="Close">An external button to close the "Bugs" notification</button>
+<NldsNotification Type="Notification.Error" TypeText="Boom" Title="ACME Dynamite" CloseButtonText="Sl<u>u</u>it" />

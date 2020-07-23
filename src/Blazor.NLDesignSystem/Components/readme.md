@@ -19,6 +19,7 @@ This holds the status of the components; if there is an implementation of this c
 - Image
 - Label
 - Navigation
+- Notification
 - Pagination
 - RadioButton (as part of Form)
 - Section
@@ -37,7 +38,6 @@ This holds the status of the components; if there is an implementation of this c
 - List
 - Modal
 - Meta
-- Notification
 - Quote
 - Table
 - Tabs

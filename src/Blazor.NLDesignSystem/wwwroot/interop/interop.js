@@ -9,7 +9,6 @@ function setEventListener(eventName, handler, JSObjectRef) {
   };
   switch (eventName) {
     case "combobox-select": handler.addEventListener(eventName, listener);
-    
     break;
   }
 }
@@ -81,3 +80,7 @@ function navitationAutoResize() {
     }
   });
 }
+
+//Notification
+
+//Done in Blazor, not javascript needed

@@ -1,0 +1,23 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (!IsClosed)
+{
+    <div class="notification notification@(NotificationExtension)">
+        <div class="notification__content">
+            <div class="notification__type">@((MarkupString)TypeText)</div>
+            <h2 class="notification__title">@((MarkupString)Title)</h2>
+            @if (ShowContent)
+            {
+                <span>
+                    @ChildContent
+                </span>
+            }
+        </div>
+        @if (ShowCloseButton)
+        {
+            <button class="notification__close-button" @onclick="Toggle">
+                <i class="icon icon-cross"></i>
+                @((MarkupString)CloseButtonText)
+            </button>
+        }
+    </div>
+}
