@@ -1,0 +1,34 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (IsPartOfList)
+{
+    <li class="file">
+        <i class="file__icon icon icon-document"></i>
+        <div class="file__data">
+            <div class="file__filename">
+                <strong class="file__title break-all">@FileName</strong>
+                <NldsMeta>@FileInfo</NldsMeta>
+            </div>
+            @if (ShowDelete)
+            {
+                <button class="btn btn--link file__button">@DeleteText</button>
+            }
+        </div>
+    </li>
+}
+else
+{
+    <div class="file">
+        <i class="file__icon icon icon-document"></i>
+        <div class="file__data">
+            <div class="file__filename">
+                <strong class="file__title break-all">@FileName</strong>
+                <NldsMeta>@FileInfo</NldsMeta>
+            </div>
+            @if (ShowDelete)
+            {
+                <button class="btn btn--link file__button">@DeleteText</button>
+            }
+        </div>
+    </div>
+}
+

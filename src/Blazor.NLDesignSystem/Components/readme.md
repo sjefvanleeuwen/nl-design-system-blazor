@@ -13,6 +13,7 @@ This holds the status of the components; if there is an implementation of this c
 - Combobox (as part of Form)
 - ContentHeader (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
 - DefinitionList
+- File (as part of Form)
 - Form
 - Header
 - Hint
@@ -38,7 +39,6 @@ This holds the status of the components; if there is an implementation of this c
 - Chart
 - Footer
 - Filter
-- File (will be part of Form)
 - List
 - Modal
 - Table

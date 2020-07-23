@@ -21,6 +21,12 @@ Status: Some features not implemented:
 - Combobox met objecten
 - Javascript API (all except combobox-select)
 
+[File](https://nl-design-system.gitlab.io/nl-design-system/componenten/file/index.html)
+
+Status: Fully implemented
+
+Note! The is a implementation File and an implmentation FileList. FileList is a warpper that can contain multiple files. When a File is part of a Filelist the Property IsPartOfList should be set to true.
+
 [Radiobutton](https://nl-design-system.gitlab.io/nl-design-system/componenten/radio/index.html)
 
 Status: Fully implemented
