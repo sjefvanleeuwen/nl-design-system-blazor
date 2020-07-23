@@ -1,0 +1,5 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="spinner @(FullPage ? "spinner--page" : string.Empty)">
+    <div @attributes="GetAttributes()">@ScreenReaderText</div>
+    <p>@DisplayText</p>
+</div>

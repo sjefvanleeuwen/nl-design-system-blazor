@@ -23,6 +23,7 @@ This holds the status of the components; if there is an implementation of this c
 - RadioButton (as part of Form)
 - Section
 - Skiplink
+- Spinner
 - Switch (as part of Form)
 - Timeline
 
@@ -38,7 +39,6 @@ This holds the status of the components; if there is an implementation of this c
 - Meta
 - Notification
 - Quote
-- Spinner
 - Table
 - Tabs
 - Tooltip

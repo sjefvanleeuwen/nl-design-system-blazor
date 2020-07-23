@@ -472,10 +472,10 @@
         "grijs-5, #999999",
         "grijs-6, #696969",
         "grijs-7, #535353"
-         };
+             };
     string SelectedComboboxValue = string.Empty;
 }
-<h3>Combobox</h3>
+<h2>Combobox</h2>
 <NldsForm>
     <NldsCombobox Identifier="com" Items="@Items" @bind-Value="SelectedComboboxValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
         <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
@@ -483,3 +483,8 @@
     </NldsCombobox>
 </NldsForm>
 <p>Geselecteerde Waarde: @SelectedComboboxValue</p>
+<h2>Spinner</h2>
+<NldsSpinner FullPage="true">
+    <DisplayText>Zoals bijvoorbeeld deze tekst die nog geladen moet worden. Het element waar de <span lang="en-US">spinner</span> op verschijnt krijgt ook een lichtere <span lang="en-US">opacity</span>.</DisplayText>
+    <ScreenReaderText>Aan het laden</ScreenReaderText>
+</NldsSpinner>
