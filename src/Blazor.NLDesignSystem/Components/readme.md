@@ -11,16 +11,19 @@ This holds the status of the components; if there is an implementation of this c
 - Checkbox (as part of Form)
 - Collapse
 - Combobox (as part of Form)
+- ContentHeader (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
 - DefinitionList
 - Form
 - Header
 - Hint
-- Icon (a usable component that is not a real Component in NL-Desing-System)
+- Icon (a usable component that is not a defined Component in NL-Desing-System)
 - Image
 - Label
+- Meta
 - Navigation
 - Notification
 - Pagination
+- Quote
 - RadioButton (as part of Form)
 - Section
 - Skiplink
@@ -38,8 +41,6 @@ This holds the status of the components; if there is an implementation of this c
 - File (will be part of Form)
 - List
 - Modal
-- Meta
-- Quote
 - Table
 - Tabs
 - Video

@@ -1,0 +1,24 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (!UseImage)
+{
+    <blockquote class="quote">
+        @Quote
+    </blockquote>
+}
+else
+{
+    <blockquote class="quote quote--with-image">
+        <div class="quote__body">
+            @Quote
+        </div>
+        <div class="quote__image">
+            <img src="@ImageUri" alt="@ImageDescription">
+        </div>
+        @if (ShowMetaContent)
+        {
+            <div class="quote__meta">
+                @MetaContent
+            </div>
+        }
+    </blockquote>
+}

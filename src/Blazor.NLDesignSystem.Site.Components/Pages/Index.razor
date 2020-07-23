@@ -472,7 +472,7 @@
         "grijs-5, #999999",
         "grijs-6, #696969",
         "grijs-7, #535353"
-                 };
+                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -516,3 +516,38 @@
 <NldsTooltip Tip="Dit is <u>de</u> Tip">Hover hierover; er zit een tip op</NldsTooltip>
 <h3>Tooltip met Icon</h3>
 <NldsTooltip UseIcon="true" Tip="Dit is <u>de</u> Tip op een Icon"></NldsTooltip>
+<h2>ContentHeader</h2>
+<NldsContentHeader Title="This is the title">
+    <p>Test</p>
+</NldsContentHeader>
+<h2>Meta</h2>
+<NldsMeta>13 november 2018</NldsMeta>
+<NldsMeta>Grat, Senior tester/product owner testautomatisering</NldsMeta>
+<h3>Meta stappen onder een kop</h3>
+<NldsContentHeader Title="Contactgegevens instelling">
+    <p>
+        <NldsMeta IsInHeader="true" IsProgress="true">
+            Stap 1 van 4 – Eerste opvang nieuwkomers VO
+        </NldsMeta>
+        <NldsMeta IsInHeader="true" IsProgress="true">
+            Stap 2 van 4 – Tweede opvang nieuwkomers VO
+        </NldsMeta>
+    </p>
+</NldsContentHeader>
+<h2>Quote</h2>
+<NldsQuote>
+    <Quote>
+        Praesent ullamcorper lacinia nisl, vel vulputate elit tempus tincidunt. Sed dictum ultrices finibus. Praesent at venenatis sapien. Nam sed quam pretium, dignissim sapien euismod, tempus urna. Maecenas mauris odio, malesuada sit amet lectus faucibus, ultrices ullamcorper enim.
+    </Quote>
+</NldsQuote>
+<h3>Quote met afbeelding</h3>
+<NldsQuote ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/ceasar.jpg" ImageDescription="Julius Caesar">
+    <Quote>
+        Praesent ullamcorper lacinia nisl, vel vulputate elit tempus tincidunt. Sed dictum ultrices finibus.
+    </Quote>
+    <MetaContent>
+        <NldsMeta>– Julius Ceasar</NldsMeta>
+        <br />
+        <a href="#" title="Lees meer">Lees meer over lorum ipsum</a>
+    </MetaContent>
+</NldsQuote>
