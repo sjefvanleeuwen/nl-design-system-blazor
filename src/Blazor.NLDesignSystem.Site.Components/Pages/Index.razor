@@ -472,7 +472,7 @@
         "grijs-5, #999999",
         "grijs-6, #696969",
         "grijs-7, #535353"
-                         };
+                             };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -559,3 +559,13 @@
 </NldsFileList>
 <h3>Single File</h3>
 <NldsFile FileName="c50bed25.jpg" FileInfo="JPG, 396.05 kB" />
+<h2>Video</h2>
+@code {
+    SubtitleInformation subtitles = new SubtitleInformation
+    {
+        Label = "Nederlands",
+        Language = "nl-NL",
+        Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
+    };
+} 
+<NldsVideo Width="100%" Uri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.mp4" PosterUri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.png" Subtitles="@subtitles"></NldsVideo>

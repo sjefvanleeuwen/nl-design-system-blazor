@@ -32,6 +32,7 @@ This holds the status of the components; if there is an implementation of this c
 - Switch (as part of Form)
 - Timeline
 - Tooltip
+- Video
 
 ## Currently not implemented
 
@@ -43,4 +44,3 @@ This holds the status of the components; if there is an implementation of this c
 - Modal
 - Table
 - Tabs
-- Video

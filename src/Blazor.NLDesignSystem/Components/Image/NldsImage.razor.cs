@@ -7,7 +7,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Alt { get; set; }
         [Parameter]
-        public int Width { get; set; }
+        public string Width { get; set; }
         [Parameter]
         public string Uri { get; set; }
     }
