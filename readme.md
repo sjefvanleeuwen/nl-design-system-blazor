@@ -1,5 +1,5 @@
 ![nl design system for blazor](docs/img/nl-design-system-blazor.svg)
-![.NET Core](https://github.com/sjefvanleeuwen/nl-design-system-blazor/workflows/.NET%20Core/badge.svg)
+[![nuget](https://img.shields.io/nuget/v/Blazorized.NLDesignSystem)](https://www.nuget.org/packages/Blazorized.NLDesignSystem/) ![.NET Core](https://github.com/sjefvanleeuwen/nl-design-system-blazor/workflows/.NET%20Core/badge.svg)
 # What is it?
 
 The NL Design System is a collection of reusable components, with which you can easily develop digital services as a designer or developer. Think of buttons, form elements and page templates. This project adapts the system so the components can be used from .NET Core Blazor (Web Assembly is supported).
