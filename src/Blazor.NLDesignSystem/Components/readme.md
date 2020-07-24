@@ -8,6 +8,8 @@ This holds the status of the components; if there is an implementation of this c
 - Badge
 - Button
 - Card
+- Chart
+- Chart
 - Checkbox (as part of Form)
 - Collapse
 - Combobox (as part of Form)
@@ -38,7 +40,6 @@ This holds the status of the components; if there is an implementation of this c
 ## Currently not implemented
 
 - BottomBar
-- Chart
 - Footer
 - List
 - Modal

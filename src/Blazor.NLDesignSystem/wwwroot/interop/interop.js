@@ -38,6 +38,18 @@ function addElement(id, element, registrationId) {
 }
 
 //////
+//Chart
+//////
+
+function donutChart(el, value) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/donut-chart/donut-chart.js').then(function (module) {
+    donutChart = new module.DonutChart(el);
+    donutChart.value = value;
+    donutChart.draw();
+  });
+}
+
+//////
 //Collapse
 //////
 
