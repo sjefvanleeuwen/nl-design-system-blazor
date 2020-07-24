@@ -227,6 +227,13 @@
         new RadioItem() { Description = "Nee", Value = "Nee" },
         new RadioItem() { Description = "Misschien", Value = "Misschien", IsDisabled = true }
     };
+
+    string radio3Value = "bestaat niet";
+    List<RadioItem> items3 = new List<RadioItem>() {
+        new RadioItem() { Description = "Ja", Value = "Ja" },
+        new RadioItem() { Description = "Nee", Value = "Nee" },
+        new RadioItem() { Description = "Misschien", Value = "Misschien", IsDisabled = true }
+    };
 }
 <NldsForm>
     <NldsRadio Items="@items1" @bind-Value="radio1Value" Identifier="groupName" ErrorText="Er is een error ofzo...">
@@ -234,7 +241,12 @@
         <Hint><NldsFormHint HintName="situatie">Geef aan of u alleenstaande bent of dat u een toeslagpartner heeft.</NldsFormHint></Hint>
     </NldsRadio>
     <h4>Geselecteerde waarde: @items1.FirstOrDefault(i => i.Value == radio1Value)?.Value</h4>
+    <h3>Horizontal</h3>
     <NldsRadio Items="@items2" @bind-Value="radio2Value" Identifier="horizontal" ItemAlignment="ItemAlignment.Horizontal">
+        <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
+    </NldsRadio>
+    <h3>Filter</h3>
+    <NldsRadio Items="@items3" @bind-Value="radio3Value" Identifier="filter" IsFilter="true">
         <Legend><NldsLegend>Item Alignment Horizontal</NldsLegend></Legend>
     </NldsRadio>
 </NldsForm>
@@ -287,6 +299,13 @@
             new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
         };
+
+    IEnumerable<string> CheckBoxValues3 = new List<string>() { "alleenstaande" };
+    List<CheckboxItem> CheckBox3 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
 }
 <h2>Checkbox</h2>
 <h3>2-way binding</h3>
@@ -303,7 +322,6 @@
         <br />
     }
 </NldsForm>
-
 <h3>Checkbox with error</h3>
 <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
 <NldsForm>
@@ -318,7 +336,19 @@
         <br />
     }
 </NldsForm>
-
+<h3>Checkbox filter</h3>
+<NldsForm>
+    <NldsCheckbox Identifier="ch3" Items="@CheckBox3" @bind-Values="@CheckBoxValues3" IsFilter="true">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var value in CheckBoxValues3 ?? new List<string>())
+    {
+        <text>@((MarkupString)CheckBox3.FirstOrDefault(s => s.Value == value).Description)</text>
+        <br />
+    }
+</NldsForm>
 <h2>Switch</h2>
 @code {
     bool TheBoolean = true;

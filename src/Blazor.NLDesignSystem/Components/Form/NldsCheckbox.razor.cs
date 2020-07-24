@@ -12,6 +12,8 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Identifier { get; set; }
         [Parameter]
+        public bool IsFilter { get; set; }
+        [Parameter]
         public ItemAlignment ItemAlignment { get; set; }
         [Parameter]
         public IEnumerable<CheckboxItem> Items { get; set; } = new List<CheckboxItem>();

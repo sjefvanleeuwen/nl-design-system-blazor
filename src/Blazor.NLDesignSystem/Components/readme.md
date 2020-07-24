@@ -14,6 +14,7 @@ This holds the status of the components; if there is an implementation of this c
 - ContentHeader (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
 - DefinitionList
 - File (as part of Form)
+- Filter (is an option in radiobutton and checkbox; IsFilter = true)
 - Form
 - Header
 - Hint
@@ -39,7 +40,6 @@ This holds the status of the components; if there is an implementation of this c
 - BottomBar
 - Chart
 - Footer
-- Filter
 - List
 - Modal
 - Table

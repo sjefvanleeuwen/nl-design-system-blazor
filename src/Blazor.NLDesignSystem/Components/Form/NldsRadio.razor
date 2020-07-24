@@ -3,9 +3,11 @@
     var counter = 0;
 }
 
-<fieldset class="input @(!IsValid ? "input--invalid" : "")">
-    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+<fieldset class="input @(IsFilter ? "filter" : string.Empty) @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="IsFilter" Value="@IsFilter">
         @Legend
+    </CascadingValue>
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
         @Hint
         @if (!IsValid)
         {
@@ -18,7 +20,7 @@
         {
             counter++;
             @*The id is a combination of the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
-            <div class="input__group input__group--radio">
+            <div class="input__group input__group--radio @(IsFilter ? "input__group--compact" : string.Empty)">
                 <input type="radio"
                        name="@Identifier"
                        id="@(Identifier)_@counter"
