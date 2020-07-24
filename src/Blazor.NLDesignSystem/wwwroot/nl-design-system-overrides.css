@@ -1,6 +1,6 @@
 ﻿
 body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
-    /* For an invalid form element diusplayed horizontally with the body set to show the horizontal labels */
+    /* For an invalid form element displayed horizontally with the body set to show the horizontal labels */
     padding-left: 0px;
 }
 
@@ -12,6 +12,7 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
     white-space: nowrap;
 }
 
-.input--invalid .combobox__icon {
-    left: 3.4rem;
+/* the order of the css in the build css is different and that is why input__control is not overridden by input__control--checkbox*/
+.input__control.input__control--checkbox {
+    width: 1px;
 }
