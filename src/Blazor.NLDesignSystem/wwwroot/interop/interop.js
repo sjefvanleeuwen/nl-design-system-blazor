@@ -42,7 +42,7 @@ function addElement(id, element, registrationId) {
 //////
 
 function collapse(el) {
-  System.import('_content/Blazor.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
     new module.Collapse(el);
   });
 }
@@ -59,7 +59,7 @@ function getComboboxById(id) {
 }
 
 async function combobox(el, id, dataArray) {
-  await System.import('_content/Blazor.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
+  await System.import('_content/Blazorized.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
     var combobox = new module.Combobox(el);
     combobox.allowUnknown = false;
     combobox.data = dataArray;
@@ -73,14 +73,14 @@ async function combobox(el, id, dataArray) {
 //////
 
 function navigationSubmenu(el) {
-  System.import('_content/Blazor.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
     new module.SubMenuNavigation(el);
   });
 }
 
 function navitationAutoResize() {
   // Load nav component
-  System.import('_content/Blazor.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
     var navs = document.querySelectorAll('.top-nav-autoresize');
     // Initialize all navs
     for (var i = 0; i < navs.length; i++) {
@@ -100,7 +100,7 @@ function navitationAutoResize() {
 //////
 
 function tooltip(el) {
-  System.import('_content/Blazor.NLDesignSystem/dist/components/tooltip/tooltip.js').then(function (module) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/tooltip/tooltip.js').then(function (module) {
     new module.Tooltip(el);
   });
 }
