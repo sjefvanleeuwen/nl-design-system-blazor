@@ -1,5 +1,5 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<video src="@Uri" controls="" poster="PosterUri" width="@Width">
+<video src="@Uri" controls="" poster="@PosterUri" width="@Width">
     @if (ShowSubtitles) {
     <track label="@Subtitles.Label" kind="subtitles" srclang="@Subtitles.Language" src="@Subtitles.Uri">
     }
