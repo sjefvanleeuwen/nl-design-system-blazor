@@ -242,17 +242,17 @@
 @code {
     string selectValue1 = "aanvrager_met_toeslagpartner";
     List<SelectItem> select1 = new List<SelectItem>() {
-        new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
-        new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
-        new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
-    };
+            new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
 
     string selectValue2;
     List<SelectItem> select2 = new List<SelectItem>() {
-        new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
-        new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
-        new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
-    };
+            new SelectItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new SelectItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new SelectItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
 }
 <h3>2-way binding</h3>
 <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
@@ -276,17 +276,17 @@
 @code {
     IEnumerable<string> CheckBoxValues1 = new List<string>() { "alleenstaande" };
     List<CheckboxItem> CheckBox1 = new List<CheckboxItem>() {
-        new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
-        new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
-        new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
-    };
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
 
     IEnumerable<string> CheckBoxValues2 = new List<string>() { "alleenstaande" };
     List<CheckboxItem> CheckBox2 = new List<CheckboxItem>() {
-        new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
-        new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
-        new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
-    };
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
 }
 <h2>Checkbox</h2>
 <h3>2-way binding</h3>
@@ -448,31 +448,31 @@
 @code {
     string[] Items = new string[]
     {
-        "violet, #a90061",
-        "roze, #f092cd",
-        "rood, #d52b1e",
-        "robijnrood, #ca005d",
-        "paars, #42145f",
-        "oranje, #e17000",
-        "lichtblauw, #8fcae7",
-        "hemelblauw, #007bc7",
-        "donkerblauw, #01689b",
-        "geel, #f9e11e",
-        "donkergeel, #ffb612",
-        "mintgroen, #76d2b6",
-        "mosgroen, #767b00",
-        "groen, #39870c",
-        "donkergroen, #275937",
-        "bruin, #94710a",
-        "donkerbruin, #673327",
-        "grijs-1, #f3f3f3",
-        "grijs-2, #e6e6e6",
-        "grijs-3, #cccccc",
-        "grijs-4, #b4b4b4",
-        "grijs-5, #999999",
-        "grijs-6, #696969",
-        "grijs-7, #535353"
-                             };
+                        "violet, #a90061",
+                        "roze, #f092cd",
+                        "rood, #d52b1e",
+                        "robijnrood, #ca005d",
+                        "paars, #42145f",
+                        "oranje, #e17000",
+                        "lichtblauw, #8fcae7",
+                        "hemelblauw, #007bc7",
+                        "donkerblauw, #01689b",
+                        "geel, #f9e11e",
+                        "donkergeel, #ffb612",
+                        "mintgroen, #76d2b6",
+                        "mosgroen, #767b00",
+                        "groen, #39870c",
+                        "donkergroen, #275937",
+                        "bruin, #94710a",
+                        "donkerbruin, #673327",
+                        "grijs-1, #f3f3f3",
+                        "grijs-2, #e6e6e6",
+                        "grijs-3, #cccccc",
+                        "grijs-4, #b4b4b4",
+                        "grijs-5, #999999",
+                        "grijs-6, #696969",
+                        "grijs-7, #535353"
+                                             };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -567,5 +567,5 @@
         Language = "nl-NL",
         Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
     };
-} 
+}
 <NldsVideo Width="100%" Uri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.mp4" PosterUri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.png" Subtitles="@subtitles"></NldsVideo>
