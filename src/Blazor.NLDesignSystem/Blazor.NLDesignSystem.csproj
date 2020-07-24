@@ -3,6 +3,27 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>Blazorized.NLDesignSystem</PackageId>
+    <Authors>Sjef van Leeuwen, Marijn Pessers</Authors>
+    <Company></Company>
+    <Product>NL DESIGN SYSTEM for Blazor</Product>
+    <PackageProjectUrl>https://github.com/sjefvanleeuwen/nl-design-system-blazor</PackageProjectUrl>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/sjefvanleeuwen/nl-design-system-blazor</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>blazor nl-design-system nldesignsystem nl design system design-system designsystem</PackageTags>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Title>NL DESIGN SYSTEM for Blazor</Title>
+    <Description>The NL Design System is a collection of reusable components, with which you can easily develop digital services as a designer or developer. Think of buttons, form elements and page templates. This project adapts the system so the components can be used from .NET Core Blazor (Web Assembly is supported).</Description>
+    <NeutralLanguage></NeutralLanguage>
+    <Copyright>Copyright (c) 2020 Sjef van Leeuwen</Copyright>
+    <PackageIcon>nlds-1024.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageVersion>0.1.1-alpha1</PackageVersion>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +36,16 @@
     <None Remove="wwwroot\dist\settings\**" />
     <None Remove="wwwroot\dist\tools\**" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\docs\img\nlds-1024.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.4" />
