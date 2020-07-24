@@ -15,7 +15,7 @@ This project componentized mostly all of the components available for NL-DESIGN-
 
 For a complete up to date status, please visit:
 
-![Available Components](./src/Blazor.NLDesignSystem/Components/readme.md)
+[Available Components](./src/Blazor.NLDesignSystem/Components/readme.md)
 
 # Installation
 
