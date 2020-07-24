@@ -12,7 +12,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public bool IndicateEnds { get; set; } = false;
         [Parameter]
-        public IEnumerable<TimelineItemDTO> Items { get; set; }
+        public IEnumerable<TimelineItemDTO> Items { get; set; } = new List<TimelineItemDTO>();
 
         private bool _indicateStart => IndicateEnds || IndicateStart;
         private bool _indicateEnd => IndicateEnds || IndicateEnd;

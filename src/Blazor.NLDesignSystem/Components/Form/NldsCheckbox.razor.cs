@@ -14,7 +14,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public ItemAlignment ItemAlignment { get; set; }
         [Parameter]
-        public IEnumerable<CheckboxItem> Items { get; set; }
+        public IEnumerable<CheckboxItem> Items { get; set; } = new List<CheckboxItem>();
 
         [Parameter]
         public RenderFragment Legend { get; set; }
