@@ -4,17 +4,18 @@
 
 The NL Design System is a collection of reusable components, with which you can easily develop digital services as a designer or developer. Think of buttons, form elements and page templates. This project adapts the system so the components can be used from .NET Core Blazor (Web Assembly is supported).
 
+For the look and feel and feel of the design system visit:
+
+[NL Design System](https://nl-design-system.gitlab.io/nl-design-system/index.html) version 0.1.1.
+
+
 # Status
 
-The project is in early stage currently, but expanded almost daily. Feel free to follow the project and receive updates as they arrive. The following components are available:
+This project componentized mostly all of the components available for NL-DESIGN-SYSTEM.
 
-* Badges
-* Buttons
-* Collapsible
-* Radio Buttons
-* Form Input
-* TopNav (flat, no hierarchy yet)
-* Header
+For a complete up to date status, please visit:
+
+![Available Components](./src/Blazor.NLDesignSystem/Components/readme.md)
 
 # Installation
 
