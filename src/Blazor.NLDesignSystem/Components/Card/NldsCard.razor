@@ -4,8 +4,9 @@
         <div class="card__thumb @(Square ? "card__thumb--square" : string.Empty)" style="background-image: url('@ImageUri')"></div>
         <div class="card__body">
             <span class="card__title">
-                @ChildContent
+                @Title 
             </span>
+            <p>@Content</p>
         </div>
     </a>
 </li>
