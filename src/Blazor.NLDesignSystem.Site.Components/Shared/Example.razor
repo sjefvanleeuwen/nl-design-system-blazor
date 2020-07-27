@@ -1,0 +1,43 @@
+﻿@inject IJSRuntime JS
+<NldsTabs>
+    <Tabs>
+        <NldsTab Identifier="1">Voorbeeld</NldsTab>
+        <NldsTab Identifier="2">Razor</NldsTab>
+        @if (Code != null)
+        {
+            <NldsTab Identifier="3">Code</NldsTab>
+        }
+        </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="1">
+            @Voorbeeld
+        </NldsTabContent>
+        <NldsTabContent Identifier="2"><pre><code class="language-aspnet" @ref="razorSyntax">@Razor</code></pre></NldsTabContent>
+        @if (Code != null)
+        {
+        <NldsTabContent Identifier="3"><pre><code class="language-csharp" @ref="codeSyntax">@Code</code></pre></NldsTabContent>
+        }
+    </TabContents>
+</NldsTabs>
+@code {
+
+    ElementReference razorSyntax { get; set; }
+    ElementReference codeSyntax { get; set; }
+
+    [Parameter]
+    public RenderFragment Voorbeeld { get; set; }
+    [Parameter]
+    public RenderFragment Razor { get; set; }
+    [Parameter]
+    public RenderFragment Code { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            JS.InvokeVoidAsync("Prism.highlightElement", razorSyntax);
+            JS.InvokeVoidAsync("Prism.highlightElement", codeSyntax);
+        }
+        base.OnAfterRender(firstRender);
+    }
+}

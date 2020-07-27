@@ -1,6 +1,74 @@
 ﻿@page "/"
-<h3>Aan de slag</h3>
-<NldsCardList Small="true">
+<h1>NL Design System (Blazor)</h1>
+
+
+<Example>
+    <Voorbeeld>
+        <NldsLabel Color="Color.Wit">WIT</NldsLabel>
+        <NldsLabel Color="Color.Zwart">ZWART</NldsLabel>
+        <NldsLabel Color="Color.Violet">VIOLET</NldsLabel>
+        <NldsLabel Color="Color.Roze">ROZE</NldsLabel>
+        <NldsLabel Color="Color.Rood">ROOD</NldsLabel>
+        <NldsLabel Color="Color.RobijnRood">ROBIJNROOD</NldsLabel>
+        <NldsLabel Color="Color.Paars">PAARS</NldsLabel>
+        <NldsLabel Color="Color.Oranje">ORANJE</NldsLabel>
+        <NldsLabel Color="Color.Mosgroen">MOSGROEN</NldsLabel>
+        <NldsLabel Color="Color.Mintgroen">MINTGROEN</NldsLabel>
+        <NldsLabel Color="Color.Lichtblauw">LICHTBLAUW</NldsLabel>
+        <NldsLabel Color="Color.HemelBlauw">HEMELBLAUW</NldsLabel>
+        <NldsLabel Color="Color.DonkerBlauw">DONKERBLAUW</NldsLabel>
+        <NldsLabel Color="Color.Groen">GROEN</NldsLabel>
+        <NldsLabel Color="Color.Geel">GEEL</NldsLabel>
+        <NldsLabel Color="Color.Donkergroen">DONKERGROEN</NldsLabel>
+        <NldsLabel Color="Color.Donkergeel">DONKERGEEL</NldsLabel>
+        <NldsLabel Color="Color.Bruin">BRUIN</NldsLabel>
+        <NldsLabel Color="Color.Optioneel">OPTIONEEL</NldsLabel>
+    </Voorbeeld>
+    <Razor>
+&lt;NldsLabel Color=&quot;Color.Wit&quot;&gt;WIT&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Zwart&quot;&gt;ZWART&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Violet&quot;&gt;VIOLET&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Roze&quot;&gt;ROZE&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Rood&quot;&gt;ROOD&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.RobijnRood&quot;&gt;ROBIJNROOD&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Paars&quot;&gt;PAARS&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Oranje&quot;&gt;ORANJE&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Mosgroen&quot;&gt;MOSGROEN&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Mintgroen&quot;&gt;MINTGROEN&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Lichtblauw&quot;&gt;LICHTBLAUW&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.HemelBlauw&quot;&gt;HEMELBLAUW&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.DonkerBlauw&quot;&gt;DONKERBLAUW&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Groen&quot;&gt;GROEN&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Geel&quot;&gt;GEEL&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Donkergroen&quot;&gt;DONKERGROEN&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Donkergeel&quot;&gt;DONKERGEEL&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Bruin&quot;&gt;BRUIN&lt;/NldsLabel&gt;
+&lt;NldsLabel Color=&quot;Color.Optioneel&quot;&gt;OPTIONEEL&lt;/NldsLabel&gt;
+    </Razor>
+    <Code>
+ElementReference razorSyntax { get; set; }
+ElementReference codeSyntax { get; set; }
+
+[Parameter]
+public RenderFragment Voorbeeld { get; set; }
+[Parameter]
+public RenderFragment Razor { get; set; }
+
+protected override void OnAfterRender(bool firstRender)
+{
+    if (firstRender)
+    {
+       JS.InvokeVoidAsync("Prism.highlightElement", razorSyntax);
+       JS.InvokeVoidAsync("Prism.highlightElement", codeSyntax);
+    }
+    base.OnAfterRender(firstRender);
+}
+    </Code>
+</Example>
+<NldsNotification Type="Notification.Warning" TypeText="LET OP" Title="NL Design System voor Blazor in pilotfase">
+    Het NL Design System voor Blazor bevindt zich momenteel nog in de pilotfase. Hierdoor is het nu nog niet volwassen genoeg om volledig gebruikt te worden. Houdt hier dus rekening mee voor je aan de slag gaat. We zouden het op prijs stellen als je wilt bijdragen om het NLDS voor Blazor tot een succes te maken. Dit kan in onze github.
+</NldsNotification>
+<NldsCardList>
     <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-1.png">
         <Title>Aan de Slag</Title>
         <Content>Installatie, richtlijnen en layout.</Content>
@@ -13,12 +81,14 @@
         <Title>Componenten</Title>
         <Content>Kant-en-klare onderdelen.</Content>
     </NldsCard>
+</NldsCardList>
+<NldsCardList>
     <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-3.png">
         <Title>Patronen</Title>
-        <Content>Kant-en-klare onderdelen.</Content>
+        <Content>Validatie en  formulieropbouw.</Content>
     </NldsCard>
-    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-3.png">
+    <NldsCard ImageUri="https://nl-design-system.gitlab.io/nl-design-system/images/img-2.png">
         <Title>Voorbeelden</Title>
-        <Content>Kant-en-klare onderdelen.</Content>
+        <Content>Kant-en-klare pagina's.</Content>
     </NldsCard>
 </NldsCardList>
