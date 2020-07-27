@@ -1,9 +1,11 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-    <div @ref="ChartReference" class="donut-chart">
-        <h3 class="donut-chart__title">@ChildContent</h3>
+    <div @ref="ChartReference" class="donut-chart donut-chart--@DisplayColor">
+        <h3 class="donut-chart__title">@((MarkupString)Title)</h3>
         <div class="donut-chart__chart">
             <canvas class="donut-chart__canvas"></canvas>
-            <div class="donut-chart__inner">@((MarkupString)TextInner)</div>
+            <div class="donut-chart__inner">
+                @ChildContent
+            </div>
         </div>
         <span class="donut-chart__subtitle">@((MarkupString)TextBelow)</span>
     </div>

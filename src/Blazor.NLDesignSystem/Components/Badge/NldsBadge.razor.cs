@@ -8,7 +8,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public int Number { get; set; }
         [Parameter]
-        public Color Color { get; set; }
+        public Color Color { get; set; } = Color.HemelBlauw;
         [Parameter]
         public bool UseOnIcon { get; set; }
 

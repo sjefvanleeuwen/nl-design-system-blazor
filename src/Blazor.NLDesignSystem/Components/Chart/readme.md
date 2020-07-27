@@ -5,7 +5,4 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 Status: Some features not implemented:
 
-- Donut chart kleuren
-- Donut chart met kleine text
-
 - Javascript methods

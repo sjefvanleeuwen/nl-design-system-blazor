@@ -22,14 +22,17 @@ namespace Blazor.NLDesignSystem.Components
         }
 
         [Parameter]
+        public Color Color { get; set; } = Color.HemelBlauw;
+        [Parameter]
         public double Percentage { get; set; }
         [Parameter]
         public string TextBelow { get; set; }
         [Parameter]
-        public string TextInner { get; set; }
+        public string Title { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        private string DisplayColor => Color.GetDescription<StyleAttribute>();
     }
 }
