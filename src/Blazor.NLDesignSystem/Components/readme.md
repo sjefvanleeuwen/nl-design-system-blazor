@@ -36,6 +36,8 @@ This holds the status of the components; if there is an implementation of this c
 - Timeline
 - Tooltip
 - Video
+- Table
+- Tabs
 
 ## Currently not implemented
 
@@ -43,5 +45,3 @@ This holds the status of the components; if there is an implementation of this c
 - Footer
 - List
 - Modal
-- Table
-- Tabs

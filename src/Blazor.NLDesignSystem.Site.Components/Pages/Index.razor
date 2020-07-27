@@ -502,7 +502,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                 };
+                                                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -670,3 +670,155 @@
         <NldsTabContent Identifier="10_"><p>Panel 10</p></NldsTabContent>
     </TabContents>
 </NldsTabs>
+<h2>Table</h2>
+<NldsTable Identifyer="tabelbeschrijving">
+    <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell />
+            <NldsTableCell>2014</NldsTableCell>
+            <NldsTableCell>2015</NldsTableCell>
+            <NldsTableCell>2016</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Foo</NldsTableCell>
+            <NldsTableCell>124</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>252</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Bar</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>526</NldsTableCell>
+            <NldsTableCell>12</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Baz</NldsTableCell>
+            <NldsTableCell>736</NldsTableCell>
+            <NldsTableCell>367</NldsTableCell>
+            <NldsTableCell>234</NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h3>Responsive Striped & Hoverable Table met caption with selected rows</h3>
+<NldsTable Identifyer="tabelbeschrijving2" IsResponsive="true" IsStriped="true" IsHoverable="true">
+    <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+    <Caption>Voorbeeld automatische <span lang="en-US">responsive</span> tabel</Caption>
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell />
+            <NldsTableCell>2014</NldsTableCell>
+            <NldsTableCell>2015</NldsTableCell>
+            <NldsTableCell>2016</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell IsHeader="true">Foo</NldsTableCell>
+            <NldsTableCell>124</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>252</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsSelected="true">
+            <NldsTableCell IsHeader="true">Bar</NldsTableCell>
+            <NldsTableCell>42</NldsTableCell>
+            <NldsTableCell>526</NldsTableCell>
+            <NldsTableCell>12</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsSelected="true">
+            <NldsTableCell IsHeader="true">Baz</NldsTableCell>
+            <NldsTableCell>736</NldsTableCell>
+            <NldsTableCell>367</NldsTableCell>
+            <NldsTableCell>234</NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h3>Complexe Tabellen</h3>
+<NldsTable Identifyer="tabelbeschrijving3" IsStriped="true" IsHoverable="true" UseFullWidth="true" UseSmallFont="true">
+    <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell Colspan="2" />
+            <NldsTableCell Colspan="2">2011 - 2012</NldsTableCell>
+            <NldsTableCell Colspan="2">2012 - 2013</NldsTableCell>
+            <NldsTableCell Colspan="2">2013 - 2014</NldsTableCell>
+            <NldsTableCell Colspan="2">2014 - 2015</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Identifyer="brin">Brinnr</NldsTableCell>
+            <NldsTableCell Identifyer="name">Naam Instelling</NldsTableCell>
+            <NldsTableCell Identifyer="i1112" Headers="yr1112"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifyer="v1112" Headers="yr1112">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifyer="i1213" Headers="yr1113"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifyer="v1213" Headers="yr1113">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifyer="i1314" Headers="yr1114"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifyer="v1314" Headers="yr1114">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifyer="i1415" Headers="yr1115"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifyer="v1415" Headers="yr1115">Vgl Grp</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">01IC</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name0">AOC Oost</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1112 yr1112">81,1%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1213 yr1213">79,8</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1314 yr1314">77,1%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 i1415 yr1415">83,7%</NldsTableCell>
+            <NldsTableCell Class="align-right" Headers="name0 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">01NJ</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name1">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name1 i1112 yr1112">75,5%</NldsTableCell>
+            <NldsTableCell Headers="name1 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name1 i1213 yr1213">77,1</NldsTableCell>
+            <NldsTableCell Headers="name1 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name1 i1314 yr1314">75,6%</NldsTableCell>
+            <NldsTableCell Headers="name1 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name1 i1415 yr1415">75,8%</NldsTableCell>
+            <NldsTableCell Headers="name1 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">01OE</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name2">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name2 i1112 yr1112">70,0%</NldsTableCell>
+            <NldsTableCell Headers="name2 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name2 i1213 yr1213">73,7</NldsTableCell>
+            <NldsTableCell Headers="name2 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name2 i1314 yr1314">75,6%</NldsTableCell>
+            <NldsTableCell Headers="name2 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name2 i1415 yr1415">76,7%</NldsTableCell>
+            <NldsTableCell Headers="name2 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">11UL</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name3">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name3 i1112 yr1112">71,0%</NldsTableCell>
+            <NldsTableCell Headers="name3 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name3 i1213 yr1213">76,4</NldsTableCell>
+            <NldsTableCell Headers="name3 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name3 i1314 yr1314">69,1%</NldsTableCell>
+            <NldsTableCell Headers="name3 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name3 i1415 yr1415">79,1%</NldsTableCell>
+            <NldsTableCell Headers="name3 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell Headers="brin">12VI</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name4">AOC Oost</NldsTableCell>
+            <NldsTableCell Headers="name4 i1112 yr1112">77,4%</NldsTableCell>
+            <NldsTableCell Headers="name4 v1112 yr1112">71,1%</NldsTableCell>
+            <NldsTableCell Headers="name4 i1213 yr1213">80,8</NldsTableCell>
+            <NldsTableCell Headers="name4 v1213 yr1213">74,7%</NldsTableCell>
+            <NldsTableCell Headers="name4 i1314 yr1314">78,8%</NldsTableCell>
+            <NldsTableCell Headers="name4 v1314 yr1314">74,6%</NldsTableCell>
+            <NldsTableCell Headers="name4 i1415 yr1415">78,7%</NldsTableCell>
+            <NldsTableCell Headers="name4 v1415 yr1415">77,2%</NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>

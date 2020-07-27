@@ -1,5 +1,5 @@
 ﻿//////
-//Event listeners
+// Event listeners
 //////
 
 window.NlDesignSystemBlazor = window.NlDesignSystemBlazor || {};
@@ -38,7 +38,7 @@ function addElement(id, element, registrationId) {
 }
 
 //////
-//Chart
+// Chart
 //////
 
 function donutChart(el, value) {
@@ -50,7 +50,7 @@ function donutChart(el, value) {
 }
 
 //////
-//Collapse
+// Collapse
 //////
 
 function collapse(el) {
@@ -60,7 +60,7 @@ function collapse(el) {
 }
 
 //////
-//Combobox
+// Combobox
 //////
 
 var comboboxPrefix = "combobox_";
@@ -81,7 +81,7 @@ async function combobox(el, id, dataArray) {
 }
 
 //////
-//Navigation
+// Navigation
 //////
 
 function navigationSubmenu(el) {
@@ -102,13 +102,23 @@ function navitationAutoResize() {
 }
 
 //////
-//Notification
+// Notification
 //////
 
 // Done in Blazor, no javascript needed
 
 //////
-//Tabs
+// Table
+//////
+
+function table(el) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/table/TableResponsive.js').then(function (module) {
+    new module.TableResponsive(el);
+  });
+}
+
+//////
+// Tabs
 //////
 
 function tabs(el) {
@@ -118,7 +128,7 @@ function tabs(el) {
 }
 
 //////
-//Tooltip
+// Tooltip
 //////
 
 function tooltip(el) {

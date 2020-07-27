@@ -19,7 +19,7 @@ namespace Blazor.NLDesignSystem.Components
 
             if (!string.IsNullOrWhiteSpace(Title))
             {
-                attributes["Title"] = Title;
+                attributes["title"] = Title;
             }
 
             return attributes;

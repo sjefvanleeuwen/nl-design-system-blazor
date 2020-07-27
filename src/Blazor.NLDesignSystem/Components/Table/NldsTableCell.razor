@@ -1,0 +1,13 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (DisplayAsHeader)
+{
+    <th @attributes="GetAttributes()">
+        @ChildContent
+    </th>
+}
+else
+{
+    <td @attributes="GetAttributes()">
+        @ChildContent
+    </td>
+}

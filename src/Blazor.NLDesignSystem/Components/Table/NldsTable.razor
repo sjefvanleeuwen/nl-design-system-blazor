@@ -1,0 +1,22 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (ShowLabel)
+{
+    <p @attributes="GetLabelAttributes()">@Label</p>
+}
+@*if the div here is empty it doesn't hurt the display*@
+<div class="@(UseFullWidth ? "content content--wide" : string.Empty)" style="@(UseFullWidth ? "overflow: scroll" : string.Empty)">
+    <table @ref="TableReference" class="table @(IsStriped ? "table--striped" : string.Empty) @(IsHoverable ? "table--hoverable" : string.Empty) @(UseSmallFont ? "table--small-font" : string.Empty)" @attributes="GetAttributes()">
+        @if (ShowCaption)
+        {
+            <caption>@Caption</caption>
+        }
+        <thead>
+            <CascadingValue Name="IsHeader" Value="true">
+                @Header
+            </CascadingValue>
+        </thead>
+        <tbody>
+            @Body
+        </tbody>
+    </table>
+</div>
