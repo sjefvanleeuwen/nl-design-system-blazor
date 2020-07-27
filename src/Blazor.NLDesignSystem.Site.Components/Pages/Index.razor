@@ -502,7 +502,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                             };
+                                                 };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -610,3 +610,63 @@
     € 2.000,00
     <NldsChartSmallText>Tweeduizend!</NldsChartSmallText>
 </NldsChart>
+<h2>Tabs</h2>
+<NldsTabs>
+    <Tabs>
+        <NldsTab Identifier="1">Tab 1 met <u>een</u> lange titel</NldsTab>
+        <NldsTab Identifier="2">Tab 2<NldsBadge Number="2" Color="Color.Oranje" /></NldsTab>
+        <NldsTab Identifier="3"><NldsIcon Icon="Icon.Delete" />Tab 3</NldsTab>
+        <NldsTab Identifier="4" IsDisabled="true">Disabled</NldsTab>
+        <NldsTab Identifier="5">Tab 5</NldsTab>
+        <NldsTab Identifier="6">Another tab (6)</NldsTab>
+        <NldsTab Identifier="7">Another tab (7)</NldsTab>
+        <NldsTab Identifier="8">Another tab (8)</NldsTab>
+        <NldsTab Identifier="9">Another tab (9)</NldsTab>
+        <NldsTab Identifier="10">Another tab (10)</NldsTab>
+    </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="1">
+            <h3>Panel 1</h3>
+            <p>Panel 1</p>
+        </NldsTabContent>
+        <NldsTabContent Identifier="2"><p>Panel 2</p></NldsTabContent>
+        <NldsTabContent Identifier="3"><p>Panel 3</p></NldsTabContent>
+        <NldsTabContent Identifier="4"><p>This tab is disabled :'(</p></NldsTabContent>
+        <NldsTabContent Identifier="5"><p>Panel 5</p></NldsTabContent>
+        <NldsTabContent Identifier="6"><p>Panel 6</p></NldsTabContent>
+        <NldsTabContent Identifier="7"><p>Panel 7</p></NldsTabContent>
+        <NldsTabContent Identifier="8"><p>Panel 8</p></NldsTabContent>
+        <NldsTabContent Identifier="9"><p>Panel 9</p></NldsTabContent>
+        <NldsTabContent Identifier="10"><p>Panel 10</p></NldsTabContent>
+    </TabContents>
+</NldsTabs>
+<h3>Inline</h3>
+<NldsTabs Inline="true">
+    <Tabs>
+        <NldsTab Identifier="1_">Tab 1 met <u>een</u> lange titel</NldsTab>
+        <NldsTab Identifier="2_">Tab 2<NldsBadge Number="2" Color="Color.Oranje" /></NldsTab>
+        <NldsTab Identifier="3_"><NldsIcon Icon="Icon.Delete" />Tab 3</NldsTab>
+        <NldsTab Identifier="4_" IsDisabled="true">Disabled</NldsTab>
+        <NldsTab Identifier="5_">Tab 5</NldsTab>
+        <NldsTab Identifier="6_">Another tab (6)</NldsTab>
+        <NldsTab Identifier="7_">Another tab (7)</NldsTab>
+        <NldsTab Identifier="8_">Another tab (8)</NldsTab>
+        <NldsTab Identifier="9_">Another tab (9)</NldsTab>
+        <NldsTab Identifier="10_">Another tab (10)</NldsTab>
+    </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="1_">
+            <h3>Panel 1</h3>
+            <p>Panel 1</p>
+        </NldsTabContent>
+        <NldsTabContent Identifier="2_"><p>Panel 2</p></NldsTabContent>
+        <NldsTabContent Identifier="3_"><p>Panel 3</p></NldsTabContent>
+        <NldsTabContent Identifier="4_"><p>This tab is disabled :'(</p></NldsTabContent>
+        <NldsTabContent Identifier="5_"><p>Panel 5</p></NldsTabContent>
+        <NldsTabContent Identifier="6_"><p>Panel 6</p></NldsTabContent>
+        <NldsTabContent Identifier="7_"><p>Panel 7</p></NldsTabContent>
+        <NldsTabContent Identifier="8_"><p>Panel 8</p></NldsTabContent>
+        <NldsTabContent Identifier="9_"><p>Panel 9</p></NldsTabContent>
+        <NldsTabContent Identifier="10_"><p>Panel 10</p></NldsTabContent>
+    </TabContents>
+</NldsTabs>

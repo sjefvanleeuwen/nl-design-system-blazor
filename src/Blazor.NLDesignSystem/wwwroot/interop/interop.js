@@ -105,7 +105,17 @@ function navitationAutoResize() {
 //Notification
 //////
 
-//Done in Blazor, no javascript needed
+// Done in Blazor, no javascript needed
+
+//////
+//Tabs
+//////
+
+function tabs(el) {
+  System.import('_content/Blazorized.NLDesignSystem/dist/components/tabs/tabs.js').then(function (module) {
+    new module.Tabs(el);
+  });
+}
 
 //////
 //Tooltip
