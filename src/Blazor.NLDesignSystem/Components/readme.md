@@ -4,12 +4,13 @@ This holds the status of the components; if there is an implementation of this c
 
 ## Currently implemented
 
+Not all implemented components are fully implemented. Look at the readme for each component for the current status.
+
 - Backlink
 - Badge
 - BottomBar
 - Button
 - Card
-- Chart
 - Chart
 - Checkbox (as part of Form)
 - Collapse
@@ -18,6 +19,7 @@ This holds the status of the components; if there is an implementation of this c
 - DefinitionList
 - File (as part of Form)
 - Filter (is an option in radiobutton and checkbox; IsFilter = true)
+- Footer
 - Form
 - Header
 - Hint
@@ -43,5 +45,4 @@ This holds the status of the components; if there is an implementation of this c
 
 ## Currently not implemented
 
-- Footer
 - Modal

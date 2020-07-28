@@ -7,6 +7,8 @@ namespace Blazor.NLDesignSystem.Components
     {
         [CascadingParameter(Name = "ParentListType")]
         public ListType? ParentListType { get; set; }
+        [CascadingParameter(Name = "IsFooter")]
+        public bool IsFooter { get; set; }
 
         [Parameter]
         public bool HasColumns { get; set; }

@@ -502,7 +502,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                 };
+                                                                                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -921,7 +921,8 @@
 <h3>- Nested list</h3>
 <NldsList>
     <NldsListItem>Test 1</NldsListItem>
-    <NldsListItem>Test 2
+    <NldsListItem>
+        Test 2
         <NldsList>
             <NldsListItem>Test 2.1</NldsListItem>
             <NldsListItem>Test 2.2</NldsListItem>
@@ -967,8 +968,36 @@
 <h2>Background</h2>
 <NldsBackground Color="Color.DonkerBlauw">Dit is een test</NldsBackground>
 
-
-
+<NldsFooter Color="Color.Donkergroen">
+    <Title><u>Samen</u> maken we onderwijs en ontwikkeling mogelijk</Title>
+    <FooterColumns>
+        <NldsFooterColumn HasOffset="true">
+            <Title>
+                <span lang="en-US">Language</span>
+            </Title>
+            <List>
+                <NldsList Type="ListType.Links">
+                    <NldsListItem><a href="#" lang="en-US">English site</a></NldsListItem>
+                    <NldsListItem><a href="#" lang="de">Deutsche Seite</a></NldsListItem>
+                </NldsList>
+            </List>
+        </NldsFooterColumn>
+        <NldsFooterColumn>
+            <Title>
+                Service
+            </Title>
+            <List>
+                <NldsList Type="ListType.Links">
+                    <NldsListItem><a href="#">Contact</a></NldsListItem>
+                    <NldsListItem><a href="#">Privacy</a></NldsListItem>
+                    <NldsListItem><a href="#">Proclaimer</a></NldsListItem>
+                    <NldsListItem><a href="#">Toegankelijkheid</a></NldsListItem>
+                    <NldsListItem><a href="#">Inloggen <NldsIcon Icon="Icon.Secure" /></a></NldsListItem>
+                </NldsList>
+            </List>
+        </NldsFooterColumn>
+    </FooterColumns>
+</NldsFooter>
 @*bottmiBottombar Spacing*@
 <br />
 <br />

@@ -12,7 +12,20 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
     white-space: nowrap;
 }
 
+/* Checkbox */*/
+
 /* the order of the css in the build css is different and that is why input__control is not overridden by input__control--checkbox*/
 .input__control.input__control--checkbox {
     width: 1px;
+}
+
+/* Footer */
+
+/* the order of the css in the build css is different and that is why .list--links a:visited is not overridden by .footer__nav a:visited*/
+.footer__nav.list--links a:visited {
+    color: currentColor;
+}
+/* the order of the css in the build css is different and that is why .list--links a is not overridden by .footer__nav a*/
+.footer__nav.list--links a {
+    text-decoration: none
 }

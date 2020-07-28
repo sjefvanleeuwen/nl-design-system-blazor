@@ -1,0 +1,18 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<footer class="footer">
+    <div class="footer__content background--@DisplayColor">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <span class="footer__header footer__header--title">@Title</span>
+                </div>
+                @if (ShowListColumns)
+                {
+                    <CascadingValue Name="IsFooter" Value="true">
+                        @FooterColumns
+                    </CascadingValue>
+                }
+            </div>
+        </div>
+    </div>
+</footer>

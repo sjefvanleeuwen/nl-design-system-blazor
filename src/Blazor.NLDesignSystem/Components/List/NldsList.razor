@@ -1,7 +1,7 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
 @if (IsNumbered)
 {
-    <ol class="@(DisplayStyle) @(HasColumns ? "columns" : string.Empty)">
+    <ol class="@(DisplayStyle) @(HasColumns ? "columns" : string.Empty) @(IsFooter ? "footer__nav" : string.Empty)">
         <CascadingValue Name="ParentListType" Value="TypeToUse">
             @ChildContent
         </CascadingValue>
@@ -9,7 +9,7 @@
 }
 else
 {
-    <ul class="@(DisplayStyle) @(HasColumns ? "columns" : string.Empty)">
+    <ul class="@(DisplayStyle) @(HasColumns ? "columns" : string.Empty) @(IsFooter ? "footer__nav" : string.Empty)">
         <CascadingValue Name="ParentListType" Value="TypeToUse">
             @ChildContent
         </CascadingValue>
