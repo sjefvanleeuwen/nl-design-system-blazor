@@ -6,6 +6,7 @@ This holds the status of the components; if there is an implementation of this c
 
 - Backlink
 - Badge
+- BottomBar
 - Button
 - Card
 - Chart
@@ -42,6 +43,5 @@ This holds the status of the components; if there is an implementation of this c
 
 ## Currently not implemented
 
-- BottomBar
 - Footer
 - Modal
