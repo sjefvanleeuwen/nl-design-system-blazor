@@ -6,42 +6,42 @@ This holds the status of the components; if there is an implementation of this c
 
 Not all implemented components are fully implemented. Look at the readme for each component for the current status.
 
-- Backlink
-- Badge
-- BottomBar
-- Button
-- Card
-- Chart
-- Checkbox (as part of Form)
-- Collapse
-- Combobox (as part of Form)
-- ContentHeader (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
-- DefinitionList
-- File (as part of Form)
-- Filter (is an option in radiobutton and checkbox; IsFilter = true)
-- Footer
-- Form
-- Header
-- Hint
-- Icon (a usable component that is not a defined Component in NL-Desing-System)
-- Image
-- Label
-- List
-- Meta
-- Navigation
-- Notification
-- Pagination
-- Quote
-- RadioButton (as part of Form)
-- Section
-- Skiplink
-- Spinner
-- Switch (as part of Form)
-- Timeline
-- Tooltip
-- Video
-- Table
-- Tabs
+- [Backlink]()
+- [Badge]()
+- [BottomBar]()
+- [Button]()
+- [Card]()
+- [Chart]()
+- [Checkbox]() (as part of Form)
+- [Collapse]()
+- [Combobox]() (as part of Form)
+- [ContentHeader]() (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
+- [DefinitionList]()
+- [File]() (as part of Form)
+- [Filter]() (is an option in radiobutton and checkbox; IsFilter = true)
+- [Footer]()
+- [Form]()
+- [Header]()
+- [Hint]()
+- [Icon]() (a usable component that is not a defined Component in NL-Desing-System)
+- [Image]()
+- [Label]()
+- [List]()
+- [Meta]()
+- [Navigation]()
+- [Notification]()
+- [Pagination]()
+- [Quote]()
+- [RadioButton]() (as part of Form)
+- [Section]()
+- [Skiplink]()
+- [Spinner]()
+- [Switch]() (as part of Form)
+- [Timeline]()
+- [Tooltip]()
+- [Video]()
+- [Table]()
+- [Tabs](./tabs/)
 
 ## Currently not implemented
 
