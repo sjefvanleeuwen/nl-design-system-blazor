@@ -30,9 +30,6 @@ namespace Blazor.NLDesignSystem.Components
         public LabelAlignment LabelAlignment { get; set; }
         //The Id used to register the elemtne in javascript. Will be the id of the element is not provided
         [Parameter]
-        public string RegistrationId { get => _registrationId ?? Identifier; set => _registrationId = value; }
-        private string _registrationId;
-        [Parameter]
         public InputSize Size { get; set; }
 
         [Parameter]
@@ -65,7 +62,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, RegistrationId, Items);
+                await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Items);
             }
             await base.OnAfterRenderAsync(firstRender);
         }

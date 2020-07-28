@@ -1,0 +1,37 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<div @ref="ModalReference" class="modal @(HasBackDrop ? "modal--backdrop" : "")" role="dialog" aria-describedby="@Identifyer" tabindex="-1">
+    <section class="modal__content @(HeightIsSet ? $"modal--height{HeightAppendix}" : string.Empty) @(WidthIsSet ? $"modal--width{WidhtAppendix}" : string.Empty)" role="document">
+        @if (ShowScreenReaderText)
+        {
+            <div id="@Identifyer" class="screenreader-only">
+
+                <p>
+                    @ScreenReaderText
+                </p>
+            </div>
+        }
+        @if (ShowHeader)
+        {
+            <header class="modal__title">
+                <h1>@Title</h1>
+                @if (HasCloseButton)
+                {
+                    <button class="modal__close-button">
+                        <i class="icon icon-cross"></i>
+                        @CloseText
+                    </button>
+                }
+            </header>
+
+        }
+        <div class="modal__body" role="document" tabindex="0">
+            @Content
+        </div>
+        @if (ShowFooter)
+        {
+            <footer class="modal__footer">
+                @Footer
+            </footer>
+        }
+    </section>
+</div>

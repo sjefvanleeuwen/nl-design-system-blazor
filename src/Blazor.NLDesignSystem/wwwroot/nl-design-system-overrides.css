@@ -12,7 +12,7 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
     white-space: nowrap;
 }
 
-/* Checkbox */*/
+/* Checkbox */
 
 /* the order of the css in the build css is different and that is why input__control is not overridden by input__control--checkbox*/
 .input__control.input__control--checkbox {

@@ -27,6 +27,7 @@ Not all implemented components are fully implemented. Look at the readme for eac
 - [Image](./Image)
 - [Label](./Label)
 - [List](./List)
+- [Modal](./Modal)
 - [Meta](./Meta)
 - [Navigation](./Navigation)
 - [Notification](./Natofication)
@@ -45,4 +46,4 @@ Not all implemented components are fully implemented. Look at the readme for eac
 
 ## Currently not implemented
 
-- Modal
+ - Everything component is implemented
