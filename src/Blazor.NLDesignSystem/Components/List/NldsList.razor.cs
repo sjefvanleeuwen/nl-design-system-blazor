@@ -20,7 +20,7 @@ namespace Blazor.NLDesignSystem.Components
 
         private ListType TypeToUse => (Type == ListType.Undefined && ParentListType.HasValue) ? ParentListType.Value : Type;
         private string DisplayStyle => TypeToUse.GetDescription<StyleAttribute>() ?? string.Empty;
-        private bool IsNumbered => 
+        private bool IsNumbered =>
             TypeToUse == ListType.Decimal ||
             TypeToUse == ListType.DecimalCircled;
     }

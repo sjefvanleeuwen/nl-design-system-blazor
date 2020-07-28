@@ -60,7 +60,7 @@ namespace Blazor.NLDesignSystem.Components
 
             return attributes;
         }
-        
+
         private IDictionary<string, object> GetLabelAttributes()
         {
             var attributes = new Dictionary<string, object>();

@@ -1,5 +1,4 @@
-﻿using Blazor.NLDesignSystem.Extensions;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace Blazor.NLDesignSystem.Components
 {

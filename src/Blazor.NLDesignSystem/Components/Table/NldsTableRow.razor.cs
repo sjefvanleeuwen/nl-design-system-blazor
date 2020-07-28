@@ -8,6 +8,6 @@ namespace Blazor.NLDesignSystem.Components
         public bool IsSelected { get; set; }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }       
+        public RenderFragment ChildContent { get; set; }
     }
 }
