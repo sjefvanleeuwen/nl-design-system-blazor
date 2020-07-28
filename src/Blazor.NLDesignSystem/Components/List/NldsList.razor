@@ -1,0 +1,17 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@if (IsNumbered)
+{
+    <ol class="@(DisplayStyle) @(HasColumns ? "columns" : string.Empty)">
+        <CascadingValue Name="ParentListType" Value="TypeToUse">
+            @ChildContent
+        </CascadingValue>
+    </ol>
+}
+else
+{
+    <ul class="@(DisplayStyle) @(HasColumns ? "columns" : string.Empty)">
+        <CascadingValue Name="ParentListType" Value="TypeToUse">
+            @ChildContent
+        </CascadingValue>
+    </ul>
+}

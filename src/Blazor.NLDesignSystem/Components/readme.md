@@ -23,6 +23,7 @@ This holds the status of the components; if there is an implementation of this c
 - Icon (a usable component that is not a defined Component in NL-Desing-System)
 - Image
 - Label
+- List
 - Meta
 - Navigation
 - Notification
@@ -43,5 +44,4 @@ This holds the status of the components; if there is an implementation of this c
 
 - BottomBar
 - Footer
-- List
 - Modal

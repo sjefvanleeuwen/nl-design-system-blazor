@@ -502,7 +502,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                     };
+                                                                                 };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -822,3 +822,140 @@
         </NldsTableRow>
     </Body>
 </NldsTable>
+<h2>List Item</h2>
+<NldsList>
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Chevrons</h3>
+<NldsList Type="ListType.Chrevrons">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Dash</h3>
+<NldsList Type="ListType.Dash">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Decimal</h3>
+<NldsList Type="ListType.Decimal">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Decimal Circled</h3>
+<NldsList Type="ListType.DecimalCircled">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Filter</h3>
+<NldsList Type="ListType.Filter">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Filter Inline</h3>
+<NldsList Type="ListType.FilterInline">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Links</h3>
+<NldsList Type="ListType.Links">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Search</h3>
+<NldsList Type="ListType.Search">
+    <NldsListItem>
+        <a href="https://www.inburgeren.nl/" class="is-h4" target="_blank" rel="noopener">Inburgeren in Nederland – index</a>
+        <p>
+            Home · <strong>Inburgeren</strong>: hoe moet dat. Asielmigranten; School en leren;
+            Inburgeringsplicht; Inburgeringsexamen; Staatsexamen NT2; Geen examen
+            doen; Meer tijd nodig; Niet op tijd klaar; Zelf verantwoordelijk. Examen doen.
+            Participatieverklaring; Schrijven; Spreken; Luisteren; Lezen; Kennis Nederlandse
+            Maatschappij&nbsp;...
+        </p>
+    </NldsListItem>
+    <NldsListItem>
+        <a href="https://www.inburgeren.nl/examen-doen.jsp" class="is-h4" target="_blank" rel="noopener">Inburgeren in Nederland – examen doen</a>
+        <p>
+            Op het inburgeringsexamen bekijkt DUO of u genoeg weet over Nederland. En of
+            uw Nederlands goed genoeg is. Als u slaagt, krijgt u het inburgeringsdiploma. U
+            kunt de examens het beste oefenen in Google Chrome of in Firefox. Het examen
+            Spreken (Spreekvaardigheid) kunt u alleen oefenen in Firefox.
+        </p>
+    </NldsListItem>
+</NldsList>
+<h3>- Subjects</h3>
+<NldsList Type="ListType.Subjects" HasColumns="true">
+    <NldsListItem>
+        <NldsListILink Uri="#">Portaalbeheer</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+    <NldsListItem>
+        <NldsListILink Uri="#">Onderwerp</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+    <NldsListItem>
+        <NldsListILink Uri="#">Onderwerp</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+    <NldsListItem>
+        <NldsListILink Uri="#">Onderwerp</NldsListILink>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus cursus.</p>
+    </NldsListItem>
+</NldsList>
+<h3>- Columns (decimal)</h3>
+<NldsList Type="ListType.Decimal" HasColumns="true">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2</NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+    <NldsListItem>Test 4</NldsListItem>
+</NldsList>
+<h3>- Nested list</h3>
+<NldsList>
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>Test 2
+        <NldsList>
+            <NldsListItem>Test 2.1</NldsListItem>
+            <NldsListItem>Test 2.2</NldsListItem>
+            <NldsListItem>Test 2.3</NldsListItem>
+            <NldsListItem>Test 2.4</NldsListItem>
+        </NldsList>
+    </NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Nested list (decimal)</h3>
+<NldsList Type="ListType.Decimal">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>
+        Test 2
+        <NldsList>
+            <NldsListItem>Test 2.1</NldsListItem>
+            <NldsListItem>Test 2.2</NldsListItem>
+            <NldsListItem>Test 2.3</NldsListItem>
+            <NldsListItem>Test 2.4</NldsListItem>
+        </NldsList>
+    </NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
+<h3>- Nested list withoud inherited type</h3>
+<NldsList Type="ListType.Decimal">
+    <NldsListItem>Test 1</NldsListItem>
+    <NldsListItem>
+        Test 2
+        <NldsList Type="ListType.Dash">
+            <NldsListItem>Test 2.1</NldsListItem>
+            <NldsListItem>Test 2.2</NldsListItem>
+            <NldsListItem>Test 2.3</NldsListItem>
+            <NldsListItem>Test 2.4</NldsListItem>
+        </NldsList>
+    </NldsListItem>
+    <NldsListItem>Test 3</NldsListItem>
+</NldsList>
