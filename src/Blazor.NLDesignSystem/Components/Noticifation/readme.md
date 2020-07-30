@@ -5,4 +5,5 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 Status: Fully implemented
 
-Note! The javascript has been replaced by Blazor. If you want to close the button you need to call Close() on the referenct to this notifiction
+### Notes
+- The JavaScript has been replaced by Blazor. `Close()` should be called on the reference to the notifucation.

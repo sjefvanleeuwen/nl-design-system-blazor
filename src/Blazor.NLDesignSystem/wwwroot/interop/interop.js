@@ -11,7 +11,7 @@ function setEventListener(eventName, handler, JSObjectRef) {
   };
   switch (eventName) {
     case "combobox-select": handler.addEventListener(eventName, listener);
-    break;
+      break;
   }
 }
 
@@ -19,7 +19,7 @@ function setEventListener(eventName, handler, JSObjectRef) {
 // Adding and getting Elements
 //////
 
-function getElementById (id, unobstrusive = false) {
+function getElementById(id, unobstrusive = false) {
   let elementHolder = window.NlDesignSystemBlazor.elements.find(e => e.id === id);
   if (!elementHolder) {
     if (unobstrusive) return null;
@@ -33,12 +33,12 @@ function getElementById (id, unobstrusive = false) {
 }
 
 function addElement(id, element) {
-    var oldElement = getElementById(id, true);
-    if (oldElement != null) {
-       window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
-       oldElement.dispose();
-    }
-    window.NlDesignSystemBlazor.elements.push({ id: id, element: element });
+  var oldElement = getElementById(id, true);
+  if (oldElement != null) {
+    window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
+    oldElement.dispose();
+  }
+  window.NlDesignSystemBlazor.elements.push({ id: id, element: element });
 }
 
 //////
@@ -52,6 +52,8 @@ function donutChart(el, value) {
     donutChart.draw();
   });
 }
+
+// Methods done in Blazor, no javascript needed
 
 //////
 // Collapse
@@ -85,7 +87,6 @@ async function modal(el, id) {
   await System.import('_content/Blazorized.NLDesignSystem/dist/components/modal/modal.js').then(function (module) {
     var modal = new module.Modal(el);
     addElement(modalPrefix + id, modal);
-    console.log(modalPrefix + id);
   });
 }
 

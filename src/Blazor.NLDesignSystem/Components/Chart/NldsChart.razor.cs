@@ -10,19 +10,10 @@ namespace Blazor.NLDesignSystem.Components
         [Inject]
         private IJSRuntime JSRuntime { get; set; }
 
-        private ElementReference ChartReference { get; set; }
-
-        protected async override Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                await JSRuntime.InvokeVoidAsync("donutChart", ChartReference, Percentage);
-            }
-            await base.OnAfterRenderAsync(firstRender);
-        }
-
         [Parameter]
         public Color Color { get; set; } = Color.HemelBlauw;
+        [Parameter]
+        public bool DrawOnCreate { get; set; } = true;
         [Parameter]
         public double Percentage { get; set; }
         [Parameter]
@@ -32,6 +23,35 @@ namespace Blazor.NLDesignSystem.Components
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        private ElementReference ChartReference { get; set; }
+
+        private bool Show { get; set; }
+
+        protected override void OnInitialized()
+        {
+            Show = DrawOnCreate;
+            base.OnInitialized();
+        }
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (Show)
+            {
+                await JSRuntime.InvokeVoidAsync("donutChart", ChartReference, Percentage);
+            }
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
+        public void Destroy()
+        {
+            Show = false;
+        }
+
+        public void Draw()
+        {
+            Show = true;
+        }
 
         private string DisplayColor => Color.GetDescription<StyleAttribute>();
     }

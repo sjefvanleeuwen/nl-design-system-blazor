@@ -1,4 +1,6 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
+@if (Show)
+{
     <div @ref="ChartReference" class="donut-chart donut-chart--@DisplayColor">
         <h3 class="donut-chart__title">@((MarkupString)Title)</h3>
         <div class="donut-chart__chart">
@@ -9,3 +11,4 @@
         </div>
         <span class="donut-chart__subtitle">@((MarkupString)TextBelow)</span>
     </div>
+}
