@@ -30,7 +30,7 @@ Not all implemented components are fully implemented. Look at the readme for eac
 - [Modal](./Modal)
 - [Meta](./Meta)
 - [Navigation](./Navigation)
-- [Notification](./Natofication)
+- [Notification](./Notification)
 - [Pagination](./Pagination)
 - [Quote](./Quote)
 - [RadioButton](./Form) (as part of Form)
