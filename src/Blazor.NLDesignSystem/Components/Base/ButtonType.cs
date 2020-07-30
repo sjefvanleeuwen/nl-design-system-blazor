@@ -13,6 +13,10 @@ namespace Blazor.NLDesignSystem
         [Style("btn btn--icon")]
         Icon,
         [Style("btn btn--digid")]
-        DigiD
+        DigiD,
+        [Style("btn btn--primary btn--digid cta-link")]
+        DigiDPrimary,
+        [Style("btn btn--link")]
+        Link
     }
 }

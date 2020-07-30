@@ -3,10 +3,9 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Button](https://nl-design-system.gitlab.io/nl-design-system/componenten/button/index.html)
 
-Status: Some features not implemented:
-- General: Icon can use the Icon class
-- Link als knop ([Non preferred use by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role))
-- Knop als link
-- DigiD buttons (?)
-	- a tags ([Non preferred use by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role))
-- Javascript ([Non preferred use by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role))
+Status: Fully implemented (See notes!)
+
+### Notes
+When using an icon in the button use the [NldsIcon component](../icon).
+The Link als een knop is not implemented because it is a [non preferred practice by Mozilla](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role) (which is also stated in the description of the [Button component](https://nl-design-system.gitlab.io/nl-design-system/componenten/button/index.html))
+This means the DigiD button [a]-tag is not implemented. The Javascript needed is not implemented either.

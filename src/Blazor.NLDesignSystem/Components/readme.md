@@ -46,4 +46,4 @@ Not all implemented components are fully implemented. Look at the readme for eac
 
 ## Currently not implemented
 
- - Everything component is implemented
+ - Everything component available in version 0.1.1. has an implementation

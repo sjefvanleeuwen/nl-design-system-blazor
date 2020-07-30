@@ -7,11 +7,12 @@ namespace Blazor.NLDesignSystem.Components
     public partial class NldsButton
     {
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
-        [Parameter]
         public string Title { get; set; }
         [Parameter]
         public ButtonType Type { get; set; }
+
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
 
         private string DisplayType => Type.GetDescription<StyleAttribute>();
 

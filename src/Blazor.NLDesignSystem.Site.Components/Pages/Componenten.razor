@@ -52,7 +52,12 @@
 <NldsButton Type="ButtonType.Primary"><NldsButtonIcon Icon="Icon.Magnifier" Title="Zoek">Zoek</NldsButtonIcon></NldsButton>
 <NldsButton Type="ButtonType.Primary"><NldsButtonIcon Icon="Icon.ArrowForward" Position="RelativePosition.After">Verder</NldsButtonIcon></NldsButton>
 <NldsButton Type="ButtonType.DigiD">Hello World!</NldsButton>
+<NldsButton Type="ButtonType.DigiDPrimary">
+    Inloggen Mijn DUO
+    <span class="screenreader-only">&nbsp;met Digi D</span>
+</NldsButton>
 <NldsButton><NldsButtonSpinner>Aan het opslaan</NldsButtonSpinner></NldsButton>
+<NldsButton Type="ButtonType.Link">Knop als link</NldsButton>
 <h2>Collapse</h2>
 <h3>Normal</h3>
 <NldsCollapseWrapper>
@@ -502,7 +507,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                     };
+                                                                                                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -984,7 +989,7 @@
     {
         Modal2.Open();
     }
-    
+
     private void OpenModal3()
     {
         Modal3.Open();
@@ -1003,7 +1008,7 @@
 
 <NldsModal @ref="Modal1" CloseText="Close" Title="De titel" ScreenReaderText="Dit is de screenreaderTekst">
     <Content>
-    Dit is de inhoud.
+        Dit is de inhoud.
     </Content>
     <Footer>This is where the action is <NldsButton Type="ButtonType.Primary">OK!?</NldsButton></Footer>
 </NldsModal>
