@@ -6,4 +6,4 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 Status: Fully implemented
 
 ### Notes
-- The JavaScript has been replaced by Blazor. `Close()` should be called on the reference to the notifucation.
+- The JavaScript has been replaced by Blazor. `Close()` should be called on the reference to the notification.
