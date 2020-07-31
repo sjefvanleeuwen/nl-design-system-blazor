@@ -216,9 +216,18 @@
     {
         CollapseExternal1.Destroy();
     }
+    private string LastAction = string.Empty;
+    private void OnCollapse1Close()
+    {
+        LastAction = "Close";
+    }
+    private void OnCollapse1Open()
+    {
+        LastAction = "Open";
+    }
 }
 <NldsCollapseWrapper>
-    <NldsCollapse @ref="CollapseExternal1" Identifyer="externalCollapse">
+    <NldsCollapse @ref="CollapseExternal1" Identifyer="externalCollapse" OnCollapseClose="OnCollapse1Close" OnCollapseOpen="OnCollapse1Open">
         <Title>Titel <u>van</u> collapse</Title>
         <Content>
             <NldsCollapseContent>
@@ -231,7 +240,8 @@
 <button @onclick="CollapseClose">Close</button>
 <button @onclick="CollapseToggle">Toggle</button>
 <button @onclick="CollapseDestroy">Destroy</button>
-
+<h4>Event callbacks</h4>
+<p>Last Action: @LastAction</p>
 <h2>Input</h2>
 <h3>6 Input Types</h3>
 <NldsForm>
@@ -256,7 +266,7 @@
 </NldsForm>
 <h3>Values</h3>
 @code {
-private string inputValue = "This is content of the input";
+    private string inputValue = "This is content of the input";
 }
 <NldsForm>
     <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">

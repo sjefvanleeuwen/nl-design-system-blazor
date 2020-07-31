@@ -1,5 +1,6 @@
-﻿@namespace Blazor.NLDesignSystem.Components
-<div @ref="CollapsableReference" class="collapse__header" @attributes="GetAttributes()" id="@Identifyer">
+﻿@inherits NldsEventComponent
+@namespace Blazor.NLDesignSystem.Components
+<div @ref="CollapseReference" class="collapse__header" @attributes="GetAttributes()" id="@Identifyer">
     <i class="collapse__indicator">
         <span class="screenreader-only" data-contracted-i18n="@CollapsedText" data-expanded-i18n="@UnfoldedText"></span>
     </i>

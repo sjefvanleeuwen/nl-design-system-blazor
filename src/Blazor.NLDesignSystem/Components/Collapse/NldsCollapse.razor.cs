@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
@@ -28,7 +28,12 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public RenderFragment Title { get; set; }
 
-        private ElementReference CollapsableReference { get; set; }
+        [Parameter]
+        public EventCallback OnCollapseClose { get; set; }
+        [Parameter]
+        public EventCallback OnCollapseOpen { get; set; }
+
+        private ElementReference CollapseReference { get; set; }
 
         private bool ShowContent => Content != null;
 
@@ -36,7 +41,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("collapse", CollapsableReference, Identifyer);
+                await JSRuntime.InvokeVoidAsync("collapse", CollapseReference, Identifyer);
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -92,5 +97,26 @@ namespace Blazor.NLDesignSystem.Components
             await JSRuntime.InvokeVoidAsync("toggleCollapse", Identifyer);
         }
 
+        protected override async Task SetEventListeners()
+        {
+            await SetEventListener("collapse-close", CollapseReference);
+            await SetEventListener("collapse-open", CollapseReference);
+        }
+
+        [JSInvokable]
+        public override async Task EventCallback(string eventName, string eventJson)
+        {
+            switch (eventName)
+            {
+                case "collapse-close":
+                    if (OnCollapseClose.HasDelegate)
+                        await OnCollapseClose.InvokeAsync(this);
+                    break;
+                case "collapse-open":
+                    if (OnCollapseOpen.HasDelegate)
+                        await OnCollapseOpen.InvokeAsync(this);
+                    break;
+            }
+        }
     }
 }

@@ -90,7 +90,7 @@ namespace Blazor.NLDesignSystem.Components
             if (IsCollapsable)
             {
                 attributes["class"] = attributes.ContainsKey("class") ? $"{attributes["class"]} collapse__header" : "collapse__header";
-                attributes["x-uno-collapse-target"] = CollapseTarget;                
+                attributes["x-uno-collapse-target"] = CollapseTarget;
             }
 
             return attributes;

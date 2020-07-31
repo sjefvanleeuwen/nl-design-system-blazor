@@ -9,10 +9,14 @@ function setEventListener(eventName, handler, JSObjectRef) {
   let listener = function (e) {
     JSObjectRef.invokeMethodAsync("EventCallback", eventName, JSON.stringify(e));
   };
-  switch (eventName) {
-    case "combobox-select": handler.addEventListener(eventName, listener);
-      break;
-  }
+  console.log(eventName);
+  handler.addEventListener(eventName, listener);
+  //switch (eventName) {
+  //  case "combobox-select": handler.addEventListener(eventName, listener);
+  //  case "combobox-select": handler.addEventListener(eventName, listener);
+  //  case "combobox-select": handler.addEventListener(eventName, listener);
+  //    break;
+  //}
 }
 
 //////
@@ -36,7 +40,6 @@ function addElement(id, element) {
   var oldElement = getElementById(id, true);
   if (oldElement != null) {
     window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
-    oldElement.dispose();
   }
   window.NlDesignSystemBlazor.elements.push({ id: id, element: element });
 }
@@ -74,7 +77,7 @@ var collapsePrefix = "_collapse_";
 function collapse(el, id) {
   System.import('_content/Blazorized.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
     var collapse = new module.Collapse(el);
-    if (id !== "") {
+    if (id != null) { //on purpose not a type specific comparison
       addElement(collapsePrefix + id, collapse);
     }
   });

@@ -96,12 +96,10 @@ namespace Blazor.NLDesignSystem.Components
         [JSInvokable]
         public override async Task EventCallback(string eventName, string eventJson)
         {
-            var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-
             switch (eventName)
             {
                 case "combobox-select":
-                    var comboboxSelectItem = JsonSerializer.Deserialize<ComboboxSelectItem>(eventJson, jsonOptions);
+                    var comboboxSelectItem = JsonSerializer.Deserialize<ComboboxSelectItem>(eventJson, JsonOptions);
                     Value = comboboxSelectItem.Data;
                     if (OnComboboxSelect.HasDelegate)
                         await OnComboboxSelect.InvokeAsync(comboboxSelectItem);

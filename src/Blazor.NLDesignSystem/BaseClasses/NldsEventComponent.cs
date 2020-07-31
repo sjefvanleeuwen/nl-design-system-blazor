@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
@@ -8,6 +9,8 @@ namespace Blazor.NLDesignSystem.Components
     {
         [Inject]
         private IJSRuntime JSRuntime { get; set; }
+
+        protected JsonSerializerOptions JsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
         public DotNetObjectReference<NldsEventComponent> JSObjectRef { get; set; }
 
