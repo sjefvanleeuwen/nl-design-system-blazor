@@ -10,8 +10,9 @@ namespace Blazor.NLDesignSystem.Components
         private IJSRuntime JSRuntime { get; set; }
 
         [Parameter]
+        public string Identifier { get; set; }
+        [Parameter]
         public bool Inline { get; set; }
-
         [Parameter]
         public RenderFragment Tabs { get; set; }
         [Parameter]
@@ -23,9 +24,34 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("tabs", TabsReference);
+                await JSRuntime.InvokeVoidAsync("tabs", TabsReference, Identifier);
             }
             await base.OnAfterRenderAsync(firstRender);
+        }
+
+        public void Destroy()
+        {
+            JSRuntime.InvokeVoidAsync("destroyTabs", Identifier);
+        }
+
+        public void DisableTab(int tabIndex)
+        {
+            JSRuntime.InvokeVoidAsync("disableTab", Identifier, tabIndex);
+        }
+
+        public void EnableTab(int tabIndex)
+        {
+            JSRuntime.InvokeVoidAsync("enableTab", Identifier, tabIndex);
+        }
+
+        public async Task<int> GetActiveTabIndexAsync()
+        {
+            return await JSRuntime.InvokeAsync<int>("getActiveTabIndex", Identifier);
+        }
+
+        public void OpenTab(int tabIndex)
+        {
+            JSRuntime.InvokeVoidAsync("openTab", Identifier, tabIndex);
         }
     }
 }

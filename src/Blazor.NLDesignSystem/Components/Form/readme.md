@@ -14,14 +14,6 @@ Status: Some features not implemented:
 - Geneste checkboxen - The JavaScript messes with the blazor events when selecting a subitem (the changed event for the parent is triggered). A solution has not been implemented yet.
 - Geneste checkboxen - tabel
 
-[Filter](https://nl-design-system.gitlab.io/nl-design-system/componenten/filter/index.html)
-
-Status: Some features not implemented:
-- Geneste checkboxen
-- Geneste checkboxen - tabel
-
-Filter (indicated as a different component) is implemented
-
 [Combobox](https://nl-design-system.gitlab.io/nl-design-system/componenten/combobox/index.html)
 
 Status: Some features not implemented:
@@ -29,6 +21,14 @@ Status: Some features not implemented:
 - Combobox ajax calls
 - Combobox met objecten
 - Javascript API (all except combobox-select)
+
+[Filter](https://nl-design-system.gitlab.io/nl-design-system/componenten/filter/index.html)
+
+Status: Some features not implemented:
+- Geneste checkboxen
+- Geneste checkboxen - tabel
+
+Filter (indicated as a different component) is implemented
 
 [File](https://nl-design-system.gitlab.io/nl-design-system/componenten/file/index.html)
 

@@ -3,6 +3,8 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Tab](https://nl-design-system.gitlab.io/nl-design-system/componenten/tabs/index.html)
 
-Status: Some features not implemented:
+Status: Fully implemented (See notes!)
 
-- Javascript
+### Notes
+- For the javascript methods to work as a Blazor call an Identifier should be provided
+- activeTabIndex is accessable with the methode `GetActiveTabIndexAsync()`

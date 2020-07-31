@@ -3,4 +3,4 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Section](https://nl-design-system.gitlab.io/nl-design-system/componenten/sections/index.html)
 
-Status: Fully implemented.
+Status: Fully implemented

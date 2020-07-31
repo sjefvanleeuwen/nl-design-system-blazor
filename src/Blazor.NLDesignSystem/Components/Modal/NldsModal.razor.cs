@@ -16,7 +16,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public ModalSize? Height { get; set; }
         [Parameter]
-        public string Identifyer { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal
+        public string Identifier { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal
         [Parameter]
         public bool HasCloseButton { get; set; } = true;
         [Parameter]
@@ -41,7 +41,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("modal", ModalReference, Identifyer);
+                await JSRuntime.InvokeVoidAsync("modal", ModalReference, Identifier);
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -56,7 +56,7 @@ namespace Blazor.NLDesignSystem.Components
         private bool WidthIsSet => Width != null;
         public async void Open()
         {
-            await JSRuntime.InvokeVoidAsync("openModal", Identifyer);
+            await JSRuntime.InvokeVoidAsync("openModal", Identifier);
         }
     }
 }

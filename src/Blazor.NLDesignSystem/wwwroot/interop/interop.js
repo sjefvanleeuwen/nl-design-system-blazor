@@ -9,14 +9,7 @@ function setEventListener(eventName, handler, JSObjectRef) {
   let listener = function (e) {
     JSObjectRef.invokeMethodAsync("EventCallback", eventName, JSON.stringify(e));
   };
-  console.log(eventName);
   handler.addEventListener(eventName, listener);
-  //switch (eventName) {
-  //  case "combobox-select": handler.addEventListener(eventName, listener);
-  //  case "combobox-select": handler.addEventListener(eventName, listener);
-  //  case "combobox-select": handler.addEventListener(eventName, listener);
-  //    break;
-  //}
 }
 
 //////
@@ -36,11 +29,15 @@ function getElementById(id, unobstrusive = false) {
   return elementHolder.element;
 }
 
-function addElement(id, element) {
+function removeElement(id) {
   var oldElement = getElementById(id, true);
   if (oldElement != null) {
     window.NlDesignSystemBlazor.elements.splice(window.NlDesignSystemBlazor.elements.findIndex(item => item.id === id), 1);
   }
+}
+
+function addElement(id, element) {
+  removeElement(id);
   window.NlDesignSystemBlazor.elements.push({ id: id, element: element });
 }
 
@@ -91,6 +88,7 @@ async function closeCollapse(id) {
 async function destroyCollapse(id) {
   var collapse = getElementById(collapsePrefix + id);
   collapse.destroy();
+  removeElement(collapsePrefix + id);
 }
 
 async function openCollapse(id) {
@@ -175,10 +173,45 @@ function table(el) {
 // Tabs
 //////
 
-function tabs(el) {
+var tabsPrefix = "_tabs_";
+
+function tabs(el, id) {
   System.import('_content/Blazorized.NLDesignSystem/dist/components/tabs/tabs.js').then(function (module) {
-    new module.Tabs(el);
+    tabs = new module.Tabs(el);
+    console.log(id);
+    if (id != null) { //on purpose not a type specific comparison
+      console.log(id);
+      addElement(tabsPrefix + id, tabs);
+    }
   });
+}
+
+async function destroyTabs(id) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.destroy();
+  removeElement(tabsPrefix + id);
+}
+
+async function disableTab(id, idx) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.disableTab(idx);
+}
+
+async function enableTab(id, idx) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.enableTab(idx);
+}
+
+async function getActiveTabIndex (id) {
+  var tabs = getElementById(tabsPrefix + id);
+  var a = tabs.activeTabIndex;
+  console.log(a);
+  return tabs.activeTabIndex;
+}
+
+async function openTab(id, idx) {
+  var tabs = getElementById(tabsPrefix + id);
+  tabs.openTab(idx);
 }
 
 //////

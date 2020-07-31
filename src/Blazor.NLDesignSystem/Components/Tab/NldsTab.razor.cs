@@ -7,6 +7,8 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Identifier { get; set; }
         [Parameter]
+        public bool IsActive { get; set; }
+        [Parameter]
         public bool IsDisabled { get; set; }
 
         [Parameter]

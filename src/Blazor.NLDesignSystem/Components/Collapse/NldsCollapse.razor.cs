@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Collections.Generic;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
@@ -17,7 +16,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string CollapsedText { get; set; } = "ingeklapt";
         [Parameter]
-        public string Identifyer { get; set; }
+        public string Identifier { get; set; }
         [Parameter]
         public string Target { get; set; }
         [Parameter]
@@ -41,7 +40,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("collapse", CollapseReference, Identifyer);
+                await JSRuntime.InvokeVoidAsync("collapse", CollapseReference, Identifier);
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -79,22 +78,22 @@ namespace Blazor.NLDesignSystem.Components
 
         public async void Close()
         {
-            await JSRuntime.InvokeVoidAsync("closeCollapse", Identifyer);
+            await JSRuntime.InvokeVoidAsync("closeCollapse", Identifier);
         }
 
         public async void Destroy()
         {
-            await JSRuntime.InvokeVoidAsync("destroyCollapse", Identifyer);
+            await JSRuntime.InvokeVoidAsync("destroyCollapse", Identifier);
         }
 
         public async void Open()
         {
-            await JSRuntime.InvokeVoidAsync("openCollapse", Identifyer);
+            await JSRuntime.InvokeVoidAsync("openCollapse", Identifier);
         }
 
         public async void Toggle()
         {
-            await JSRuntime.InvokeVoidAsync("toggleCollapse", Identifyer);
+            await JSRuntime.InvokeVoidAsync("toggleCollapse", Identifier);
         }
 
         protected override async Task SetEventListeners()

@@ -7,4 +7,4 @@ Status: Fully implemented (See notes!)
 
 ### Notes
 - Collapsable table is implemented in [Table](../Table)
-- For the javascript methods to work as a Blazor call an Identifyer should be provided
+- For the javascript methods to work as a Blazor call an Identifier should be provided

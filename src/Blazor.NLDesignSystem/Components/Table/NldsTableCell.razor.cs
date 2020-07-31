@@ -24,7 +24,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Headers { get; set; }
         [Parameter]
-        public string Identifyer { get; set; }
+        public string Identifier { get; set; }
         [Parameter]
         public bool IsHeader { get; set; }
         [Parameter]
@@ -75,9 +75,9 @@ namespace Blazor.NLDesignSystem.Components
             {
                 attributes["colspan"] = Colspan;
             }
-            if (!string.IsNullOrWhiteSpace(Identifyer))
+            if (!string.IsNullOrWhiteSpace(Identifier))
             {
-                attributes["id"] = Identifyer;
+                attributes["id"] = Identifier;
             }
             if (!string.IsNullOrWhiteSpace(Headers))
             {

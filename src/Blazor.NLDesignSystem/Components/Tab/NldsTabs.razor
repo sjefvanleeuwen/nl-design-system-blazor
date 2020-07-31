@@ -1,5 +1,5 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<ul @ref="TabsReference" class="tab @(Inline ? "tab--inline" : string.Empty)" role="tablist">
+<ul @ref="TabsReference" class="tab @(Inline ? "tab--inline" : string.Empty)" role="tablist" id="@Identifier">
     @Tabs
 </ul>
 <div class="content-background tab__content @(Inline ? "tab__content--inline" : string.Empty)">

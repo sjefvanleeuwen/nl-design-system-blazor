@@ -9,7 +9,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public Color? BackgroundColor { get; set; }
         [Parameter]
-        public string Identifyer { get; set; }
+        public string Identifier { get; set; }
         [Parameter]
         public bool IsCollapsableContent { get; set; }
         [Parameter]
@@ -25,9 +25,9 @@ namespace Blazor.NLDesignSystem.Components
         {
             var attributes = new Dictionary<string, object>();
 
-            if (!string.IsNullOrWhiteSpace(Identifyer))
+            if (!string.IsNullOrWhiteSpace(Identifier))
             {
-                attributes["id"] = Identifyer;
+                attributes["id"] = Identifier;
             }
 
             return attributes;

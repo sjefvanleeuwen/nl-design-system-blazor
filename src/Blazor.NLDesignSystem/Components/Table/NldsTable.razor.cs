@@ -11,7 +11,7 @@ namespace Blazor.NLDesignSystem.Components
         private IJSRuntime JSRuntime { get; set; }
 
         [Parameter]
-        public string Identifyer { get; set; }
+        public string Identifier { get; set; }
         [Parameter]
         public bool IsResponsive { get; set; }
         [Parameter]
@@ -53,9 +53,9 @@ namespace Blazor.NLDesignSystem.Components
         {
             var attributes = new Dictionary<string, object>();
 
-            if (ShowLabel && !string.IsNullOrWhiteSpace(Identifyer))
+            if (ShowLabel && !string.IsNullOrWhiteSpace(Identifier))
             {
-                attributes["aria-describedby"] = Identifyer;
+                attributes["aria-describedby"] = Identifier;
             }
 
             return attributes;
@@ -65,9 +65,9 @@ namespace Blazor.NLDesignSystem.Components
         {
             var attributes = new Dictionary<string, object>();
 
-            if (ShowLabel && !string.IsNullOrWhiteSpace(Identifyer))
+            if (ShowLabel && !string.IsNullOrWhiteSpace(Identifier))
             {
-                attributes["id"] = Identifyer;
+                attributes["id"] = Identifier;
             }
 
             return attributes;

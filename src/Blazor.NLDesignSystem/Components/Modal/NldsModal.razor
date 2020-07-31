@@ -1,9 +1,9 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<div @ref="ModalReference" class="modal @(HasBackDrop ? "modal--backdrop" : "")" role="dialog" aria-describedby="@Identifyer" tabindex="-1">
+<div @ref="ModalReference" class="modal @(HasBackDrop ? "modal--backdrop" : "")" role="dialog" aria-describedby="@Identifier" tabindex="-1">
     <section class="modal__content @(HeightIsSet ? $"modal--height{HeightAppendix}" : string.Empty) @(WidthIsSet ? $"modal--width{WidhtAppendix}" : string.Empty)" role="document">
         @if (ShowScreenReaderText)
         {
-            <div id="@Identifyer" class="screenreader-only">
+            <div id="@Identifier" class="screenreader-only">
 
                 <p>
                     @ScreenReaderText

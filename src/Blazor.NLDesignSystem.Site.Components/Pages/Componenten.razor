@@ -158,7 +158,7 @@
             <NldsTableCell>-</NldsTableCell>
             <NldsTableCell>MBO-Onderwijslicentie</NldsTableCell>
         </NldsTableRow>
-        <NldsTableRow IsCollapsableContent="true" Identifyer="table_collapse" BackgroundColor="Color.Mintgroen">
+        <NldsTableRow IsCollapsableContent="true" Identifier="table_collapse" BackgroundColor="Color.Mintgroen">
             <NldsTableCell Colspan="3">
                 <p>
                     Proin quis massa
@@ -179,7 +179,7 @@
             <NldsTableCell>-</NldsTableCell>
             <NldsTableCell>Examenlicentie</NldsTableCell>
         </NldsTableRow>
-        <NldsTableRow IsCollapsableContent="true" Identifyer="table_collapse2" BackgroundColor="Color.Mintgroen">
+        <NldsTableRow IsCollapsableContent="true" Identifier="table_collapse2" BackgroundColor="Color.Mintgroen">
             <NldsTableCell Colspan="3">
                 <p>
                     Proin quis massa
@@ -227,7 +227,7 @@
     }
 }
 <NldsCollapseWrapper>
-    <NldsCollapse @ref="CollapseExternal1" Identifyer="externalCollapse" OnCollapseClose="OnCollapse1Close" OnCollapseOpen="OnCollapse1Open">
+    <NldsCollapse @ref="CollapseExternal1" Identifier="externalCollapse" OnCollapseClose="OnCollapse1Close" OnCollapseOpen="OnCollapse1Open">
         <Title>Titel <u>van</u> collapse</Title>
         <Content>
             <NldsCollapseContent>
@@ -652,7 +652,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                     };
+                                                                                                                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -777,11 +777,11 @@
 </NldsChart>
 <button @onclick="Chart1Draw">Draw Chart</button>
 <button @onclick="Chart1Destroy">Destroy Chart</button>
-<h2>Tabs</h2>
+<h2>Tabs (2nd tab is active)</h2>
 <NldsTabs>
     <Tabs>
         <NldsTab Identifier="1">Tab 1 met <u>een</u> lange titel</NldsTab>
-        <NldsTab Identifier="2">Tab 2<NldsBadge Number="2" Color="Color.Oranje" /></NldsTab>
+        <NldsTab Identifier="2" IsActive="true">Tab 2<NldsBadge Number="2" Color="Color.Oranje" /></NldsTab>
         <NldsTab Identifier="3"><NldsIcon Icon="Icon.Delete" />Tab 3</NldsTab>
         <NldsTab Identifier="4" IsDisabled="true">Disabled</NldsTab>
         <NldsTab Identifier="5">Tab 5</NldsTab>
@@ -837,8 +837,69 @@
         <NldsTabContent Identifier="10_"><p>Panel 10</p></NldsTabContent>
     </TabContents>
 </NldsTabs>
+<h3>Methods on tabs</h3>
+@code {
+    private int? ActiveTab = null;
+    private NldsTabs Tabsref;
+    private void OpenTab1()
+    {
+        Tabsref.OpenTab(0);
+    }
+    private void OpenTab2()
+    {
+        Tabsref.OpenTab(1);
+    }
+    private void OpenTab3()
+    {
+        Tabsref.OpenTab(2);
+    }
+    private void OpenTab4()
+    {
+        Tabsref.OpenTab(3);
+    }
+    private void DisableTab2()
+    {
+        Tabsref.DisableTab(1);
+    }
+    private void EnableTab2()
+    {
+        Tabsref.EnableTab(1);
+    }
+    private void DestroyTabs()
+    {
+        Tabsref.Destroy();
+    }
+    private async void GetActiveTab()
+    {
+        ActiveTab = await Tabsref.GetActiveTabIndexAsync();
+        StateHasChanged();
+    }
+}
+<NldsTabs @ref="@Tabsref" Identifier="tabsname">
+    <Tabs>
+        <NldsTab Identifier="Tab1_id">Tab 1</NldsTab>
+        <NldsTab Identifier="Tab2_id">Tab 2</NldsTab>
+        <NldsTab Identifier="Tab3_id">Tab 3</NldsTab>
+        <NldsTab Identifier="Tab4_id">Tab 4</NldsTab>
+    </Tabs>
+    <TabContents>
+        <NldsTabContent Identifier="Tab1_id"><h3>Panel 1</h3></NldsTabContent>
+        <NldsTabContent Identifier="Tab2_id"><h3>Panel 2</h3></NldsTabContent>
+        <NldsTabContent Identifier="Tab3_id"><h3>Panel 3</h3></NldsTabContent>
+        <NldsTabContent Identifier="Tab4_id"><h3>Panel 4</h3></NldsTabContent>
+    </TabContents>
+</NldsTabs>
+<button @onclick="OpenTab1">Open Tab 1</button>
+<button @onclick="OpenTab2">Open Tab 2</button>
+<button @onclick="OpenTab3">Open Tab 3</button>
+<button @onclick="OpenTab4">Open Tab 4</button>
+<button @onclick="GetActiveTab">Check de actieve tab</button>
+<button @onclick="DisableTab2">Disable Tab 2</button>
+<button @onclick="EnableTab2">Enable Tab 2</button>
+<button @onclick="DestroyTabs">Destroy Tabs</button>
+<p>Active Tab: @ActiveTab</p>
 <h2>Table</h2>
-<NldsTable Identifyer="tabelbeschrijving">
+<NldsTable Identifier="tabelbeschrijving">
     <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
     <Header>
         <NldsTableRow>
@@ -870,7 +931,7 @@
     </Body>
 </NldsTable>
 <h3>Responsive Striped & Hoverable Table met caption with selected rows</h3>
-<NldsTable Identifyer="tabelbeschrijving2" IsResponsive="true" IsStriped="true" IsHoverable="true">
+<NldsTable Identifier="tabelbeschrijving2" IsResponsive="true" IsStriped="true" IsHoverable="true">
     <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
     <Caption>Voorbeeld automatische <span lang="en-US">responsive</span> tabel</Caption>
     <Header>
@@ -903,7 +964,7 @@
     </Body>
 </NldsTable>
 <h3>Complexe Tabellen</h3>
-<NldsTable Identifyer="tabelbeschrijving3" IsStriped="true" IsHoverable="true" UseFullWidth="true" UseSmallFont="true">
+<NldsTable Identifier="tabelbeschrijving3" IsStriped="true" IsHoverable="true" UseFullWidth="true" UseSmallFont="true">
     <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
     <Header>
         <NldsTableRow>
@@ -914,22 +975,22 @@
             <NldsTableCell Colspan="2">2014 - 2015</NldsTableCell>
         </NldsTableRow>
         <NldsTableRow>
-            <NldsTableCell Identifyer="brin">Brinnr</NldsTableCell>
-            <NldsTableCell Identifyer="name">Naam Instelling</NldsTableCell>
-            <NldsTableCell Identifyer="i1112" Headers="yr1112"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
-            <NldsTableCell Identifyer="v1112" Headers="yr1112">Vgl Grp</NldsTableCell>
-            <NldsTableCell Identifyer="i1213" Headers="yr1113"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
-            <NldsTableCell Identifyer="v1213" Headers="yr1113">Vgl Grp</NldsTableCell>
-            <NldsTableCell Identifyer="i1314" Headers="yr1114"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
-            <NldsTableCell Identifyer="v1314" Headers="yr1114">Vgl Grp</NldsTableCell>
-            <NldsTableCell Identifyer="i1415" Headers="yr1115"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
-            <NldsTableCell Identifyer="v1415" Headers="yr1115">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="brin">Brinnr</NldsTableCell>
+            <NldsTableCell Identifier="name">Naam Instelling</NldsTableCell>
+            <NldsTableCell Identifier="i1112" Headers="yr1112"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1112" Headers="yr1112">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="i1213" Headers="yr1113"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1213" Headers="yr1113">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="i1314" Headers="yr1114"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1314" Headers="yr1114">Vgl Grp</NldsTableCell>
+            <NldsTableCell Identifier="i1415" Headers="yr1115"><abbr title="Instelling" tabindex="0">Inst.</abbr></NldsTableCell>
+            <NldsTableCell Identifier="v1415" Headers="yr1115">Vgl Grp</NldsTableCell>
         </NldsTableRow>
     </Header>
     <Body>
         <NldsTableRow>
             <NldsTableCell Headers="brin">01IC</NldsTableCell>
-            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name0">AOC Oost</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name0">AOC Oost</NldsTableCell>
             <NldsTableCell Class="align-right" Headers="name0 i1112 yr1112">81,1%</NldsTableCell>
             <NldsTableCell Class="align-right" Headers="name0 v1112 yr1112">71,1%</NldsTableCell>
             <NldsTableCell Class="align-right" Headers="name0 i1213 yr1213">79,8</NldsTableCell>
@@ -941,7 +1002,7 @@
         </NldsTableRow>
         <NldsTableRow>
             <NldsTableCell Headers="brin">01NJ</NldsTableCell>
-            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name1">AOC Oost</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name1">AOC Oost</NldsTableCell>
             <NldsTableCell Headers="name1 i1112 yr1112">75,5%</NldsTableCell>
             <NldsTableCell Headers="name1 v1112 yr1112">71,1%</NldsTableCell>
             <NldsTableCell Headers="name1 i1213 yr1213">77,1</NldsTableCell>
@@ -953,7 +1014,7 @@
         </NldsTableRow>
         <NldsTableRow>
             <NldsTableCell Headers="brin">01OE</NldsTableCell>
-            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name2">AOC Oost</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name2">AOC Oost</NldsTableCell>
             <NldsTableCell Headers="name2 i1112 yr1112">70,0%</NldsTableCell>
             <NldsTableCell Headers="name2 v1112 yr1112">71,1%</NldsTableCell>
             <NldsTableCell Headers="name2 i1213 yr1213">73,7</NldsTableCell>
@@ -965,7 +1026,7 @@
         </NldsTableRow>
         <NldsTableRow>
             <NldsTableCell Headers="brin">11UL</NldsTableCell>
-            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name3">AOC Oost</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name3">AOC Oost</NldsTableCell>
             <NldsTableCell Headers="name3 i1112 yr1112">71,0%</NldsTableCell>
             <NldsTableCell Headers="name3 v1112 yr1112">71,1%</NldsTableCell>
             <NldsTableCell Headers="name3 i1213 yr1213">76,4</NldsTableCell>
@@ -977,7 +1038,7 @@
         </NldsTableRow>
         <NldsTableRow>
             <NldsTableCell Headers="brin">12VI</NldsTableCell>
-            <NldsTableCell IsHeader="true" Headers="name" Identifyer="name4">AOC Oost</NldsTableCell>
+            <NldsTableCell IsHeader="true" Headers="name" Identifier="name4">AOC Oost</NldsTableCell>
             <NldsTableCell Headers="name4 i1112 yr1112">77,4%</NldsTableCell>
             <NldsTableCell Headers="name4 v1112 yr1112">71,1%</NldsTableCell>
             <NldsTableCell Headers="name4 i1213 yr1213">80,8</NldsTableCell>

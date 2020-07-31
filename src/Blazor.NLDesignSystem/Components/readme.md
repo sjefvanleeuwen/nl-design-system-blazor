@@ -39,7 +39,7 @@ Not all implemented components are fully implemented. Look at the readme for eac
 - [Spinner](./Spinner)
 - [Switch](./Form) (as part of Form)
 - [Table](./Table)
-- [Tabs](./Tabs)
+- [Tab](./Tab)
 - [Timeline](./Timeline)
 - [Tooltip](./Tooltip)
 - [Video](./Video)
