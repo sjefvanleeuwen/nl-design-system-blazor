@@ -3,6 +3,8 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Meta](https://nl-design-system.gitlab.io/nl-design-system/componenten/meta/index.html)
 
-Status: Fully implemented
+Status: Fully implemented (See notes!)
 
-Note! The meta is always a span. The example where the meta is a p(aragraph) should be rendered as a meta within a wrapping p(aragraph)
+### Notes
+
+- The meta is always a span. The example where the meta is a p(aragraph) should be rendered as a meta within a wrapping p(aragraph)

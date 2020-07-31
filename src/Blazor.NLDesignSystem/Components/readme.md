@@ -18,7 +18,7 @@ Not all implemented components are fully implemented. Look at the readme for eac
 - [ContentHeader](./ContentHeader) (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
 - [DefinitionList](./DefinitionList)
 - [File](./File) (as part of Form)
-- [Filter](./Filter) (is an option in radiobutton and checkbox; IsFilter = true)
+- [Filter](./Form) (is an option in radiobutton and checkbox; IsFilter = true)
 - [Footer](./Footer)
 - [Form](./Form)
 - [Header](./Header)
