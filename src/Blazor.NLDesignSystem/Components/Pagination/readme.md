@@ -3,4 +3,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Pagination](https://nl-design-system.gitlab.io/nl-design-system/componenten/pagination/index.html)
 
-Status: Fully implemented
+Status: Fully implemented (See notes!)
+
+### Notes
+- The old style is deprecated and has not been implmented. 
