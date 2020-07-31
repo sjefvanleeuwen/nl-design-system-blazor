@@ -1,8 +1,19 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
 @if (ShowTitle)
 {
-    <div class="edit-section">
+    <div class="@(IsInnerSection ? "inner-section" : "edit-section") @(HasBackgroundColor ? $"inner-section--no-border background--{DisplayBackgroundColor}" : string.Empty)">
         <h2>@((MarkupString)Title)</h2>
+        @if (HasLink)
+        {
+            <a href="@Uri">@UriText</a>
+        }
+        @if (IsInnerSection)
+        {
+            @ChildContent
+        }
     </div>
 }
-@ChildContent
+@if (!IsInnerSection)
+{
+    @ChildContent
+}
