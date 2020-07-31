@@ -47,3 +47,10 @@ Not all implemented components are fully implemented. Look at the readme for eac
 ## Currently not implemented
 
  - Everything component available in version 0.1.1. has an implementation
+ - General makeup like headers and page wrappers need an implementation
+ - Colors need to be extented with all other secondary colors
+ - Possibly each item can have a specific color (as an example see the background color in the NldsTableRow, part of Table). This should become part of each component; i.e. the components should inherit a base component that can set all the default properties. More input from the developers is needed.
+
+ ## Known Bugs
+
+ - After initialising goes to halfway down the page. This is something that also happens in components description of the [NL Design System](https://nl-design-system.gitlab.io/nl-design-system/componenten/index.html)

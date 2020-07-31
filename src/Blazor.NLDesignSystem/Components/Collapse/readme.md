@@ -3,9 +3,13 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Collapse](https://nl-design-system.gitlab.io/nl-design-system/componenten/collapse/index.html)
 
-Status: Some features not implemented:
-- collapsable tabel
+Status: Fully implemented (See notes!)
 
+### Notes
+- Collapsable table is implemented in [Table](../Table)
+- For the javascript methods to work as a Blazor call an Identifyer should be provided
+
+Status: Some features not implemented:
 - Interop not implemented
 	- Publieke methodes
 		- open()

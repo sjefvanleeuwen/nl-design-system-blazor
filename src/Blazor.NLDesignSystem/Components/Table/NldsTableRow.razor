@@ -1,4 +1,4 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<tr class="@(IsSelected ? "row--selected" : string.Empty)">
+<tr class="@(IsSelected ? "row--selected" : string.Empty) @(HasBackGroundColor ? $"background--{DisplayBackgroundColor}" : string.Empty) @(IsCollapsableContent ? "collapse__details" : string.Empty)" @attributes="GetAttributes()">
     @ChildContent
 </tr>

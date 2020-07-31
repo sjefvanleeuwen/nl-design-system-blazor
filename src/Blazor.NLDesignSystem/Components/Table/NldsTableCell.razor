@@ -7,7 +7,13 @@
 }
 else
 {
-    <td @attributes="GetAttributes()">
+    <td @ref="CollapsableReference" @attributes="GetAttributes()">
+        @if (IsCollapsable)
+        {
+            <i class="collapse__indicator">
+                <span class="screenreader-only" data-contracted-i18n="@CollapsedText" data-expanded-i18n="@UnfoldedText"></span>
+            </i>
+        }
         @ChildContent
     </td>
 }

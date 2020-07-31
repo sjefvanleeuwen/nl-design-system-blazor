@@ -139,10 +139,99 @@
         <Title>Titel <u>van</u> collapse</Title>
     </NldsCollapse>
 </NldsCollapseWrapper>
-<h3>Collapse Target</h3>
+<h4>Collapse Target</h4>
 <NldsCollapseContent Id="Collapse_target">
     Dolor set amit
 </NldsCollapseContent>
+<h3>Collapse Tabel</h3>
+<NldsTable IsStriped="true">
+    <Header>
+        <NldsTableRow>
+            <NldsTableCell>Opleidingsstelsel</NldsTableCell>
+            <NldsTableCell>Opleidingscode</NldsTableCell>
+            <NldsTableCell>Type</NldsTableCell>
+        </NldsTableRow>
+    </Header>
+    <Body>
+        <NldsTableRow>
+            <NldsTableCell CollapseTarget="table_collapse">Centraal register</NldsTableCell>
+            <NldsTableCell>-</NldsTableCell>
+            <NldsTableCell>MBO-Onderwijslicentie</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsCollapsableContent="true" Identifyer="table_collapse" BackgroundColor="Color.Mintgroen">
+            <NldsTableCell Colspan="3">
+                <p>
+                    Proin quis massa
+                    a quam consequat cursus fringilla vel purus. Nunc at felis
+                    feugiat, aliquet massa eu, porta mauris. Sed ac turpis at
+                    dolor consequat venenatis. Aenean sed blandit leo.
+                    Suspendisse dignissim arcu tortor, in faucibus arcu
+                    fringilla vitae. Maecenas at velit quis elit tincidunt
+                    pellentesque in id erat. Vestibulum ante ipsum primis in
+                    faucibus orci luctus et ultrices posuere cubilia Curae;
+                    Vestibulum bibendum ut erat non vehicula. Quisque at lacus
+                    nec sem pulvinar interdum.
+                </p>
+            </NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow>
+            <NldsTableCell CollapseTarget="table_collapse2">Beroepsonderwijs</NldsTableCell>
+            <NldsTableCell>-</NldsTableCell>
+            <NldsTableCell>Examenlicentie</NldsTableCell>
+        </NldsTableRow>
+        <NldsTableRow IsCollapsableContent="true" Identifyer="table_collapse2" BackgroundColor="Color.Mintgroen">
+            <NldsTableCell Colspan="3">
+                <p>
+                    Proin quis massa
+                    a quam consequat cursus fringilla vel purus. Nunc at felis
+                    feugiat, aliquet massa eu, porta mauris. Sed ac turpis at
+                    dolor consequat venenatis. Aenean sed blandit leo.
+                    Suspendisse dignissim arcu tortor, in faucibus arcu
+                    fringilla vitae. Maecenas at velit quis elit tincidunt
+                    pellentesque in id erat. Vestibulum ante ipsum primis in
+                    faucibus orci luctus et ultrices posuere cubilia Curae;
+                    Vestibulum bibendum ut erat non vehicula. Quisque at lacus
+                    nec sem pulvinar interdum.
+                </p>
+            </NldsTableCell>
+        </NldsTableRow>
+    </Body>
+</NldsTable>
+<h3>Controlled externally</h3>
+@code {
+    private NldsCollapse CollapseExternal1 { get; set; }
+    private void CollapseClose()
+    {
+        CollapseExternal1.Close();
+    }
+    private void CollapseOpen()
+    {
+        CollapseExternal1.Open();
+    }
+    private void CollapseToggle()
+    {
+        CollapseExternal1.Toggle();
+    }
+    private void CollapseDestroy()
+    {
+        CollapseExternal1.Destroy();
+    }
+}
+<NldsCollapseWrapper>
+    <NldsCollapse @ref="CollapseExternal1" Identifyer="externalCollapse">
+        <Title>Titel <u>van</u> collapse</Title>
+        <Content>
+            <NldsCollapseContent>
+                Dit <i>is</i> de <strong>inhoud</strong> van <u>de</u> collapse. Humani generiss sunt dominas de nobilis compater. Cliniass cadunt in audax cirpi! Est placidus urbs, cesaris.
+            </NldsCollapseContent>
+        </Content>
+    </NldsCollapse>
+</NldsCollapseWrapper>
+<button @onclick="CollapseOpen">Open</button>
+<button @onclick="CollapseClose">Close</button>
+<button @onclick="CollapseToggle">Toggle</button>
+<button @onclick="CollapseDestroy">Destroy</button>
+
 <h2>Input</h2>
 <h3>6 Input Types</h3>
 <NldsForm>
@@ -167,7 +256,7 @@
 </NldsForm>
 <h3>Values</h3>
 @code {
-    private string inputValue = "This is content of the input";
+private string inputValue = "This is content of the input";
 }
 <NldsForm>
     <NldsInput Identifier="a0" Size="InputSize.Large" @bind-Value="@inputValue">
@@ -537,7 +626,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                         };
+                                                                                                                     };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -570,12 +659,12 @@
 <h3>With Close button</h3>
 @code {
     NldsNotification CloseDoc;
-    private void Close()
+    private void CloseNotification()
     {
         CloseDoc.Close();
     }
 }
-<button @onclick="Close">An external button to close the "Bugs" notification</button>
+<button @onclick="CloseNotification">An external button to close the "Bugs" notification</button>
 <NldsNotification Type="Notification.Error" TypeText="Boom" Title="ACME Dynamite" CloseButtonText="Sl<u>u</u>it" />
 <h2>Tooltip</h2>
 <NldsTooltip Tip="Dit is <u>de</u> Tip">Hover hierover; er zit een tip op</NldsTooltip>
@@ -1363,8 +1452,8 @@
     </FooterColumns>
 </NldsFooter>
 @*bottmiBottombar Spacing*@
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -69,10 +69,35 @@ function checkbox(el) {
 // Collapse
 //////
 
-function collapse(el) {
+var collapsePrefix = "_collapse_";
+
+function collapse(el, id) {
   System.import('_content/Blazorized.NLDesignSystem/dist/components/collapse/collapse.js').then(function (module) {
-    new module.Collapse(el);
+    var collapse = new module.Collapse(el);
+    if (id !== "") {
+      addElement(collapsePrefix + id, collapse);
+    }
   });
+}
+
+async function closeCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.close();
+}
+
+async function destroyCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.destroy();
+}
+
+async function openCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.open();
+}
+
+async function toggleCollapse(id) {
+  var collapse = getElementById(collapsePrefix + id);
+  collapse.toggle();
 }
 
 //////

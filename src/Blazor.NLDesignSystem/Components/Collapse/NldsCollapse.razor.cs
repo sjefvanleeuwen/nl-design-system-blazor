@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
@@ -15,6 +16,8 @@ namespace Blazor.NLDesignSystem.Components
 
         [Parameter]
         public string CollapsedText { get; set; } = "ingeklapt";
+        [Parameter]
+        public string Identifyer { get; set; }
         [Parameter]
         public string Target { get; set; }
         [Parameter]
@@ -33,7 +36,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("collapse", CollapsableReference);
+                await JSRuntime.InvokeVoidAsync("collapse", CollapsableReference, Identifyer);
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -68,5 +71,26 @@ namespace Blazor.NLDesignSystem.Components
 
             return attributes;
         }
+
+        public async void Close()
+        {
+            await JSRuntime.InvokeVoidAsync("closeCollapse", Identifyer);
+        }
+
+        public async void Destroy()
+        {
+            await JSRuntime.InvokeVoidAsync("destroyCollapse", Identifyer);
+        }
+
+        public async void Open()
+        {
+            await JSRuntime.InvokeVoidAsync("openCollapse", Identifyer);
+        }
+
+        public async void Toggle()
+        {
+            await JSRuntime.InvokeVoidAsync("toggleCollapse", Identifyer);
+        }
+
     }
 }
