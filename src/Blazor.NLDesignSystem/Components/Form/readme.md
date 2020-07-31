@@ -8,6 +8,12 @@ Status: Some features not implemented:
 - Bestanden upload
 
 [Checkbox](https://nl-design-system.gitlab.io/nl-design-system/componenten/checkbox/index.html)
+
+Status: Some features not implemented:
+
+- Geneste checkboxen - The JavaScript messes with the blazor events when selecting a subitem (the changed event for the parent is triggered). A solution has not been implemented yet.
+- Geneste checkboxen - tabel
+
 [Filter](https://nl-design-system.gitlab.io/nl-design-system/componenten/filter/index.html)
 
 Status: Some features not implemented:

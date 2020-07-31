@@ -291,23 +291,32 @@
 </NldsForm>
 
 @code {
-    IEnumerable<string> CheckBoxValues1 = new List<string>() { "alleenstaande" };
-    List<CheckboxItem> CheckBox1 = new List<CheckboxItem>() {
-            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+    IEnumerable<CheckboxItem> CheckBox1 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked= true },
             new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
         };
 
-    IEnumerable<string> CheckBoxValues2 = new List<string>() { "alleenstaande" };
-    List<CheckboxItem> CheckBox2 = new List<CheckboxItem>() {
-            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+    IEnumerable<CheckboxItem> CheckBox2 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = true },
             new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
         };
 
-    IEnumerable<string> CheckBoxValues3 = new List<string>() { "alleenstaande" };
-    List<CheckboxItem> CheckBox3 = new List<CheckboxItem>() {
-            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande" },
+    IEnumerable<CheckboxItem> CheckBox3 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = true },
+            new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
+            new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
+        };
+
+    IEnumerable<CheckboxItem> CheckBox4 = new List<CheckboxItem>() {
+            new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = false,
+                SubItems = new List<CheckboxItem> {
+                    new CheckboxItem() { Description = "Optie1", Value = "option1", IsChecked = false },
+                    new CheckboxItem() { Description = "Optie2", Value = "option2", IsChecked = false },
+                    new CheckboxItem() { Description = "Optie3", Value = "option3", IsChecked = false }
+                }
+            },
             new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
         };
@@ -316,41 +325,62 @@
 <h3>2-way binding</h3>
 <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
 <NldsForm>
-    <NldsCheckbox Identifier="ch1" Items="@CheckBox1" @bind-Values="@CheckBoxValues1">
+    <NldsCheckbox Identifier="ch1" @bind-Items="CheckBox1">
         <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Groothof</NldsFormHint></Hint>
     </NldsCheckbox>
     <p>Selected values:</p>
-    @foreach (var value in CheckBoxValues1 ?? new List<string>())
+    @foreach (var item in CheckBox1.Where(c => c.IsChecked))
     {
-        <text>@((MarkupString)CheckBox1.FirstOrDefault(s => s.Value == value).Description)</text>
+        <text>@((MarkupString)item.Description)</text>
         <br />
     }
 </NldsForm>
 <h3>Checkbox with error</h3>
 <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
 <NldsForm>
-    <NldsCheckbox Identifier="ch2" Items="@CheckBox2" @bind-Values="@CheckBoxValues2" ItemAlignment="ItemAlignment.Horizontal" ErrorText="Oops something went wrong.">
+    <NldsCheckbox Identifier="ch2" @bind-Items="@CheckBox2" ItemAlignment="ItemAlignment.Horizontal" ErrorText="Oops something went wrong.">
         <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsCheckbox>
     <p>Selected values:</p>
-    @foreach (var value in CheckBoxValues2 ?? new List<string>())
+    @foreach (var item in CheckBox2.Where(c => c.IsChecked))
     {
-        <text>@((MarkupString)CheckBox2.FirstOrDefault(s => s.Value == value).Description)</text>
+        <text>@((MarkupString)item.Description)</text>
         <br />
     }
 </NldsForm>
 <h3>Checkbox filter</h3>
 <NldsForm>
-    <NldsCheckbox Identifier="ch3" Items="@CheckBox3" @bind-Values="@CheckBoxValues3" IsFilter="true">
+    <NldsCheckbox Identifier="ch3" @bind-Items="@CheckBox3" IsFilter="true">
         <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsCheckbox>
     <p>Selected values:</p>
-    @foreach (var value in CheckBoxValues3 ?? new List<string>())
+    @foreach (var item in CheckBox3.Where(c => c.IsChecked))
     {
-        <text>@((MarkupString)CheckBox3.FirstOrDefault(s => s.Value == value).Description)</text>
+        <text>@((MarkupString)item.Description)</text>
+        <br />
+    }
+</NldsForm>
+<h3>Checkbox nested</h3>
+<NldsForm>
+    <NldsCheckbox Identifier="ch4" @bind-Items="@CheckBox4" IsFilter="true">
+        <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
+        <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
+    </NldsCheckbox>
+    <p>Selected values:</p>
+    @foreach (var item in CheckBox4.Where(c => c.IsChecked))
+    {
+        <text>@((MarkupString)item.Description)</text>
+        if (item.HasSubItems)
+        {
+            foreach (var subitem in item.SubItems.Where(s => s.IsChecked))
+            {
+                <text>@((MarkupString)subitem.Description)</text>
+                <br />
+            }
+        }
         <br />
     }
 </NldsForm>
@@ -626,7 +656,7 @@
     {
         Chart1.Destroy();
     }
-} 
+}
 <NldsChart @ref="Chart1" DrawOnCreate="false" Percentage="80" TextBelow="over <u>van</u> € 10.000,00" Title="Overgebleven <u>leenruimte</u> studiejaar 2018/2019">
     € 2.000,00
 </NldsChart>
@@ -1333,8 +1363,8 @@
     </FooterColumns>
 </NldsFooter>
 @*bottmiBottombar Spacing*@
-<br />
-<br />
-<br />
-<br />
-<br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
