@@ -1,7 +1,8 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<ul class="list list--timeline@(_indicateStart ? " list--timeline-no-start" : "") @(_indicateEnd ? " list--timeline-no-end" : "")">
-    @foreach (var item in Items)
-    {
-        <TimelineItem Number="@item.Number" Title="@item.Title" Content="@item.Content" />
-    }
+<ul class="list list--timeline @(HasColor ? $"list--timeline-{DisplayColor}" : string.Empty) @(!IndicateStart ? "list--timeline-no-start" : string.Empty) @(!IndicateEnd ? "list--timeline-no-end" : string.Empty) @(IsCompact ? "list--timeline-compact": string.Empty) @(IsLarge ? "list--timeline-large": string.Empty)">
+    <CascadingValue Name="HeadingNumber" Value="@HeadingNumber" IsFixed="true">
+        <CascadingValue Name="IsLarge" Value="@IsLarge" IsFixed="true">
+            @ChildContent
+        </CascadingValue>
+    </CascadingValue>
 </ul>

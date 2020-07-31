@@ -1,0 +1,49 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+@switch (HeadingNumber)
+{
+    case 1:
+        {
+            <h1 class="list__item-heading">
+                @ChildContent
+            </h1>
+        }
+        break;
+    case 2:
+        {
+            <h2 class="list__item-heading">
+                @ChildContent
+            </h2>
+        }
+        break;
+    case 3:
+        {
+            <h3 class="list__item-heading">
+                @ChildContent
+            </h3>
+        }
+        break;
+    case 4:
+        {
+            <h4 class="list__item-heading">
+                @ChildContent
+            </h4>
+        }
+        break;
+    case 5:
+        {
+            <h5 class="list__item-heading">
+                @ChildContent
+            </h5>
+        }
+        break;
+    case 6:
+        {
+            <h6 class="list__item-heading">
+                @ChildContent
+            </h6>
+        }
+        break;
+    default:
+        @ChildContent
+        break;
+}

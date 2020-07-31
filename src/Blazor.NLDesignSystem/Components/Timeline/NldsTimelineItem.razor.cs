@@ -1,21 +1,38 @@
 ﻿using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsTimelineItem
     {
-        [Parameter]
-        public int? Number { get; set; }
-        [Parameter]
-        public string Title { get; set; }
-        [Parameter]
-        public string Content { get; set; }
-    }
+        [CascadingParameter(Name = "IsLarge")]
+        public bool IsLarge { get; set; }
 
-    public class TimelineItemDTO
-    {
-        public int? Number { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
+        [Parameter]
+        public DateTime Date { get; set; }
+        [Parameter]
+        public bool HeaderIsTime { get; set; }
+        [Parameter]
+        public bool IsActive { get; set; }
+        [Parameter]
+        public bool IsDisabled { get; set; }
+
+        [Parameter]
+        public RenderFragment Content { get; set; }
+        [Parameter]
+        public RenderFragment Header { get; set; }
+
+        private IDictionary<string, object> GetTimeAttributes()
+        {
+            var attributes = new Dictionary<string, object>();
+
+            if (Date != null)
+            {
+                attributes["datetime"] = string.Format("{0:s}", Date);
+            }
+
+            return attributes;
+        }
     }
 }

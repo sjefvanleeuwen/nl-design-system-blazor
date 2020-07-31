@@ -652,7 +652,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                         };
+                                                                                                                                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -1505,9 +1505,6 @@
     <Footer>This is where the action is <NldsButton Type="ButtonType.Primary">OK!?</NldsButton></Footer>
 </NldsModal>
 <button @onclick="OpenModal5">Open Modal</button>
-
-
-
 <NldsFooter Color="Color.Donkergroen">
     <Title><u>Samen</u> maken we onderwijs en ontwikkeling mogelijk</Title>
     <FooterColumns>
@@ -1538,7 +1535,175 @@
         </NldsFooterColumn>
     </FooterColumns>
 </NldsFooter>
-@*bottmiBottombar Spacing*@
+<h2>Timeline</h2>
+<NldsTimeline HeadingNumber="3">
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 mei t/m 30 augustus</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/tegemoetkoming-aspirant-opleidingsscholen.jsp">
+                    Indienen
+                    aanvraag aspirant-opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 juni t/m 30 september</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/opgave-aantal-studenten-opleidingsscholen.jsp">
+                    Indienen
+                    Opgave aantal studenten
+                    opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>15 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/personeel/levering-personeelsgegevens.jsp">
+                    Levering
+                    personeelsgegevens kwartaal 1 po
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>22 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/betaaldatums/betaaldatums.jsp">
+                    Betaaldatum
+                    bekostiging
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true" IsDisabled="true">
+        <Header>28 juni</Header>
+        <Content>
+            <p>Dit item is uitgeschakeld door gebruik van <code>list__item--disabled</code></p>
+        </Content>
+    </NldsTimelineItem>
+</NldsTimeline>
+<h3>without start or end with colored line</h3>
+<NldsTimeline IndicateStart="false" IndicateEnd="false" HeadingNumber="4" Color="Color.DonkerBruin">
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 mei t/m 30 augustus</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/tegemoetkoming-aspirant-opleidingsscholen.jsp">
+                    Indienen
+                    aanvraag aspirant-opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 juni t/m 30 september</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/opgave-aantal-studenten-opleidingsscholen.jsp">
+                    Indienen
+                    Opgave aantal studenten
+                    opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>15 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/personeel/levering-personeelsgegevens.jsp">
+                    Levering
+                    personeelsgegevens kwartaal 1 po
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>22 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/betaaldatums/betaaldatums.jsp">
+                    Betaaldatum
+                    bekostiging
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true" IsDisabled="true">
+        <Header>28 juni</Header>
+        <Content>
+            <p>Dit item is uitgeschakeld door gebruik van <code>list__item--disabled</code></p>
+        </Content>
+    </NldsTimelineItem>
+</NldsTimeline>
+<h3>Grote tijdlijn</h3>
+<NldsTimeline IndicateStart="false" IsLarge="true">
+    <NldsTimelineItem HeaderIsTime="true" Date="@(new DateTime(2017, 8, 3))">
+        <Header>3 augustus 2017</Header>
+        <Content>
+            <strong>Terugmeldingen 2e voorlopige foto  2015 mbo vavo beschikbaar</strong>
+            <p>De terugmelding bekostigingsgrondslagen en de individuele terugmelding mbo en vavo van de tweede voorlopige foto van 1 oktober 2015 zij geplaatst.</p>
+            <p>
+                <a href="/particulier/nieuwsoverzicht/terugmeldingen-2e-voorlopige-foto-2015-mbo-vavo-beschikbaar/">Lees meer</a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>1 juni t/m 30 september</Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/bekostiging-en-subsidies/tegemoetkoming-opleidingsscholen/opgave-aantal-studenten-opleidingsscholen.jsp">
+                    Indienen
+                    Opgave aantal studenten
+                    opleidingsscholen
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>15 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/primair-onderwijs/personeel/levering-personeelsgegevens.jsp">
+                    Levering
+                    personeelsgegevens kwartaal 1 po
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true">
+        <Header>22 juni<NldsLabel Color="Color.Donkergeel">Deadline</NldsLabel></Header>
+        <Content>
+            <p>
+                <a href="/zakelijk/betaaldatums/betaaldatums.jsp">
+                    Betaaldatum
+                    bekostiging
+                </a>
+            </p>
+        </Content>
+    </NldsTimelineItem>
+    <NldsTimelineItem HeaderIsTime="true" IsDisabled="true">
+        <Header>28 juni</Header>
+        <Content>
+            <p>Dit item is uitgeschakeld door gebruik van <code>list__item--disabled</code></p>
+        </Content>
+    </NldsTimelineItem>
+</NldsTimeline>
+<h3>Compact</h3>
+<NldsTimeline IsCompact=" true">
+    <NldsTimelineItem><Header>Gegevens verzamelen</Header></NldsTimelineItem>
+    <NldsTimelineItem IsActive="true"><Header>Ondertekening</Header></NldsTimelineItem>
+    <NldsTimelineItem IsDisabled="true"><Header>In behandeling</Header></NldsTimelineItem>
+    <NldsTimelineItem IsDisabled="true"><Header>Uitsluitsel</Header></NldsTimelineItem>
+</NldsTimeline>
+@*Bottombar Spacing*@
 <br />
 <br />
 <br />

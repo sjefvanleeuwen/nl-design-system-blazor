@@ -1,20 +1,27 @@
-﻿using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
+﻿using Blazor.NLDesignSystem.Extensions;
+using Microsoft.AspNetCore.Components;
 
 namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsTimeline
     {
         [Parameter]
-        public bool IndicateStart { get; set; } = false;
+        public Color? Color { get; set; }
         [Parameter]
-        public bool IndicateEnd { get; set; } = false;
+        public int HeadingNumber { get; set; }
         [Parameter]
-        public bool IndicateEnds { get; set; } = false;
+        public bool IndicateEnd { get; set; } = true;
         [Parameter]
-        public IEnumerable<TimelineItemDTO> Items { get; set; } = new List<TimelineItemDTO>();
+        public bool IndicateStart { get; set; } = true;
+        [Parameter]
+        public bool IsCompact { get; set; }
+        [Parameter]
+        public bool IsLarge { get; set; }
 
-        private bool _indicateStart => IndicateEnds || IndicateStart;
-        private bool _indicateEnd => IndicateEnds || IndicateEnd;
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
+
+        private bool HasColor => Color != null;
+        private string DisplayColor => Color.Value.GetDescription<StyleAttribute>();
     }
 }

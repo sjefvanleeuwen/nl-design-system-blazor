@@ -1,19 +1,38 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<li class="list__item">
-    @if (!string.IsNullOrWhiteSpace(Title) || Number != null)
+<li class="list__item @(IsActive ? "list__item--active" : string.Empty) @(IsDisabled ? "list__item--disabled" : string.Empty)">
+    @if (IsLarge)
     {
-        <h2 class="list__item-heading">
-            @if (Number != null)
+        <div class="content">
+            @if (HeaderIsTime)
             {
-                <Badge Number="@Number.GetValueOrDefault()" />
+                <time class="meta list__date" @attributes="GetTimeAttributes()">@Header</time>
             }
-            <strong>@Title</strong>
-        </h2>
+            else
+            {
+                <NldsMeta IsInHeader="true">@Header</NldsMeta>
+            }
+            <div class="content-background">
+                <div class="content">
+                    <div class="list__content">
+                        @Content
+                    </div>
+                </div>
+            </div>
+        </div>
     }
-    @if (!string.IsNullOrWhiteSpace(Content))
+    else
     {
-        <p>
-            @Content
-        </p>
+        <NldsTimelineItemHeaderWrapper>
+            @if (HeaderIsTime)
+            {
+                <time @attributes="GetTimeAttributes()">@Header</time>
+            }
+            else
+            {
+                @Header
+            }
+        </NldsTimelineItemHeaderWrapper>
+        @Content
     }
 </li>
+

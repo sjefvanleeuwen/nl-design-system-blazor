@@ -18,7 +18,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
-        private string DisplayBackgroundColor => BackgroundColor?.GetDescription<StyleAttribute>() ?? Color.Wit.GetDescription<StyleAttribute>();
+        private string DisplayBackgroundColor => BackgroundColor.Value.GetDescription<StyleAttribute>();
         private bool HasBackGroundColor => BackgroundColor != null;
 
         private IDictionary<string, object> GetAttributes()
