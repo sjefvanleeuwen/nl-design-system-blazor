@@ -1,6 +1,7 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<li class="nav__item">
-    <a class="nav__link @(IsActiveLink ?  "nav__link--active" : string.Empty)" href="@Uri" @attributes="GetAttributes()">
-        @ChildContent
-    </a>
-</li>
+    <li @attributes="GetLiAttributes()">
+        <a href="@Uri" @attributes="GetAAttributes()">
+            @Content
+        </a>
+        @SubMenu
+    </li>

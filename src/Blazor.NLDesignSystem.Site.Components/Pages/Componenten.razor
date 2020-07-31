@@ -652,7 +652,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                         };
+                                                                                                                                                                                     };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -1703,7 +1703,177 @@
     <NldsTimelineItem IsDisabled="true"><Header>In behandeling</Header></NldsTimelineItem>
     <NldsTimelineItem IsDisabled="true"><Header>Uitsluitsel</Header></NldsTimelineItem>
 </NldsTimeline>
+<h2>Navigatie</h2>
+<h3>Navigatiebalk met breadcrumbs menu en knoppen</h3>
+<div>
+    <NldsNavigation Color="Color.RobijnRood">
+        <NldsBreadcrumbs>
+            <NldsNavigationItem Uri="#" Title="Home">
+                <Content>
+                    <NldsIcon Icon="Icon.Home"></NldsIcon>
+                    <span lang="en-US">Home</span>
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" Title="Page">
+                <Content>
+                    <span>Niv 1</span>
+                </Content>
+            </NldsNavigationItem>
+        </NldsBreadcrumbs>
+        <NldsNavigationCollapseBlock GroupName="nav-example1">
+            <NldsNavigationCollapseBlockItem Target="collapse-menu-example">
+                <NldsIcon Icon="Icon.Hamburger"></NldsIcon>
+                <span>Menu</span>
+            </NldsNavigationCollapseBlockItem>
+        </NldsNavigationCollapseBlock>
+    </NldsNavigation>
+    <NldsNavigationCollapse Identifier="collapse-menu-example">
+        <NldsNavigationItem Uri="#"><Content>Core</Content></NldsNavigationItem>
+        <NldsNavigationItem Uri="#"><Content>Componenten</Content></NldsNavigationItem>
+        <NldsNavigationItem Uri="#"><Content>Changelog</Content></NldsNavigationItem>
+    </NldsNavigationCollapse>
+</div>
+<br />
+<br />
+<h3>Simpele navigatiebalk</h3>
+<div>
+    <NldsNavigation Color="Color.Donkergeel">
+        <NldsNavigationList>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Core
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsActive="true">
+                <Content>
+                    Componenten
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Changelog
+                </Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Navigatiebalk met subnavigatie</h3>
+<div>
+    <NldsNavigation Color="Color.HemelBlauw">
+        <NldsNavigationList HasSubNavigationPopout="true">
+            <NldsSubNavigationPopoutItem Uri="#">
+                <Content>Particulier</Content>
+                <PopoutList>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Mbo'er
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Student hbo of universiteit
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Scholier vmbo, havo of vwo
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Ouder
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Leraar
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Terugbetaler
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Staatsexamenkandidaat
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            Kinderopvang
+                        </Content>
+                    </NldsNavigationItem>
+                    <NldsNavigationItem Uri="#">
+                        <Content>
+                            International visitor
+                        </Content>
+                    </NldsNavigationItem>
+                </PopoutList>
+            </NldsSubNavigationPopoutItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Zakelijk
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>
+                    Onderwijsdata
+                </Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsExternal="true">
+                <Content>
+                    Inburgeren
+                </Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Navigatiebalk met subnavigatie</h3>
+<div>
+    <NldsNavigation Color="Color.HemelBlauw">
+        <NldsNavigationList HasSubMenu="true">
+            <NldsNavigationItem Uri="#"><Content>Core</Content></NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Componenten</Content>
+                <SubMenu>
+                    <NldsNavigationList IsSubMenu="true">
+                        <NldsNavigationItem Uri="/test">
+                            <Content>Button</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="/test2">
+                            <Content>Checkbox</Content>
+                        </NldsNavigationItem>
+                    </NldsNavigationList>
+                </SubMenu>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Changelog</Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
+    </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Zijnavigatie</h3>
+<div>
+    <NldsNavigation IsSideNav="true">
+
+    </NldsNavigation>
+</div>
 @*Bottombar Spacing*@
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <br />
 <br />
 <br />

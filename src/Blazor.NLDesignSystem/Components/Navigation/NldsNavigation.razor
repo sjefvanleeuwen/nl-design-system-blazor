@@ -1,8 +1,6 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<nav class="top-nav top-nav--@DisplayColor">
+<nav class="top-nav top-nav--@(DisplayColor)">
     <div class="container">
-        <CascadingValue IsFixed="true" Name="AutoResize" Value="AutoResize">
-            @ChildContent
-        </CascadingValue>
+        @ChildContent
     </div>
 </nav>

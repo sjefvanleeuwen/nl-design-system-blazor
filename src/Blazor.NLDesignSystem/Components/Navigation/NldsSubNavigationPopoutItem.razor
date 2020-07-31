@@ -1,0 +1,14 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<li class="navigation__item navigation__item--has-popout">
+    <a class="navigation__link" href="@Uri">
+        @Content
+        <span class="icon icon-chevron-down navigation__icon" role="" @attributes="GetAttributes()"></span>
+    </a>
+    <div class="navigation__popout">
+        <ul class="list list--links list--chevrons navigation__popout-items">
+            <CascadingValue Name="IsInSubNavigationPopout" Value="true" IsFixed="true">
+                @PopoutList
+            </CascadingValue>
+        </ul>
+    </div>
+</li>

@@ -1,0 +1,13 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+    <ul @attributes="GetAttributes()">
+        @if (HasSubNavigationPopout)
+        {
+            <CascadingValue Name="IsInSubNavigation" Value="true" IsFixed="true">
+                @ChildContent
+            </CascadingValue>
+        }
+        else
+        {
+            @ChildContent
+        }
+    </ul>

@@ -3,16 +3,17 @@ using System.Collections.Generic;
 
 namespace Blazor.NLDesignSystem.Components
 {
-    public partial class NldsNavigationSubmenu
+    public partial class NldsSubNavigationPopoutItem
     {
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
-        [Parameter]
-        public string DisplayName { get; set; }
-        [Parameter]
-        public Icon Icon { get; set; }
-        [Parameter]
         public string Title { get; set; }
+        [Parameter]
+        public string Uri { get; set; }
+
+        [Parameter]
+        public RenderFragment Content { get; set; }
+        [Parameter]
+        public RenderFragment PopoutList { get; set; }
 
         private IDictionary<string, object> GetAttributes()
         {
@@ -22,7 +23,7 @@ namespace Blazor.NLDesignSystem.Components
             {
                 attributes["title"] = Title;
             }
-
+            
             return attributes;
         }
     }
