@@ -5,9 +5,8 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 Status: Some features not implemented:
 
-- Zijnavigatie
 - In site navigatie
 
 ### Notes
 - The menu for components needs to be redone
-- Completely overhauled in version alpha 4. Look at the examples how to do it.
+- Completely overhauled in version alpha 4. Look at the examples how to do it.	

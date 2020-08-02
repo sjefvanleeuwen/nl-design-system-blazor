@@ -1,6 +1,15 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-<nav class="top-nav top-nav--@(DisplayColor)">
+<nav class="@(IsSideNavigation ? "sidenav" : "top-nav top-nav--@(DisplayColor)")">
+    @if (IsSideNavigation)
+    {
+        <CascadingValue Name="IsInSideNavigation" Value="@IsSideNavigation">
+            @ChildContent
+        </CascadingValue>
+    }
+    else
+    {
     <div class="container">
         @ChildContent
     </div>
+    }
 </nav>

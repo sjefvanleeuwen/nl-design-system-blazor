@@ -652,7 +652,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                                                                     };
+                                                                                                                                                                                                     };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -1861,8 +1861,39 @@
 <br />
 <h3>Zijnavigatie</h3>
 <div>
-    <NldsNavigation IsSideNav="true">
-
+    <NldsNavigation IsSideNavigation="true">
+        <NldsNavigationList>
+            <NldsNavigationItem Uri="#">
+                <Content>Core</Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#" IsActive="true">
+                <Content>
+                    Componenten
+                </Content>
+                <SubMenu>
+                    <NldsNavigationList>
+                        <NldsNavigationItem Uri="#">
+                            <Content>Button</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="#" IsActive="true">
+                            <Content>Checkbox</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="#">
+                            <Content>Radio</Content>
+                        </NldsNavigationItem>
+                        <NldsNavigationItem Uri="#">
+                            <Content>Tabs</Content>
+                        </NldsNavigationItem>
+                    </NldsNavigationList>
+                </SubMenu>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Templates</Content>
+            </NldsNavigationItem>
+            <NldsNavigationItem Uri="#">
+                <Content>Changelog</Content>
+            </NldsNavigationItem>
+        </NldsNavigationList>
     </NldsNavigation>
 </div>
 @*Bottombar Spacing*@

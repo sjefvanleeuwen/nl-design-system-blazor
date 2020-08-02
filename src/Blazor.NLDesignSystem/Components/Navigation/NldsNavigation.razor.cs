@@ -7,6 +7,8 @@ namespace Blazor.NLDesignSystem.Components
     {
         [Parameter]
         public Color Color { get; set; } = Color.HemelBlauw;
+        [Parameter]
+        public bool IsSideNavigation { get; set; }
 
         [Parameter]
         public RenderFragment ChildContent { get; set; }

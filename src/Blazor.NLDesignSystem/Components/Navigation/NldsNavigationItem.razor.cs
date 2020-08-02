@@ -9,8 +9,8 @@ namespace Blazor.NLDesignSystem.Components
         public bool IsInBreadCrumbs { get; set; }
         [CascadingParameter(Name = "IsInCollapse")]
         public bool IsInCollapse { get; set; }
-        [CascadingParameter(Name = "IsInSideNaviation")]
-        public bool IsInSideNaviation { get; set; }
+        [CascadingParameter(Name = "IsInSideNavigation")]
+        public bool IsInSideNavigation { get; set; }
         [CascadingParameter(Name = "IsInSubNavigation")]
         public bool IsInSubNavigation { get; set; }
         [CascadingParameter(Name = "IsInSubNavigationPopout")]
@@ -53,7 +53,7 @@ namespace Blazor.NLDesignSystem.Components
                         attributes["class"] = "navigation__link";
                     }
                 }
-                else if (!IsInSideNaviation)
+                else if (!IsInSideNavigation)
                 {
                     attributes["class"] = "nav__link";
                     if (IsActive)
@@ -95,7 +95,7 @@ namespace Blazor.NLDesignSystem.Components
                         attributes["class"] = "navigation__item";
                     }
                 }
-                else if (IsInSideNaviation)
+                else if (IsInSideNavigation)
                 {
                     attributes["class"] = "sidenav__item";
                     if (IsActive)

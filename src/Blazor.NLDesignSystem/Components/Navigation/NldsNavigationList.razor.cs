@@ -5,6 +5,9 @@ namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsNavigationList
     {
+        [CascadingParameter(Name = "IsInSideNavigation")]
+        public bool IsInSideNavigation { get; set; }
+
         [Parameter]
         public bool HasSubMenu { get; set; }
         [Parameter]
@@ -20,6 +23,11 @@ namespace Blazor.NLDesignSystem.Components
         {
             var attributes = new Dictionary<string, object>();
             
+            if (IsInSideNavigation) //nothing to be set here, move along
+            {
+                return attributes;
+            }
+
             if (HasSubNavigationPopout)
             {
                 attributes["class"] = "navigation";
