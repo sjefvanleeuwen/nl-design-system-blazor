@@ -1,19 +1,35 @@
 ﻿@inherits LayoutComponentBase
 <NldsSkiplink>Ga direct naar inhoud</NldsSkiplink>
-<NldsNavigation_ Color="Color.HemelBlauw">
-    <NldsNavigationBlock_ HasSubmenu="true">
-        <NldsNavigationItem_ Uri="" Title="Home"><NldsIcon Icon="Icon.Home" />NL Design System</NldsNavigationItem_>
-        <NldsNavigationItem_ Uri="aan-de-slag">Aan de slag</NldsNavigationItem_>
-        <NldsNavigationSubmenu_ Title="BasisMenu" Icon="Icon.Info" DisplayName="<u>BasisMenu</u>">
-            <NldsNavigationItem_ Uri="core">Basis</NldsNavigationItem_>
-            <NldsNavigationItem_ Uri="#"><NldsIcon Icon="Icon.Info" />LinkToNowhere</NldsNavigationItem_>
-        </NldsNavigationSubmenu_>
-        <NldsNavigationItem_ Uri="componenten">Componenten</NldsNavigationItem_>
-    </NldsNavigationBlock_>
-    <NldsNavigationBlock_ Position="Position.Right">
-        <NldsNavigationItem_ Uri="templates">Voorbeelden</NldsNavigationItem_>
-    </NldsNavigationBlock_>
-</NldsNavigation_>
+
+<NldsNavigation>
+    <NldsNavigationList>
+        <NldsNavigationItem Uri="" Title="Home">
+            <Content>
+                <NldsIcon Icon="Icon.Home" />NL Design System
+            </Content>
+        </NldsNavigationItem>
+        <NldsNavigationItem Uri="aan-de-slag">
+            <Content>
+                Aan de slag
+            </Content>
+        </NldsNavigationItem>
+        <NldsNavigationItem Uri="componenten">
+            <Content>
+                Componenten
+            </Content>
+        </NldsNavigationItem>
+        <NldsNavigationItem Uri="basis">
+            <Content>
+                Basis
+            </Content>
+        </NldsNavigationItem>
+        <NldsNavigationItem Uri="voorbeelden">
+            <Content>
+                Voorbeelden
+            </Content>
+        </NldsNavigationItem>
+    </NldsNavigationList>
+</NldsNavigation>
 <main id="content" class="skiplink-target main" tabindex="-1">
     <div class="container">
         @Body

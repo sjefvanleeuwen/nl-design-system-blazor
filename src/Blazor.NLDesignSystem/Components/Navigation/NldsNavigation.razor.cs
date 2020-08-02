@@ -6,7 +6,7 @@ namespace Blazor.NLDesignSystem.Components
     public partial class NldsNavigation
     {
         [Parameter]
-        public Color Color { get; set; } = Color.HemelBlauw;
+        public Color? Color { get; set; }
         [Parameter]
         public bool IsSideNavigation { get; set; }
 
@@ -14,5 +14,6 @@ namespace Blazor.NLDesignSystem.Components
         public RenderFragment ChildContent { get; set; }
 
         private string DisplayColor => Color.GetDescription<StyleAttribute>();
+        private bool UseColor => Color != null;
     }
 }

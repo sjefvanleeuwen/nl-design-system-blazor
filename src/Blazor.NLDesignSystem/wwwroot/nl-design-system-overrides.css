@@ -29,3 +29,8 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
 .footer__nav.list--links a {
     text-decoration: none
 }
+
+/* the order of the css in the build css is different and that is why a is not overridden by .top-nav*/
+.top-nav a, .top-nav a:visited, .top-nav a:hover, .top-nav a:active {
+    color: #fff;
+}

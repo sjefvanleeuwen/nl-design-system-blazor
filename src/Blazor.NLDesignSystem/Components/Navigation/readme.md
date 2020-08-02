@@ -6,5 +6,4 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 Status: Fully implemented (see Notes)
 
 ### Notes
-- The menu for components needs to be redone
-- Completely overhauled in version alpha 4. Look at the examples how to do it.	
+- Completely overhauled in version alpha 4. Look at the examples how to use it.	
