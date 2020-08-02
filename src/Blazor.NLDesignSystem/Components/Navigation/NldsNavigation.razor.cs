@@ -27,9 +27,12 @@ namespace Blazor.NLDesignSystem.Components
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
-            if (AutoResize)
+            if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("navitationAutoResize", NavigationResizeReference);
+                if (AutoResize)
+                {
+                    await JSRuntime.InvokeVoidAsync("navitationAutoResize", NavigationResizeReference);
+                }
             }
             await base.OnAfterRenderAsync(firstRender);
         }

@@ -28,9 +28,12 @@ namespace Blazor.NLDesignSystem.Components
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
-            if (HasSubMenu)
+            if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("navigationSubmenu", NavigationListReference);
+                if (HasSubMenu)
+                {
+                    await JSRuntime.InvokeVoidAsync("navigationSubmenu", NavigationListReference);
+                }
             }
             await base.OnAfterRenderAsync(firstRender);
         }
