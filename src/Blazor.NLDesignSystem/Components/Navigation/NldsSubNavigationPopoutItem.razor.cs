@@ -23,7 +23,7 @@ namespace Blazor.NLDesignSystem.Components
             {
                 attributes["title"] = Title;
             }
-            
+
             return attributes;
         }
     }

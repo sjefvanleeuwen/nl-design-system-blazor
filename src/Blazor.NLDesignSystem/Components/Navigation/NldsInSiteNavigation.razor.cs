@@ -24,6 +24,6 @@ namespace Blazor.NLDesignSystem.Components
         public string Uri { get; set; }
 
         public readonly Guid Key = Guid.NewGuid();
-        
+
     }
 }

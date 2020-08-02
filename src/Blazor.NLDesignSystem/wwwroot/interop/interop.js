@@ -142,14 +142,9 @@ function navigationSubmenu(el) {
   });
 }
 
-function navitationAutoResize() {
-  // Load nav component
+function navitationAutoResize(el) {
   System.import('_content/Blazorized.NLDesignSystem/dist/components/navigation/navigation.js').then(function (module) {
-    var navs = document.querySelectorAll('.top-nav-autoresize');
-    // Initialize all navs
-    for (var i = 0; i < navs.length; i++) {
-      //new module.AutoResizeNavigation(navs.item(i));
-    }
+      new module.AutoResizeNavigation(el);
   });
 }
 
@@ -178,9 +173,7 @@ var tabsPrefix = "_tabs_";
 function tabs(el, id) {
   System.import('_content/Blazorized.NLDesignSystem/dist/components/tabs/tabs.js').then(function (module) {
     tabs = new module.Tabs(el);
-    console.log(id);
     if (id != null) { //on purpose not a type specific comparison
-      console.log(id);
       addElement(tabsPrefix + id, tabs);
     }
   });

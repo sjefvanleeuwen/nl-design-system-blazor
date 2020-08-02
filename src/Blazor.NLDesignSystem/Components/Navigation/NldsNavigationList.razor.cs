@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
 {
     public partial class NldsNavigationList
     {
+        [Inject]
+        private IJSRuntime JSRuntime { get; set; }
+
         [CascadingParameter(Name = "IsInSideNavigation")]
         public bool IsInSideNavigation { get; set; }
 
@@ -19,10 +24,21 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        private ElementReference NavigationListReference { get; set; }
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (HasSubMenu)
+            {
+                await JSRuntime.InvokeVoidAsync("navigationSubmenu", NavigationListReference);
+            }
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
         private IDictionary<string, object> GetAttributes()
         {
             var attributes = new Dictionary<string, object>();
-            
+
             if (IsInSideNavigation) //nothing to be set here, move along
             {
                 return attributes;

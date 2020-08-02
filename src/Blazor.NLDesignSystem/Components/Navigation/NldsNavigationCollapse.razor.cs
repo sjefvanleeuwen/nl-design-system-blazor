@@ -6,7 +6,7 @@ namespace Blazor.NLDesignSystem.Components
     {
         [Parameter]
         public string Identifier { get; set; }
-        
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
     }

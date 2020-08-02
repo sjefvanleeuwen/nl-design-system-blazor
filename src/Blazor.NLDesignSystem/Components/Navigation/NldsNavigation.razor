@@ -9,7 +9,9 @@
     else
     {
     <div class="container">
-        @ChildContent
+        <div @ref="NavigationResizeReference" class="@(AutoResize ? "top-nav-autoresize" : string.Empty)">
+            @ChildContent
+        </div>
     </div>
     }
 </nav>

@@ -1,5 +1,5 @@
 ﻿@namespace Blazor.NLDesignSystem.Components
-    <ul @attributes="GetAttributes()">
+    <ul @ref="NavigationListReference" @attributes="GetAttributes()">
         @if (HasSubNavigationPopout)
         {
             <CascadingValue Name="IsInSubNavigation" Value="true" IsFixed="true">
