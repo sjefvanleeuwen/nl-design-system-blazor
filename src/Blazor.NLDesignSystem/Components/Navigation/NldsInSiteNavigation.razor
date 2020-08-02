@@ -1,0 +1,16 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<ol class="content__header-inpage list list--decimal list--decimal-with-dot columns">
+    @foreach (var item in Items)
+    {
+        <li @key="item.Key" class="@(item.IsSelected ? "selected" : string.Empty)">
+            @if (!item.IsSelected)
+            {
+                <a href="@item.Uri" @onclick="(() => ExecuteCallbackEvent(item.Key))" @onclick:preventDefault @onclick:stopPropagation>@((MarkupString)item.Content)</a>
+            }
+            else
+            {
+                @((MarkupString)item.Content)
+            }
+        </li>
+    }
+</ol>

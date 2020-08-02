@@ -652,7 +652,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                                                                                     };
+                                                                                                                                                                                                                     };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -1895,6 +1895,57 @@
             </NldsNavigationItem>
         </NldsNavigationList>
     </NldsNavigation>
+</div>
+<br />
+<br />
+<h3>Zijnavigatie</h3>
+@code {
+    static Action<Guid> SelectItem = (guid) => SetItemSelected(guid);
+
+    static private void SetItemSelected(Guid key)
+    {
+        var inSideNavigationItems = InSideNavigationItems.ToList();
+        inSideNavigationItems.ForEach(i => i.IsSelected = i.Key == key);
+        InSideNavigationItems = inSideNavigationItems;
+    }
+
+    static IEnumerable<InSiteNavigationItem> InSideNavigationItems = new List<InSiteNavigationItem> {
+        new InSiteNavigationItem
+        {
+            Content = "Wat moet je doen",
+            Uri = "#",
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Voorwaarden",
+            Uri = "#",
+            IsSelected = true,
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Hoe het werkt",
+            Uri = "#",
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Hoe zit het met studiefinanciering",
+            Uri = "#",
+            OnClick = SelectItem
+        },
+        new InSiteNavigationItem
+        {
+            Content = "Ouders",
+            Uri = "#",
+            OnClick = SelectItem
+        }
+};
+
+}
+<div>
+    <NldsInSiteNavigation Items="@InSideNavigationItems" />
 </div>
 @*Bottombar Spacing*@
 <br />

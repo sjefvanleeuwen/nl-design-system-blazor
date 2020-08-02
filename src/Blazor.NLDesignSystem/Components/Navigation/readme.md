@@ -3,9 +3,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Navigation](https://nl-design-system.gitlab.io/nl-design-system/componenten/navigation/index.html)
 
-Status: Some features not implemented:
-
-- In site navigatie
+Status: Fully implemented (see Notes)
 
 ### Notes
 - The menu for components needs to be redone
