@@ -28,7 +28,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public InputSize Size { get; set; }
         [Parameter]
-        public bool ShowEmptyValue { get; set; } = true;
+        public bool ShowEmptyValue { get; set; }
 
         [Parameter]
         public RenderFragment Label { get; set; }
