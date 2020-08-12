@@ -58,6 +58,17 @@
 </NldsButton>
 <NldsButton><NldsButtonSpinner>Aan het opslaan</NldsButtonSpinner></NldsButton>
 <NldsButton Type="ButtonType.Link">Knop als link</NldsButton>
+<h3>Met onclick event</h3>
+@code {
+    int waarde = 0;
+    private void Add()
+    {
+        waarde += 1;
+    }
+}
+<NldsButton Type="ButtonType.Disabled" OnClick="Add">Waarde Ophogen</NldsButton>
+<NldsButton OnClick="Add">Waarde Ophogen</NldsButton>
+<p>Waarde: @waarde</p>
 <h2>Collapse</h2>
 <h3>Normal</h3>
 <NldsCollapseWrapper>
@@ -199,32 +210,32 @@
 </NldsTable>
 <h3>Controlled externally</h3>
 @code {
-    private NldsCollapse CollapseExternal1 { get; set; }
-    private void CollapseClose()
-    {
-        CollapseExternal1.Close();
-    }
-    private void CollapseOpen()
-    {
-        CollapseExternal1.Open();
-    }
-    private void CollapseToggle()
-    {
-        CollapseExternal1.Toggle();
-    }
-    private void CollapseDestroy()
-    {
-        CollapseExternal1.Destroy();
-    }
-    private string LastAction = string.Empty;
-    private void OnCollapse1Close()
-    {
-        LastAction = "Close";
-    }
-    private void OnCollapse1Open()
-    {
-        LastAction = "Open";
-    }
+        private NldsCollapse CollapseExternal1 { get; set; }
+            private void CollapseClose()
+            {
+                CollapseExternal1.Close();
+            }
+            private void CollapseOpen()
+            {
+                CollapseExternal1.Open();
+            }
+            private void CollapseToggle()
+            {
+                CollapseExternal1.Toggle();
+            }
+            private void CollapseDestroy()
+            {
+                CollapseExternal1.Destroy();
+            }
+            private string LastAction = string.Empty;
+            private void OnCollapse1Close()
+            {
+                LastAction = "Close";
+            }
+            private void OnCollapse1Open()
+            {
+                LastAction = "Open";
+            }
 }
 <NldsCollapseWrapper>
     <NldsCollapse @ref="CollapseExternal1" Identifier="externalCollapse" OnCollapseClose="OnCollapse1Close" OnCollapseOpen="OnCollapse1Open">
@@ -319,7 +330,7 @@
 <h3>TextArea</h3>
 @code {
     string textArea = "test";
-} 
+}
 <NldsTextArea @bind-Value="@textArea" />
 <p>@textArea</p>
 <h2>Radios</h2>
@@ -661,7 +672,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                                                                                                         };
+                                                                                                                                                                                                                             };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
