@@ -1,0 +1,30 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+        @if (LabelAlignment == LabelAlignment.Horizontal)
+        {
+            <div>
+                @Label
+                @Hint
+            </div>
+        }
+        else
+        {
+            @Label
+            @Hint
+        }
+        @if (!IsValid)
+        {
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
+        }
+    </CascadingValue>
+    <textarea  id="@Identifier"
+           type="@DisplayType"
+           class="input__control input__control@(SizeAppendix) @InputControlType"
+           @bind="Value"
+           @bind:event="oninput"
+           @oninput:preventDefault
+           @attributes="GetAttributes()"
+           disabled="@IsDisabled"
+           required="@IsRequired"></textarea>
+</div>

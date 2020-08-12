@@ -316,6 +316,12 @@
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Zappa</NldsFormHint></Hint>
     </NldsInput>
 </NldsForm>
+<h3>TextArea</h3>
+@code {
+    string textArea = "test";
+} 
+<NldsTextArea @bind-Value="@textArea" />
+<p>@textArea</p>
 <h2>Radios</h2>
 @code {
     string radio1Value = "aanvrager_met_toeslagpartner";
