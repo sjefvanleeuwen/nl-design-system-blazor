@@ -21,6 +21,10 @@ namespace Blazor.NLDesignSystem.Components
         public string ScreenreaderActivePageDescription { get; set; } = "U bevindt zich op pagina";
         [Parameter]
         public string ScreenreaderPageDescription { get; set; } = "pagina";
+        [Parameter]
+        public bool ShowNext { get; set; } = true;
+        [Parameter]
+        public bool ShowPrevious { get; set; } = true;
 
         [Parameter]
         public EventCallback OnNext { get; set; }
@@ -29,11 +33,11 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback OnPrevious { get; set; }
 
-        private bool NextEnabled => OnNext.HasDelegate ||
-                                    (OnPageClick.HasDelegate && ActivePage < NumberOfPages);
+        private bool NextEnabled => ShowNext && 
+            (OnNext.HasDelegate || (OnPageClick.HasDelegate && ActivePage < NumberOfPages));
         private IEnumerable<Page> Pages => BuildDisplayPages();
-        private bool PreviousEnabled => OnPrevious.HasDelegate ||
-                                        (OnPageClick.HasDelegate && ActivePage > 1);
+        private bool PreviousEnabled => ShowPrevious && 
+            (OnPrevious.HasDelegate || (OnPageClick.HasDelegate && ActivePage > 1));
 
         private async void InvokeNext()
         {

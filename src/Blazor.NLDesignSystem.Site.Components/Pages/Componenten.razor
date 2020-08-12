@@ -526,7 +526,7 @@
         StateHasChanged();
     }
 
-    public void PageAction(int page)
+    private void PageAction(int page)
     {
         actionDone = $"Pagina {page}";
         StateHasChanged();
@@ -536,16 +536,18 @@
     <h3>De laatste actie die is uitgevoerd: <strong>@actionDone</strong></h3>
     <h3>Next</h3>
     <NldsPagination NextText="Volgende" OnNext="NextAction" />
-    <h3>Next with default values for previous</h3>
-    <NldsPagination OnPrevious="default(EventCallback)" NextText="Volgende" OnNext="NextAction" />
     <h3>Previous</h3>
     <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" />
     <h3>Next & Previous</h3>
     <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" NextText="Volgende" OnNext="NextAction" />
+    <h3>Next & Previous without showing previous</h3>
+    <NldsPagination ShowPrevious="false" PreviousText="Vorige" OnPrevious="PreviousAction" NextText="Volgende" OnNext="NextAction" />
     <h3>5 pages - first active</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>5 pages - 3rd active</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="3" NumberOfPages="5" OnPageClick="PageAction" />
+    <h3>5 pages - 3rd active, previous disabled</h3>
+    <NldsPagination ShowPrevious="false" PreviousText="Vorige" NextText="Volgende" ActivePage="3" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>5 pages - last active</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="5" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>20 pages - 1rst active</h3>
