@@ -10,17 +10,11 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public int ActivePage { get; set; } = 1;
         [Parameter]
-        public Action NextAction { get; set; }
-        [Parameter]
         public string NextText { get; set; }
         [Parameter]
         public int NumberOfPages { get; set; }
         [Parameter]
         public int NumberOfPageNumbersToDisplay { get; set; } = 5;
-        [Parameter]
-        public Action<int> PageAction { get; set; }
-        [Parameter]
-        public Action PreviousAction { get; set; }
         [Parameter]
         public string PreviousText { get; set; }
         [Parameter]
@@ -28,17 +22,24 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string ScreenreaderPageDescription { get; set; } = "pagina";
 
-        private bool NextEnabled => NextAction != null ||
-                                    (PageAction != null && ActivePage < NumberOfPages);
-        private IEnumerable<Page> Pages => BuildDisplayPages();
-        private bool PreviousEnabled => PreviousAction != null ||
-                                        (PageAction != null && ActivePage > 1);
+        [Parameter]
+        public EventCallback OnNext { get; set; }
+        [Parameter]
+        public EventCallback<int> OnPageClick { get; set; }
+        [Parameter]
+        public EventCallback OnPrevious { get; set; }
 
-        private void InvokeNext()
+        private bool NextEnabled => OnNext.HasDelegate ||
+                                    (OnPageClick.HasDelegate && ActivePage < NumberOfPages);
+        private IEnumerable<Page> Pages => BuildDisplayPages();
+        private bool PreviousEnabled => OnPrevious.HasDelegate ||
+                                        (OnPageClick.HasDelegate && ActivePage > 1);
+
+        private async void InvokeNext()
         {
-            if (NextAction != null)
+            if (OnNext.HasDelegate)
             {
-                NextAction.Invoke();
+                await OnNext.InvokeAsync(this);
             }
             else
             {
@@ -46,11 +47,11 @@ namespace Blazor.NLDesignSystem.Components
             }
         }
 
-        private void InvokePrevious()
+        private async void InvokePrevious()
         {
-            if (PreviousAction != null)
+            if (OnPrevious.HasDelegate)
             {
-                PreviousAction.Invoke();
+                await OnPrevious.InvokeAsync(this);
             }
             else
             {
@@ -58,14 +59,17 @@ namespace Blazor.NLDesignSystem.Components
             }
         }
 
-        private void InvokePage(int pageNumber)
+        private async void InvokePage(int pageNumber)
         {
-            PageAction?.Invoke(pageNumber);
+            if (OnPageClick.HasDelegate)
+            {
+                await OnPageClick.InvokeAsync(pageNumber);
+            }
         }
 
         private IEnumerable<Page> BuildDisplayPages()
         {
-            if (PageAction == null || NumberOfPages < 1)
+            if (!OnPageClick.HasDelegate || NumberOfPages < 1)
             {
                 return new List<Page>();
             }

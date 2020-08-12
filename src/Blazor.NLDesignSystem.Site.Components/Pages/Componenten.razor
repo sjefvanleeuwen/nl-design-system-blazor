@@ -508,7 +508,8 @@
         actionDone = "Previous";
         StateHasChanged();
     }
-    private void PageAction(int page)
+
+    public void PageAction(int page)
     {
         actionDone = $"Pagina {page}";
         StateHasChanged();
@@ -517,29 +518,31 @@
 <NldsForm>
     <h3>De laatste actie die is uitgevoerd: <strong>@actionDone</strong></h3>
     <h3>Next</h3>
-    <NldsPagination NextText="Volgende" NextAction="NextAction" />
+    <NldsPagination NextText="Volgende" OnNext="NextAction" />
+    <h3>Next with default values for previous</h3>
+    <NldsPagination OnPrevious="default(EventCallback)" NextText="Volgende" OnNext="NextAction" />
     <h3>Previous</h3>
-    <NldsPagination PreviousText="Vorige" PreviousAction="PreviousAction" />
+    <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" />
     <h3>Next & Previous</h3>
-    <NldsPagination PreviousText="Vorige" PreviousAction="PreviousAction" NextText="Volgende" NextAction="NextAction" />
+    <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" NextText="Volgende" OnNext="NextAction" />
     <h3>5 pages - first active</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="5" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>5 pages - 3rd active</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="3" NumberOfPages="5" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="3" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>5 pages - last active</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="5" NumberOfPages="5" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="5" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>20 pages - 1rst active</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="20" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="20" OnPageClick="PageAction" />
     <h3>20 pages - 10th active</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" OnPageClick="PageAction" />
     <h3>20 pages - last active</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="20" NumberOfPages="20" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="20" NumberOfPages="20" OnPageClick="PageAction" />
     <h3>20 pages - 10th active and an even (4) middle numbers</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="4" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="4" OnPageClick="PageAction" />
     <h3>20 pages - 10th active and 3 middle numbers</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="3" PageAction="PageAction" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" NumberOfPageNumbersToDisplay="3" OnPageClick="PageAction" />
     <h3>Andere screenreader informatie</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" PageAction="PageAction" ScreenreaderPageDescription="Page" ScreenreaderActivePageDescription="You are now on page" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="10" NumberOfPages="20" OnPageClick="PageAction" ScreenreaderPageDescription="Page" ScreenreaderActivePageDescription="You are now on page" />
     @code {
         int ActivePage = 1;
         private void PageActionInteractive(int page)
@@ -549,7 +552,7 @@
         }
     }
     <h3>20 pages - interactive</h3>
-    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="@ActivePage" NumberOfPages="20" PageAction="PageActionInteractive" />
+    <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="@ActivePage" NumberOfPages="20" OnPageClick="PageActionInteractive" />
 </NldsForm>
 <h2>DefinitonList</h2>
 <h3>Standaard en horizontaal</h3>
@@ -652,7 +655,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                                                                                                     };
+                                                                                                                                                                                                                         };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
