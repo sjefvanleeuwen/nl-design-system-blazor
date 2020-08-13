@@ -540,8 +540,13 @@
     <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" />
     <h3>Next & Previous</h3>
     <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" NextText="Volgende" OnNext="NextAction" />
-    <h3>Next & Previous without showing previous (by boolean)</h3>
-    <NldsPagination PreviousText="Vorige" OnPrevious="@(false ? PreviousAction : default(Action))" NextText="Volgende" OnNext="NextAction" />
+    @code {
+        bool ShowPrevious = false;
+    }
+    <h3>Next & Previous without showing previous (by ShowPrevious parameter)</h3>
+    <NldsPagination PreviousText="Vorige" OnPrevious="PreviousAction" ShowPrevious="ShowPrevious" NextText="Volgende" OnNext="NextAction" />
+    <h3>Next & Previous without showing previous (by optionally providing a default Action)</h3>
+    <NldsPagination PreviousText="Vorige" OnPrevious="@(ShowPrevious ? PreviousAction : default(Action))" NextText="Volgende" OnNext="NextAction" />
     <h3>5 pages - first active</h3>
     <NldsPagination PreviousText="Vorige" NextText="Volgende" ActivePage="1" NumberOfPages="5" OnPageClick="PageAction" />
     <h3>5 pages - 3rd active</h3>
