@@ -33,10 +33,10 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback OnPrevious { get; set; }
 
-        private bool NextEnabled => ShowNext && 
+        private bool NextEnabled => ShowNext &&
             (OnNext.HasDelegate || (OnPageClick.HasDelegate && ActivePage < NumberOfPages));
         private IEnumerable<Page> Pages => BuildDisplayPages();
-        private bool PreviousEnabled => ShowPrevious && 
+        private bool PreviousEnabled => ShowPrevious &&
             (OnPrevious.HasDelegate || (OnPageClick.HasDelegate && ActivePage > 1));
 
         private async void InvokeNext()
