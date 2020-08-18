@@ -1,0 +1,60 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+        @if (LabelAlignment == LabelAlignment.Horizontal)
+        {
+            <div>
+                @Label
+                @Hint
+            </div>
+        }
+        else
+        {
+            @Label
+            @Hint
+        }
+        @if (!IsValid)
+        {
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
+        }
+    </CascadingValue>
+    <div class="input__control-group" @attributes="GetAttributes()">
+        <div>
+            <label class="input__hint" for="@(Identifier)_postal_code">@LabelZipcode</label>
+            <input aria-label="@DescriptionZipcode" 
+                   title="@DescriptionZipcode" 
+                   type="text" 
+                   pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" 
+                   id="@(Identifier)_postal_code" 
+                   class="input__control input__control--six-characters input__control--text"
+                   disabled="@IsDisabled"
+                   required="@IsRequired"
+                   @bind="ZipCode" />
+        </div>
+        <div>
+            <label class="input__hint" for="@(Identifier)_number">@LabelHouseNumber</label>
+            <input aria-label="@DescriptionHouseNumber" 
+                   title="@DescriptionHouseNumber"
+                   type="number" 
+                   minlength="1" 
+                   maxlength="5" 
+                   id="@(Identifier)_number" 
+                   class="input__control input__control--five-characters input__control--text"
+                   disabled="@IsDisabled"
+                   required="@IsRequired"
+                   @bind="HouseNumber" />
+        </div>
+        <div>
+            <span class="input__hint" for="@(Identifier)_number-suffix">@LabelHousenumberSuffix</span>
+            <input aria-label="@DescriptionHousenumberSuffix" 
+                   title="@DescriptionHousenumberSuffix" 
+                   type="text" 
+                   maxlength="5" 
+                   id="@(Identifier)_number-suffix" 
+                   class="input__control input__control--five-characters input__control--text"
+                   disabled="@IsDisabled"
+                   required="@IsRequired"
+                   @bind="HouseNumberSuffix" />
+        </div>
+    </div>
+</div>

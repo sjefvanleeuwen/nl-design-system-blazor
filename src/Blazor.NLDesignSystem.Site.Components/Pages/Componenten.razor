@@ -210,32 +210,32 @@
 </NldsTable>
 <h3>Controlled externally</h3>
 @code {
-        private NldsCollapse CollapseExternal1 { get; set; }
-            private void CollapseClose()
-            {
-                CollapseExternal1.Close();
-            }
-            private void CollapseOpen()
-            {
-                CollapseExternal1.Open();
-            }
-            private void CollapseToggle()
-            {
-                CollapseExternal1.Toggle();
-            }
-            private void CollapseDestroy()
-            {
-                CollapseExternal1.Destroy();
-            }
-            private string LastAction = string.Empty;
-            private void OnCollapse1Close()
-            {
-                LastAction = "Close";
-            }
-            private void OnCollapse1Open()
-            {
-                LastAction = "Open";
-            }
+    private NldsCollapse CollapseExternal1 { get; set; }
+    private void CollapseClose()
+    {
+        CollapseExternal1.Close();
+    }
+    private void CollapseOpen()
+    {
+        CollapseExternal1.Open();
+    }
+    private void CollapseToggle()
+    {
+        CollapseExternal1.Toggle();
+    }
+    private void CollapseDestroy()
+    {
+        CollapseExternal1.Destroy();
+    }
+    private string LastAction = string.Empty;
+    private void OnCollapse1Close()
+    {
+        LastAction = "Close";
+    }
+    private void OnCollapse1Open()
+    {
+        LastAction = "Open";
+    }
 }
 <NldsCollapseWrapper>
     <NldsCollapse @ref="CollapseExternal1" Identifier="externalCollapse" OnCollapseClose="OnCollapse1Close" OnCollapseOpen="OnCollapse1Open">
@@ -411,14 +411,37 @@
     DateTime GeboorteDatum = new DateTime(1979, 3, 8);
 }
 <NldsForm>
-    <NldsDate Identifier="date" 
-              @bind-Value="GeboorteDatum" 
+    <NldsDate Identifier="date"
+              @bind-Value="GeboorteDatum"
               DescriptionYear="Geboortejaar" DescriptionMonth="Geboortemaand" DescriptionDay="Geboortedag"
               LabelYear="JJJJ" LabelMonth="MM" LabelDay="DD">
         <Label><NldsFormLabel>Geboortedatum</NldsFormLabel></Label>
         <Hint><NldsFormHint>Wat is uw geboortedatum?</NldsFormHint></Hint>
     </NldsDate>
 </NldsForm>
+@GeboorteDatum.ToString()
+
+<h2>Address</h2>
+@code{
+    Address Address = new Address
+    {
+        ZipCode = "1000NC",
+        HouseNumber = 1701,
+        HouseNumberSuffix = "D"
+    };
+}
+<NldsForm>
+    <NldsAddress Identifier="address"
+              @bind-Value="Address"
+              DescriptionZipcode="ZipCode" DescriptionHouseNumber="Nr" DescriptionHousenumberSuffix="ExtraInitcator"
+              LabelZipcode="Zip" LabelHouseNumber="Nr" LabelHousenumberSuffix="?">
+        <Label><NldsFormLabel>Adres</NldsFormLabel></Label>
+        <Hint><NldsFormHint>Waar woont u?</NldsFormHint></Hint>
+    </NldsAddress>
+</NldsForm>
+<p>Postcode: @Address.ZipCode</p>
+<p>Huisnummer: @Address.HouseNumber</p>
+<p>Toevoeging: @Address.HouseNumberSuffix</p>
 
 <h2>Checkbox</h2>
 @code {
@@ -693,7 +716,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                                                                                                             };
+                                                                                                                                                                                                                                 };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
