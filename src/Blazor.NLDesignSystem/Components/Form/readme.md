@@ -4,6 +4,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 [Form](https://nl-design-system.gitlab.io/nl-design-system/componenten/form/index.html)
 
 Status: Some features not implemented:
+- Adres
 - HTML5 input types (mulitple field grouped values & label optional)
 - Bestanden upload
 

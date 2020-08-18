@@ -406,6 +406,21 @@
     </NldsSelect>
 </NldsForm>
 
+<h2>Date</h2>
+@code{
+    DateTime GeboorteDatum = new DateTime(1979, 3, 8);
+}
+<NldsForm>
+    <NldsDate Identifier="date" 
+              @bind-Value="GeboorteDatum" 
+              DescriptionYear="Geboortejaar" DescriptionMonth="Geboortemaand" DescriptionDay="Geboortedag"
+              LabelYear="JJJJ" LabelMonth="MM" LabelDay="DD">
+        <Label><NldsFormLabel>Geboortedatum</NldsFormLabel></Label>
+        <Hint><NldsFormHint>Wat is uw geboortedatum?</NldsFormHint></Hint>
+    </NldsDate>
+</NldsForm>
+
+<h2>Checkbox</h2>
 @code {
     IEnumerable<CheckboxItem> CheckBox1 = new List<CheckboxItem>() {
             new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked= true },
@@ -437,7 +452,6 @@
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
         };
 }
-<h2>Checkbox</h2>
 <h3>2-way binding</h3>
 <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
 <NldsForm>
