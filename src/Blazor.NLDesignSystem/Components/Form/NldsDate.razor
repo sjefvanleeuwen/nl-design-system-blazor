@@ -20,7 +20,7 @@
     </CascadingValue>
     <div class="input__control-group">
         <div>
-            <label class="input__hint" for="@(Identifier)-d">dag</label>
+            <label class="input__hint" for="@(Identifier)-d">@LabelDay</label>
             <input aria-label="@DescriptionDay" 
                    title="@DescriptionDay" 
                    type="number" 
@@ -33,7 +33,7 @@
                    @bind="Day" />
         </div>
         <div>
-            <label class="input__hint" for="@(Identifier)-m">maand</label>
+            <label class="input__hint" for="@(Identifier)-m">@LabelMonth</label>
             <input aria-label="@DescriptionMonth" 
                    title="@DescriptionMonth" 
                    type="number"
@@ -46,7 +46,7 @@
                    @bind="Month" />
         </div>
         <div>
-            <span class="input__hint" for="@(Identifier)-y">jaar</span>
+            <span class="input__hint" for="@(Identifier)-y">@LabelYear</span>
             <input aria-label="@DescriptionYear" 
                    title="@DescriptionYear" 
                    type="number" 
