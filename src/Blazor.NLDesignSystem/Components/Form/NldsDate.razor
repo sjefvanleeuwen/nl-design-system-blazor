@@ -18,7 +18,7 @@
             <NldsError>@((MarkupString)DisplayErrorText)</NldsError>
         }
     </CascadingValue>
-    <div class="input__control-group">
+    <div class="input__control-group" @attributes="GetAttributes()">
         <div>
             <label class="input__hint" for="@(Identifier)-d">@LabelDay</label>
             <input aria-label="@DescriptionDay" 

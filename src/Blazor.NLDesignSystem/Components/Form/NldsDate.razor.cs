@@ -54,15 +54,14 @@ namespace Blazor.NLDesignSystem.Components
                 ValueChanged.InvokeAsync(value);
             }
         }
-        
+        private DateTime _value = DateTime.Today;
+        [Parameter]
+        public EventCallback<DateTime> ValueChanged { get; set; }
+
         private int _day;
         private bool _invalidDate;
         private int _month;
-        private DateTime _value = DateTime.Today;
         private int _year;
-
-        [Parameter]
-        public EventCallback<DateTime> ValueChanged { get; set; }
 
         private int Day { get => _day; set { _day = value; UpdateValue(); } }
         private int Month { get => _month; set { _month = value; UpdateValue(); } }
@@ -77,9 +76,9 @@ namespace Blazor.NLDesignSystem.Components
 
         protected override void OnInitialized()
         {
-            Day = _value.Day;
-            Month = _value.Month;
-            Year = _value.Year;
+            Day = Value.Day;
+            Month = Value.Month;
+            Year = Value.Year;
             base.OnInitialized();
         }
 
