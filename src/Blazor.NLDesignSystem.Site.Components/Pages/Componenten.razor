@@ -719,6 +719,34 @@
         };
 
     string typedValue = string.Empty;
+
+    IEnumerable<ComboboxItem> Items2 = new List<ComboboxItem>
+        {
+            new ComboboxItem { Value = "violet, #a90061" },
+            new ComboboxItem { Value = "roze, #f092cd", IsDisabled = true },
+            new ComboboxItem { Value = "rood, #d52b1e" },
+            new ComboboxItem { Value = "robijnrood, #ca005d" },
+            new ComboboxItem { Value = "paars, #42145f" },
+            new ComboboxItem { Value = "oranje, #e17000" },
+            new ComboboxItem { Value = "lichtblauw, #8fcae7" },
+            new ComboboxItem { Value = "hemelblauw, #007bc7" },
+            new ComboboxItem { Value = "donkerblauw, #01689b" },
+            new ComboboxItem { Value = "geel, #f9e11e" },
+            new ComboboxItem { Value = "donkergeel, #ffb612" },
+            new ComboboxItem { Value = "mintgroen, #76d2b6" },
+            new ComboboxItem { Value = "mosgroen, #767b00" },
+            new ComboboxItem { Value = "groen, #39870c" },
+            new ComboboxItem { Value = "donkergroen, #275937" },
+            new ComboboxItem { Value = "bruin, #94710a" },
+            new ComboboxItem { Value = "donkerbruin, #673327" },
+            new ComboboxItem { Value = "grijs-1, #f3f3f3" },
+            new ComboboxItem { Value = "grijs-2, #e6e6e6" },
+            new ComboboxItem { Value = "grijs-3, #cccccc" },
+            new ComboboxItem { Value = "grijs-4, #b4b4b4" },
+            new ComboboxItem { Value = "grijs-5, #999999" },
+            new ComboboxItem { Value = "grijs-6, #696969" },
+            new ComboboxItem { Value = "grijs-7, #535353" }
+        };
 }
 <h2>Combobox</h2>
 <NldsForm>
@@ -729,20 +757,19 @@
 </NldsForm>
 <p>Typed value: @typedValue</p>
 <p>Selected Value: @(Items.FirstOrDefault(i => i.IsChecked)?.Value)</p>
-@*<p>Geselecteerde Waarde: @SelectedComboboxValue</p>
 <h3>Multiple</h3>
 <NldsForm>
-    <NldsCombobox Identifier="com2" Items="@Items" @bind-Value="SelectedComboboxValues" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+    <NldsCombobox IsMultiple="true" Identifier="com2" @bind-Items="@Items" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
         <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
     </NldsCombobox>
 </NldsForm>
 <ul>
-    Geselecteerde Waardes: @foreach (var value in SelectedComboboxValues)
+    Geselecteerde Waardes: @foreach (var item in Items2.Where(i => i.IsChecked))
     {
-        <li>@value</li>
+        <li>@item.Value</li>
     }
-</ul>*@
+</ul>
 <h2>Spinner</h2>
 <NldsSpinner FullPage="true">
     <DisplayText>Zoals bijvoorbeeld deze tekst die nog geladen moet worden. Het element waar de <span lang="en-US">spinner</span> op verschijnt krijgt ook een lichtere <span lang="en-US">opacity</span>.</DisplayText>

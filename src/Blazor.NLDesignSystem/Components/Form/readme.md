@@ -27,11 +27,15 @@ Status: Some features not implemented:
 
 [Combobox](https://nl-design-system.gitlab.io/nl-design-system/componenten/combobox/index.html)
 
-Status: Some features not implemented:
-- Combobox met meerdere items
-- Combobox ajax calls
-- Combobox met objecten
+Status: Some features not implemented (See Notes):
+
 - Javascript API (all except combobox-select)
+
+### Notes
+
+- *Combobox met meerdere items* can not be used in Blazor. Though it is implemented, when selecting a value the event `combobox-select` is not called. 
+- *Combobox ajax calls* has not been implemented as indicated since ajax calls should not be part of Blazor. Instead the bound Value should be used to have C# do the API call. Then when the call is loaded and the Items are filled, the `Open()` method should be called.
+- *Combobox met objecten* has not been implemented since it is a Javascript implementation of how to make a list from an object. This should be handled in C#.
 
 ## Filter
 

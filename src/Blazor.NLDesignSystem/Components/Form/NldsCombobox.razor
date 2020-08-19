@@ -19,11 +19,25 @@
             <NldsError>@((MarkupString)ErrorText)</NldsError>
         }
     </CascadingValue>
-    <input id="@Identifier"
-           type="@DisplayType"
-           class="combobox__input input__control input__control@(SizeAppendix) @InputControlType"
-           @bind="Value"
-           @attributes="GetAttributes()"
-           disabled="@IsDisabled"
-           required="@IsRequired" />
+    @if (IsMultiple)
+    {
+        var counter = 0;
+        <ul class="combobox__input input__control input__control@(SizeAppendix) @InputControlType" id="@Identifier">
+            @foreach (var item in Items.Where(i => !i.IsDisabled))
+            {
+                <li data-id="@($"{Identifier}_{counter}")">@item.Value</li>
+                counter++;
+            }
+        </ul>
+    }
+    else
+    {
+        <input id="@Identifier"
+               type="@DisplayType"
+               class="combobox__input input__control input__control@(SizeAppendix) @InputControlType"
+               @bind="Value"
+               @attributes="GetAttributes()"
+               disabled="@IsDisabled"
+               required="@IsRequired" />
+    }
 </div>
