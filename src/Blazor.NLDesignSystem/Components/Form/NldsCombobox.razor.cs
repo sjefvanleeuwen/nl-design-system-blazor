@@ -22,7 +22,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string ErrorText { get; set; }
         [Parameter]
-        public string Identifier { get; set; } = Guid.NewGuid().ToString();
+        public string Identifier { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal
         [Parameter]
         public bool IsDisabled { get; set; }
         [Parameter]

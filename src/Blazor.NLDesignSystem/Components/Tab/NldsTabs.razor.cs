@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
 using System.Threading.Tasks;
 
 namespace Blazor.NLDesignSystem.Components
@@ -10,7 +11,7 @@ namespace Blazor.NLDesignSystem.Components
         private IJSRuntime JSRuntime { get; set; }
 
         [Parameter]
-        public string Identifier { get; set; }
+        public string Identifier { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal
         [Parameter]
         public bool Inline { get; set; }
         [Parameter]

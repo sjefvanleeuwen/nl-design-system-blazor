@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string CollapsedText { get; set; } = "ingeklapt";
         [Parameter]
-        public string Identifier { get; set; }
+        public string Identifier { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal
         [Parameter]
         public string Target { get; set; }
         [Parameter]
