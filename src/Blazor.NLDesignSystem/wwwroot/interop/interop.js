@@ -105,17 +105,20 @@ async function toggleCollapse(id) {
 // Combobox
 //////
 
-async function combobox(el, dataArray) {
+var comboboxPrefix = "_combobox_";
+
+async function combobox(el, id, dataArray) {
   await comboboxPrivate(el, dataArray, false);
 }
 
-async function comboboxMultiple(el) {
+async function comboboxMultiple(el, id) {
   await comboboxPrivate(el, null, true);
 }
 
-async function comboboxPrivate(el, dataArray, isMultiple = false) {
+async function comboboxPrivate(el, id, dataArray, isMultiple = false) {
   await System.import('_content/Blazorized.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
     var combobox = new module.Combobox(el, isMultiple);
+    addElement(comboboxPrefix + id, combobox);
     if (!isMultiple) {
       combobox.allowUnknown = false;
       combobox.data = dataArray;

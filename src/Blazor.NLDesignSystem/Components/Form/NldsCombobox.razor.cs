@@ -1,6 +1,7 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -21,7 +22,7 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string ErrorText { get; set; }
         [Parameter]
-        public string Identifier { get; set; }
+        public string Identifier { get; set; } = Guid.NewGuid().ToString();
         [Parameter]
         public bool IsDisabled { get; set; }
         [Parameter]
@@ -84,11 +85,11 @@ namespace Blazor.NLDesignSystem.Components
             {
                 if (IsMultiple)
                 {
-                    await JSRuntime.InvokeVoidAsync("comboboxMultiple", ComboboxReference);
+                    await JSRuntime.InvokeVoidAsync("comboboxMultiple", ComboboxReference, Identifier);
                 }
                 else
                 {
-                    await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Items.Where(i => !i.IsDisabled).Select(i => i.Value));
+                    await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, Items.Where(i => !i.IsDisabled).Select(i => i.Value));
                 }
             }
             await base.OnAfterRenderAsync(firstRender);
