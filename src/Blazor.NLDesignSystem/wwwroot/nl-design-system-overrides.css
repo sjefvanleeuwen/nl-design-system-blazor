@@ -12,8 +12,17 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
     white-space: nowrap;
 }
 
-/* Checkbox */
+/* Form (File Uplodd) */
 
+/* this is missing in the rendered css*/
+.hidden {
+    height: 1px;
+    position: fixed;
+    top: -100px;
+    width: 1px;
+}
+
+/* Checkbox */
 /* the order of the css in the build css is different and that is why input__control is not overridden by input__control--checkbox*/
 .input__control.input__control--checkbox {
     width: 1px;
@@ -34,3 +43,4 @@ body.theme--xxl-breakpoint div.input--horizontal.input--invalid {
 .top-nav a, .top-nav a:visited, .top-nav a:hover, .top-nav a:active {
     color: #fff;
 }
+

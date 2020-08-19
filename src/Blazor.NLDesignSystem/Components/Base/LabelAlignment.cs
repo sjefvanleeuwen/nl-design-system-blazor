@@ -7,6 +7,6 @@ namespace Blazor.NLDesignSystem
         [Style("input--text")]
         Default,
         [Style("input--horizontal")]
-        Horizontal,
+        Horizontal
     }
 }

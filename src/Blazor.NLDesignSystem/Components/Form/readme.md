@@ -3,9 +3,11 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Form](https://nl-design-system.gitlab.io/nl-design-system/componenten/form/index.html)
 
-Status: Some features not implemented:
-- HTML5 input types (mulitple field grouped values & label optional)
-- Bestanden upload
+Status: Fully implemented (see Notes)
+
+### Notes
+- The file upload does not yet handle file uploads (it is better to wait for .net5 to implement this)
+
 
 [Checkbox](https://nl-design-system.gitlab.io/nl-design-system/componenten/checkbox/index.html)
 

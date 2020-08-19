@@ -1,0 +1,51 @@
+﻿@namespace Blazor.NLDesignSystem.Components
+<div class="input @LabelAlignmentStyle @(!IsValid ? "input--invalid" : "")">
+    <CascadingValue Name="ElementIdentifier" Value="@Identifier">
+        @if (LabelAlignment == LabelAlignment.Horizontal)
+        {
+            <div>
+                @Hint
+                <label>
+                    @if (!IsDisabled)
+                    {
+                        <input id="@Identifier"
+                               type="file"
+                               class="input__control--file"
+                               multiple="" @attributes="GetAttributes()"
+                               @onchange="DoOnUpload">
+                    }
+                    <span class="btn"
+                          role="button"
+                          disabled="@IsDisabled"
+                          required="@IsRequired">@((MarkupString)ButtonText)</span>
+                </label>
+            </div>
+        }
+        else
+        {
+            @Hint
+            <label>
+                @if (!IsDisabled)
+                {
+                    <input id="@Identifier"
+                           type="file"
+                           class="input__control--file"
+                           multiple="" @attributes="GetAttributes()"
+                           @onchange="DoOnUpload">
+                }
+                <span class="btn"
+                      role="button"
+                      disabled="@IsDisabled"
+                      required="@IsRequired">@((MarkupString)ButtonText)</span>
+            </label>
+        }
+        @if (!IsValid)
+        {
+            <NldsError>@((MarkupString)ErrorText)</NldsError>
+        }
+    </CascadingValue>
+    <div class="hidden hidden--for-a11y">
+        <!-- Puur om de a11y test te doorstaan -->
+        <input type="submit" value="submit">
+    </div>
+</div>

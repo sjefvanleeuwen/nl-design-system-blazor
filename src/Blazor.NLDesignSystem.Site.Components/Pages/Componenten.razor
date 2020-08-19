@@ -432,9 +432,9 @@
 }
 <NldsForm>
     <NldsAddress Identifier="address"
-              @bind-Value="Address"
-              DescriptionZipcode="ZipCode" DescriptionHouseNumber="Nr" DescriptionHousenumberSuffix="ExtraInitcator"
-              LabelZipcode="Zip" LabelHouseNumber="Nr" LabelHousenumberSuffix="?">
+                 @bind-Value="Address"
+                 DescriptionZipcode="ZipCode" DescriptionHouseNumber="Nr" DescriptionHousenumberSuffix="ExtraInitcator"
+                 LabelZipcode="Zip" LabelHouseNumber="Nr" LabelHousenumberSuffix="?">
         <Label><NldsFormLabel>Adres</NldsFormLabel></Label>
         <Hint><NldsFormHint>Waar woont u?</NldsFormHint></Hint>
     </NldsAddress>
@@ -716,7 +716,7 @@
                         "grijs-5, #999999",
                         "grijs-6, #696969",
                         "grijs-7, #535353"
-                                                                                                                                                                                                                                 };
+                                                                                                                                                                                                                                     };
     string SelectedComboboxValue = string.Empty;
 }
 <h2>Combobox</h2>
@@ -803,6 +803,15 @@
 </NldsFileList>
 <h3>Single File</h3>
 <NldsFile FileName="c50bed25.jpg" FileInfo="JPG, 396.05 kB" />
+<h3>File Upload</h3>
+<NldsFileUpload Identifier="file_upload" ButtonText="<u>U</u>pload">
+    <Hint><NldsFormHint>Try to select a file and upload it.</NldsFormHint></Hint>
+</NldsFileUpload>
+<h3>File Upload Disabled</h3>
+<NldsFileUpload Identifier="file_upload_disabled" IsDisabled="true" ButtonText="<u>U</u>pload">
+    <Hint><NldsFormHint>Disabled</NldsFormHint></Hint>
+</NldsFileUpload>
+
 <h2>Video</h2>
 @code {
     SubtitleInformation subtitles = new SubtitleInformation
