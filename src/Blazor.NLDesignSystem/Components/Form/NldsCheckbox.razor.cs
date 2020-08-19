@@ -39,7 +39,6 @@ namespace Blazor.NLDesignSystem.Components
             }
         }
         private IEnumerable<CheckboxItem> _items = new List<CheckboxItem>();
-
         [Parameter]
         public EventCallback<IEnumerable<CheckboxItem>> ItemsChanged { get; set; }
 
@@ -65,7 +64,6 @@ namespace Blazor.NLDesignSystem.Components
 
     public class CheckboxItem
     {
-
         public string Value { get; set; }
         public string Description { get; set; }
         public bool IsDisabled { get; set; }

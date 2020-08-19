@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace Blazor.NLDesignSystem.Components
     {
         [Inject]
         private IJSRuntime JSRuntime { get; set; }
+
         /// <summary>
         /// Optional; overrides the default value; if the input contains a hint the value "hint_" + Id will be used by default
         /// </summary>
@@ -21,9 +23,9 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Identifier { get; set; }
         [Parameter]
-        public string[] Items { get; set; } = new string[] { };
-        [Parameter]
         public bool IsDisabled { get; set; }
+        [Parameter]
+        public bool IsMultiple { get; set; }
         [Parameter]
         public bool IsRequired { get; set; }
         [Parameter]
@@ -36,6 +38,23 @@ namespace Blazor.NLDesignSystem.Components
         public RenderFragment Label { get; set; }
         [Parameter]
         public RenderFragment Hint { get; set; }
+
+        //2-way binding
+        [Parameter]
+        public IEnumerable<ComboboxItem> Items
+        {
+            get => _items;
+            set
+            {
+                if (_items == value) return;
+                _items = value;
+                ItemsChanged.InvokeAsync(value);
+                StateHasChanged();
+            }
+        }
+        private IEnumerable<ComboboxItem> _items = new List<ComboboxItem>();
+        [Parameter]
+        public EventCallback<IEnumerable<ComboboxItem>> ItemsChanged { get; set; }
 
         //2-way binding
         [Parameter]
@@ -53,8 +72,9 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
+
         [Parameter]
-        public EventCallback<ComboboxSelectItem> OnComboboxSelect { get; set; }
+        public EventCallback<ComboboxSelectedItem> OnComboboxSelect { get; set; }
 
         public ElementReference ComboboxReference { get; set; }
 
@@ -62,7 +82,14 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Items);
+                if (IsMultiple)
+                {
+                    await JSRuntime.InvokeVoidAsync("comboboxMultiple", ComboboxReference);
+                }
+                else
+                {
+                    await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Items.Where(i => !i.IsDisabled).Select(i => i.Value));
+                }
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -99,8 +126,11 @@ namespace Blazor.NLDesignSystem.Components
             switch (eventName)
             {
                 case "combobox-select":
-                    var comboboxSelectItem = JsonSerializer.Deserialize<ComboboxSelectItem>(eventJson, JsonOptions);
-                    Value = comboboxSelectItem.Data;
+                    var comboboxSelectItem = JsonSerializer.Deserialize<ComboboxSelectedItem>(eventJson, JsonOptions);
+                    var selectedDescription = comboboxSelectItem.Data;
+                    var itemList = Items.ToList();
+                    itemList.ForEach(i => i.IsChecked = i.Value == selectedDescription);
+                    Items = itemList;
                     if (OnComboboxSelect.HasDelegate)
                         await OnComboboxSelect.InvokeAsync(comboboxSelectItem);
                     break;
@@ -108,9 +138,15 @@ namespace Blazor.NLDesignSystem.Components
         }
     }
 
-    public class ComboboxSelectItem
+    public class ComboboxSelectedItem
     {
         public bool IsTrusted { get; set; }
         public string Data { get; set; }
+    }
+
+    public class ComboboxItem { 
+        public string Value { get; set; }
+        public bool IsDisabled { get; set; }
+        public bool IsChecked { get; set; }
     }
 }

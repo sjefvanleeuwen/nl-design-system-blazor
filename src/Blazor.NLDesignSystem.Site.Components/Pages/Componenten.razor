@@ -492,7 +492,7 @@
 <h3>Checkbox with error</h3>
 <p>For this to work horizontally set Body to class: theme--xxl-breakpoint</p>
 <NldsForm>
-    <NldsCheckbox Identifier="ch2" @bind-Items="@CheckBox2" ItemAlignment="ItemAlignment.Horizontal" ErrorText="Oops something went wrong.">
+    <NldsCheckbox Identifier="ch2" @bind-Items="CheckBox2" ItemAlignment="ItemAlignment.Horizontal" ErrorText="Oops something went wrong.">
         <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsCheckbox>
@@ -505,7 +505,7 @@
 </NldsForm>
 <h3>Checkbox filter</h3>
 <NldsForm>
-    <NldsCheckbox Identifier="ch3" @bind-Items="@CheckBox3" IsFilter="true">
+    <NldsCheckbox Identifier="ch3" @bind-Items="CheckBox3" IsFilter="true">
         <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsCheckbox>
@@ -518,7 +518,7 @@
 </NldsForm>
 <h3>Checkbox nested</h3>
 <NldsForm>
-    <NldsCheckbox Identifier="ch4" @bind-Items="@CheckBox4" IsFilter="true">
+    <NldsCheckbox Identifier="ch4" @bind-Items="CheckBox4">
         <Legend><NldsLegend>Naam Beheerder</NldsLegend></Legend>
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsCheckbox>
@@ -690,43 +690,59 @@
 <h3>Backlink</h3>
 <NldsBackLink Uri="#" Title="Naar Primair onderwijs"><string>Primair</string> onderwijs</NldsBackLink>
 @code {
-    string[] Items = new string[]
-    {
-                        "violet, #a90061",
-                        "roze, #f092cd",
-                        "rood, #d52b1e",
-                        "robijnrood, #ca005d",
-                        "paars, #42145f",
-                        "oranje, #e17000",
-                        "lichtblauw, #8fcae7",
-                        "hemelblauw, #007bc7",
-                        "donkerblauw, #01689b",
-                        "geel, #f9e11e",
-                        "donkergeel, #ffb612",
-                        "mintgroen, #76d2b6",
-                        "mosgroen, #767b00",
-                        "groen, #39870c",
-                        "donkergroen, #275937",
-                        "bruin, #94710a",
-                        "donkerbruin, #673327",
-                        "grijs-1, #f3f3f3",
-                        "grijs-2, #e6e6e6",
-                        "grijs-3, #cccccc",
-                        "grijs-4, #b4b4b4",
-                        "grijs-5, #999999",
-                        "grijs-6, #696969",
-                        "grijs-7, #535353"
-                                                                                                                                                                                                                                     };
-    string SelectedComboboxValue = string.Empty;
+    IEnumerable<ComboboxItem> Items = new List<ComboboxItem>
+        {
+            new ComboboxItem { Value = "violet, #a90061" },
+            new ComboboxItem { Value = "roze, #f092cd", IsDisabled = true },
+            new ComboboxItem { Value = "rood, #d52b1e" },
+            new ComboboxItem { Value = "robijnrood, #ca005d" },
+            new ComboboxItem { Value = "paars, #42145f" },
+            new ComboboxItem { Value = "oranje, #e17000" },
+            new ComboboxItem { Value = "lichtblauw, #8fcae7" },
+            new ComboboxItem { Value = "hemelblauw, #007bc7" },
+            new ComboboxItem { Value = "donkerblauw, #01689b" },
+            new ComboboxItem { Value = "geel, #f9e11e" },
+            new ComboboxItem { Value = "donkergeel, #ffb612" },
+            new ComboboxItem { Value = "mintgroen, #76d2b6" },
+            new ComboboxItem { Value = "mosgroen, #767b00" },
+            new ComboboxItem { Value = "groen, #39870c" },
+            new ComboboxItem { Value = "donkergroen, #275937" },
+            new ComboboxItem { Value = "bruin, #94710a" },
+            new ComboboxItem { Value = "donkerbruin, #673327" },
+            new ComboboxItem { Value = "grijs-1, #f3f3f3" },
+            new ComboboxItem { Value = "grijs-2, #e6e6e6" },
+            new ComboboxItem { Value = "grijs-3, #cccccc" },
+            new ComboboxItem { Value = "grijs-4, #b4b4b4" },
+            new ComboboxItem { Value = "grijs-5, #999999" },
+            new ComboboxItem { Value = "grijs-6, #696969" },
+            new ComboboxItem { Value = "grijs-7, #535353" }
+        };
+
+    string typedValue = string.Empty;
 }
 <h2>Combobox</h2>
 <NldsForm>
-    <NldsCombobox Identifier="com" Items="@Items" @bind-Value="SelectedComboboxValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+    <NldsCombobox Identifier="com" @bind-Items="Items" @bind-Value="typedValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
         <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
     </NldsCombobox>
 </NldsForm>
-<p>Geselecteerde Waarde: @SelectedComboboxValue</p>
+<p>Typed value: @typedValue</p>
+<p>Selected Value: @(Items.FirstOrDefault(i => i.IsChecked)?.Value)</p>
+@*<p>Geselecteerde Waarde: @SelectedComboboxValue</p>
+<h3>Multiple</h3>
+<NldsForm>
+    <NldsCombobox Identifier="com2" Items="@Items" @bind-Value="SelectedComboboxValues" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+        <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
+        <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
+    </NldsCombobox>
+</NldsForm>
+<ul>
+    Geselecteerde Waardes: @foreach (var value in SelectedComboboxValues)
+    {
+        <li>@value</li>
+    }
+</ul>*@
 <h2>Spinner</h2>
 <NldsSpinner FullPage="true">
     <DisplayText>Zoals bijvoorbeeld deze tekst die nog geladen moet worden. Het element waar de <span lang="en-US">spinner</span> op verschijnt krijgt ook een lichtere <span lang="en-US">opacity</span>.</DisplayText>
