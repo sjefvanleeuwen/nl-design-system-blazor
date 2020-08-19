@@ -108,11 +108,11 @@ async function toggleCollapse(id) {
 var comboboxPrefix = "_combobox_";
 
 async function combobox(el, id, dataArray) {
-  await comboboxPrivate(el, dataArray, false);
+  await comboboxPrivate(el, id, dataArray, false);
 }
 
 async function comboboxMultiple(el, id) {
-  await comboboxPrivate(el, null, true);
+  await comboboxPrivate(el, id, null, true);
 }
 
 async function comboboxPrivate(el, id, dataArray, isMultiple = false) {
