@@ -31,7 +31,6 @@ namespace Blazor.NLDesignSystem.Components
         public bool IsRequired { get; set; }
         [Parameter]
         public LabelAlignment LabelAlignment { get; set; }
-        //The Id used to register the elemtne in javascript. Will be the id of the element is not provided
         [Parameter]
         public InputSize Size { get; set; }
 
