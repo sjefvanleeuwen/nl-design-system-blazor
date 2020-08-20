@@ -68,13 +68,18 @@ namespace Blazor.NLDesignSystem.Components
                 ValueChanged.InvokeAsync(value);
             }
         }
+
+        private async void UpdateItemsBySelectedValues()
+        {
+            var selectedValues = await GetValue();
+            var items = Items.ToList();
+            items.ForEach(i => i.IsChecked = selectedValues.Contains(i.Value));
+            Items = items;
+        }
+
         private string _value;
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
-
-
-        [Parameter]
-        public EventCallback<ComboboxSelectedItem> OnComboboxSelect { get; set; }
 
         public ElementReference ComboboxReference { get; set; }
 
@@ -118,6 +123,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             //always set the combobox-select callback. It sets the value after selecting.
             await SetEventListener("combobox-select", ComboboxReference);
+            await SetEventListener("combobox-close", ComboboxReference);
         }
 
         [JSInvokable]
@@ -128,14 +134,31 @@ namespace Blazor.NLDesignSystem.Components
                 case "combobox-select":
                     var comboboxSelectItem = JsonSerializer.Deserialize<ComboboxSelectedItem>(eventJson, JsonOptions);
                     var selectedDescription = comboboxSelectItem.Data;
-                    var itemList = Items.ToList();
-                    itemList.ForEach(i => i.IsChecked = i.Value == selectedDescription);
-                    Items = itemList;
-                    if (OnComboboxSelect.HasDelegate)
-                        await OnComboboxSelect.InvokeAsync(comboboxSelectItem);
+                    var items = Items.ToList();
+                    items.ForEach(i => i.IsChecked = i.Value == selectedDescription);
+                    Items = items;
+                    break;
+                case "combobox-close":
+                    await UpdateSelectedList();
                     break;
             }
         }
+
+        [JSInvokable]
+        public async Task UpdateSelectedList()
+        {
+            if (!IsMultiple)
+            {
+                return;
+            }
+            var items = Items.ToList();
+            var selectedValues = await GetValue();
+            items.ForEach(i => i.IsChecked = selectedValues.Contains(i.Value));
+            Items = items;
+            //set a callback to all the items added above the combobox
+            await JSRuntime.InvokeVoidAsync("triggerComboboxUpdateSelectedList", ComboboxReference, JSObjectRef);
+        }
+
         public async Task<IEnumerable<string>> GetValue()
         {
             if (IsMultiple)
@@ -155,7 +178,7 @@ namespace Blazor.NLDesignSystem.Components
         {
             await JSRuntime.InvokeVoidAsync("openCombobox", Identifier);
         }
-        
+
         public async Task SetData(IEnumerable<string> data)
         {
             await JSRuntime.InvokeVoidAsync("setComboboxData", Identifier, data);
@@ -168,7 +191,8 @@ namespace Blazor.NLDesignSystem.Components
         public string Data { get; set; }
     }
 
-    public class ComboboxItem { 
+    public class ComboboxItem
+    {
         public string Value { get; set; }
         public bool IsDisabled { get; set; }
         public bool IsChecked { get; set; }

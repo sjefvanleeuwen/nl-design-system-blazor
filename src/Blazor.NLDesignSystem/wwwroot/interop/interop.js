@@ -133,7 +133,6 @@ async function closeCombobox(id) {
 
 async function getComboboxValue(id) {
   var combobox = getElementById(comboboxPrefix + id);
-  console.log(combobox.value);
   return combobox.value;
 }
 
@@ -151,6 +150,14 @@ async function setComboboxData(id, dataArray) {
 async function ComboboxIsOpen(id) {
   var combobox = getElementById(comboboxPrefix + id);
   return combobox.isOpen();
+}
+
+async function triggerComboboxUpdateSelectedList(el, JSObjectRef) {
+  el.querySelectorAll('ul.list.list--filter.list--filter-inline.list--filter-closable > li').forEach(function (selectedValue) {
+    selectedValue.addEventListener('click', function () {
+      JSObjectRef.invokeMethodAsync('UpdateSelectedList');
+    });
+  });
 }
 
 //////
