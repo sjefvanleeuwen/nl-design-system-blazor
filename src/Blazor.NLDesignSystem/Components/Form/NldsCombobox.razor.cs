@@ -83,23 +83,14 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback<string> ValueChanged { get; set; }
 
-        public ElementReference ComboboxReference { get; set; }
+        [Parameter]
+        public EventCallback OnComboboxSelect { get; set; }
+        [Parameter]
+        public EventCallback OnComboboxOpen { get; set; }
+        [Parameter]
+        public EventCallback OnComboboxClose { get; set; }
 
-        protected async override Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                if (IsMultiple)
-                {
-                    await JSRuntime.InvokeVoidAsync("comboboxMultiple", ComboboxReference, Identifier, AllowUnknown);
-                }
-                else
-                {
-                    await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, AllowUnknown, Items.Where(i => !i.IsDisabled).Select(i => i.Value));
-                }
-            }
-            await base.OnAfterRenderAsync(firstRender);
-        }
+        public ElementReference ComboboxReference { get; set; }
 
         private string DisplayType => Type.GetDescription<StyleAttribute>();
         private string InputControlType => Type.GetDescription<InputControlAttribute>();
@@ -107,6 +98,15 @@ namespace Blazor.NLDesignSystem.Components
         private string LabelAlignmentStyle => LabelAlignment.GetDescription<StyleAttribute>();
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
         public InputType Type => InputType.Combobox;
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, AllowUnknown, Items.Where(i => !i.IsDisabled).Select(i => i.Value), IsMultiple);
+            }
+            await base.OnAfterRenderAsync(firstRender);
+        }
 
         private IDictionary<string, object> GetAttributes()
         {
@@ -126,6 +126,10 @@ namespace Blazor.NLDesignSystem.Components
             //always set the combobox-select callback. It sets the value after selecting.
             await SetEventListener("combobox-select", ComboboxReference);
             await SetEventListener("combobox-close", ComboboxReference);
+            if (OnComboboxOpen.HasDelegate)
+            {
+                await SetEventListener("combobox-open", ComboboxReference);
+            }
         }
 
         [JSInvokable]
@@ -139,9 +143,20 @@ namespace Blazor.NLDesignSystem.Components
                     var items = Items.ToList();
                     items.ForEach(i => i.IsChecked = i.Value == selectedDescription);
                     Items = items;
+                    if (OnComboboxSelect.HasDelegate)
+                    {
+                        await OnComboboxSelect.InvokeAsync(this);
+                    }
+                    break;
+                case "combobox-open":
+                    await OnComboboxOpen.InvokeAsync(this);
                     break;
                 case "combobox-close":
                     await UpdateSelectedList();
+                    if (OnComboboxClose.HasDelegate)
+                    {
+                        await OnComboboxClose.InvokeAsync(this);
+                    }
                     break;
             }
         }
@@ -149,7 +164,7 @@ namespace Blazor.NLDesignSystem.Components
         [JSInvokable]
         public async Task UpdateSelectedList()
         {
-            if (!IsMultiple)
+            if (!IsMultiple || !Items.Any())
             {
                 return;
             }
@@ -165,15 +180,20 @@ namespace Blazor.NLDesignSystem.Components
         {
             if (IsMultiple)
             {
-                return await JSRuntime.InvokeAsync<IEnumerable<string>>("getComboboxValue", Identifier);
+                return await JSRuntime.InvokeAsync<IEnumerable<string>>("getComboboxValue", Identifier) ?? new List<string>();
             }
 
-            return new List<string> { await JSRuntime.InvokeAsync<string>("getComboboxValue", Identifier) };
+            return new List<string> { await JSRuntime.InvokeAsync<string>("getComboboxValue", Identifier) } ?? new List<string>();
         }
 
         public async void Close()
         {
             await JSRuntime.InvokeVoidAsync("closeCombobox", Identifier);
+        }
+
+        public async Task<bool> IsOpen()
+        {
+            return await JSRuntime.InvokeAsync<bool>("comboboxIsOpen", Identifier);
         }
 
         public async void Open()

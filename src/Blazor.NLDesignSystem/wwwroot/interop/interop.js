@@ -107,20 +107,13 @@ async function toggleCollapse(id) {
 
 var comboboxPrefix = "_combobox_";
 
-async function combobox(el, id, dataArray, allowUnknown = false) {
-  await combobox(el, id, dataArray, allowUnknown, false);
-}
-
-async function comboboxMultiple(el, id, allowUnknown) {
-  await combobox(el, id, null, allowUnknown, true);
-}
-
-async function combobox(el, id, dataArray, allowUnknown = false, isMultiple = false) {
+async function combobox(el, id, allowUnknown, dataArray, isMultiple) {
   await System.import('_content/Blazorized.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
     var combobox = new module.Combobox(el, isMultiple);
     addElement(comboboxPrefix + id, combobox);
     if (!isMultiple) {
-      setComboboxData(dataArray);
+      allowUnknownCombobox(id, allowUnknown);
+      setComboboxData(id, dataArray);
     }
   });
 }
@@ -130,9 +123,14 @@ async function closeCombobox(id) {
   combobox.close();
 }
 
-async function allowUnknownCombobox(id) {
+async function allowUnknownCombobox(id, allowUnknown) {
   var combobox = getElementById(comboboxPrefix + id);
-  combobox.allowUnknown = ;
+  combobox.allowUnknown = allowUnknown;
+}
+
+async function comboboxIsOpen(id) {
+  var combobox = getElementById(comboboxPrefix + id);
+  return combobox.isOpen;
 }
 
 async function getComboboxValue(id) {
@@ -148,11 +146,6 @@ async function openCombobox(id) {
 async function setComboboxData(id, dataArray) {
   var combobox = getElementById(comboboxPrefix + id);
   combobox.data = dataArray;
-}
-
-async function ComboboxIsOpen(id) {
-  var combobox = getElementById(comboboxPrefix + id);
-  return combobox.isOpen();
 }
 
 async function triggerComboboxUpdateSelectedList(el, JSObjectRef) {

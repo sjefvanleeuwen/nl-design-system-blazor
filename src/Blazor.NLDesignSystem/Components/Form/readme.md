@@ -34,7 +34,9 @@ Status: Fully implemented (see Notes)
 - *Combobox met meerdere items* works but there is no callback event (like `combobox-select`) once items are selected. Nor is there a callback event when a selected item is removed. Manually added an update to the selected items by reading the selected values when the combobox closes, as onclick (removing) of a selected item.
 - *Combobox ajax calls* has not been implemented as indicated since ajax calls should not be part of Blazor. Instead the bound Value should be used to have C# do the API call. Then when the call is loaded and the Items are filled, the `Open()` method should be called.
 - *Combobox met objecten* has not been implemented since it is a Javascript implementation of how to make a list from an object. This should be handled in C#.
-- Since the filtering should be part of C# the `filterFuncion` is not implemented.
+- Since the filtering can (should) be part of C# the properties `filterFuncion` and `labelFunction` are not implemented.
+- The `query` property is not implemented, this is represented by `Value` which can be bound to the Combobox.
+- The `validationError` is also not implemented; this can be done in blazor by validating the bound Value vs the bound Items if needed be (Parameter ErrorText van be set).
 
 ## Filter
 
