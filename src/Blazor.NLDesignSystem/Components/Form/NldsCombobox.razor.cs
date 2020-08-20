@@ -136,6 +136,30 @@ namespace Blazor.NLDesignSystem.Components
                     break;
             }
         }
+        public async Task<IEnumerable<string>> GetValue()
+        {
+            if (IsMultiple)
+            {
+                return await JSRuntime.InvokeAsync<IEnumerable<string>>("getComboboxValue", Identifier);
+            }
+
+            return new List<string> { await JSRuntime.InvokeAsync<string>("getComboboxValue", Identifier) };
+        }
+
+        public async void Close()
+        {
+            await JSRuntime.InvokeVoidAsync("closeCombobox", Identifier);
+        }
+
+        public async void Open()
+        {
+            await JSRuntime.InvokeVoidAsync("openCombobox", Identifier);
+        }
+        
+        public async Task SetData(IEnumerable<string> data)
+        {
+            await JSRuntime.InvokeVoidAsync("setComboboxData", Identifier, data);
+        }
     }
 
     public class ComboboxSelectedItem

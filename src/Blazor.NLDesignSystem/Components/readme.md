@@ -15,7 +15,7 @@ Not all implemented components are fully implemented. Look at the readme for eac
 - [Checkbox](./Form) (as part of Form)
 - [Combobox](./Form) (as part of Form)
 - [Collapse](./Collapse)
-- [ContentHeader](./ContentHeader) (a usable component that is a defined Component in NL-Desing-System, it is used in meta fonr instance and can be re-usable without a meta)
+- [ContentHeader](./ContentHeader) (a usable component that is a defined Component in NL-Desing-System, it is used in meta for instance and can be re-usable without a meta)
 - [DefinitionList](./DefinitionList)
 - [File](./File) (as part of Form)
 - [Filter](./Form) (is an option in radiobutton and checkbox; IsFilter = true)

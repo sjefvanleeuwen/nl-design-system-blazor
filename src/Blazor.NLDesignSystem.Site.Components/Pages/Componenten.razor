@@ -691,7 +691,7 @@
 <NldsBackLink Uri="#" Title="Naar Primair onderwijs"><string>Primair</string> onderwijs</NldsBackLink>
 @code {
     IEnumerable<ComboboxItem> Items = new List<ComboboxItem>
-        {
+    {
             new ComboboxItem { Value = "violet, #a90061" },
             new ComboboxItem { Value = "roze, #f092cd", IsDisabled = true },
             new ComboboxItem { Value = "rood, #d52b1e" },
@@ -721,7 +721,7 @@
     string typedValue = string.Empty;
 
     IEnumerable<ComboboxItem> Items2 = new List<ComboboxItem>
-        {
+{
             new ComboboxItem { Value = "violet, #a90061" },
             new ComboboxItem { Value = "roze, #f092cd", IsDisabled = true },
             new ComboboxItem { Value = "rood, #d52b1e" },
@@ -747,29 +747,88 @@
             new ComboboxItem { Value = "grijs-6, #696969" },
             new ComboboxItem { Value = "grijs-7, #535353" }
         };
+    string Overwrittenmessage = "";
 }
+
 <h2>Combobox</h2>
+@code {
+    private void ComboOpen()
+    {
+        ComboRef.Open();
+    }
+    private void ComboClose()
+    {
+        ComboRef.Close();
+    }
+
+    private IEnumerable<string> Vals { get; set; } = new List<string>();
+
+    private string ComboVal { get; set; }
+    private IEnumerable<string> ComboVals { get; set; } = new List<string>();
+    private async void ComboValue()
+    {
+        ComboVal = (await ComboRef.GetValue()).FirstOrDefault();
+        StateHasChanged();
+    }
+
+    private async void ComboValues()
+    {
+        ComboVals = await ComboRef2.GetValue();
+        StateHasChanged();
+    }
+
+    private async void ComboSetData()
+    {
+        await ComboRef.SetData(new List<string> { "one", "two", "three" });
+        Overwrittenmessage = "Unable to show after overwriting the original values in this example";
+    }
+
+    private NldsCombobox ComboRef { get; set; }
+    private NldsCombobox ComboRef2 { get; set; }
+}
+
+<button @onclick="ComboOpen">Open</button>
+<button @onclick="ComboClose">Close</button>
+<button @onclick="ComboSetData">Set One Two Three</button>
+<div>
+    <button @onclick="ComboValue">Get Value</button>
+    Value by button:
+   <p>@ComboVal</p>
+</div>
 <NldsForm>
-    <NldsCombobox Identifier="com" @bind-Items="Items" @bind-Value="typedValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+    <NldsCombobox @ref="ComboRef" Identifier="com" @bind-Items="Items" @bind-Value="typedValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
         <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
     </NldsCombobox>
 </NldsForm>
 <p>Typed value: @typedValue</p>
-<p>Selected Value: @(Items.FirstOrDefault(i => i.IsChecked)?.Value)</p>
+<p>Selected Value: @Overwrittenmessage @(Items.FirstOrDefault(i => i.IsChecked)?.Value)</p>
+
 <h3>Multiple</h3>
+<div>
+    <button @onclick="ComboValues">Get Values</button>
+    Value by button:
+    <p>
+        <ul>@foreach (var val in ComboVals)
+        {
+            <li>@val</li>
+        }
+        </ul>
+    </p>
+</div>
 <NldsForm>
-    <NldsCombobox IsMultiple="true" Identifier="com2" @bind-Items="@Items" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+    <NldsCombobox @ref="ComboRef2" IsMultiple="true" Identifier="com2" @bind-Items="@Items2" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
         <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
     </NldsCombobox>
 </NldsForm>
 <ul>
-    Geselecteerde Waardes: @foreach (var item in Items2.Where(i => i.IsChecked))
+    Selected Values: @foreach (var item in Items2.Where(i => i.IsChecked))
     {
         <li>@item.Value</li>
     }
 </ul>
+
 <h2>Spinner</h2>
 <NldsSpinner FullPage="true">
     <DisplayText>Zoals bijvoorbeeld deze tekst die nog geladen moet worden. Het element waar de <span lang="en-US">spinner</span> op verschijnt krijgt ook een lichtere <span lang="en-US">opacity</span>.</DisplayText>
@@ -791,12 +850,12 @@
 <NldsNotification Type="Notification.Warning" TypeText="Bugs" Title="Eh, what's up doc?" @ref="@CloseDoc" />
 <h3>With Close button</h3>
 @code {
-    NldsNotification CloseDoc;
-    private void CloseNotification()
-    {
-        CloseDoc.Close();
-    }
-}
+                    NldsNotification CloseDoc;
+                    private void CloseNotification()
+                    {
+                        CloseDoc.Close();
+                    }
+                }
 <button @onclick="CloseNotification">An external button to close the "Bugs" notification</button>
 <NldsNotification Type="Notification.Error" TypeText="Boom" Title="ACME Dynamite" CloseButtonText="Sl<u>u</u>it" />
 <h2>Tooltip</h2>
@@ -857,13 +916,13 @@
 
 <h2>Video</h2>
 @code {
-    SubtitleInformation subtitles = new SubtitleInformation
-    {
-        Label = "Nederlands",
-        Language = "nl-NL",
-        Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
-    };
-}
+                    SubtitleInformation subtitles = new SubtitleInformation
+                    {
+                        Label = "Nederlands",
+                        Language = "nl-NL",
+                        Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
+                    };
+                }
 <NldsVideo Width="100%" Uri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.mp4" PosterUri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.png" Subtitles="@subtitles"></NldsVideo>
 
 <h2>Chart</h2>
@@ -879,15 +938,15 @@
 <h3>Draw and destroy with event</h3>
 @code {
     private NldsChart Chart1 { get; set; }
-    private void Chart1Draw()
-    {
-        Chart1.Draw();
-    }
-    private void Chart1Destroy()
-    {
-        Chart1.Destroy();
-    }
-}
+            private void Chart1Draw()
+            {
+                Chart1.Draw();
+            }
+            private void Chart1Destroy()
+            {
+                Chart1.Destroy();
+            }
+        }
 <NldsChart @ref="Chart1" DrawOnCreate="false" Percentage="80" TextBelow="over <u>van</u> € 10.000,00" Title="Overgebleven <u>leenruimte</u> studiejaar 2018/2019">
     € 2.000,00
 </NldsChart>
@@ -956,41 +1015,41 @@
 <h3>Methods on tabs</h3>
 @code {
     private int? ActiveTab = null;
-    private NldsTabs Tabsref;
-    private void OpenTab1()
-    {
-        Tabsref.OpenTab(0);
+        private NldsTabs Tabsref;
+        private void OpenTab1()
+        {
+            Tabsref.OpenTab(0);
+        }
+        private void OpenTab2()
+        {
+            Tabsref.OpenTab(1);
+        }
+        private void OpenTab3()
+        {
+            Tabsref.OpenTab(2);
+        }
+        private void OpenTab4()
+        {
+            Tabsref.OpenTab(3);
+        }
+        private void DisableTab2()
+        {
+            Tabsref.DisableTab(1);
+        }
+        private void EnableTab2()
+        {
+            Tabsref.EnableTab(1);
+        }
+        private void DestroyTabs()
+        {
+            Tabsref.Destroy();
+        }
+        private async void GetActiveTab()
+        {
+            ActiveTab = await Tabsref.GetActiveTabIndexAsync();
+            StateHasChanged();
+        }
     }
-    private void OpenTab2()
-    {
-        Tabsref.OpenTab(1);
-    }
-    private void OpenTab3()
-    {
-        Tabsref.OpenTab(2);
-    }
-    private void OpenTab4()
-    {
-        Tabsref.OpenTab(3);
-    }
-    private void DisableTab2()
-    {
-        Tabsref.DisableTab(1);
-    }
-    private void EnableTab2()
-    {
-        Tabsref.EnableTab(1);
-    }
-    private void DestroyTabs()
-    {
-        Tabsref.Destroy();
-    }
-    private async void GetActiveTab()
-    {
-        ActiveTab = await Tabsref.GetActiveTabIndexAsync();
-        StateHasChanged();
-    }
-}
 <NldsTabs @ref="@Tabsref" Identifier="tabsname">
     <Tabs>
         <NldsTab Identifier="Tab1_id">Tab 1</NldsTab>
@@ -1220,7 +1279,7 @@
         <a href="https://www.inburgeren.nl/" class="is-h4" target="_blank" rel="noopener">Inburgeren in Nederland – index</a>
         <p>
             Home · <strong>Inburgeren</strong>: hoe moet dat. Asielmigranten; School en leren;
-            Inburgeringsplicht; Inburgeringsexamen; Staatsexamen NT2; Geen examen
+    Inburgeringsplicht; Inburgeringsexamen; Staatsexamen NT2; Geen examen
             doen; Meer tijd nodig; Niet op tijd klaar; Zelf verantwoordelijk. Examen doen.
             Participatieverklaring; Schrijven; Spreken; Luisteren; Lezen; Kennis Nederlandse
             Maatschappij&nbsp;...
