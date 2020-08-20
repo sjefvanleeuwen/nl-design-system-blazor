@@ -14,6 +14,8 @@ namespace Blazor.NLDesignSystem.Components
         [Inject]
         private IJSRuntime JSRuntime { get; set; }
 
+        [Parameter]
+        public bool AllowUnknown { get; set; }
         /// <summary>
         /// Optional; overrides the default value; if the input contains a hint the value "hint_" + Id will be used by default
         /// </summary>
@@ -89,11 +91,11 @@ namespace Blazor.NLDesignSystem.Components
             {
                 if (IsMultiple)
                 {
-                    await JSRuntime.InvokeVoidAsync("comboboxMultiple", ComboboxReference, Identifier);
+                    await JSRuntime.InvokeVoidAsync("comboboxMultiple", ComboboxReference, Identifier, AllowUnknown);
                 }
                 else
                 {
-                    await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, Items.Where(i => !i.IsDisabled).Select(i => i.Value));
+                    await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, AllowUnknown, Items.Where(i => !i.IsDisabled).Select(i => i.Value));
                 }
             }
             await base.OnAfterRenderAsync(firstRender);

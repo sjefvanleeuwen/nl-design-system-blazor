@@ -107,21 +107,20 @@ async function toggleCollapse(id) {
 
 var comboboxPrefix = "_combobox_";
 
-async function combobox(el, id, dataArray) {
-  await combobox(el, id, dataArray, false);
+async function combobox(el, id, dataArray, allowUnknown = false) {
+  await combobox(el, id, dataArray, allowUnknown, false);
 }
 
-async function comboboxMultiple(el, id) {
-  await combobox(el, id, null, true);
+async function comboboxMultiple(el, id, allowUnknown) {
+  await combobox(el, id, null, allowUnknown, true);
 }
 
-async function combobox(el, id, dataArray, isMultiple = false) {
+async function combobox(el, id, dataArray, allowUnknown = false, isMultiple = false) {
   await System.import('_content/Blazorized.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
     var combobox = new module.Combobox(el, isMultiple);
     addElement(comboboxPrefix + id, combobox);
     if (!isMultiple) {
-      combobox.allowUnknown = false;
-      combobox.data = dataArray;
+      setComboboxData(dataArray);
     }
   });
 }
@@ -129,6 +128,11 @@ async function combobox(el, id, dataArray, isMultiple = false) {
 async function closeCombobox(id) {
   var combobox = getElementById(comboboxPrefix + id);
   combobox.close();
+}
+
+async function allowUnknownCombobox(id) {
+  var combobox = getElementById(comboboxPrefix + id);
+  combobox.allowUnknown = ;
 }
 
 async function getComboboxValue(id) {
@@ -143,7 +147,6 @@ async function openCombobox(id) {
 
 async function setComboboxData(id, dataArray) {
   var combobox = getElementById(comboboxPrefix + id);
-  combobox.allowUnknown = false;
   combobox.data = dataArray;
 }
 
