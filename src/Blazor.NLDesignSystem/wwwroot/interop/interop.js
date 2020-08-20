@@ -107,13 +107,16 @@ async function toggleCollapse(id) {
 
 var comboboxPrefix = "_combobox_";
 
-async function combobox(el, id, allowUnknown, dataArray, isMultiple) {
+async function combobox(el, id, allowUnknown, isAutocomplete, dataArray, isMultiple) {
   await System.import('_content/Blazorized.NLDesignSystem/dist/components/form/combobox.js').then(function (module) {
     var combobox = new module.Combobox(el, isMultiple);
     addElement(comboboxPrefix + id, combobox);
     if (!isMultiple) {
       allowUnknownCombobox(id, allowUnknown);
       setComboboxData(id, dataArray);
+    }
+    if (isAutocomplete) {
+      combobox.mode = module.MODE_AUTOCOMPLETE;
     }
   });
 }
@@ -147,6 +150,13 @@ async function setComboboxData(id, dataArray) {
   var combobox = getElementById(comboboxPrefix + id);
   combobox.data = dataArray;
 }
+
+async function setComboboxLoading(id, loading) {
+  var combobox = getElementById(comboboxPrefix + id);
+  combobox.loading = loading;
+}
+
+
 
 async function triggerComboboxUpdateSelectedList(el, JSObjectRef) {
   el.querySelectorAll('ul.list.list--filter.list--filter-inline.list--filter-closable > li').forEach(function (selectedValue) {
@@ -239,8 +249,6 @@ async function enableTab(id, idx) {
 
 async function getActiveTabIndex (id) {
   var tabs = getElementById(tabsPrefix + id);
-  var a = tabs.activeTabIndex;
-  console.log(a);
   return tabs.activeTabIndex;
 }
 

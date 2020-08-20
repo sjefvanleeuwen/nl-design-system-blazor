@@ -26,6 +26,8 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public string Identifier { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal
         [Parameter]
+        public bool IsAutocomplete { get; set; }
+        [Parameter]
         public bool IsDisabled { get; set; }
         [Parameter]
         public bool IsMultiple { get; set; }
@@ -51,6 +53,10 @@ namespace Blazor.NLDesignSystem.Components
                 if (_items == value) return;
                 _items = value;
                 ItemsChanged.InvokeAsync(value);
+                if (IsAutocomplete)
+                {
+                    SetData(_items.Select(i => i.Value)).ConfigureAwait(false);
+                }
                 StateHasChanged();
             }
         }
@@ -68,15 +74,14 @@ namespace Blazor.NLDesignSystem.Components
                 if (_value == value) return;
                 _value = value;
                 ValueChanged.InvokeAsync(value);
+                if (OnValueSet.HasDelegate && IsInitialized)
+                {
+                    SetLoading(true);
+                    OnValueSet.InvokeAsync(this);
+                    SetData(Items.Select(i => i.Value)).ConfigureAwait(false);
+                    SetLoading(false);
+                }
             }
-        }
-
-        private async void UpdateItemsBySelectedValues()
-        {
-            var selectedValues = await GetValue();
-            var items = Items.ToList();
-            items.ForEach(i => i.IsChecked = selectedValues.Contains(i.Value));
-            Items = items;
         }
 
         private string _value;
@@ -89,6 +94,8 @@ namespace Blazor.NLDesignSystem.Components
         public EventCallback OnComboboxOpen { get; set; }
         [Parameter]
         public EventCallback OnComboboxClose { get; set; }
+        [Parameter]
+        public EventCallback OnValueSet { get; set; }
 
         public ElementReference ComboboxReference { get; set; }
 
@@ -99,13 +106,21 @@ namespace Blazor.NLDesignSystem.Components
         private string SizeAppendix => Size.GetDescription<StyleAttribute>();
         public InputType Type => InputType.Combobox;
 
+        private bool IsInitialized { get; set; }
+
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
-                await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, AllowUnknown, Items.Where(i => !i.IsDisabled).Select(i => i.Value), IsMultiple);
+                await JSRuntime.InvokeVoidAsync("combobox", ComboboxReference, Identifier, AllowUnknown, IsAutocomplete, Items.Where(i => !i.IsDisabled).Select(i => i.Value), IsMultiple);
             }
             await base.OnAfterRenderAsync(firstRender);
+        }
+
+        protected override void OnInitialized()
+        {
+            IsInitialized = true;
+            base.OnInitialized();
         }
 
         private IDictionary<string, object> GetAttributes()
@@ -204,6 +219,16 @@ namespace Blazor.NLDesignSystem.Components
         public async Task SetData(IEnumerable<string> data)
         {
             await JSRuntime.InvokeVoidAsync("setComboboxData", Identifier, data);
+        }
+
+        public void SetItems(IEnumerable<ComboboxItem> items)
+        {
+            Items = items;
+        }
+
+        public void SetLoading(bool loading)
+        {
+            JSRuntime.InvokeVoidAsync("setComboboxLoading", Identifier, loading);
         }
     }
 

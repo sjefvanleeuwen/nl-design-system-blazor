@@ -25,7 +25,7 @@
         <ul class="combobox__input input__control input__control@(SizeAppendix) @InputControlType" id="@Identifier">
             @foreach (var item in Items.Where(i => !i.IsDisabled))
             {
-                <li data-id="@($"{Identifier}_{counter}")">@item.Value</li>
+                <li @key="@($"{Identifier}_{item.Value}")" data-id="@($"{Identifier}_{counter}")">@item.Value</li>
                 counter++;
             }
         </ul>
@@ -35,7 +35,9 @@
         <input id="@Identifier"
                type="@DisplayType"
                class="combobox__input input__control input__control@(SizeAppendix) @InputControlType"
-               @bind="Value"
+               @bind="Value" 
+               @bind:event="oninput" 
+               @oninput:preventDefault
                @attributes="GetAttributes()"
                disabled="@IsDisabled"
                required="@IsRequired" />
