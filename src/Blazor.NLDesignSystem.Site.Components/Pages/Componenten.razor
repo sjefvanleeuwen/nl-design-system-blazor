@@ -473,7 +473,16 @@
             },
             new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
-        };                                                                                                              
+        };
+    IEnumerable<CheckboxItem> GhostedForTable = new List<CheckboxItem>() {
+            new CheckboxItem() { Value = "all", IsChecked = false,
+                SubItems = new List<CheckboxItem> {
+                    new CheckboxItem() { Value = "row1", IsChecked = true },
+                    new CheckboxItem() { Value = "row2", IsChecked = false },
+                    new CheckboxItem() { Value = "row3", IsChecked = false }
+                }
+            }
+        };
 }
 <h3>2-way binding</h3>
 <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
@@ -485,7 +494,7 @@
     <p>Selected values:</p>
     @foreach (var item in CheckBox1.Where(c => c.IsChecked))
     {
-        <text>@((MarkupString)item.Description)</text>
+        <text>@((MarkupString)item.Value)</text>
         <br />
     }
 </NldsForm>
@@ -499,7 +508,7 @@
     <p>Selected values:</p>
     @foreach (var item in CheckBox2.Where(c => c.IsChecked))
     {
-        <text>@((MarkupString)item.Description)</text>
+        <text>@((MarkupString)item.Value)</text>
         <br />
     }
 </NldsForm>
@@ -512,10 +521,11 @@
     <p>Selected values:</p>
     @foreach (var item in CheckBox3.Where(c => c.IsChecked))
     {
-        <text>@((MarkupString)item.Description)</text>
+        <text>@((MarkupString)item.Value)</text>
         <br />
     }
 </NldsForm>
+
 <h3>Checkbox nested</h3>
 <NldsForm>
     <NldsCheckbox Identifier="ch4" @bind-Items="CheckBox4">
@@ -527,20 +537,79 @@
     {
         if (item.IsChecked)
         {
-            <text>@((MarkupString)item.Description)</text>
+            <text>@((MarkupString)item.Value)</text>
             <br />
         }
         if (item.HasSubItems)
         {
             foreach (var subitem in item.SubItems.Where(s => s.IsChecked))
             {
-                <text>@((MarkupString)subitem.Description)</text>
+                <text>@((MarkupString)subitem.Value)</text>
                 <br />
             }
         }
         <br />
     }
 </NldsForm>
+<h3>Table with checkboxes</h3>
+<p>This uses a ghosted (invisible) nester checkbox with checkbox references items </p>
+<NldsForm>
+    <NldsCheckbox Identifier="ch4" @bind-Items="GhostedForTable" IsGhost="true">
+        <CheckboxReferenceContent>
+            <NldsTable Identifier="tabelbeschrijving">
+                <Label>Tabelvoorbeeld <u>per</u> jaar.</Label>
+                <Header>
+                    <NldsTableRow>
+                        <NldsTableCell>
+                            <NldsCheckboxReference Reference="@GhostedForTable.First().Identifier"></NldsCheckboxReference>
+                        </NldsTableCell>
+                        <NldsTableCell>2014</NldsTableCell>
+                        <NldsTableCell>2015</NldsTableCell>
+                        <NldsTableCell>2016</NldsTableCell>
+                    </NldsTableRow>
+                </Header>
+                <Body>
+                    <NldsTableRow>
+                        <NldsTableCell IsHeader="true"><NldsCheckboxReference Reference="@GhostedForTable.First().SubItems.ElementAt(0).Identifier"></NldsCheckboxReference></NldsTableCell>
+                        <NldsTableCell>124</NldsTableCell>
+                        <NldsTableCell>42</NldsTableCell>
+                        <NldsTableCell>252</NldsTableCell>
+                    </NldsTableRow>
+                    <NldsTableRow>
+                        <NldsTableCell IsHeader="true"><NldsCheckboxReference Reference="@GhostedForTable.First().SubItems.ElementAt(1).Identifier"></NldsCheckboxReference></NldsTableCell>
+                        <NldsTableCell>42</NldsTableCell>
+                        <NldsTableCell>526</NldsTableCell>
+                        <NldsTableCell>12</NldsTableCell>
+                    </NldsTableRow>
+                    <NldsTableRow>
+                        <NldsTableCell IsHeader="true"><NldsCheckboxReference Reference="@GhostedForTable.First().SubItems.ElementAt(2).Identifier"></NldsCheckboxReference></NldsTableCell>
+                        <NldsTableCell>736</NldsTableCell>
+                        <NldsTableCell>367</NldsTableCell>
+                        <NldsTableCell>234</NldsTableCell>
+                    </NldsTableRow>
+                </Body>
+            </NldsTable>
+        </CheckboxReferenceContent>
+    </NldsCheckbox>
+</NldsForm>
+<p>Selected values:</p>
+@foreach (var item in GhostedForTable)
+{
+    if (item.IsChecked)
+    {
+        <text>@((MarkupString)item.Value)</text>
+        <br />
+    }
+    if (item.HasSubItems)
+    {
+        foreach (var subitem in item.SubItems.Where(s => s.IsChecked))
+        {
+            <text>@((MarkupString)subitem.Value)</text>
+            <br />
+        }
+    }
+    <br />
+}
 <h2>Switch</h2>
 @code {
     bool TheBoolean = true;
@@ -695,7 +764,7 @@
 <NldsBackLink Uri="#" Title="Naar Primair onderwijs"><string>Primair</string> onderwijs</NldsBackLink>
 @code {
     IEnumerable<ComboboxItem> Items = new List<ComboboxItem>
-    {
+{
             new ComboboxItem { Value = "violet, #a90061" },
             new ComboboxItem { Value = "roze, #f092cd", IsDisabled = true },
             new ComboboxItem { Value = "rood, #d52b1e" },
@@ -826,7 +895,7 @@
 <div>
     <button @onclick="ComboValue">Get Value</button>
     Value by button:
-   <p>@ComboVal</p>
+    <p>@ComboVal</p>
 </div>
 <NldsForm>
     <NldsCombobox @ref="ComboRef" Identifier="com" @bind-Items="Items" @bind-Value="typedValue" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
@@ -842,10 +911,11 @@
     <button @onclick="ComboValues">Get Values</button>
     Value by button:
     <p>
-        <ul>@foreach (var val in ComboVals)
-        {
-            <li>@val</li>
-        }
+        <ul>
+            @foreach (var val in ComboVals)
+            {
+                <li>@val</li>
+            }
         </ul>
     </p>
 </div>
@@ -867,6 +937,7 @@
     private string filter = string.Empty;
     private IEnumerable<ComboboxItem> fiteredItems { get; set; } = new List<ComboboxItem>();
     private NldsCombobox Combobox3 { get; set; }
+    
     private void FilterItems()
     {
         if (Combobox3 == null)
@@ -888,7 +959,7 @@
     }
 }
 <NldsForm>
-    <NldsCombobox @ref="Combobox3" Identifier="com3" @bind-Value="filter"  @bind-Items="fiteredItems" OnValueSet="FilterItems" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
+    <NldsCombobox @ref="Combobox3" Identifier="com3" @bind-Value="filter" @bind-Items="fiteredItems" OnValueSet="FilterItems" Size="InputSize.ExtraLarge" ErrorText="Geen kleur geselecteerd">
         <Label><NldsFormLabel>Kleur</NldsFormLabel></Label>
         <Hint><NldsFormHint HintName="kleur">Voer een kleur of kleurcode in</NldsFormHint></Hint>
     </NldsCombobox>
@@ -920,7 +991,7 @@
     {
         CloseDoc.Close();
     }
-                }
+}
 <button @onclick="CloseNotification">An external button to close the "Bugs" notification</button>
 <NldsNotification Type="Notification.Error" TypeText="Boom" Title="ACME Dynamite" CloseButtonText="Sl<u>u</u>it" />
 <h2>Tooltip</h2>
@@ -981,13 +1052,13 @@
 
 <h2>Video</h2>
 @code {
-                    SubtitleInformation subtitles = new SubtitleInformation
-                    {
-                        Label = "Nederlands",
-                        Language = "nl-NL",
-                        Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
-                    };
-                }
+    SubtitleInformation subtitles = new SubtitleInformation
+    {
+        Label = "Nederlands",
+        Language = "nl-NL",
+        Uri = "https://nl-design-system.gitlab.io/nl-design-system/subtitles/video.vtt"
+    };
+}
 <NldsVideo Width="100%" Uri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.mp4" PosterUri="https://nl-design-system.gitlab.io/nl-design-system/images/SampleVideo_1280x720_1mb.png" Subtitles="@subtitles"></NldsVideo>
 
 <h2>Chart</h2>
@@ -1003,15 +1074,15 @@
 <h3>Draw and destroy with event</h3>
 @code {
     private NldsChart Chart1 { get; set; }
-            private void Chart1Draw()
-            {
-                Chart1.Draw();
-            }
-            private void Chart1Destroy()
-            {
-                Chart1.Destroy();
-            }
-        }
+    private void Chart1Draw()
+    {
+        Chart1.Draw();
+    }
+    private void Chart1Destroy()
+    {
+        Chart1.Destroy();
+    }
+}
 <NldsChart @ref="Chart1" DrawOnCreate="false" Percentage="80" TextBelow="over <u>van</u> € 10.000,00" Title="Overgebleven <u>leenruimte</u> studiejaar 2018/2019">
     € 2.000,00
 </NldsChart>
@@ -1080,41 +1151,41 @@
 <h3>Methods on tabs</h3>
 @code {
     private int? ActiveTab = null;
-        private NldsTabs Tabsref;
-        private void OpenTab1()
-        {
-            Tabsref.OpenTab(0);
-        }
-        private void OpenTab2()
-        {
-            Tabsref.OpenTab(1);
-        }
-        private void OpenTab3()
-        {
-            Tabsref.OpenTab(2);
-        }
-        private void OpenTab4()
-        {
-            Tabsref.OpenTab(3);
-        }
-        private void DisableTab2()
-        {
-            Tabsref.DisableTab(1);
-        }
-        private void EnableTab2()
-        {
-            Tabsref.EnableTab(1);
-        }
-        private void DestroyTabs()
-        {
-            Tabsref.Destroy();
-        }
-        private async void GetActiveTab()
-        {
-            ActiveTab = await Tabsref.GetActiveTabIndexAsync();
-            StateHasChanged();
-        }
+    private NldsTabs Tabsref;
+    private void OpenTab1()
+    {
+        Tabsref.OpenTab(0);
     }
+    private void OpenTab2()
+    {
+        Tabsref.OpenTab(1);
+    }
+    private void OpenTab3()
+    {
+        Tabsref.OpenTab(2);
+    }
+    private void OpenTab4()
+    {
+        Tabsref.OpenTab(3);
+    }
+    private void DisableTab2()
+    {
+        Tabsref.DisableTab(1);
+    }
+    private void EnableTab2()
+    {
+        Tabsref.EnableTab(1);
+    }
+    private void DestroyTabs()
+    {
+        Tabsref.Destroy();
+    }
+    private async void GetActiveTab()
+    {
+        ActiveTab = await Tabsref.GetActiveTabIndexAsync();
+        StateHasChanged();
+    }
+}
 <NldsTabs @ref="@Tabsref" Identifier="tabsname">
     <Tabs>
         <NldsTab Identifier="Tab1_id">Tab 1</NldsTab>
@@ -1344,7 +1415,7 @@
         <a href="https://www.inburgeren.nl/" class="is-h4" target="_blank" rel="noopener">Inburgeren in Nederland – index</a>
         <p>
             Home · <strong>Inburgeren</strong>: hoe moet dat. Asielmigranten; School en leren;
-    Inburgeringsplicht; Inburgeringsexamen; Staatsexamen NT2; Geen examen
+            Inburgeringsplicht; Inburgeringsexamen; Staatsexamen NT2; Geen examen
             doen; Meer tijd nodig; Niet op tijd klaar; Zelf verantwoordelijk. Examen doen.
             Participatieverklaring; Schrijven; Spreken; Luisteren; Lezen; Kennis Nederlandse
             Maatschappij&nbsp;...

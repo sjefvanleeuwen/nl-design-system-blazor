@@ -20,11 +20,16 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public bool IsFilter { get; set; }
         [Parameter]
+        public bool IsGhost { get; set; }
+        [Parameter]
         public ItemAlignment ItemAlignment { get; set; }
+
         [Parameter]
         public RenderFragment Legend { get; set; }
         [Parameter]
         public RenderFragment Hint { get; set; }
+        [Parameter]
+        public RenderFragment CheckboxReferenceContent { get; set; }
 
         //2-way binding
         [Parameter]
@@ -43,17 +48,8 @@ namespace Blazor.NLDesignSystem.Components
         [Parameter]
         public EventCallback<IEnumerable<CheckboxItem>> ItemsChanged { get; set; }
 
-        private ElementReference CheckboxListReference { get; set; }
-
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
-            if (firstRender)
-            {
-                if (IsNested)
-                {
-                    //await JSRuntime.InvokeVoidAsync("checkbox", CheckboxListReference);
-                }
-            }
             SetTopLevelState(Items);
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -63,9 +59,20 @@ namespace Blazor.NLDesignSystem.Components
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string ItemAlignmentStyle => ItemAlignment.GetDescription<StyleAttribute>();
 
-        private void ChangeEvent(string identifier, ChangeEventArgs e)
+        private IDictionary<string, object> GetAttributes()
         {
-            var item = FindItem(identifier, Items);
+            var attributes = new Dictionary<string, object>();
+            if (IsGhost)
+            {
+                attributes["style"] = "display: none;";
+            }
+
+            return attributes;
+        }
+
+        public void ChangeEvent(string identifier, ChangeEventArgs e)
+        {
+            var item = FindItem(identifier);
             if (item == null)
             {
                 return;
@@ -86,8 +93,12 @@ namespace Blazor.NLDesignSystem.Components
             StateHasChanged();
         }
 
-        private CheckboxItem FindItem(string identifier, IEnumerable<CheckboxItem> items)
-        { 
+        public CheckboxItem FindItem(string identifier, IEnumerable<CheckboxItem> items = null)
+        {
+            if (items == null)
+            {
+                items = Items;
+            }
             foreach (var item in items)
             {
                 if (item.Identifier == identifier)
@@ -111,19 +122,18 @@ namespace Blazor.NLDesignSystem.Components
         {
             foreach (var item in items.Where(i => !i.IsDisabled))
             {
-                if (item.IsIndeteminate)
+                await JSRuntime.InvokeVoidAsync("setCheckBoxIndeterminate", item.Identifier, item.IsIndeteminate);
+                if (IsGhost)
                 {
-                    await JSRuntime.InvokeVoidAsync("setCheckBoxIndeterminate", item.Identifier, true);
-                    continue;
+                    await JSRuntime.InvokeVoidAsync("setCheckBoxIndeterminate", $"{item.Identifier}_ghost_ref", item.IsIndeteminate);
                 }
-                await JSRuntime.InvokeVoidAsync("setCheckBoxIndeterminate", item.Identifier, false);
             }
         }        
     }
 
     public class CheckboxItem
     {
-        public string Identifier { get; } = Guid.NewGuid().ToString();
+        public string Identifier { get; set; } = Guid.NewGuid().ToString();
         public string Value { get; set; }
         public string Description { get; set; }
         public bool IsDisabled { get; set; }

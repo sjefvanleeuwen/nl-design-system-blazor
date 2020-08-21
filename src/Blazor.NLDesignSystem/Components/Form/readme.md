@@ -15,14 +15,14 @@ Status: Fully implemented (see Notes)
 [Checkbox](https://nl-design-system.gitlab.io/nl-design-system/componenten/checkbox/index.html)  
 [Filter](https://nl-design-system.gitlab.io/nl-design-system/componenten/filter/index.html)
 
-Status: Some features not implemented:
-
-- Geneste checkboxen - tabel
+Status: Fully implemented (see Notes)
 
 ### Notes
 
 - Includes an implementation of filter
-- *Geneste checkboxen* used own interop and not the javascript supplied.
+- *Geneste checkboxen* uses own interop and not the javascript supplied.
+- *Geneste checkboxen - tabel* See Ghost option below.
+- Implemented a "Ghost" option (`IsGhost`). This is a checkbox that will be hidden; but can be referenced / integrated into any html/razor file by using `NldsRechboxReference` and providing the corresponding `Identifier` as `Reference`.
 
 ## Combobox
 

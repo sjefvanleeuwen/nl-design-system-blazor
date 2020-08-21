@@ -2,8 +2,7 @@
 @{
     var counter = 0;
 }
-
-<fieldset class="input @(IsFilter ? "filter" : string.Empty) @(!IsValid ? "input--invalid" : "")">
+<fieldset class="input @(IsFilter ? "filter" : string.Empty) @(!IsValid ? "input--invalid" : "")" @attributes="GetAttributes()">
     <CascadingValue Name="IsFilter" Value="@IsFilter">
         @Legend
     </CascadingValue>
@@ -16,7 +15,7 @@
     </CascadingValue>
     @if (IsNested)
     {
-        <ul @ref="CheckboxListReference" class="input__group-list">
+        <ul class="input__group-list">
             @foreach (var item in Items)
             {
                 counter++;
@@ -47,7 +46,7 @@
                                            @onchange:preventDefault
                                            disabled="@subItem.IsDisabled"
                                            checked="@subItem.IsChecked">
-                                    <label class="input__label input__label--checkbox" for="@subItem.Identifier">@((MarkupString)subItem.Description) @subItem.IsDisabled</label>
+                                    <label class="input__label input__label--checkbox" for="@subItem.Identifier">@((MarkupString)subItem.Description)</label>
                                 </li>
                             }
                         </ul>
@@ -80,3 +79,6 @@
         </div>
     }
 </fieldset>
+<CascadingValue Value="this" Name="NldsCheckbox">
+    @CheckboxReferenceContent
+</CascadingValue>
