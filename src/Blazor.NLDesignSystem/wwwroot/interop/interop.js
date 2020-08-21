@@ -59,6 +59,13 @@ function donutChart(el, value) {
 // Checkbox
 //////
 
+function setCheckBoxIndeterminate(id, isIndeterminate) {
+  var object = document.getElementById(id);
+  if (object) {
+    document.getElementById(id).indeterminate = isIndeterminate;
+  }
+}
+
 function checkbox(el) {
   System.import('_content/Blazorized.NLDesignSystem/dist/components/form/checkbox.js').then(function (module) {
     new module.CheckboxGroup(el);

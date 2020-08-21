@@ -467,13 +467,13 @@
             new CheckboxItem() { Description = "<i>Alleenstaande</i>", Value = "alleenstaande", IsChecked = false,
                 SubItems = new List<CheckboxItem> {
                     new CheckboxItem() { Description = "Optie1", Value = "option1", IsChecked = false },
-                    new CheckboxItem() { Description = "Optie2", Value = "option2", IsChecked = false },
+                    new CheckboxItem() { Description = "Optie2", Value = "option2", IsChecked = true },
                     new CheckboxItem() { Description = "Optie3", Value = "option3", IsChecked = false }
                 }
             },
             new CheckboxItem() { Description = "<i>Aanvrager <strong>met</strong> toeslagparter</i>", Value = "aanvrager_met_toeslagpartner" },
             new CheckboxItem() { Description = "<u>Disabled</u>", Value = "disabled", IsDisabled = true }
-        };
+        };                                                                                                              
 }
 <h3>2-way binding</h3>
 <p>Markup is filteed in displaying the value in the dropdown. It can still be used for displaying outside of the select</p>
@@ -523,9 +523,13 @@
         <Hint><NldsFormHint HintName="fullname">Bijvoorbeeld Frank Sinatra</NldsFormHint></Hint>
     </NldsCheckbox>
     <p>Selected values:</p>
-    @foreach (var item in CheckBox4.Where(c => c.IsChecked))
+    @foreach (var item in CheckBox4)
     {
-        <text>@((MarkupString)item.Description)</text>
+        if (item.IsChecked)
+        {
+            <text>@((MarkupString)item.Description)</text>
+            <br />
+        }
         if (item.HasSubItems)
         {
             foreach (var subitem in item.SubItems.Where(s => s.IsChecked))

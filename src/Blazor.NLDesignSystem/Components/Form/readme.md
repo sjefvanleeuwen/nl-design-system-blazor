@@ -17,11 +17,12 @@ Status: Fully implemented (see Notes)
 
 Status: Some features not implemented:
 
-- Geneste checkboxen - The JavaScript messes with the blazor events when selecting a subitem (the changed event for the parent is triggered). A solution has not been implemented yet.
 - Geneste checkboxen - tabel
 
 ### Notes
+
 - Includes an implementation of filter
+- *Geneste checkboxen* used own interop and not the javascript supplied.
 
 ## Combobox
 

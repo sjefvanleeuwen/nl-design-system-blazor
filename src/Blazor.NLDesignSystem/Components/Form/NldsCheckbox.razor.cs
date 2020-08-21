@@ -1,6 +1,7 @@
 ﻿using Blazor.NLDesignSystem.Extensions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -50,9 +51,10 @@ namespace Blazor.NLDesignSystem.Components
             {
                 if (IsNested)
                 {
-                    await JSRuntime.InvokeVoidAsync("checkbox", CheckboxListReference);
+                    //await JSRuntime.InvokeVoidAsync("checkbox", CheckboxListReference);
                 }
             }
+            SetTopLevelState(Items);
             await base.OnAfterRenderAsync(firstRender);
         }
 
@@ -60,29 +62,77 @@ namespace Blazor.NLDesignSystem.Components
         private bool IsNested => Items.Any(i => i.HasSubItems);
         private bool IsValid => string.IsNullOrWhiteSpace(ErrorText);
         private string ItemAlignmentStyle => ItemAlignment.GetDescription<StyleAttribute>();
+
+        private void ChangeEvent(string identifier, ChangeEventArgs e)
+        {
+            var item = FindItem(identifier, Items);
+            if (item == null)
+            {
+                return;
+            }
+
+            var isChecked = (bool)e.Value;
+            item.IsChecked = isChecked;
+            if (item.HasSubItems)
+            {
+                foreach (var subItem in item.SubItems)
+                {
+                    //use this variable because IsChecked is a calculated value;
+                    subItem.IsChecked = isChecked;
+                }
+            }
+
+            ItemsChanged.InvokeAsync(Items);
+            StateHasChanged();
+        }
+
+        private CheckboxItem FindItem(string identifier, IEnumerable<CheckboxItem> items)
+        { 
+            foreach (var item in items)
+            {
+                if (item.Identifier == identifier)
+                {
+                    return item;
+                }
+                if (item.HasSubItems)
+                {
+                    var childItem = FindItem(identifier, item.SubItems);
+                    if (childItem != null)
+                    {
+                        return childItem;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        private async void SetTopLevelState(IEnumerable<CheckboxItem> items)
+        {
+            foreach (var item in items.Where(i => !i.IsDisabled))
+            {
+                if (item.IsIndeteminate)
+                {
+                    await JSRuntime.InvokeVoidAsync("setCheckBoxIndeterminate", item.Identifier, true);
+                    continue;
+                }
+                await JSRuntime.InvokeVoidAsync("setCheckBoxIndeterminate", item.Identifier, false);
+            }
+        }        
     }
 
     public class CheckboxItem
     {
+        public string Identifier { get; } = Guid.NewGuid().ToString();
         public string Value { get; set; }
         public string Description { get; set; }
         public bool IsDisabled { get; set; }
         public IEnumerable<CheckboxItem> SubItems { get; set; }
-        public bool IsChecked { get; set; }
+        private bool isChecked;
+        public bool IsChecked { get => HasSubItems ? AllChildrenChecked : isChecked; set => isChecked = value; }
 
         public bool HasSubItems => SubItems != null && SubItems.Any();
-
-        public void Toggle()
-        {
-            IsChecked = !IsChecked;
-            if (!HasSubItems)
-            {
-                return;
-            }
-            foreach (var subItem in SubItems)
-            {
-                subItem.IsChecked = IsChecked;
-            }
-        }
+        public bool IsIndeteminate => HasSubItems && SubItems.Any(i => i.IsChecked) && !AllChildrenChecked;
+        public bool AllChildrenChecked => HasSubItems && SubItems.All(i => i.IsChecked);
     }
 }

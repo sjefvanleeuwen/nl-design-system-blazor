@@ -22,14 +22,15 @@
                 counter++;
                 @*The id is a combination of the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
                 <li class="input__group input__group--checkbox">
-                    <input @key="@($"{Identifier}_{counter}")"
+                    <input @key="@item.Identifier"
                            type="checkbox"
-                           id="@($"{Identifier}_{counter}")"
+                           id="@item.Identifier"
                            class="input__control @InputControlType"
-                           @onchange="@(() => { item.Toggle(); ItemsChanged.InvokeAsync(Items); })"
+                           @onchange="@((e) => ChangeEvent(item.Identifier, e))"
                            @onchange:preventDefault
-                           disabled="@item.IsDisabled">
-                    <label class="input__label input__label--checkbox" for="@($"{Identifier}_{counter}")">@((MarkupString)item.Description) @item.IsDisabled</label>
+                           disabled="@item.IsDisabled"
+                           checked="@item.IsChecked">
+                    <label class="input__label input__label--checkbox" for="@item.Identifier">@((MarkupString)item.Description)</label>
                     @if (item.HasSubItems)
                     {
                         var subCounter = 0;
@@ -38,14 +39,15 @@
                             {
                                 subCounter++;
                                 <li>
-                                    <input @key="@($"{Identifier}_{counter}_{subCounter}")"
+                                    <input @key="@subItem.Identifier"
                                            type="checkbox"
-                                           id="@($"{Identifier}_{counter}_{subCounter}")"
+                                           id="@subItem.Identifier"
                                            class="input__control @InputControlType"
-                                           @onchange="@(() => { item.Toggle(); ItemsChanged.InvokeAsync(Items); })"
+                                           @onchange="@((e) => ChangeEvent(subItem.Identifier, e))"
                                            @onchange:preventDefault
-                                           disabled="@subItem.IsDisabled">
-                                    <label class="input__label input__label--checkbox" for="@($"{Identifier}_{counter}_{subCounter}")">@((MarkupString)subItem.Description) @subItem.IsDisabled</label>
+                                           disabled="@subItem.IsDisabled"
+                                           checked="@subItem.IsChecked">
+                                    <label class="input__label input__label--checkbox" for="@subItem.Identifier">@((MarkupString)subItem.Description) @subItem.IsDisabled</label>
                                 </li>
                             }
                         </ul>
