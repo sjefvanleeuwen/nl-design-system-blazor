@@ -3,7 +3,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [Chart](https://nl-design-system.gitlab.io/nl-design-system/componenten/donutchart/index.html)
 
-Status: Fully implemented (See notes!)
+Status: Fully implemented (See notes)
 
 ### Notes
 - The Global variables in donut-chart.js are not configuarable.  

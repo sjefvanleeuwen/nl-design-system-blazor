@@ -4,7 +4,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 [Table](https://nl-design-system.gitlab.io/nl-design-system/componenten/table/index.html)
 [Collapse](https://nl-design-system.gitlab.io/nl-design-system/componenten/collapse/index.html)
 
-Status: Fully implemented (See notes!)
+Status: Fully implemented (See notes)
 
 ### Notes
 - Includes an implementation of collapse

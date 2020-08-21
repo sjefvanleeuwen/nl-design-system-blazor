@@ -3,7 +3,7 @@ Blazor implementation of [NL Design System](https://nl-design-system.gitlab.io/n
 
 [ContentHeader - part of meta](https://nl-design-system.gitlab.io/nl-design-system/componenten/meta/index.html)
 
-Status: Fully implemented (See notes!)
+Status: Fully implemented (See notes)
 
 ### Notes
 - Can be used without meta.

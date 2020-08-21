@@ -33,7 +33,7 @@ Status: Fully implemented (see Notes)
 ### Notes
 
 - *Combobox met meerdere items* works but should be updated if available in the future. There is no callback event (like `combobox-select`) once items are selected. Nor is there a callback event when a selected item is removed. Added an update to the selected items by reading the selected values when the combobox closes (*this is not optimal*). Also added an onclick event when removing a selected item.
-- *Combobox ajax calls* has not been implemented as indicated since ajax calls should not be part of Blazor. Instead the bound `OnValueSet` should be used to have C# do the API call, and the items should be set again via `SetItems(<items>)`. !Importan; Set the Parameter `IsAutocomplete` to `true` for this.
+- *Combobox ajax calls* has not been implemented as indicated since ajax calls should not be part of Blazor. Instead the bound `OnValueSet` should be used to have C# do the API call, and the items should be set again via `SetItems(<items>)`. !Important: Set the Parameter `IsAutocomplete` to `true` for this.
 - *Combobox met objecten* has not been implemented since it is a Javascript implementation of how to make a list from an object. This should be handled in C#.
 - Since the filtering can (should) be part of C# the properties `filterFuncion` and `labelFunction` are not implemented.
 - The `query` property is not implemented, this is represented by `Value` which can be bound to the Combobox.
@@ -65,7 +65,7 @@ Status: Fully implemented (see Notes)
 [Radiobutton](https://nl-design-system.gitlab.io/nl-design-system/componenten/radio/index.html)  
 [Filter](https://nl-design-system.gitlab.io/nl-design-system/componenten/filter/index.html)
 
-Status: Fully implemented (See notes!)
+Status: Fully implemented (See notes)
 
 ### Notes
 
