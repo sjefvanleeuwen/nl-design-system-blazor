@@ -21,7 +21,8 @@
             counter++;
             @*The id is a combination of the name and the value (since a html page can have multiple items with the same value, but should only have 1 for each name).*@
             <div class="input__group input__group--radio @(IsFilter ? "input__group--compact" : string.Empty)">
-                <input type="radio"
+                <input @key="@($"{Identifier}_{counter}")"
+                       type="radio"
                        name="@Identifier"
                        id="@(Identifier)_@counter"
                        class="input__control @InputControlType"

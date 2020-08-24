@@ -12,7 +12,7 @@
         </li>
         @foreach (var page in Pages)
         {
-            <li class="pagination__item
+            <li @key="page.Number" class="pagination__item
                 @(page.IsActive ? "pagination__item--active" : string.Empty)
                 @(page.IsFirst ? "pagination__item--first" : string.Empty)
                 @(page.IsLast ? "pagination__item--last" : string.Empty)

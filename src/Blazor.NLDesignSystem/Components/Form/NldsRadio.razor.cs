@@ -32,6 +32,7 @@ namespace Blazor.NLDesignSystem.Components
                 if (_value == value) return;
                 _value = value;
                 ValueChanged.InvokeAsync(value);
+                StateHasChanged();
             }
         }
         private string _value;
