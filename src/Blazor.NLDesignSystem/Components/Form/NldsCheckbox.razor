@@ -73,7 +73,7 @@
                            @onchange="@(() => { item.IsChecked = !item.IsChecked; ItemsChanged.InvokeAsync(Items); })"
                            @onchange:preventDefault
                            disabled="@item.IsDisabled">
-                    <label class="input__label input__label--checkbox" for="@($"{Identifier}_{counter}")">@((MarkupString)item.Description) @item.IsDisabled</label>
+                    <label class="input__label input__label--checkbox" for="@($"{Identifier}_{counter}")">@((MarkupString)item.Description)</label>
                 </div>
             }
         </div>
