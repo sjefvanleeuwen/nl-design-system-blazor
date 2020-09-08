@@ -6,5 +6,8 @@ namespace Blazor.NLDesignSystem.Components
     {
         [Parameter]
         public RenderFragment ChildContent { get; set; }
+
+        [Parameter]
+        public string Style { get; set; } = "padding: 10px";
     }
 }
