@@ -2,7 +2,7 @@
 <div class="collapse
      @(HasBackground ? string.Empty : "collapse--no-background")
      @(IsSimple ? "collapse--simple" : string.Empty)
-     @(UseIcons ? "collapse--icons" : string.Empty)">
+     @(UseIcons ? "collapse--icons" : string.Empty)" style="@Style">
     <CascadingValue IsFixed="true" Name="GroupName" Value="@GroupName">
         @ChildContent
     </CascadingValue>

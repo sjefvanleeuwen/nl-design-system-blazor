@@ -15,6 +15,9 @@ namespace Blazor.NLDesignSystem.Components
         protected string GroupName { get; set; }
 
         [Parameter]
+        public string Style { get; set; }
+
+        [Parameter]
         public string CollapsedText { get; set; } = "ingeklapt";
         [Parameter]
         public string Identifier { get; set; } = Guid.NewGuid().ToString(); //If no identifyer is supplied there needs to be a unique referal

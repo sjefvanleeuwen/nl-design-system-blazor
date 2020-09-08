@@ -6,6 +6,9 @@ namespace Blazor.NLDesignSystem.Components
     public partial class NldsCollapseContent
     {
         [Parameter]
+        public string Style { get; set; }
+
+        [Parameter]
         public bool IsIndented { get; set; }
         [Parameter]
         public string Id { get; set; }

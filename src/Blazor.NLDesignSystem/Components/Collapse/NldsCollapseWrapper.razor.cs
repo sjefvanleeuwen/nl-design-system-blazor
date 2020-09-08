@@ -5,6 +5,9 @@ namespace Blazor.NLDesignSystem.Components
     public partial class NldsCollapseWrapper
     {
         [Parameter]
+        public string Style { get; set; }
+
+        [Parameter]
         public string GroupName { get; set; }
         [Parameter]
         public bool HasBackground { get; set; } = true;
