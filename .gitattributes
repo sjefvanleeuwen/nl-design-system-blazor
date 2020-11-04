@@ -1,0 +1,8 @@
+*.cs linguist-language=C#
+*.razor linguist-language=C#
+docs/* linguist-vendored
+doc/* linguist-vendored
+src/Blazor.NLDesignSystem/wwwroot/dist/* linguist-vendored
+src/Blazor.NLDesignSystem.Site.Components/* linguist-vendored
+src/Blazor.NLDesignSystem.Site.Server/* linguist-vendored
+src/Blazor.NLDesignSystem.Wasm/* linguist-vendored
