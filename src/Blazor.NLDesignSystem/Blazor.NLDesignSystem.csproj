@@ -20,7 +20,7 @@
     <Copyright>Copyright (c) 2020 Sjef van Leeuwen</Copyright>
     <PackageIcon>nlds-1024.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageVersion>0.1.1</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <PackageReleaseNotes></PackageReleaseNotes>
     <AssemblyName>Blazorized.NLDesignSystem</AssemblyName>
     <RootNamespace>Blazorized.NLDesignSystem</RootNamespace>
