@@ -11,6 +11,10 @@ For the look and feel and feel of the design system visit:
 
 # Status
 
+**This project is now in maintenance mode until the next release by the Core Team of NL Design System. NL Design System is being overhauled to HTML WebComponents framework.**
+You can follow the project here: https://github.com/nl-design-system
+
+
 This project componentized mostly all of the components available for NL-DESIGN-SYSTEM.
 
 For a complete up to date status, please visit:
