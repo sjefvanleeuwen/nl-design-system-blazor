@@ -17,10 +17,10 @@
     <Title>NL DESIGN SYSTEM for Blazor</Title>
     <Description>The NL Design System is a collection of reusable components, with which you can easily develop digital services as a designer or developer. Think of buttons, form elements and page templates. This project adapts the system so the components can be used from .NET Core Blazor (Web Assembly is supported).</Description>
     <NeutralLanguage></NeutralLanguage>
-    <Copyright>Copyright (c) 2020 Sjef van Leeuwen</Copyright>
+    <Copyright>Copyright (c) 2020-2021 Sjef van Leeuwen</Copyright>
     <PackageIcon>nlds-1024.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageReleaseNotes></PackageReleaseNotes>
     <AssemblyName>Blazorized.NLDesignSystem</AssemblyName>
     <RootNamespace>Blazorized.NLDesignSystem</RootNamespace>
