@@ -28,7 +28,7 @@ For a complete up to date status, please visit:
 Start a new Blazor APP and simply install the nuget package.
 
 ```
-dotnet add package Blazorized.NLDesignSystem --version 1.01
+dotnet add package Blazorized.NLDesignSystem --version 1.0.1
 ```
 
 Or go to the nuget page for more installation options: https://www.nuget.org/packages/Blazorized.NLDesignSystem/
